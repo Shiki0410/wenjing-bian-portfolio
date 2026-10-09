@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-09T17:04:22.991Z",
+  "project": "《镜外》ORPHEE 作品集",
+  "scope": "仅修改三件原创 SVG 的可见文字为矢量轮廓与本来源清单；可编辑文字 SVG 归档在 制作记录/镜外_20261010/矢量文字源/；不修改页面、样式、脚本或游戏工程",
+  "palette": {
+    "cream": "#f3ebd7",
+    "coral": "#c86763",
+    "inkBlue": "#263244",
+    "brass": "#a78042",
+    "teal": "#76a8a5"
+  },
+  "typography": {
+    "family": [
+      "Inter Tight",
+      "Noto Sans SC JW",
+      "Microsoft YaHei",
+      "sans-serif"
+    ],
+    "matchingSiteFamily": true,
+    "fontLicenseRecord": "font-provenance.json",
+    "originalEditableFamily": [
+      "Inter Tight",
+      "Noto Sans SC JW",
+      "Microsoft YaHei",
+      "sans-serif"
+    ],
+    "editableFontReferences": [
+      "../InterTight-Latin.woff2",
+      "NotoSansSC-Regular-Jingwai.woff2",
+      "NotoSansSC-Bold-Jingwai.woff2"
+    ],
+    "finalRendering": "所有可见文字均为SVG路径；最终SVG没有text元素或font-face，作为img使用时无需加载字体",
+    "finalExternalFontDependencies": [],
+    "outlineSources": [
+      {
+        "family": "Inter Tight",
+        "file": "H:/设计作业/申请/作品集_重构_20261008/assets/InterTight.ttf",
+        "weightInstances": [
+          600,
+          700,
+          800
+        ],
+        "used": true,
+        "license": "H:/设计作业/申请/作品集_重构_20261008/assets/InterTight-OFL.txt",
+        "sha256": "b81b73dcb64df3c230cabade7df6c5773bf863233f24c9ee51087519f1f88b6f"
+      },
+      {
+        "family": "Noto Sans SC",
+        "file": "H:/gamedesign/Application/XHS-20261010/NotoSansSC-Regular.ttf",
+        "weight": 400,
+        "used": false,
+        "note": "完整Regular字库作为字重低于650的备用来源；本组三图可见中文为700字重，因此没有调用",
+        "license": "H:/gamedesign/Application/XHS-20261010/OFL-NotoSansSC.txt",
+        "sha256": "2bcae47782a73ebd46920a057189ee6aef9a8c24c43d5ab9b548dfd01d539431"
+      },
+      {
+        "family": "Noto Sans SC",
+        "file": "H:/gamedesign/Application/XHS-20261010/NotoSansSC-Bold.ttf",
+        "weight": 700,
+        "used": true,
+        "license": "H:/gamedesign/Application/XHS-20261010/OFL-NotoSansSC.txt",
+        "sha256": "5238730c4d7210a018dbbf4866b68bdafd592c47d3b5ecccc804d658a9b26257"
+      }
+    ],
+    "conversion": {
+      "tool": "Python fontTools TTFont / varLib.instancer / SVGPathPen / TransformPen",
+      "variableFontHandling": "Inter Tight按源SVG所用600/700/800 wght分别实例化",
+      "layoutPreserved": [
+        "x/y基线",
+        "text-anchor",
+        "字体字号",
+        "字重",
+        "字距",
+        "Inter Tight GPOS kern成对字距",
+        "填色"
+      ],
+      "precisionSvgUnits": 0.001,
+      "missingGlyphs": [],
+      "convertedAt": "2026-10-09T17:13:52.033Z",
+      "sourceEditableDirectory": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源",
+      "reports": [
+        {
+          "file": "projection-study.svg",
+          "textElementsOutlined": 13,
+          "glyphsOutlined": 219,
+          "fontGlyphCounts": {
+            "Inter Tight": 219
+          },
+          "pathPrecisionSvgUnits": 0.001,
+          "kerning": "Inter Tight GPOS kern pair adjustment preserved",
+          "title": true,
+          "desc": true,
+          "viewBox": "0 0 1200 800",
+          "noVisibleText": true,
+          "externalFontFacesRemoved": true,
+          "bytes": 66061
+        },
+        {
+          "file": "letter-route-study.svg",
+          "textElementsOutlined": 20,
+          "glyphsOutlined": 275,
+          "fontGlyphCounts": {
+            "Inter Tight": 275
+          },
+          "pathPrecisionSvgUnits": 0.001,
+          "kerning": "Inter Tight GPOS kern pair adjustment preserved",
+          "title": true,
+          "desc": true,
+          "viewBox": "0 0 1200 800",
+          "noVisibleText": true,
+          "externalFontFacesRemoved": true,
+          "bytes": 82897
+        },
+        {
+          "file": "layered-film-study.svg",
+          "textElementsOutlined": 17,
+          "glyphsOutlined": 251,
+          "fontGlyphCounts": {
+            "Inter Tight": 241,
+            "Noto Sans SC": 10
+          },
+          "pathPrecisionSvgUnits": 0.001,
+          "kerning": "Inter Tight GPOS kern pair adjustment preserved",
+          "title": true,
+          "desc": true,
+          "viewBox": "0 0 1200 800",
+          "noVisibleText": true,
+          "externalFontFacesRemoved": true,
+          "bytes": 92730
+        }
+      ]
+    }
+  },
+  "constructionPrinciples": [
+    "模块网格",
+    "大编号与粗黑字",
+    "细刻线",
+    "有限几何",
+    "印刷定位标",
+    "平面色块"
+  ],
+  "exclusions": [
+    "渐变",
+    "阴影",
+    "圆角卡片",
+    "外部或参考图片嵌入",
+    "伪实机画面",
+    "用户私人社交界面"
+  ],
+  "designEvidence": [
+    {
+      "file": "H:/gamedesign/My project/Docs/DesignIndex.md",
+      "use": "区分历史首章 Demo 与后续电影层级及新方案；没有把后续设想写为现有实装"
+    },
+    {
+      "file": "H:/gamedesign/My project/Docs/SceneFlowSpecification.md",
+      "use": "核对摄影、真实封存、现实查证和唯一原信三条送法；到柜不等于米娅亲收"
+    },
+    {
+      "file": "H:/设计作业/申请/作品集_重构_20261008/jingwai.css",
+      "use": "核对现有站点 Inter Tight / Noto Sans SC JW 字体家族"
+    },
+    {
+      "file": "C:/Users/Administrator/.codex/skills/jingwai-game-production/SKILL.md",
+      "use": "区分机制说明、概念提案与原生引擎证据"
+    }
+  ],
+  "visualReferences": [
+    {
+      "file": "C:/Users/Administrator/AppData/Local/Temp/codex-clipboard-265ed575-8b14-4b58-93e0-49a84b359170.png",
+      "description": "荧黄活动模块网格",
+      "adoptedPrinciple": "模块分区、对齐关系和几何节奏；未采用原图颜色或内容",
+      "sha256": "97c706316d9f4c85dcbce6da8890c29bbc38d27cebe0aa3db7784f7bf5c6cdc1",
+      "localFileVerified": true,
+      "sourceType": "user-provided screenshot",
+      "originalCreator": "未确认",
+      "originalPublicUrl": null,
+      "pixelObservation": "父代理已通过 view_image 查看真实像素；本绘制代理根据其原则说明作原创绘制",
+      "embeddedInOutput": false
+    },
+    {
+      "file": "C:/Users/Administrator/AppData/Local/Temp/codex-clipboard-e7a42f04-b99a-4759-b288-111baaff8ebb.png",
+      "description": "蓝黑印刷编号、光栅与透视几何",
+      "adoptedPrinciple": "大编号、粗细线的层级及平面结构示意；不复用光栅纹理和原图形",
+      "sha256": "1929b5b09d8cf3922f8820251aa2cacb3f887abeed054712ffef8731ca758a60",
+      "localFileVerified": true,
+      "sourceType": "user-provided screenshot",
+      "originalCreator": "未确认",
+      "originalPublicUrl": null,
+      "pixelObservation": "父代理已通过 view_image 查看真实像素；本绘制代理根据其原则说明作原创绘制",
+      "embeddedInOutput": false
+    },
+    {
+      "file": "C:/Users/Administrator/AppData/Local/Temp/codex-clipboard-b8240483-c4b7-4f7f-82ad-1210e50d0b11.png",
+      "description": "黑黄图形版式与印刷定位标",
+      "adoptedPrinciple": "印刷定位标、有限几何与编辑构成；图形和颜色重新设计",
+      "sha256": "1a3a1724dd9a970a385963441545e5a7e0a14c37d2b808deb9c82ca667b8fae3",
+      "localFileVerified": true,
+      "sourceType": "user-provided screenshot",
+      "originalCreator": "未确认",
+      "originalPublicUrl": null,
+      "pixelObservation": "父代理已通过 view_image 查看真实像素；本绘制代理根据其原则说明作原创绘制",
+      "embeddedInOutput": false
+    }
+  ],
+  "referenceTransfer": "仅借鉴三张用户参考中的网格、编号和印刷构成原则，主体、功能关系、布局和配色均按《镜外》重新绘制。原始参考未公开嵌入；不声称拥有或复刻参考原作。",
+  "assets": [
+    {
+      "file": "projection-study.svg",
+      "sourceFile": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源/projection-study.svg",
+      "viewBox": [
+        0,
+        0,
+        1200,
+        800
+      ],
+      "aspectRatio": "3:2",
+      "mediaType": "image/svg+xml",
+      "sha256": "42f1cab9ca97bc745d90da34cdb2b0f0a1dbc70e324acd96c194de8b86ee5966",
+      "authorship": "本次为《镜外》作品集重新绘制的原创 SVG；SVG 本身是可编辑矢量源",
+      "status": "首章机制的平面抽象结构示意／非游戏截图／不作为原生操作证据",
+      "purpose": "摄影 → 实体介入 → 在现实中查证证据",
+      "accessibleTitle": true,
+      "accessibleDescription": true,
+      "narrowColumnNote": "缩至300px宽时，最小图内字为4px；图形用于辅助结构辨识，详细叙事说明由页面正文及SVG desc承担",
+      "sourceGeometry": "相机、机械支撑、原信、邮車、柜、侧盘、便条、接收窗及胶片层级全部用基础矢量几何从零绘制",
+      "screenshotEmbedded": false,
+      "privateSocialInterfaceEmbedded": false,
+      "rasterEmbedded": false,
+      "editableTextSource": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源/projection-study.svg",
+      "editableTextSourceSha256": "a90f8fc3249a10b90aebd7813e072540b0e1a521adc90db74d39eafbd20f0eac",
+      "finalOutlinedFile": "projection-study.svg",
+      "bytes": 66129,
+      "visibleTextOutlined": true,
+      "noRuntimeFontDependency": true,
+      "sourceMinimumFontSizePx": 16
+    },
+    {
+      "file": "letter-route-study.svg",
+      "sourceFile": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源/letter-route-study.svg",
+      "viewBox": [
+        0,
+        0,
+        1200,
+        800
+      ],
+      "aspectRatio": "3:2",
+      "mediaType": "image/svg+xml",
+      "sha256": "637ea753708e08a2876ce8ba8c99ac62c299a8d34267326c8329346f78d82cf8",
+      "authorship": "本次为《镜外》作品集重新绘制的原创 SVG；SVG 本身是可编辑矢量源",
+      "status": "首章机制的平面抽象结构示意／非游戏截图／不作为原生操作证据",
+      "purpose": "同一原信的三种替代送法及不同接收设备",
+      "accessibleTitle": true,
+      "accessibleDescription": true,
+      "narrowColumnNote": "缩至300px宽时，最小图内字为4px；图形用于辅助结构辨识，详细叙事说明由页面正文及SVG desc承担",
+      "sourceGeometry": "相机、机械支撑、原信、邮車、柜、侧盘、便条、接收窗及胶片层级全部用基础矢量几何从零绘制",
+      "screenshotEmbedded": false,
+      "privateSocialInterfaceEmbedded": false,
+      "rasterEmbedded": false,
+      "editableTextSource": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源/letter-route-study.svg",
+      "editableTextSourceSha256": "e2fbdd0309305cfa81db8241eadb13956f3a50c68ada5c3366c48e6e05ee66c0",
+      "finalOutlinedFile": "letter-route-study.svg",
+      "bytes": 82975,
+      "visibleTextOutlined": true,
+      "noRuntimeFontDependency": true,
+      "sourceMinimumFontSizePx": 16
+    },
+    {
+      "file": "layered-film-study.svg",
+      "sourceFile": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源/layered-film-study.svg",
+      "viewBox": [
+        0,
+        0,
+        1200,
+        800
+      ],
+      "aspectRatio": "3:2",
+      "mediaType": "image/svg+xml",
+      "sha256": "400b4174becdd7982edeb69238b145473eb774884a43175788fcd607fee52e43",
+      "authorship": "本次为《镜外》作品集重新绘制的原创 SVG；SVG 本身是可编辑矢量源",
+      "status": "后续结构设想／非游戏截图／未宣称已实现",
+      "purpose": "后续多层电影的嵌套关系设想",
+      "accessibleTitle": true,
+      "accessibleDescription": true,
+      "narrowColumnNote": "缩至300px宽时，最小图内字为4px；图形用于辅助结构辨识，详细叙事说明由页面正文及SVG desc承担",
+      "sourceGeometry": "相机、机械支撑、原信、邮車、柜、侧盘、便条、接收窗及胶片层级全部用基础矢量几何从零绘制",
+      "screenshotEmbedded": false,
+      "privateSocialInterfaceEmbedded": false,
+      "rasterEmbedded": false,
+      "editableTextSource": "H:/设计作业/申请/作品集_重构_20261008/制作记录/镜外_20261010/矢量文字源/layered-film-study.svg",
+      "editableTextSourceSha256": "cdcedeba49c90f3adde588ca28f4fb7d756526da12bb53f8dc1b81d42de9d8d2",
+      "finalOutlinedFile": "layered-film-study.svg",
+      "bytes": 92778,
+      "visibleTextOutlined": true,
+      "noRuntimeFontDependency": true,
+      "sourceMinimumFontSizePx": 16
+    }
+  ],
+  "validation": {
+    "xmlParser": "xml-js",
+    "allSvgXmlParsed": true,
+    "allViewBoxesMatch": true,
+    "allTitlesAndDescriptionsPresent": true,
+    "allColorsWithinSpecifiedPalette": true,
+    "noImageElements": true,
+    "noScriptsFiltersGradientsRoundedRectangles": true,
+    "visualReview": "转曲后再次通过sharp在内存渲染900×600预览，逐图核对实际Inter Tight与NotoSC字形、对齐、中文状态标识和几何；未写入额外预览文件",
+    "browserValidation": "按任务要求未启动浏览器验证",
+    "doesNotEstablish": "本次矢量结构图和静态检查不证明 Unity 功能、碰撞、动作、照片来源判定或未来多层电影系统已经实现",
+    "outlineValidation": {
+      "visibleTextElementsRemaining": 0,
+      "externalFontFacesRemaining": 0,
+      "missingGlyphs": 0,
+      "allSvgXmlParsed": true,
+      "titleDescAriaAndViewBoxPreserved": true,
+      "sourceCopiesArchived": true
+    }
+  },
+  "updatedAt": "2026-10-09T17:13:52.033Z"
+}

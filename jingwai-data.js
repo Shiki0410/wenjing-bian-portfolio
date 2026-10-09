@@ -46,4 +46,4 @@
   ],
   "reflection": "录像、音轨编排和更深层的电影仍是后续方案。",
   "links": []
-};if(window.PORTFOLIO&&!window.PORTFOLIO.projects.some(x=>x.id===p.id))window.PORTFOLIO.projects.push(p);})();
+};if(window.PORTFOLIO){const a=window.PORTFOLIO.projects,old=a.findIndex(x=>x.id===p.id);if(old>=0)a.splice(old,1);const garden=a.findIndex(x=>x.id==='garden');a.splice(garden>=0?garden+1:a.length,0,p);a.forEach((x,i)=>x.number=String(i+1).padStart(2,'0'));window.PORTFOLIO.order=a.map(x=>x.id);}})();
