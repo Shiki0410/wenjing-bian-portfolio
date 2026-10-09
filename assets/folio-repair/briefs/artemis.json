@@ -1,0 +1,96 @@
+{
+  "project": {
+    "question": "怎样让科学试错与角色动作接成可玩的探索循环？",
+    "audience": "设计、产品、研究与技术招聘者及项目评审",
+    "takeaway": "探索、零件构筑与战斗让科学知识进入动作。我负责的机制通过输入、规则、状态和反馈接续起来。",
+    "deliverable": "可交互项目案例、原图导读与可编辑SVG",
+    "dimensions": "responsive 390–1440px",
+    "language": "zh-CN"
+  },
+  "evidence": {
+    "unit_of_analysis": "一个游戏机制的输入与状态转换",
+    "time_range": "原项目材料覆盖期；不新增样本",
+    "sample_size": "Idle Start Move Stop状态；邻接与路径；能量分支和敌人条件",
+    "measures": [
+      "Idle Start Move Stop状态",
+      "邻接与路径",
+      "能量分支和敌人条件"
+    ],
+    "sources": [
+      {
+        "title": "原设定 / 角色造型",
+        "url_or_id": "assets/composition/artemis-character-heavy.webp"
+      },
+      {
+        "title": "原实机 / 构筑界面",
+        "url_or_id": "assets/artemis-build.webp"
+      },
+      {
+        "title": "原 CG / 实验室",
+        "url_or_id": "assets/composition/artemis-cg-laboratory.webp"
+      },
+      {
+        "title": "精英02机器人原设定",
+        "url_or_id": "assets/folio-repair/artemis-elite2-design.webp"
+      },
+      {
+        "title": "精英01重甲守卫原动作帧",
+        "url_or_id": "assets/folio-repair/artemis-elite1-motion-sheet.webp"
+      },
+      {
+        "title": "原实机战斗录屏（40s与56s）",
+        "url_or_id": "media/artemis-gameplay.mp4"
+      }
+    ],
+    "transformations": [
+      "原图等比例显示，不覆盖原图文字或重估数值",
+      "依原材料重绘关系图，所有结构长度不编码数量",
+      "先保留来源、再组织编辑层与概念美术",
+      "原设定等比例转WebP；原动作表按既有动作行显示；原录屏抽帧保留时间；规则图不冒充实机表现"
+    ],
+    "missingness": "未提供的数值与时间不补写",
+    "uncertainty": "不补写帧数、伤害统计或玩家测试结果；逻辑示意不是实测时间轴。",
+    "causal_design": false
+  },
+  "claims": {
+    "main": "探索、零件构筑与战斗让科学知识进入动作。我负责的机制通过输入、规则、状态和反馈接续起来。",
+    "support": [
+      "原脚本区分规则、状态和反馈",
+      "原实机与美术资产能核对"
+    ],
+    "limitation": "游戏机制图依据原脚本与演示；概念 CG、界面提案和实机分开标记。",
+    "counterpoint": "原型可演示不等于机制已平衡或玩家体验已验证。"
+  },
+  "design": {
+    "chart_family": "state transition with separate trigger conditions",
+    "encodings": [
+      {
+        "channel": "position",
+        "variable": "原方案的关系或明确顺序",
+        "scale": "qualitative ordered, no measured spacing",
+        "transform": "none"
+      },
+      {
+        "channel": "text and line style",
+        "variable": "来源与职责边界",
+        "scale": "categorical, redundant text labels"
+      }
+    ],
+    "axis_zero_for_length": true,
+    "color_is_only_cue": false,
+    "style_primary": "Japanese research editorial",
+    "style_supporting": "Bauhaus functional + angular flat illustration",
+    "reading_time": "exploratory",
+    "color_system": "保留项目现有主题色，纸白与近黑为主；不统一成绿色",
+    "interaction": "原有原型与分析控件保留；新增来源切换和结构检查焦点",
+    "motion": "none; respect reduced-motion"
+  },
+  "validation": {
+    "source_verified": true,
+    "proportionality_checked": true,
+    "uncertainty_addressed": true,
+    "color_vision_checked": false,
+    "actual_size_render_checked": true,
+    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。"
+  }
+}

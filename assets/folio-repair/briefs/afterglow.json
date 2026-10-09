@@ -1,0 +1,83 @@
+{
+  "project": {
+    "question": "环境信号如何进入字形，而不是成为信息屏的背景装饰？",
+    "audience": "设计、产品、研究与技术招聘者及项目评审",
+    "takeaway": "在同一字环骨架里组织人流、噪声、空气与风。先读轮廓，再读纹理，让代码决定的变化能够被解释。",
+    "deliverable": "可交互项目案例、原图导读与可编辑SVG",
+    "dimensions": "responsive 390–1440px",
+    "language": "zh-CN"
+  },
+  "evidence": {
+    "unit_of_analysis": "一个内置时刻样本及其渲染状态",
+    "time_range": "原项目材料覆盖期；不新增样本",
+    "sample_size": "人流噪声PM2.5风四路输入；V3与V4插值机制；手动字重",
+    "measures": [
+      "人流噪声PM2.5风四路输入",
+      "V3与V4插值机制",
+      "手动字重"
+    ],
+    "sources": [
+      {
+        "title": "原项目 / 编码图",
+        "url_or_id": "assets/afterglow-mapping-board.webp"
+      },
+      {
+        "title": "原项目 / 状态板",
+        "url_or_id": "assets/afterglow-state-board.webp"
+      },
+      {
+        "title": "原渲染 / 穹顶投影",
+        "url_or_id": "assets/afterglow-render-dome.webp"
+      }
+    ],
+    "transformations": [
+      "原图等比例显示，不覆盖原图文字或重估数值",
+      "依原材料重绘关系图，所有结构长度不编码数量",
+      "先保留来源、再组织编辑层与概念美术"
+    ],
+    "missingness": "未提供的数值与时间不补写",
+    "uncertainty": "19个内置样本采集来源未再次核验；投影方案未经现场验证。",
+    "causal_design": false
+  },
+  "claims": {
+    "main": "在同一字环骨架里组织人流、噪声、空气与风。先读轮廓，再读纹理，让代码决定的变化能够被解释。",
+    "support": [
+      "原V4代码保留四路编码",
+      "原输出和建筑效果图可核对"
+    ],
+    "limitation": "原代码内置样本用于演示，不写作实时车站实测；空间图是渲染提案。",
+    "counterpoint": "图形连贯不等于信息已被公众准确理解。"
+  },
+  "design": {
+    "chart_family": "channel-to-glyph encoding anatomy",
+    "encodings": [
+      {
+        "channel": "position",
+        "variable": "原方案的关系或明确顺序",
+        "scale": "qualitative ordered, no measured spacing",
+        "transform": "none"
+      },
+      {
+        "channel": "text and line style",
+        "variable": "来源与职责边界",
+        "scale": "categorical, redundant text labels"
+      }
+    ],
+    "axis_zero_for_length": true,
+    "color_is_only_cue": false,
+    "style_primary": "Japanese research editorial",
+    "style_supporting": "Bauhaus functional + angular flat illustration",
+    "reading_time": "exploratory",
+    "color_system": "保留项目现有主题色，纸白与近黑为主；不统一成绿色",
+    "interaction": "原有原型与分析控件保留；新增来源切换和结构检查焦点",
+    "motion": "none; respect reduced-motion"
+  },
+  "validation": {
+    "source_verified": true,
+    "proportionality_checked": true,
+    "uncertainty_addressed": true,
+    "color_vision_checked": false,
+    "actual_size_render_checked": true,
+    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。"
+  }
+}

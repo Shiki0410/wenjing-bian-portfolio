@@ -1,0 +1,83 @@
+{
+  "project": {
+    "question": "如何让抽象的授权成为可体验、可记录、可检查的选择？",
+    "audience": "设计、产品、研究与技术招聘者及项目评审",
+    "takeaway": "把“是否同意”放回阅读、犹豫与选择的情境。网页解释规则，离线实验检查模型；两者不冒充彼此。",
+    "deliverable": "可交互项目案例、原图导读与可编辑SVG",
+    "dimensions": "responsive 390–1440px",
+    "language": "zh-CN"
+  },
+  "evidence": {
+    "unit_of_analysis": "一个模拟权限情境或一条合成样本；两者不合并",
+    "time_range": "原项目材料覆盖期；不新增样本",
+    "sample_size": "48个输入字段；五模型导出指标；测试集750",
+    "measures": [
+      "48个输入字段",
+      "五模型导出指标",
+      "测试集750"
+    ],
+    "sources": [
+      {
+        "title": "原报告 / 系统架构",
+        "url_or_id": "assets/refinement/fig1_architecture.webp"
+      },
+      {
+        "title": "原报告 / 概率校准",
+        "url_or_id": "assets/refinement/fig6_calibration_curve.webp"
+      },
+      {
+        "title": "原界面 / 五模型导出",
+        "url_or_id": "assets/privacy-compare.webp"
+      }
+    ],
+    "transformations": [
+      "原图等比例显示，不覆盖原图文字或重估数值",
+      "依原材料重绘关系图，所有结构长度不编码数量",
+      "先保留来源、再组织编辑层与概念美术"
+    ],
+    "missingness": "未提供的数值与时间不补写",
+    "uncertainty": "合成数据的外部有效性未建立；AUC区间沿用原报告，图解不添加新因果证据。",
+    "causal_design": false
+  },
+  "claims": {
+    "main": "把“是否同意”放回阅读、犹豫与选择的情境。网页解释规则，离线实验检查模型；两者不冒充彼此。",
+    "support": [
+      "五类模拟请求与规则反馈已有网页",
+      "模型导出保留同一数据划分"
+    ],
+    "limitation": "5,000 条合成样本实验；不是在线访客画像，也不是实际设备授权。",
+    "counterpoint": "真实用户的动机、阅读习惯和隐私行为可能与模拟器不同。"
+  },
+  "design": {
+    "chart_family": "parallel evidence lanes",
+    "encodings": [
+      {
+        "channel": "position",
+        "variable": "原方案的关系或明确顺序",
+        "scale": "qualitative ordered, no measured spacing",
+        "transform": "none"
+      },
+      {
+        "channel": "text and line style",
+        "variable": "来源与职责边界",
+        "scale": "categorical, redundant text labels"
+      }
+    ],
+    "axis_zero_for_length": true,
+    "color_is_only_cue": false,
+    "style_primary": "Japanese research editorial",
+    "style_supporting": "Bauhaus functional + angular flat illustration",
+    "reading_time": "exploratory",
+    "color_system": "保留项目现有主题色，纸白与近黑为主；不统一成绿色",
+    "interaction": "原有原型与分析控件保留；新增来源切换和结构检查焦点",
+    "motion": "none; respect reduced-motion"
+  },
+  "validation": {
+    "source_verified": true,
+    "proportionality_checked": true,
+    "uncertainty_addressed": true,
+    "color_vision_checked": false,
+    "actual_size_render_checked": true,
+    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。"
+  }
+}

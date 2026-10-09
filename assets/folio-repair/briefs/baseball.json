@@ -1,0 +1,83 @@
+{
+  "project": {
+    "question": "如何让大规模投打记录同时支持快速浏览和深入检查？",
+    "audience": "设计、产品、研究与技术招聘者及项目评审",
+    "takeaway": "以人物建立入口，以图表检查分布，以空间返回一次表现。数据口径不因页面切换而消失。",
+    "deliverable": "可交互项目案例、原图导读与可编辑SVG",
+    "dimensions": "responsive 390–1440px",
+    "language": "zh-CN"
+  },
+  "evidence": {
+    "unit_of_analysis": "逐球、击球或球队汇总，按源表分别处理",
+    "time_range": "原项目材料覆盖期；不新增样本",
+    "sample_size": "release_speed；球种有效记录数；击球位置与结果",
+    "measures": [
+      "release_speed",
+      "球种有效记录数",
+      "击球位置与结果"
+    ],
+    "sources": [
+      {
+        "title": "原网站 / 宏观视图",
+        "url_or_id": "assets/baseball-web-macro.webp"
+      },
+      {
+        "title": "原网站 / 实验室",
+        "url_or_id": "assets/baseball-web-lab.webp"
+      },
+      {
+        "title": "原网站 / 数据图谱",
+        "url_or_id": "assets/baseball-web-atlas.webp"
+      }
+    ],
+    "transformations": [
+      "原图等比例显示，不覆盖原图文字或重估数值",
+      "依原材料重绘关系图，所有结构长度不编码数量",
+      "先保留来源、再组织编辑层与概念美术"
+    ],
+    "missingness": "未提供的数值与时间不补写",
+    "uncertainty": "源文件覆盖期和缺失限制比较；网站结构图不编码数值。",
+    "causal_design": false
+  },
+  "claims": {
+    "main": "以人物建立入口，以图表检查分布，以空间返回一次表现。数据口径不因页面切换而消失。",
+    "support": [
+      "原CSV图表保留各自分母",
+      "宏观实验室细节三个入口已有前端"
+    ],
+    "limitation": "四份 CSV 的单位不同；2026 只覆盖源文件时段，不作完整赛季结论。",
+    "counterpoint": "球速分布和空间聚集不能独自解释比赛结果。"
+  },
+  "design": {
+    "chart_family": "nested reading scales",
+    "encodings": [
+      {
+        "channel": "position",
+        "variable": "原方案的关系或明确顺序",
+        "scale": "qualitative ordered, no measured spacing",
+        "transform": "none"
+      },
+      {
+        "channel": "text and line style",
+        "variable": "来源与职责边界",
+        "scale": "categorical, redundant text labels"
+      }
+    ],
+    "axis_zero_for_length": true,
+    "color_is_only_cue": false,
+    "style_primary": "Japanese research editorial",
+    "style_supporting": "Bauhaus functional + angular flat illustration",
+    "reading_time": "exploratory",
+    "color_system": "保留项目现有主题色，纸白与近黑为主；不统一成绿色",
+    "interaction": "原有原型与分析控件保留；新增来源切换和结构检查焦点",
+    "motion": "none; respect reduced-motion"
+  },
+  "validation": {
+    "source_verified": true,
+    "proportionality_checked": true,
+    "uncertainty_addressed": true,
+    "color_vision_checked": false,
+    "actual_size_render_checked": true,
+    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "images": [
+    [
+      "H:/游戏素材/elite1/elite1/精英怪1 人类守卫.png",
+      "artemis-elite1-design.webp"
+    ],
+    [
+      "H:/游戏素材/elite2/elite2/精英怪2 人类守卫.png",
+      "artemis-elite2-design.webp"
+    ],
+    [
+      "H:/游戏素材/地图与逐帧/敌人精英1.png",
+      "artemis-elite1-motion-sheet.webp"
+    ],
+    [
+      "H:/游戏素材/elite1/无盔甲.png",
+      "artemis-elite1-unarmored.webp"
+    ]
+  ],
+  "transform": "Proportional WebP conversion only; no pixels or poses redrawn",
+  "sourceCode": [
+    "Elite2HookState.cs",
+    "Elite1TransformState.cs"
+  ],
+  "sourceVideo": "media/artemis-gameplay.mp4",
+  "screenshots": [
+    {
+      "source": "media/artemis-gameplay.mp4",
+      "source_time_s": 40,
+      "asset": "artemis-telegraph-field.webp"
+    },
+    {
+      "source": "media/artemis-gameplay.mp4",
+      "source_time_s": 56,
+      "asset": "artemis-telegraph-response.webp"
+    }
+  ],
+  "correspondence": "Elite1 folder and original shield/shooting motion board; Elite2 folder and original robot design. Concept art, motion board, code diagram and game recording are distinct source layers."
+}

@@ -1,0 +1,83 @@
+{
+  "project": {
+    "question": "如何让校园中的材料与制作需求形成可以接续的服务？",
+    "audience": "设计、产品、研究与技术招聘者及项目评审",
+    "takeaway": "材料交换、制作预约、团购和项目档案通过校园取件衔接。把屏幕上的需求，接到线下的履约。",
+    "deliverable": "可交互项目案例、原图导读与可编辑SVG",
+    "dimensions": "responsive 390–1440px",
+    "language": "zh-CN"
+  },
+  "evidence": {
+    "unit_of_analysis": "一次概念服务需求及其交接阶段",
+    "time_range": "原项目材料覆盖期；不新增样本",
+    "sample_size": "五类相邻机制；五类MVP模块；线上线下交接",
+    "measures": [
+      "五类相邻机制",
+      "五类MVP模块",
+      "线上线下交接"
+    ],
+    "sources": [
+      {
+        "title": "原汇报 / 需求研究",
+        "url_or_id": "assets/loop-source-03.webp"
+      },
+      {
+        "title": "原汇报 / MVP",
+        "url_or_id": "assets/loop-source-09.webp"
+      },
+      {
+        "title": "原汇报 / 线上线下旅程",
+        "url_or_id": "assets/loop-source-11.webp"
+      }
+    ],
+    "transformations": [
+      "原图等比例显示，不覆盖原图文字或重估数值",
+      "依原材料重绘关系图，所有结构长度不编码数量",
+      "先保留来源、再组织编辑层与概念美术"
+    ],
+    "missingness": "未提供的数值与时间不补写",
+    "uncertainty": "履约流程和商业模式为原设计方案；不添加未给出的交易统计。",
+    "causal_design": false
+  },
+  "claims": {
+    "main": "材料交换、制作预约、团购和项目档案通过校园取件衔接。把屏幕上的需求，接到线下的履约。",
+    "support": [
+      "原MVP和旅程保留对应关系",
+      "机制比较支持模块边界"
+    ],
+    "limitation": "原需求、流程与商业模式为服务设计方案；项目档案记录照片／3D 扫描，不是库存档案。",
+    "counterpoint": "功能串联不保证线下履约可靠，仍需要运营与试点。"
+  },
+  "design": {
+    "chart_family": "two-lane handover service blueprint",
+    "encodings": [
+      {
+        "channel": "position",
+        "variable": "原方案的关系或明确顺序",
+        "scale": "qualitative ordered, no measured spacing",
+        "transform": "none"
+      },
+      {
+        "channel": "text and line style",
+        "variable": "来源与职责边界",
+        "scale": "categorical, redundant text labels"
+      }
+    ],
+    "axis_zero_for_length": true,
+    "color_is_only_cue": false,
+    "style_primary": "Japanese research editorial",
+    "style_supporting": "Bauhaus functional + angular flat illustration",
+    "reading_time": "exploratory",
+    "color_system": "保留项目现有主题色，纸白与近黑为主；不统一成绿色",
+    "interaction": "原有原型与分析控件保留；新增来源切换和结构检查焦点",
+    "motion": "none; respect reduced-motion"
+  },
+  "validation": {
+    "source_verified": true,
+    "proportionality_checked": true,
+    "uncertainty_addressed": true,
+    "color_vision_checked": false,
+    "actual_size_render_checked": true,
+    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。"
+  }
+}
