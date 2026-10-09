@@ -3,7 +3,7 @@
   const portfolio = window.PORTFOLIO;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const asset = name => `assets/${esc(name)}.webp`;
-  const caseUrl = id => `case.html?project=${encodeURIComponent(id)}`;
+  const caseUrl = id => id==='jingwai'?'jingwai.html':`case.html?project=${encodeURIComponent(id)}`;
   const chineseTitle = p => ['bronze','garden'].includes(p.id) ? ' chinese-title' : '';
   const gardenGraphic = suffix => `<svg viewBox="0 0 600 360" role="img" aria-labelledby="garden-title-${suffix} garden-desc-${suffix}"><title id="garden-title-${suffix}">园林探索与对话关系示意</title><desc id="garden-desc-${suffix}">一条蜿蜒的路径穿过亭、石与水，表示场景探索、知识触点和 NPC 对话的关系；属于作品集展示重构。</desc><g fill="none" stroke="#58725d"><path d="M60 280Q115 290 152 218T261 224Q343 320 417 217T540 104" stroke-width="2" stroke-dasharray="5 6"/><path d="M60 114Q125 70 187 95T291 83Q339 60 384 75" stroke-width="1"/><path d="M40 129Q120 96 188 114T308 105Q343 88 370 93" stroke-width="1"/><path d="M210 318Q306 294 357 321T480 307"/><path d="M217 331Q306 310 357 334T480 322"/></g><g stroke="#58725d" fill="#f4f2eb"><path d="m135 158 44-23 44 23-13 8h-62z" stroke-width="2"/><path d="M154 166v43h51v-43M160 168v40m39-40v40M147 211h65" stroke-width="2"/><path d="m380 152 28-49 32 32 18 34-7 24-40-6z"/><path d="m441 173 19-41 27 26 5 24-25 20z"/><path d="m500 57 25-15 29 14-9 10h-38z"/><path d="M510 66v34h32V66"/></g><g fill="#c33b28"><circle cx="150" cy="234" r="5"/><circle cx="340" cy="274" r="5"/><circle cx="522" cy="117" r="5"/></g><g font-family="Noto Sans SC, sans-serif" font-size="12" fill="#405c45"><text x="98" y="264">场景探索</text><text x="292" y="300">知识触点</text><text x="475" y="144">NPC 对话</text></g></svg>`;
   const gardenCover = suffix => `<div class="garden-cover"><small>EXPLORATION / CULTURE / INTERACTION</small><h4>游园画境</h4>${gardenGraphic(suffix)}</div>`;
@@ -135,6 +135,7 @@
   function chapter(c,i){return `<section class="case-chapter" id="chapter-${i+1}" aria-labelledby="chapter-title-${i+1}"><div class="chapter-heading"><p class="eyebrow">${esc(c.eyebrow)}</p><h2 id="chapter-title-${i+1}">${esc(c.title)}</h2><p>${esc(c.text)}</p></div>${c.component?component(c.component):''}${c.image?figure(c.image,c.caption||c.title):''}${c.gallery?`<div class="figure-gallery">${c.gallery.map(g=>figure(...g)).join('')}</div>`:''}${c.cards?`<div class="case-cards">${c.cards.map(c=>`<article><h3>${esc(c[0])}</h3><p>${esc(c[1])}</p></article>`).join('')}</div>`:''}</section>`;}
   function setupCase(){
     const id = new URLSearchParams(location.search).get('project') || 'rallylens';
+    if(id==='jingwai'){location.replace('jingwai.html'+location.hash);return;}
     const p = portfolio.projects.find(p=>p.id===id);
     if(!p){document.querySelector('main').innerHTML='<section class="section-pad"><h1>没有找到这个项目。</h1><p style="margin-top:25px"><a class="text-link" href="index.html#work">返回项目目录 →</a></p></section>';return;}
     document.title=`${p.name} — 卞文璟作品集`;

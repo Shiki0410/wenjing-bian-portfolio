@@ -1,0 +1,24 @@
+{
+  "source_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+  "date": "2026-10-10",
+  "family": "Noto Sans SC；页面内别名Noto Sans SC JW用于限制作用域",
+  "covers": "新增镜外页面、分支文本、首页入口和媒体占位的全部可见中文与Latin字符",
+  "records": [
+    {
+      "weight": 400,
+      "file": "assets/jingwai/NotoSansSC-Regular-Jingwai.woff2",
+      "characters": 772,
+      "bytes": 120376,
+      "sha256": "34adc356a16377dae81b8c22fbc290a0b9e636c6ef8f27db6a6f4486af32f5bf",
+      "source": "H:\\gamedesign\\Application\\XHS-20261010\\NotoSansSC-Regular.ttf"
+    },
+    {
+      "weight": 700,
+      "file": "assets/jingwai/NotoSansSC-Bold-Jingwai.woff2",
+      "characters": 772,
+      "bytes": 123056,
+      "sha256": "1ec9bac9ba446c6113291798b3b9da8a233176ccf39a688653f13e58a8534e35",
+      "source": "H:\\gamedesign\\Application\\XHS-20261010\\NotoSansSC-Bold.ttf"
+    }
+  ]
+}

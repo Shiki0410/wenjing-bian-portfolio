@@ -1,0 +1,53 @@
+{
+  "title": "镜外 Unity 首章实机操作演示",
+  "sourceVideo": "continuous-native.mp4",
+  "sourceSha256": "3266f68aff2dff451915722e181f981c6b87d9f65d06b2ff85779b98f9bcd85b",
+  "outputSha256": "a701ae40aa747845de1b21cf1d7d44c7710ace3b39a426003ec2cf3806308afd",
+  "output": "jingwai-first-chapter-v138.mp4",
+  "version": "v1.3.8",
+  "durationSeconds": 94,
+  "dimensions": [
+    1280,
+    784
+  ],
+  "frameRate": 20,
+  "sections": [
+    {
+      "sourceStart": 13,
+      "sourceEnd": 23,
+      "caption": "01 / 撑杆托灯，让艾达避开危险"
+    },
+    {
+      "sourceStart": 23,
+      "sourceEnd": 32,
+      "caption": "02 / 补拍结果，将这次改变封存"
+    },
+    {
+      "sourceStart": 32,
+      "sourceEnd": 43,
+      "caption": "03 / 026：原信装袋、盖戳、留底"
+    },
+    {
+      "sourceStart": 43,
+      "sourceEnd": 62,
+      "caption": "04 / 027：拍停邮车，实际装袋再续映"
+    },
+    {
+      "sourceStart": 62,
+      "sourceEnd": 70,
+      "caption": "05 / 07号：取回原信，交到米娅手里"
+    },
+    {
+      "sourceStart": 70,
+      "sourceEnd": 86,
+      "caption": "06 / 依照撑杆锁位检修，调整光路、拍清地图"
+    },
+    {
+      "sourceStart": 86,
+      "sourceEnd": 103,
+      "caption": "07 / 拍下桥与楼梯，搭路并走向影院"
+    }
+  ],
+  "provenance": "Windows Graphics Capture，仅采集游戏客户区。程序驱动生产输入，包含声明机位切换；本片为剪辑选编。字幕为后期说明，无音轨。",
+  "changedGameplay": false
+}

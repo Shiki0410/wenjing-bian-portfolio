@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-10",
+  "note": "最后v1.3.8主颜色图与历史操作图按版本分别标注。静态帧不是连续操作录屏。",
+  "records": [
+    {
+      "id": "hotel-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\03-shader-025-hotel-wide-B-v138-fine-repair-AA4.png",
+      "source_sha256": "182c45182641f5549d1f027c0a450b75d8a1d2df8197f2fb145d08dd8ae4b6d8",
+      "file": "assets/jingwai/hotel-v138.webp",
+      "sha256": "51c0b9258fc9ca9626656873e5791a87cd0d7b01a07caf5bf2e3146bdac4d76d",
+      "size": [
+        1600,
+        900
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "ada-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\04-shader-025-Ada-real-frontal-portrait-B-v138-fine-repair-AA4.png",
+      "source_sha256": "6c7895ddcff14701aa1005b4cd77ad4c824f67143e686efb6fd5eb786ee4f22a",
+      "file": "assets/jingwai/ada-v138.webp",
+      "sha256": "83b602fde1c99ef96d45a319b0b41ed0f4c1d146e4f19be9cb0eb0f2d0ac27e0",
+      "size": [
+        1600,
+        900
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "chandelier-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\05-shader-025-chandelier-high-structure-B-v138-fine-repair-AA4.png",
+      "source_sha256": "013f5b602145d9b1061e3f4c6726a955315bcf198be2d3cdc71f9ffd663448a8",
+      "file": "assets/jingwai/chandelier-v138.webp",
+      "sha256": "70c555c3955dd0c4e037d0388521e33dd368c4393e6150cecb3c0cb88b7df3ce",
+      "size": [
+        1600,
+        900
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "editing-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\11-shader-archive-actual-editing-desk-B-v138-fine-repair-AA4.png",
+      "source_sha256": "0c76751b4640d66f132ea68bf0b6c120cb13a00533b538ed8c40c231639bb4e3",
+      "file": "assets/jingwai/editing-v138.webp",
+      "sha256": "9b87c97b7d8de7f6493e033cf549c780c0d1688dc868aee7fec4a835a91c7a0a",
+      "size": [
+        1600,
+        900
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "workbench-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\16-shader-07-actual-workbench-B-v138-fine-repair-AA4.png",
+      "source_sha256": "699cccaf2bc150a8ad14e8bf2a43efd0aef1aeac148a590e6beb544a5132c539",
+      "file": "assets/jingwai/workbench-v138.webp",
+      "sha256": "7789202a5cc49814289c40877ce0c8d2172c65892172a832241fedabae83fbea",
+      "size": [
+        1600,
+        900
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "arrival-note-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\18-shader-07-actual-truth-paper-B-v138-fine-repair-AA4.png",
+      "source_sha256": "5b2d39f4d648df266c6e74979b3d33afb4059478654ea5a8ae2b71947da026bb",
+      "file": "assets/jingwai/arrival-note-v138.webp",
+      "sha256": "5ec1ac0d9e6414dd9a7599ec7a1d9a3c44ab16d08a7e9bf369c0ad43dac17a03",
+      "size": [
+        1600,
+        900
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "paper-note-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\actual-07-arrival-production-640x400.png",
+      "source_sha256": "50a8c1aac25fc1d1a7fd5c55ac2486f215a11a39f8fd59a38816c31328bc649f",
+      "file": "assets/jingwai/paper-note-v138.webp",
+      "sha256": "a72bac212aba4382f1e91cdfaf937cb0e49a3d3bcde3f17ca5309ff8565ddc16",
+      "size": [
+        640,
+        400
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "paper-map-v138",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\render-pipeline-v138-native-r7\\actual-07-maintenance-map-production-640x400.png",
+      "source_sha256": "b2f4421198dd0d39f39d9509d226bac3c61163ad5dfd84d17c6cd80b7c40f554",
+      "file": "assets/jingwai/paper-map-v138.webp",
+      "sha256": "0a9e644189456c72884b1adf3c4ed0d71ebabec19a7ef5212fc8fe2189fa09bc",
+      "size": [
+        640,
+        400
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "brace-v133",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\brace-wheel-v133.png",
+      "source_sha256": "b48f8d9e22a51f0edde5792df9755bfc91fdc21fd959bb6765d54b775505009f",
+      "file": "assets/jingwai/brace-v133.webp",
+      "sha256": "1b3e3010a29ef687dbb62fd124c99655fa118ec596bfa26854ea1fafe17fcb8e",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "family-v133",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\cable-family-v133.png",
+      "source_sha256": "974c581939c7bfafabd6fe04e6b503bdf2b8dd1a93e9ce304dcd0c33a1bd90a6",
+      "file": "assets/jingwai/family-v133.webp",
+      "sha256": "23957f80bb6d386600d51ebfce9e21eb20a1b094d6c20fe1014c07a76f21e6dc",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "frame-v136",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\current-family-alignment-v136.png",
+      "source_sha256": "bf5809759d54aceb83be8b930a7453af8c1e7fd4c21610e9a5ac3465b13cbd98",
+      "file": "assets/jingwai/frame-v136.webp",
+      "sha256": "168137baaea0d6c0912e096af674d93aeb0223d1666413ec45373baab6c48313",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "structure-v136",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\current-map-direct-camera-v136.png",
+      "source_sha256": "8acf1b5c610093ba0e56e68e6bc676762bd2dd8b2aae862dcff5be08d5bba759",
+      "file": "assets/jingwai/structure-v136.webp",
+      "sha256": "16046103f7e176ba0827859e3b32db1759d6f2fa213a49cc39363bd6ecde1248",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    },
+    {
+      "id": "forwarding-v135",
+      "source": "H:\\gamedesign\\My project\\Docs\\DesignReview\\assets\\mail-forwarding-receiver-lit-v135-r6.png",
+      "source_sha256": "037fa80570fdc12a9d18074ca7472ab2a27ddd0ab030c195f965adafff842c1b",
+      "file": "assets/jingwai/forwarding-v135.webp",
+      "sha256": "1093536c38b97873b9fa2a88c102d3981c67fa3c27a58bb0496b3054aa5294af",
+      "size": [
+        1280,
+        720
+      ],
+      "kind": "Unity真实引擎帧；无损WebP转码，未改画面像素"
+    }
+  ]
+}
