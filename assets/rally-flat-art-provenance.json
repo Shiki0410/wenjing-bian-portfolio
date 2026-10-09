@@ -1,0 +1,55 @@
+{
+  "usage": "Built-in imagegen; conceptual scene assets, not research observation",
+  "palette": "Original cobalt, pale blue, paper and ink",
+  "style_reference": "The Tatami Galaxy / 四畳半神話大系, original characters",
+  "prompts": [
+    {
+      "key": "rally-flat-pair",
+      "prompt": "Create a transparent-background original animation character illustration for a badminton research portfolio, strongly in the graphic animation style of The Tatami Galaxy (四畳半神話大系): absurdly lanky angular people, eccentric long noses and tiny expressive dot eyes, deliberate asymmetry, elastic elongated forearms and legs, solid jet-black hair silhouettes, flat cream skin, flat cobalt blue (#2354d8) and paper-white sportswear, graphic hard-edge shapes, crisp assertive black outlines, flat cel drawing. NOT realistic, NOT sketch shading, NOT cross-hatching, no glossy lighting, no gradients, no 3D. TWO unrelated original amateur university badminton partners, not existing anime characters: left a short-haired woman with blue shirt white shorts making a very long low underhand stroke leaning toward center; right a tall man with white T-shirt blue shorts with a strongly angular bent-knee wide defensive stance reaching toward center. Badminton racquets have unmistakably small oval heads, thin shafts, light simple lattice strings. Full bodies feet and racquets uncropped. Wide landscape 3:1 composition: figures occupy leftmost 22% and rightmost 22%, completely empty central 55%. Transparent everywhere behind figures. Strong poster personality, limited flat colors, a few crooked fold lines only. No text, no labels, no extra floating marks or stars, no court, no shuttle trajectory. These are conceptual stand-ins, not participant portraits."
+    },
+    {
+      "key": "rally-flat-hall",
+      "prompt": "Original graphic animation environment illustration for a badminton research portfolio. Visual style of The Tatami Galaxy (四畳半神話大系): bold flat hard-edged shapes, exaggerated impossible perspective and elongated architecture, crisp black outlines, rhythmic geometric shapes, eccentric 2D animation staging, no realistic rendering, no gradients, no painterly blur, no 3D. A community indoor badminton hall seen from an elevated diagonal viewpoint, a cobalt-blue and pale-blue court floor, clear paper-white badminton court line geometry and a black mesh badminton net across center. A pair of tiny lanky original university amateur players on opposite sides, one in blue shirt/white shorts, one white shirt/blue shorts; two clearly different small tripod video cameras at the outer back corners face the court, useful as dual-view conceptual illustration. A badminton shuttlecock and two slender badminton racquets drawn as large stylized graphic motifs in the empty margin, not part of a measured trajectory. Restrict whole palette to cobalt #2354d8, pale blue #dce7fb, near-black #111719 and off-white #f5f6f2. Strong asymmetric poster-like composition, long diagonal roof beams and calm open floor. Wide landscape 3:2. No text or numbers, no logos, no green, no yellow. This is an illustration of the study setup, not a real study photo or measured tracking diagram."
+    },
+    {
+      "key": "rally-flat-review",
+      "prompt": "Transparent-background original graphic animation illustration of two amateur badminton partners reviewing a laptop with a researcher, in the distinctly flat quirky 2D visual style of The Tatami Galaxy (四畳半神話大系): thin elastic elongated limbs, angular shoulders, overlong noses, tiny black expressive dot eyes, bold irregular black hair silhouettes, asymmetrical posture, assertive clean black contour, deliberate flat cream and cobalt blue (#2354d8) and white color fields. No cross-hatching, no pencil shading, no realistic anatomical detail, no gradients, no glossy AI illustration. A short-haired athletic woman in blue shirt and white shorts sits on left chair, an angular tall man in white sports T-shirt and blue shorts sits on right, a bespectacled researcher at a low simple rectangular desk indicates an open laptop between them. Show all figures and furniture uncropped, 2:1 landscape with plentiful clear surrounding negative space. Simple non-legible pale rectangles on laptop, no actual data or text. No speech bubbles, no text, no labels, no extra decorative stars. No existing anime characters. Conceptual scene stand-ins, not real participant likenesses."
+    }
+  ],
+  "hall_final_edit_prompt": "Edit this badminton hall illustration into a deliberately FLAT, hard-edge graphic 2D background in the style of The Tatami Galaxy (四畳半神話大系). Retain the bold skewed high diagonal architecture, two visible cameras, badminton court, two small angular original players and large shuttlecock/racquet objects in the right margin. Remove ALL photorealistic lighting, soft shading, gradient floor tones, glossy material, 3D volume, depth-of-field and glow. Exactly four solid opaque colors: near-black #111719, cobalt #2354d8, pale blue #dce7fb, off-white #f5f6f2. Strong coarse black contours and geometric flat masses. Roof and wall windows as rhythmic poster shapes. Court floor a single flat cobalt color with clear white court lines. Shadows if any must be single hard-edged black shapes, never tonal gradients. Eccentric elastic people with small dot eyes and long angular noses. The net is simplified to a few straight black grid strokes. Keep the clean asymmetric overall composition and whitespace. No labels, no numbers, no logos, no green. Conceptual study-setup illustration, not an observed frame.",
+  "assets": [
+    {
+      "asset": "assets/rally-flat-pair-v1.webp",
+      "size": [
+        2172,
+        724
+      ],
+      "sha256": "a6672e1f08b41477ad71247ba562708acfeec43567abdd35ca60a292e941b98d",
+      "generated_source": "exec-1e8c645f-bc59-4034-9882-99dc9af35a6a.png",
+      "source_unchanged": true,
+      "kind": "Conceptual illustration; not participant, camera or trajectory evidence"
+    },
+    {
+      "asset": "assets/rally-flat-hall-v1.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "d6a257a4d4fcbc57aa1d669d03a0cce3ee978ef0090b1e18f0d9ccaf6fd41519",
+      "generated_source": "exec-db9c643d-0fa5-4710-b511-c1bf099e3532.png",
+      "source_unchanged": true,
+      "kind": "Conceptual illustration; not participant, camera or trajectory evidence"
+    },
+    {
+      "asset": "assets/rally-flat-review-v1.webp",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "a90542da0b15a1c0b08e365e007ea747a69440946261c251421d437f15abc206",
+      "generated_source": "exec-4d3546f0-afbc-4afa-a540-c114804a1274.png",
+      "source_unchanged": true,
+      "kind": "Conceptual illustration; not participant, camera or trajectory evidence"
+    }
+  ]
+}
