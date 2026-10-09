@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320">
+ <title>Folded direction — original portfolio graphic</title>
+ <g fill="#000"><path d="M28 35H159L201 76L241 35H372L201 206Z M28 178H110L201 269L291 178H372L230 320H173Z"/><path d="M178 0H222V20H178Z M0 128H26V132H0Z M374 128H400V132H374Z"/></g>
+ <g fill="none" stroke="#000" stroke-width="1"><path d="M0 0H400V320H0Z M0 160H400 M200 0V320 M0 0L400 320 M400 0L0 320"/></g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" fill="none"><title>RallyLens — two accounts, shared event</title>
+ <g stroke="#000"><path d="M22 64H184Q222 64 246 110Q270 156 306 156H458 M22 176H184Q222 176 246 130Q270 84 306 84H458" stroke-width="15"/>
+ <path d="M22 39H184Q237 39 268 98Q286 132 306 132H458 M22 201H184Q237 201 268 142Q286 108 306 108H458" stroke-width="1.5"/>
+ <path d="M245 20V222 M330 20V222 M64 20V222" stroke-width="1" stroke-dasharray="2 6"/><path d="M212 15H277V225H212Z" stroke-width="1.5"/>
+ <path d="M408 144L432 156L408 168 M408 72L432 84L408 96" stroke-width="5"/></g>
+ <g fill="#000"><circle cx="64" cy="64" r="14"/><circle cx="64" cy="176" r="14"/><path d="M235 110H255V130H235Z M14 13H34V17H14Z M22 5H26V25H22Z M446 221H466V225H446Z M454 213H458V233H454Z"/></g>
+</svg>

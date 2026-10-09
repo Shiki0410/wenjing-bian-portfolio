@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none"><title>Artemis — neighbouring hexagons and movement gate</title>
+ <defs><path id="hex" d="M-36 -20L0 -41L36 -20V20L0 41L-36 20Z"/></defs>
+ <g stroke="#000" stroke-width="2"><use href="#hex" x="128" y="160"/><use href="#hex" x="164" y="98"/><use href="#hex" x="236" y="98"/><use href="#hex" x="272" y="160"/><use href="#hex" x="236" y="222"/><use href="#hex" x="164" y="222"/><use href="#hex" x="200" y="160"/>
+ <path d="M110 178L128 189L146 178 M146 116L164 127L182 116 M254 178L272 189L290 178 M236 222H318V43" stroke-width="1"/>
+ <path d="M200 160H250 M239 150L253 160L239 170" stroke-width="8"/><path d="M74 43H326V277H74Z" stroke-width="1" stroke-dasharray="3 9"/></g>
+ <g fill="#000"><circle cx="200" cy="160" r="12"/><path d="M25 39H51V44H25Z M35 29H40V55H35Z M345 253H367V277H345Z M345 253H358V263H345Z"/></g>
+</svg>

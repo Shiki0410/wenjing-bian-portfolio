@@ -1,0 +1,76 @@
+/* Research Visualization Master pass: full-span layouts, linked evidence and honest scales. */
+.rv-event-inspector dd{overflow-wrap:anywhere}
+.rv-about-cv{display:inline-block;font-size:14px;line-height:1.8;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;margin-top:8px;padding-bottom:4px}
+.rv-network-art{overflow-x:auto;overscroll-behavior-inline:contain}.rv-network-art svg{min-width:700px}
+@media(max-width:600px){.rv-scroll::before{content:'↔ 横向滑动，查看完整图表';display:block;position:sticky;left:0;font:12px/1.7 var(--mono,monospace);padding:0 0 14px;color:inherit}.rv-network-art::before{content:'↔ 横向滑动，查看完整架构';display:block;font-size:12px;padding-bottom:18px}}
+.refined-edition .chapter-visuals>.comp-panel,
+.refined-edition .chapter-visuals>.edit-panel,
+.refined-edition .chapter-visuals>.depth-panel,
+.refined-edition .chapter-visuals>.rv-panel{grid-column:1/-1;width:100%;min-width:0}
+.refined-edition .chapter-visuals:has(>.comp-panel),
+.refined-edition .chapter-visuals:has(>.rv-panel),
+.refined-edition .chapter-visuals:has(>.edit-panel){display:block!important;grid-column:1/-1!important;padding-right:0!important}
+.refined-edition .case-meta dd{font-size:14px;line-height:1.85;max-width:62ch}
+.refined-edition .chapter-caption>p,.refined-edition .case-overview p{font-size:15px;line-height:1.9}
+.refined-edition .chapter-plate .chapter-caption{max-width:none}
+.rv-panel{--rv-paper:#f9f8f0;border:1px solid #263331;background:var(--rv-paper);color:#17211f;margin:28px 0;max-width:100%;overflow:hidden;font-variant-numeric:tabular-nums}
+.rv-panel *{box-sizing:border-box;min-width:0}
+.rv-panel header{display:flex;align-items:center;gap:24px;justify-content:space-between;padding:30px 34px;border-bottom:1px solid #263331}
+.rv-code{font:12px/1.6 var(--mono,monospace);letter-spacing:.045em}
+.rv-panel h3{font-size:clamp(25px,3vw,42px);line-height:1.25;letter-spacing:-.045em;margin:14px 0 0;max-width:850px}
+.rv-panel header>b{font:700 clamp(50px,7vw,92px)/1 var(--display,sans-serif);letter-spacing:-.05em;color:var(--accent)}
+.rv-panel h4{font-size:24px;line-height:1.35;letter-spacing:-.03em;margin:18px 0 12px}
+.rv-panel p{font-size:14px;line-height:1.85;margin:12px 0}
+.rv-panel small{font-size:12px;line-height:1.7}
+.rv-panel svg{display:block;width:100%;height:auto;font-family:inherit}
+.rv-panel svg text{fill:currentColor;font-size:16px}
+.rv-source{padding:18px 30px;border-top:1px solid #b5c0b9;font-size:12px!important;margin:0!important;color:#50635c;line-height:1.8}
+.rv-controls{display:flex;flex-wrap:wrap;border-bottom:1px solid #aeb9b2;gap:0}
+.rv-controls button{font:12px/1.5 var(--mono,monospace);padding:16px 18px;border:0;border-right:1px solid #aeb9b2;color:inherit;background:transparent;cursor:pointer;min-height:48px;text-align:left}
+.rv-controls button[aria-pressed=true]{background:var(--accent);color:white}
+.rv-panel :is(button,input,select,summary,[tabindex]):focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.rv-panel details>summary{padding:19px 30px;border-top:1px solid #b5c0b9;font-size:13px;cursor:pointer}
+.rv-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
+.rv-events-main{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(260px,1fr)}
+.rv-event-visual{padding:25px 26px;background:#edf0eb}
+.rv-event-visual .rv-scroll>div{min-width:740px}
+.rv-event-visual svg text{font-size:16px}
+.rv-event-visual .rv-event-number{font-size:13px}
+.rv-grid{stroke:#c0cbc5;stroke-width:1;fill:none}
+.rv-rally-path{stroke:#737f80;stroke-width:2;fill:none}
+.rv-hit{cursor:pointer;outline:none}.rv-hit .rv-hit-bg{fill:transparent;stroke:transparent}.rv-hit.selected .rv-hit-bg{fill:#e0c248;stroke:#776224;stroke-width:1.3}
+.rv-hit circle:not(.rv-hit-bg){fill:#2255cf}.rv-hit rect{fill:#aa4434}.rv-hit .rv-diamond{fill:#f8f6e9;stroke:#596563;stroke-width:2}
+.rv-hit:focus-visible .rv-hit-bg{stroke:#17211f;stroke-width:3}
+.rv-window{fill:#1743b5;opacity:.08}.rv-window-track{cursor:pointer}.rv-window-track rect{fill:#dbe4df;stroke:#728b83;stroke-width:1}.rv-window-track.selected rect{fill:#173e75}.rv-window-track.selected text{fill:white}
+.rv-event-inspector{padding:26px;border-left:1px solid #aeb9b2;background:#e4e9dd}
+.rv-event-index{font:700 78px/1 var(--display,sans-serif);color:#234bd8;display:block}
+.rv-event-inspector h4{font-size:27px;margin-block:16px}
+.rv-event-inspector dl{margin:24px 0;font-size:13px}.rv-event-inspector dl>div{padding:12px 0;border-bottom:1px solid #bac5b8;display:flex;justify-content:space-between;gap:12px}.rv-event-inspector dd{margin:0;font-weight:650;text-align:right}
+.rv-event-inspector figure{margin:22px 0 0}.rv-event-inspector figcaption{font-size:12px;line-height:1.7;margin-top:12px}
+.rv-window-summary{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #aeb9b2}
+.rv-window-summary>div{padding:20px 26px;border-right:1px solid #aeb9b2;font-size:13px}.rv-window-summary strong{display:block;font:34px var(--display,sans-serif);margin-bottom:10px;color:#234bd8}
+.rv-parent{padding:25px 30px}.rv-parent>div{display:grid;grid-template-columns:140px minmax(100px,1fr) 110px;gap:15px;align-items:center;margin:16px 0;font-size:13px}.rv-parent-track{position:relative;background:repeating-linear-gradient(90deg,#c6d0ca 0 1px,transparent 1px 25%);height:22px;border-bottom:1px solid #aab8ac}.rv-parent-track i{position:absolute;top:3px;width:12px;height:12px;border:2px solid #2255cf;border-radius:50%;transform:translateX(-50%)}.rv-parent-track b{position:absolute;top:3px;width:12px;height:12px;background:#aa4434;transform:translateX(-50%)}
+.rv-findings-spread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.rv-findings-art{padding:30px;background:#e7eee8;align-self:stretch;display:flex;align-items:center}
+.rv-findings-reading{padding:30px;border-left:1px solid #aeb9b2;align-self:start}
+.rv-findings-reading h4{font-size:29px}.rv-pair-accounts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:25px 0}.rv-pair-accounts article{padding-block:18px;border-block:1px solid #bdc9c0}.rv-pair-accounts b{font:15px var(--mono,monospace);color:#2255cf}.rv-pair-accounts article+article b{color:#aa4434}
+.rv-implication{border-top:1px solid #aeb9b2;padding-top:20px;margin-top:22px}.rv-implication>span{font:12px var(--mono,monospace);color:#234bd8}
+.rv-paper-display{padding:25px;background:white}.rv-paper-display img{width:100%;height:auto;display:block}
+.rv-paper-description{padding:24px 30px;background:#e8ede4}.rv-paper-description h4{margin-top:0}
+.rv-privacy-spread{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(270px,1fr)}
+.rv-privacy-plot{padding:25px;background:#f2e9ed}.rv-privacy-plot .rv-scroll>div{min-width:590px}
+.rv-privacy-reading{padding:30px;border-left:1px solid #c8b9c1}.rv-privacy-reading>strong{font:700 62px var(--display,sans-serif);color:#b01646}.rv-privacy-reading dl{font-size:13px}.rv-privacy-reading dl>div{display:flex;gap:18px;justify-content:space-between;padding-block:12px;border-bottom:1px solid #c8b9c1}.rv-privacy-reading dd{margin:0}
+.rv-model-bar{fill:#b01646}.rv-model-alt{fill:#485e64}.rv-dot{fill:#b01646;stroke:#b01646}.rv-model-label{font-size:14px!important}.rv-model-value{font-size:14px!important}
+.rv-network-spread{display:grid;grid-template-columns:1.7fr 1fr}.rv-network-art{padding:24px;background:#263738;color:white}.rv-network-reading{padding:30px;border-left:1px solid #91a09b}.rv-network-reading code{display:block;margin:18px 0;padding:18px 0;border-block:1px solid #b9c3be;font:14px var(--mono,monospace);overflow-wrap:anywhere}
+.rv-node{fill:#edf0e9;stroke:#91a9a1;stroke-width:1.5}.rv-edge{stroke:#667f77;stroke-width:2;fill:none}.rv-network-art .rv-node{fill:#374e4d}.rv-network-art .rv-edge{stroke:#a7c3b5}
+.rv-tennis-ux{display:grid;grid-template-columns:1.25fr 1fr}.rv-tennis-research{padding:26px;background:#f1e8d9}.rv-tennis-research svg{max-height:560px}.rv-tennis-choices{padding:30px;border-left:1px solid #b7b3a6}.rv-tennis-choice{padding:18px 0;border-bottom:1px solid #c0b9ac;display:grid;grid-template-columns:46px 1fr;gap:12px}.rv-tennis-choice>b{font:34px var(--display,sans-serif);color:#c64700}.rv-tennis-choice h4{font-size:20px;margin:0 0 10px}.rv-tennis-choice p{margin:0}
+.rv-tennis-specimens{display:grid;grid-template-columns:repeat(4,1fr);background:#1a2523;color:#f4f3e7}.rv-tennis-specimens figure{margin:0;padding:22px 18px;border-right:1px solid #56635a}.rv-tennis-specimens svg{aspect-ratio:200/125;background:#132521}.rv-tennis-specimens figcaption{font-size:13px;line-height:1.8;margin-top:18px}.rv-tennis-specimens b{color:#fd8b3e;font:14px var(--mono,monospace);display:block;margin-bottom:10px}
+.refined-edition .edit-tennis-art svg{min-height:620px}.refined-edition .edit-tennis-art .rv-art-crop{height:100%;min-height:620px;max-height:900px}.refined-edition .edit-tennis-art .rv-art-crop image{transform:none}
+.rv-art-menu{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #9ead9f;grid-column:1/-1}.rv-art-menu button{padding:20px 15px;border:0;border-right:1px solid #9ead9f;text-align:left;background:transparent;font:13px var(--mono,monospace);cursor:pointer;color:#19342b}.rv-art-menu button[aria-pressed=true]{background:#19342b;color:#fff6dc}
+.rv-tech-stage{display:grid;grid-template-columns:1.8fr 1fr}.rv-tech-art{padding:24px;background:#edf0e9}.rv-tech-art img{display:block;width:100%;height:auto}.rv-tech-reading{padding:30px;border-left:1px solid #b6c1b5}.rv-tech-reading h4{font-size:30px;color:#c24700}
+.rv-story-score{padding:28px;background:#172722;color:#f5f2e8}.rv-story-score>.rv-scroll>div{min-width:760px}.rv-story-note{padding:24px 30px;display:grid;grid-template-columns:1fr 1fr;gap:30px}.rv-story-note p{margin:0}
+.rv-case-guide{display:grid;grid-template-columns:repeat(4,1fr);margin-top:26px;border-block:1px solid #a1aca4;background:#e7e9df}.rv-case-guide a{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:19px 22px;text-decoration:none;color:#24332e;border-right:1px solid #a1aca4;font-size:13px;line-height:1.7}.rv-case-guide b{color:var(--accent);font:22px var(--display,sans-serif)}
+.rv-resume-link{display:inline-flex;gap:20px;align-items:center;padding:15px 20px;border:1px solid currentColor;text-decoration:none;color:inherit;margin-top:22px;font-size:14px}
+@media(max-width:900px){.rv-events-main,.rv-findings-spread,.rv-privacy-spread,.rv-network-spread,.rv-tennis-ux,.rv-tech-stage{grid-template-columns:1fr}.rv-event-inspector,.rv-findings-reading,.rv-privacy-reading,.rv-network-reading,.rv-tennis-choices,.rv-tech-reading{border-left:0;border-top:1px solid #acb9af}.rv-event-inspector{display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.rv-event-inspector dl{grid-column:2;grid-row:1/4}.rv-event-inspector figure{grid-column:1/-1;max-width:430px}.rv-case-guide{grid-template-columns:1fr 1fr}.rv-tennis-specimens{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.rv-panel header{padding:24px 20px;gap:12px}.rv-panel header>b{font-size:47px}.rv-panel h3{font-size:25px}.rv-code{font-size:11px}.rv-event-visual{padding:22px 14px}.rv-event-inspector{display:block;padding:25px 22px}.rv-event-index{font-size:60px}.rv-controls button{padding:14px 16px}.rv-window-summary{grid-template-columns:1fr 1fr}.rv-window-summary>div{padding:20px;border-bottom:1px solid #aeb9b2}.rv-source{padding:18px 20px}.rv-panel details>summary{padding:18px 20px}.rv-parent{padding:20px}.rv-parent>div{grid-template-columns:110px minmax(70px,1fr) 90px;gap:8px;font-size:11px}.rv-findings-art,.rv-findings-reading,.rv-paper-display,.rv-paper-description,.rv-privacy-plot,.rv-privacy-reading,.rv-network-art,.rv-network-reading,.rv-tennis-research,.rv-tennis-choices,.rv-tech-art,.rv-tech-reading{padding:24px 20px}.rv-pair-accounts{grid-template-columns:1fr;gap:5px}.rv-tennis-specimens figure{padding:20px 15px}.rv-tennis-specimens figcaption{font-size:12px}.rv-art-menu{grid-template-columns:1fr 1fr}.rv-art-menu button{font-size:12px}.rv-story-score{padding:24px 14px}.rv-story-note{grid-template-columns:1fr;gap:18px;padding:24px 20px}.rv-case-guide a{padding:15px;font-size:12px;grid-template-columns:22px 1fr;gap:8px}.refined-edition .edit-tennis-art .rv-art-crop{min-height:0;max-height:none;aspect-ratio:900/1000;height:auto}.rv-resume-link{font-size:13px;padding:14px}}
+@media(prefers-reduced-motion:reduce){.refined-edition *{scroll-behavior:auto!important}.rv-panel *{animation:none!important;transition:none!important}}

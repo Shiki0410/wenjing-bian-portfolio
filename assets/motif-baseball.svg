@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" fill="none"><title>Pitch Impact — strike zone and field geometry</title>
+ <g stroke="#000"><path d="M200 306L35 141Q200 -24 365 141Z" stroke-width="3"/><path d="M200 306L117 142L200 58L283 142Z M71 175Q200 45 329 175 M107 212Q200 115 293 212 M200 306V58" stroke-width="1"/><path d="M187 293H213V311L200 323L187 311Z" stroke-width="4"/>
+ <path d="M253 43H374V163H253Z M293 43V163 M334 43V163 M253 83H374 M253 123H374" stroke-width="2"/><path d="M39 40Q89 84 115 129Q146 182 194 240" stroke-width="10"/><path d="M15 55Q68 104 91 145Q129 209 170 249" stroke-width="1.5" stroke-dasharray="3 6"/></g>
+ <g fill="#000"><circle cx="39" cy="40" r="16"/><path d="M191 222L215 256L178 245Z M285 0H338V6H285Z"/></g>
+</svg>

@@ -1,0 +1,211 @@
+{
+  "source": "23-26山本投手数据.csv",
+  "sourceId": "H:/设计作业/设计技术4/中期数据可视化/public/data/23-26山本投手数据.csv",
+  "sha256": "15f38253d83fc14ef932c4681a41f549f5c3b8d70a96020223136a1eb24a1381",
+  "player": "Yamamoto, Yoshinobu",
+  "unit": "CSV 一行投球记录",
+  "method": "按 game_year 和 pitch_name 分组；占比分母是该年全部 CSV 行。release_speed 空值不参与均值。不补齐未记录赛季。",
+  "rows": 4649,
+  "years": [
+    {
+      "year": "2024",
+      "total": 1474,
+      "dateStart": "2024-03-21",
+      "dateEnd": "2024-09-28",
+      "types": [
+        {
+          "name": "4-Seam Fastball",
+          "count": 595,
+          "share": 0.40366350067842605,
+          "meanSpeed": 95.50235294117654,
+          "speedN": 595,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Split-Finger",
+          "count": 355,
+          "share": 0.24084124830393486,
+          "meanSpeed": 90.20619718309852,
+          "speedN": 355,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Curveball",
+          "count": 340,
+          "share": 0.23066485753052918,
+          "meanSpeed": 78.0111764705882,
+          "speedN": 340,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Cutter",
+          "count": 89,
+          "share": 0.060379918588873815,
+          "meanSpeed": 91.48202247191011,
+          "speedN": 89,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Slider",
+          "count": 47,
+          "share": 0.03188602442333786,
+          "meanSpeed": 86.44042553191491,
+          "speedN": 47,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Sinker",
+          "count": 41,
+          "share": 0.027815468113975575,
+          "meanSpeed": 94.71951219512196,
+          "speedN": 41,
+          "missingSpeed": 0
+        },
+        {
+          "name": "未标注球种",
+          "count": 5,
+          "share": 0.0033921302578018998,
+          "meanSpeed": 86.69999999999999,
+          "speedN": 2,
+          "missingSpeed": 3
+        },
+        {
+          "name": "Sweeper",
+          "count": 2,
+          "share": 0.0013568521031207597,
+          "meanSpeed": 83.7,
+          "speedN": 2,
+          "missingSpeed": 0
+        }
+      ]
+    },
+    {
+      "year": "2025",
+      "total": 2792,
+      "dateStart": "2025-03-18",
+      "dateEnd": "2025-09-25",
+      "types": [
+        {
+          "name": "4-Seam Fastball",
+          "count": 982,
+          "share": 0.3517191977077364,
+          "meanSpeed": 95.37953156822802,
+          "speedN": 982,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Split-Finger",
+          "count": 710,
+          "share": 0.25429799426934097,
+          "meanSpeed": 90.94028169014082,
+          "speedN": 710,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Curveball",
+          "count": 491,
+          "share": 0.1758595988538682,
+          "meanSpeed": 76.82362525458247,
+          "speedN": 491,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Cutter",
+          "count": 311,
+          "share": 0.11138968481375358,
+          "meanSpeed": 91.13022508038588,
+          "speedN": 311,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Sinker",
+          "count": 217,
+          "share": 0.07772206303724928,
+          "meanSpeed": 94.79124423963135,
+          "speedN": 217,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Slider",
+          "count": 77,
+          "share": 0.027578796561604585,
+          "meanSpeed": 86.33766233766232,
+          "speedN": 77,
+          "missingSpeed": 0
+        },
+        {
+          "name": "未标注球种",
+          "count": 3,
+          "share": 0.0010744985673352436,
+          "meanSpeed": 95,
+          "speedN": 1,
+          "missingSpeed": 2
+        },
+        {
+          "name": "Sweeper",
+          "count": 1,
+          "share": 0.00035816618911174784,
+          "meanSpeed": 84.2,
+          "speedN": 1,
+          "missingSpeed": 0
+        }
+      ]
+    },
+    {
+      "year": "2026",
+      "total": 383,
+      "dateStart": "2026-03-26",
+      "dateEnd": "2026-04-14",
+      "types": [
+        {
+          "name": "Split-Finger",
+          "count": 117,
+          "share": 0.30548302872062666,
+          "meanSpeed": 91.27435897435895,
+          "speedN": 117,
+          "missingSpeed": 0
+        },
+        {
+          "name": "4-Seam Fastball",
+          "count": 89,
+          "share": 0.23237597911227154,
+          "meanSpeed": 95.63483146067416,
+          "speedN": 89,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Cutter",
+          "count": 72,
+          "share": 0.18798955613577023,
+          "meanSpeed": 91.03194444444449,
+          "speedN": 72,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Curveball",
+          "count": 49,
+          "share": 0.1279373368146214,
+          "meanSpeed": 76.59795918367348,
+          "speedN": 49,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Sinker",
+          "count": 33,
+          "share": 0.08616187989556136,
+          "meanSpeed": 95.07575757575756,
+          "speedN": 33,
+          "missingSpeed": 0
+        },
+        {
+          "name": "Slider",
+          "count": 23,
+          "share": 0.06005221932114883,
+          "meanSpeed": 86.59565217391304,
+          "speedN": 23,
+          "missingSpeed": 0
+        }
+      ]
+    }
+  ]
+}

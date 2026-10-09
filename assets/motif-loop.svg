@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none"><title>LoopLab — material layers and return path</title>
+ <g stroke="#000"><path d="M68 111L191 42L315 111L191 180Z M68 150L191 219L315 150 M68 188L191 257L315 188" stroke-width="9"/><path d="M97 127V164 M127 145V180 M257 145V180 M286 127V164" stroke-width="1"/>
+ <path d="M49 250Q8 221 21 139Q34 57 95 32 M339 65Q391 102 378 181Q365 260 304 286" stroke-width="4"/><path d="M75 28L105 29L87 51 M324 271L294 290L324 293" stroke-width="8"/></g>
+ <path d="M164 90L191 75L219 90L191 106Z M146 111L174 127L146 143L118 127Z" fill="#000"/>
+</svg>

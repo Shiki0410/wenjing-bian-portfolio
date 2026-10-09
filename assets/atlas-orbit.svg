@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+ <title>Orbit and registration — original portfolio graphic</title>
+ <g stroke="#000">
+  <circle cx="200" cy="200" r="174" stroke-width="2"/><circle cx="200" cy="200" r="149"/><circle cx="200" cy="200" r="111" stroke-width="2"/><circle cx="200" cy="200" r="52"/>
+  <path d="M0 200H400 M200 0V400 M58 58L342 342 M58 342L342 58"/>
+  <path d="M26 200A174 174 0 0 1 200 26 M200 374A174 174 0 0 0 374 200" stroke-width="20"/>
+  <path d="M73 110L327 290 M73 290L327 110 M110 73L290 327 M110 327L290 73" stroke-width=".7"/>
+ </g>
+ <g fill="#000"><circle cx="200" cy="200" r="13"/><path d="M187 63H213V67H187Z M333 187H337V213H333Z M187 333H213V337H187Z M63 187H67V213H63Z M273 47H301V75H273Z"/></g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none"><title>Privacy City — 48-feature input and model layers</title>
+ <defs><pattern id="features" width="37" height="31" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="29" height="22" fill="#000"/></pattern></defs>
+ <rect x="0" y="31" width="222" height="248" fill="url(#features)"/>
+ <g stroke="#000" stroke-width="1.5"><path d="M234 58L282 91L324 43L369 109L410 160 M234 120L282 91L324 161L369 109L410 160 M234 183L282 222L324 161L369 235L410 160 M234 244L282 222L324 279L369 235L410 160"/><circle cx="410" cy="160" r="28"/>
+ <path d="M440 160H471 M460 152L474 160L460 168 M0 7H222 M0 307H222" stroke-width="3"/></g>
+ <g fill="#000"><circle cx="282" cy="91" r="12"/><circle cx="282" cy="222" r="12"/><circle cx="324" cy="43" r="9"/><circle cx="324" cy="161" r="9"/><circle cx="324" cy="279" r="9"/><circle cx="369" cy="109" r="7"/><circle cx="369" cy="235" r="7"/></g>
+</svg>

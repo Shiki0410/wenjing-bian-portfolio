@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+ <title>Parallel tracks — original portfolio graphic</title>
+ <g stroke="#000" stroke-width="14" stroke-linecap="square">
+  <path d="M25 42H243Q349 42 349 124Q349 206 243 206H115Q52 206 52 263H349"/>
+  <path d="M25 75H241Q315 75 315 124Q315 173 241 173H113Q20 173 20 296H349"/>
+  <path d="M25 108H239Q282 108 282 124Q282 140 239 140H112"/>
+ </g>
+ <g fill="#000"><path d="M126 213L157 239L184 213H226L157 281L87 213Z"/><path d="M349 24H382V58H349Z M369 281H397V309H369Z"/></g>
+ <g stroke="#000" stroke-width="1"><path d="M0 0H400V320H0Z M0 160H400 M200 0V320"/></g>
+</svg>

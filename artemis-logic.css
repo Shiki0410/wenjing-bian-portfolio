@@ -1,0 +1,58 @@
+/* Source-grounded diagrams, scoped to the existing Artemis paper case. */
+.case-page[data-project=artemis] .artemis-logic,
+.case-page[data-project=artemis] .artemis-chain,
+.case-page[data-project=artemis] .artemis-enemies{background:#f8f6ef;border:1px solid #a29aa9;box-shadow:4px 4px 0 #74609812}
+.artemis-logic .component-label,.artemis-chain .component-label,.artemis-enemies .component-label{background:#e9e3ef;color:#393043;border-bottom:1px solid #a29aa9}
+.logic-kicker,.chain-key,.logic-detail-heading>span,.enemy-mechanism header>span,.enemy-phases li>span{font-family:Consolas,"Noto Sans SC",sans-serif;font-size:11px;letter-spacing:.06em;color:#5e4a77}
+.logic-input{padding:24px 26px 22px;border-bottom:1px dashed #b7aebb}
+.logic-input>p{font-size:13px;line-height:2;margin:12px 0}
+.logic-input kbd{display:inline-block;border:1px solid #9b90a5;padding:1px 7px;margin-right:4px;line-height:1.6;background:#fffdf7;font-family:Consolas,sans-serif;color:#453c50;font-size:12px;box-shadow:0 2px 0 #74609820}
+.logic-input ul{display:flex;flex-wrap:wrap;gap:7px 22px;padding:0;list-style:none;color:#504757;font-size:11px;line-height:1.9}
+.logic-input li:before{content:"✓ ";color:#5e4a77}
+.artemis-logic .component-tabs{padding:0 18px;border-bottom:1px solid #c5becb;display:grid;grid-template-columns:repeat(4,1fr)}
+.artemis-logic .component-tabs button{font-size:12px;min-height:46px;padding:12px 8px;color:#544660}
+.artemis-logic .component-tabs button[aria-pressed=true]{background:#746098;color:#fff}
+.artemis-logic .component-tabs button:focus-visible{outline:2px solid #302438;outline-offset:-4px}
+.artemis-logic .state-diagram{padding:24px 12px 10px;background:#f8f6ef}
+.artemis-logic .state-diagram svg{display:block;width:100%;height:auto;max-height:none}
+.logic-node-caption{font:13px Consolas,sans-serif;letter-spacing:.06em}
+.logic-node-title{font:600 24px "Noto Sans SC",sans-serif}
+.logic-edge-caption{font:17px "Noto Sans SC",sans-serif}
+.logic-svg-note{font:13px "Noto Sans SC",sans-serif}
+.artemis-logic .state-detail{padding:20px 26px 25px;border-top:1px dashed #b7aebb;background:#eee9f1}
+.logic-detail-heading{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:end;margin-bottom:16px}
+.logic-detail-heading>span{grid-column:1/-1;font-size:10px}
+.artemis-logic .logic-detail-heading h3{font-size:23px;line-height:1.5;font-weight:600;margin:0;color:#302738}
+.logic-detail-heading code{font:11px Consolas,sans-serif;color:#665373;overflow-wrap:anywhere;line-height:1.8}
+.state-detail dl{display:grid;grid-template-columns:38px minmax(0,1fr);gap:8px 15px;margin:0;font-size:12px;line-height:2}
+.state-detail dt{color:#6c567f;font-weight:600}
+.state-detail dd{margin:0;color:#39313f}
+.logic-implementation{display:grid;grid-template-columns:1fr 1fr;gap:25px;padding:24px 26px;border-top:1px solid #c5becb}
+.logic-implementation h4,.chain-flow h4,.chain-rules h4,.enemy-phases h4{font-size:13px;line-height:1.7;font-weight:600;margin:0 0 7px;color:#332b3b}
+.logic-implementation p,.chain-flow p,.chain-rules p,.enemy-phases p{font-size:12px;line-height:2;color:#504757;margin:0;overflow-wrap:anywhere}
+.logic-mobile-flow{display:none}
+.artemis-logic .component-note,.artemis-chain .component-note,.artemis-enemies .component-note{background:#f0ede5;color:#655d6b;padding:13px 26px;font-size:10px;line-height:1.9;border-top:1px solid #c5becb;margin:0}
+.chain-intro{padding:26px 26px 5px}
+.chain-intro h3{font-size:23px;line-height:1.65;color:#302738;margin:12px 0}
+.chain-intro p,.enemy-mechanism>p{font-size:13px;line-height:2.05;color:#504757;margin:0}
+.chain-flow{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;gap:0;padding:24px 26px;margin:0}
+.chain-flow li{position:relative;padding:0 16px;border-left:1px solid #b9afc2}
+.chain-flow li:first-child{padding-left:0;border-left:0}
+.chain-flow li:last-child{padding-right:0}
+.chain-flow li+li:before{content:"→";position:absolute;left:-8px;top:4px;color:#746098;background:#f8f6ef;line-height:20px;font-size:15px}
+.chain-key{display:block;font-size:10px;margin-bottom:12px;line-height:1.6}
+.chain-rules{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:24px 26px;border-top:1px dashed #b7aebb}
+.logic-rule-mark{display:block;font-size:25px;line-height:1;margin-bottom:13px;color:#746098}
+.enemy-mechanism{padding:26px}
+.enemy-mechanism+.enemy-mechanism{border-top:1px dashed #b7aebb}
+.enemy-mechanism header h3{font-size:22px;line-height:1.7;font-weight:600;color:#302738;margin:10px 0 14px}
+.enemy-phases{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;gap:20px;padding:22px 0 0;margin:0}
+.enemy-phases li{border-top:2px solid #92809f;padding-top:12px}
+.enemy-phases li>span{display:block;font-size:10px;margin-bottom:11px}
+.transform-sequence{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:21px 0;font-size:12px;line-height:1.8}
+.transform-sequence>span{padding:7px 10px;border:1px solid #ada0b5;background:#eee9f1}
+.transform-sequence b{color:#746098;font-weight:400}
+.enemy-mechanism .enemy-return{font-size:12px}
+@media(max-width:1000px){.chain-flow{grid-template-columns:1fr 1fr;gap:23px 25px}.chain-flow li{border:0;padding:0!important}.chain-flow li+li:before{display:none}.chain-flow li{border-top:1px solid #b9afc2;padding-top:13px!important}.chain-flow .chain-key{margin-bottom:9px}}
+@media(max-width:760px){.logic-input,.chain-intro,.enemy-mechanism{padding:21px}.artemis-logic .state-detail,.logic-implementation,.chain-flow,.chain-rules{padding:21px}.logic-input ul{gap:5px}.logic-input li{flex-basis:100%}.logic-detail-heading{grid-template-columns:1fr}.logic-detail-heading code{font-size:11px}.logic-implementation,.chain-rules,.enemy-phases{grid-template-columns:1fr;gap:23px}.chain-intro h3,.enemy-mechanism header h3{font-size:20px}.artemis-logic .state-diagram{display:none}.logic-mobile-flow{display:block;list-style:none;padding:18px 21px;margin:0;font-size:13px}.logic-mobile-flow li{padding:9px 0;border-bottom:1px dotted #b7aebb;display:flex;align-items:baseline;gap:14px;justify-content:space-between}.logic-mobile-flow li>span{font-size:10px;color:#665373;text-align:right;line-height:1.8}.artemis-logic .component-tabs{padding:0 8px}.artemis-logic .component-tabs button{font-size:11px}.state-detail dl{grid-template-columns:29px minmax(0,1fr);gap:8px 11px}.transform-sequence{display:grid;grid-template-columns:1fr;margin:20px 0;gap:6px}.transform-sequence b{text-align:center;transform:rotate(90deg)}.artemis-logic .component-note,.artemis-chain .component-note,.artemis-enemies .component-note{padding:13px 21px}}
+@media(max-width:400px){.chain-flow{grid-template-columns:1fr;gap:20px}.logic-mobile-flow li{gap:7px}.logic-input>p,.chain-intro p,.enemy-mechanism>p{font-size:12px}}

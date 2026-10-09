@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" fill="none"><title>Mandate — vessel form and mirrored ornament</title>
+ <g stroke="#000"><path d="M102 83V36H143V83 M257 83V36H298V83 M81 83H319L301 221Q200 268 99 221Z" stroke-width="13"/><path d="M109 105H291L278 204Q200 235 122 204Z" stroke-width="2"/><path d="M125 237L105 306 M200 251V312 M275 237L295 306" stroke-width="17"/>
+ <path d="M143 126H173V151H150V136H160 M257 126H227V151H250V136H240 M200 115V205 M132 169L174 182L145 194 M268 169L226 182L255 194" stroke-width="5"/>
+ <path d="M39 0V340 M361 0V340 M18 65H382 M18 279H382" stroke-width="1" stroke-dasharray="2 6"/></g>
+ <path d="M142 154H174V160H142Z M226 154H258V160H226Z" fill="#000"/>
+</svg>

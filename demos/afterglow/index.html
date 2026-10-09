@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- 余晖环 · AFTERGLOW — Living Glyph Ring (interactive)
+     视觉主体 = 原 AFTERGLOW_motion.pde 效果(放射扭曲字形 + 中央红日 + 数据驱动)。
+     交互层 = 参考 index.html 的输入方式(多行文本 / 手动滑块 / CSV 数据 / 时间轴)。 -->
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFTERGLOW · Living Glyph Ring</title>
+<script src="vendor/p5.min.js"></script>
+<style>
+@font-face{font-family:Outfit;src:url('../../assets/InterTight-Latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:Poppins;src:url('../../assets/InterTight-Latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --canvas:#F4EFE6; --ink:#16140F; --red:#FF4D1F; --steel:#B5B0A5;
+  --panel:#ffffff; --line:#e6e2d8; --muted:#9a958a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#efece4;color:var(--ink);min-height:100vh;}
+.wrap{display:flex;gap:18px;padding:18px;min-height:100vh;}
+.side{width:320px;flex-shrink:0;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:20px;overflow-y:auto;box-shadow:0 10px 30px rgba(20,20,19,.08);}
+.side h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;letter-spacing:-.01em;}
+.side .sub{color:var(--muted);font-size:12px;margin:4px 0 22px;line-height:1.5;}
+.sec{margin-bottom:22px;}
+.sec h3{font-size:13px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+.sec h3::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;}
+textarea{width:100%;min-height:74px;resize:vertical;border:1px solid var(--line);border-radius:8px;
+  padding:10px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:var(--ink);
+  background:#faf9f5;line-height:1.3;}
+textarea:focus{outline:none;border-color:var(--red);}
+.row{margin-bottom:13px;}
+.row label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;}
+.row label .v{font-family:'Outfit',monospace;color:var(--muted);}
+input[type=range]{width:100%;height:4px;-webkit-appearance:none;background:var(--line);border-radius:2px;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;
+  background:var(--red);cursor:pointer;}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border:none;border-radius:50%;background:var(--red);cursor:pointer;}
+.btns{display:flex;gap:8px;}
+.btn{flex:1;border:1px solid var(--line);background:#faf9f5;border-radius:7px;padding:9px;font-size:12px;
+  font-weight:600;cursor:pointer;color:var(--ink);transition:.15s;}
+.btn:hover{border-color:var(--muted);}
+.btn.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.btn.red{background:var(--red);color:#fff;border-color:var(--red);}
+.btn.red:hover{filter:brightness(.94);}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
+.metric{background:#faf9f5;border:1px solid var(--line);border-radius:8px;padding:8px 10px;}
+.metric .l{font-size:10px;color:var(--muted);line-height:1.3;}
+.metric .n{font-family:'Outfit',monospace;font-weight:600;font-size:15px;margin-top:2px;}
+.time{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;}
+.time .t{font-family:'Outfit',monospace;color:var(--red);font-weight:600;}
+.toggle{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:13px;}
+.canvasarea{flex:1;display:flex;align-items:flex-start;justify-content:center;min-width:0;}
+#cc{width:100%;max-width:560px;border-radius:10px;overflow:hidden;box-shadow:0 20px 50px rgba(20,20,19,.18);background:#F4EFE6;}
+#cc canvas{display:block;width:100%!important;height:auto!important;}
+.note{font-size:11px;color:var(--muted);line-height:1.5;margin-top:6px;}
+.hidden{display:none;}
+@media(max-width:780px){.wrap{flex-direction:column;}.side{width:100%;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="side">
+    <h1>余晖环 · AFTERGLOW</h1>
+    <div class="sub">放射扭曲字形与中心圆，依数据呼吸。<br>Living glyph ring · type your own text.</div>
+
+    <div class="sec">
+      <h3>文本 Text（支持多行 / 每行一圈）</h3>
+      <textarea id="txt" oninput="P.text=this.value">AFTERGLOW
+余晖环
+SHANGHAI SOUTH</textarea>
+      <div class="note">每一行铺成一层同心圈;字符沿环排布并被扭曲。可输入中英文。</div>
+    </div>
+
+    <div class="sec">
+      <h3>数据 Data</h3>
+      <div class="btns" style="margin-bottom:12px;">
+        <button class="btn on" id="m-csv" onclick="setMode('csv')">内置时序样本</button>
+        <button class="btn" id="m-man" onclick="setMode('manual')">手动微调</button>
+      </div>
+
+      <div id="csvgroup">
+        <div class="time"><span>06:00—00:00 · 19 个演示时刻</span><span class="t" id="curtime">08:00</span></div>
+        <div class="row"><input type="range" id="tl" min="0" max="18" value="2" step="1" oninput="scrub(this.value)"></div>
+        <div class="btns" style="margin-bottom:12px;">
+          <button class="btn" id="play" onclick="togglePlay()">▶ 播放</button>
+          <button class="btn" id="night" onclick="toggleNight()">墨底</button>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="l">🔊 噪声 → 扭曲</div><div class="n" id="v-noise">88 dB</div></div>
+        <div class="metric"><div class="l">👥 人流 → 长度</div><div class="n" id="v-flow">145</div></div>
+        <div class="metric"><div class="l">😷 PM2.5 → 字号</div><div class="n" id="v-pm25">35</div></div>
+        <div class="metric"><div class="l">🍃 风速 → 流速</div><div class="n" id="v-wind">3.2</div></div>
+      </div>
+
+      <div id="mangroup" class="hidden">
+        <div class="row"><label>噪声 Noise <span class="v"><span id="sv-noise">88</span> dB</span></label>
+          <input type="range" id="s-noise" min="50" max="105" value="88" oninput="manual('noise',this.value)"></div>
+        <div class="row"><label>人流 Flow <span class="v"><span id="sv-flow">145</span></span></label>
+          <input type="range" id="s-flow" min="15" max="220" value="145" oninput="manual('flow',this.value)"></div>
+        <div class="row"><label>PM2.5 <span class="v"><span id="sv-pm25">35</span></span></label>
+          <input type="range" id="s-pm25" min="10" max="200" value="35" oninput="manual('pm25',this.value)"></div>
+        <div class="row"><label>风速 Wind <span class="v"><span id="sv-wind">3.2</span></span></label>
+          <input type="range" id="s-wind" min="0.2" max="12" value="3.2" step="0.1" oninput="manual('wind',this.value)"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3>视觉手调 Visual</h3>
+      <div class="row"><label>整体大小 Size <span class="v" id="lv-size">1.05</span></label>
+        <input type="range" id="r-size" min="0.6" max="1.6" step="0.01" value="1.05" oninput="vp('size',this.value,'lv-size')"></div>
+      <div class="row"><label>环幅 Ring Spread <span class="v" id="lv-spread">0.86</span></label>
+        <input type="range" id="r-spread" min="0.4" max="1.0" step="0.01" value="0.86" oninput="vp('spread',this.value,'lv-spread')"></div>
+      <div class="row"><label>字形密度 Density <span class="v" id="lv-density">96</span></label>
+        <input type="range" id="r-density" min="40" max="150" step="1" value="96" oninput="vp('density',this.value,'lv-density')"></div>
+      <div class="row"><label>扭曲量 Warp <span class="v" id="lv-warp">0.42</span></label>
+        <input type="range" id="r-warp" min="0" max="1.2" step="0.01" value="0.42" oninput="vp('warp',this.value,'lv-warp')"></div>
+      <div class="row"><label>剪切 Shear <span class="v" id="lv-shear">0.18</span></label>
+        <input type="range" id="r-shear" min="0" max="0.8" step="0.01" value="0.18" oninput="vp('shear',this.value,'lv-shear')"></div>
+      <div class="row"><label>波数 Wave Count <span class="v" id="lv-wave">3</span></label>
+        <input type="range" id="r-wave" min="0" max="6" step="1" value="3" oninput="vp('waveCount',this.value,'lv-wave')"></div>
+      <div class="row"><label>流速 Wave Speed <span class="v" id="lv-speed">1.0</span></label>
+        <input type="range" id="r-speed" min="0" max="2" step="0.05" value="1.0" oninput="vp('waveSpeed',this.value,'lv-speed')"></div>
+      <div class="row"><label>红日大小 Sun <span class="v" id="lv-sun">1.0</span></label>
+        <input type="range" id="r-sun" min="0.3" max="2" step="0.05" value="1.0" oninput="vp('sun',this.value,'lv-sun')"></div>
+      <div class="toggle"><span>整环旋转 Rotate</span>
+        <label><input type="checkbox" id="r-rot" onchange="P.rotate=this.checked"></label></div>
+    </div>
+
+    <div class="sec">
+      <h3>操作 Actions</h3>
+      <div class="btns" style="margin-bottom:8px;">
+        <button class="btn" onclick="P.paused=!P.paused">⏯ 暂停画面</button>
+        <button class="btn" onclick="P.weightBold=!P.weightBold">字重切换</button>
+      </div>
+      <button class="btn red" onclick="exportPNG()">⬇ 导出 PNG · A3 300dpi</button>
+      <div class="note" id="status"></div>
+    </div>
+  </div>
+
+  <div class="canvasarea"><div id="cc"></div></div>
+</div>
+
+<script>
+// ===== 数据(内置兜底,与 data.csv 同源)=====
+const CSV_FALLBACK = [
+ {Timestamp:"06:00",Noise_Level_dB:52,Pedestrian_Flow:24,PM25_Index:18,Wind_Speed_ms:1.2},
+ {Timestamp:"07:00",Noise_Level_dB:65,Pedestrian_Flow:58,PM25_Index:22,Wind_Speed_ms:1.5},
+ {Timestamp:"08:00",Noise_Level_dB:88,Pedestrian_Flow:145,PM25_Index:35,Wind_Speed_ms:3.2},
+ {Timestamp:"09:00",Noise_Level_dB:92,Pedestrian_Flow:172,PM25_Index:42,Wind_Speed_ms:4.5},
+ {Timestamp:"10:00",Noise_Level_dB:78,Pedestrian_Flow:98,PM25_Index:40,Wind_Speed_ms:3.8},
+ {Timestamp:"11:00",Noise_Level_dB:74,Pedestrian_Flow:82,PM25_Index:38,Wind_Speed_ms:2.7},
+ {Timestamp:"12:00",Noise_Level_dB:79,Pedestrian_Flow:105,PM25_Index:45,Wind_Speed_ms:2.5},
+ {Timestamp:"13:00",Noise_Level_dB:76,Pedestrian_Flow:89,PM25_Index:48,Wind_Speed_ms:2.1},
+ {Timestamp:"14:00",Noise_Level_dB:73,Pedestrian_Flow:81,PM25_Index:52,Wind_Speed_ms:1.8},
+ {Timestamp:"15:00",Noise_Level_dB:75,Pedestrian_Flow:85,PM25_Index:55,Wind_Speed_ms:2.0},
+ {Timestamp:"16:00",Noise_Level_dB:78,Pedestrian_Flow:95,PM25_Index:50,Wind_Speed_ms:2.3},
+ {Timestamp:"17:00",Noise_Level_dB:84,Pedestrian_Flow:130,PM25_Index:48,Wind_Speed_ms:3.5},
+ {Timestamp:"18:00",Noise_Level_dB:94,Pedestrian_Flow:185,PM25_Index:52,Wind_Speed_ms:4.8},
+ {Timestamp:"19:00",Noise_Level_dB:90,Pedestrian_Flow:160,PM25_Index:55,Wind_Speed_ms:4.2},
+ {Timestamp:"20:00",Noise_Level_dB:82,Pedestrian_Flow:115,PM25_Index:58,Wind_Speed_ms:3.0},
+ {Timestamp:"21:00",Noise_Level_dB:77,Pedestrian_Flow:90,PM25_Index:62,Wind_Speed_ms:2.4},
+ {Timestamp:"22:00",Noise_Level_dB:70,Pedestrian_Flow:68,PM25_Index:60,Wind_Speed_ms:1.9},
+ {Timestamp:"23:00",Noise_Level_dB:60,Pedestrian_Flow:42,PM25_Index:58,Wind_Speed_ms:1.4},
+ {Timestamp:"00:00",Noise_Level_dB:50,Pedestrian_Flow:15,PM25_Index:52,Wind_Speed_ms:1.0}
+];
+let DATA = CSV_FALLBACK;
+let idx = 2, playing = false;
+let pos = 2.0;            // 连续数据位置(逐帧平滑插值,告别整点跳变)
+
+// ===== 参数 =====
+const COL = { canvas:'#F4EFE6', ink:'#16140F', red:'#FF4D1F', steel:'#B5B0A5' };
+const P = {
+  text:"AFTERGLOW\n余晖环\nSHANGHAI SOUTH",
+  mode:'csv', metrics:{noise:88,flow:145,pm25:35,wind:3.2},
+  size:1.05, spread:0.86, density:96, warp:0.42, shear:0.18,
+  waveCount:3, waveSpeed:1.0, sun:1.0, rotate:false,
+  night:false, paused:matchMedia('(prefers-reduced-motion: reduce)').matches, weightBold:true
+};
+const FONT = '"Outfit","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif';
+const BASE_W = 880, BASE_H = 1244;
+let liveBuf, phase = 0, lastMs = 0;
+
+function setup(){
+  pixelDensity(1);
+  frameRate(12);
+  const c = createCanvas(BASE_W, BASE_H);
+  c.parent('cc');
+  liveBuf = createGraphics(BASE_W, BASE_H);
+  liveBuf.pixelDensity(1);
+  loadCSV();
+  syncMetricUI();
+}
+
+async function loadCSV(){
+  // The submitted V4 contains these 19 samples. The separate weather CSV has a
+  // different schema (T/H/P/W/M) and must not be mapped to noise/flow/PM2.5.
+  DATA = CSV_FALLBACK;
+  sampleContinuous(pos); updateCsvUI();
+  document.getElementById('status').textContent='保留原 V4 内置演示序列；不是实时监测或完整 24 小时观测。';
+  document.querySelectorAll('input[type=range]').forEach(input=>input.setAttribute('aria-label',input.closest('.row')?.querySelector('label')?.textContent.trim()||'演示时间轴'));
+  document.getElementById('txt').setAttribute('aria-label','同心字环文本');
+}
+
+function norm(v,a,b){ return constrain((v-a)/(b-a),0,1); }
+
+function draw(){
+  const now = millis();
+  const dt = lastMs ? Math.min(0.15,(now-lastMs)/1000) : 0; lastMs = now;
+
+  if(!P.paused){
+    if(P.mode==='csv' && playing){
+      pos = (pos + dt*0.9) % DATA.length;   // 连续推进(约 1 步/1.1s)
+      sampleContinuous(pos);                 // 平滑插值出当前 metrics
+      updateCsvUI();
+    }
+    const wN = norm(P.metrics.wind,0.5,5);
+    phase = (phase + dt * P.waveSpeed*(0.18+wN*1.4)*0.16) % 1;  // 风速 → 行进波速度
+  }
+  renderArt(liveBuf, phase);
+  image(liveBuf, 0, 0, width, height);
+}
+
+// 在两条数据点之间线性插值 → 连续变化
+function sampleContinuous(p){
+  const n=DATA.length, i0=Math.floor(p)%n, i1=(i0+1)%n, f=p-Math.floor(p);
+  const L=(a,b)=>a+(b-a)*f;
+  P.metrics={
+    noise:L(DATA[i0].Noise_Level_dB, DATA[i1].Noise_Level_dB),
+    flow :L(DATA[i0].Pedestrian_Flow, DATA[i1].Pedestrian_Flow),
+    pm25 :L(DATA[i0].PM25_Index, DATA[i1].PM25_Index),
+    wind :L(DATA[i0].Wind_Speed_ms, DATA[i1].Wind_Speed_ms)
+  };
+  idx=Math.round(p)%n;
+}
+function updateCsvUI(){
+  document.getElementById('curtime').textContent=DATA[idx].Timestamp;
+  document.getElementById('tl').value=Math.floor(pos);
+  document.getElementById('v-noise').textContent=Math.round(P.metrics.noise)+' dB';
+  document.getElementById('v-flow').textContent=Math.round(P.metrics.flow);
+  document.getElementById('v-pm25').textContent=Math.round(P.metrics.pm25);
+  document.getElementById('v-wind').textContent=P.metrics.wind.toFixed(1);
+}
+
+// ===== 主渲染:原 .pde 效果(放射扭曲字形 + 红日),数据多维驱动 =====
+function renderArt(pg, ph){
+  const w=pg.width, h=pg.height;
+  const ground = P.night?COL.ink:COL.canvas;
+  const mark   = P.night?COL.canvas:COL.ink;
+  pg.background(ground);
+
+  const cx=w/2, cy=h*0.45, maxR=min(w,h)*0.5;
+
+  // ---- 数据归一(贴合 CSV 实际范围,放大动态)----
+  const nN=norm(P.metrics.noise,50,96);   // 噪声
+  const fN=norm(P.metrics.flow,15,200);   // 人流
+  const pN=norm(P.metrics.pm25,15,65);    // PM2.5
+  const wN=norm(P.metrics.wind,0.5,5);    // 风速
+
+  // ---- 数据 → 多维视觉(连续、明显、艺术化)----
+  const sunR    = maxR*0.12*P.sun;
+  const innerR  = max(sunR, maxR*0.13) + maxR*0.03;
+  const span    = maxR*(0.50+0.46*fN)*P.spread;        // 人流 → 环幅/半径
+  const step    = maxR*0.040*P.size*(1.3-0.55*fN);     // 人流 → 字形密度(越挤越密)
+  const N       = Math.round(P.density*(0.6+0.7*fN));  // 人流 → 方向数
+  const lobes   = max(1, Math.round(P.waveCount*(0.5+nN*1.7))); // 噪声 → 波瓣数
+  const waveAmp = 0.10 + 0.85*nN;                      // 噪声 → 波幅(起伏剧烈度)
+  const warpAmt = (0.2+1.6*nN)*P.warp;                 // 噪声 → 字形旋转扭曲
+  const shearAmt= (0.3+1.3*nN)*P.shear;                // 噪声 → 剪切
+  const glyphMul= (0.8+0.85*pN)*P.size;                // PM2.5 → 字号
+  const rimSwell= pN;                                  // PM2.5 → 外圈字形胀大(单色)
+  const lean    = (wN-0.45)*0.55;                      // 风速 → 整体倾斜
+
+  const travel  = ph*TWO_PI;                           // 行进相位(速度已含风速)
+  const lines   = P.text.split('\n').map(s=>s.trim()).filter(s=>s.length>0);
+  const useLines= lines.length?lines:["AFTERGLOW"];
+  const markC=color(mark);
+
+  pg.push(); pg.translate(cx,cy);
+  if(P.rotate) pg.rotate(ph*TWO_PI);
+
+  // 18 扇形单元暗码
+  pg.stroke(COL.steel); pg.strokeWeight(maxR*0.0014); pg.noFill();
+  for(let k=0;k<18;k++){
+    const a=-HALF_PI+k/18*TWO_PI, r1=innerR-maxR*0.024, r2=innerR-maxR*0.008;
+    pg.line(cos(a)*r1,sin(a)*r1,cos(a)*r2,sin(a)*r2);
+  }
+
+  // 放射扭曲字形
+  pg.textFont(FONT); pg.textAlign(CENTER,CENTER);
+  pg.textStyle(P.weightBold?BOLD:NORMAL); pg.noStroke();
+  let agg=0;
+  for(let i=0;i<N;i++){
+    const a=-HALF_PI+i/N*TWO_PI;
+    // 行进波形:噪声控制瓣数与幅度,风速控制行进速度
+    const wv=0.5+0.5*sin(a*lobes - travel);
+    const val=constrain((1-waveAmp)+waveAmp*wv, 0.05, 1.35);
+    agg+=Math.min(val,1);
+    const spokeLen=span*val;
+    const nG=constrain(Math.round(spokeLen/step),1,16);
+    pg.push(); pg.rotate(a);
+    for(let j=0;j<nG;j++){
+      const r=innerR+(j+0.5)*step;
+      const wp=a*lobes - travel + j*0.55;
+      const rot=sin(wp)*warpAmt + lean*sin(a);          // 风速→倾斜
+      const shr=constrain(cos(wp*0.7)*shearAmt + lean*0.35, -1.1, 1.1);
+      const sz=step*(0.8+0.7*Math.min(val,1))*glyphMul*(0.9+0.13*sin(wp*1.3))*(1+rimSwell*0.7*(j/nG));
+      const line=useLines[j%useLines.length];
+      const ch=line.charAt(i%line.length);
+      if(ch && ch!==' '){
+        pg.fill(markC);
+        pg.push(); pg.translate(r,0); pg.rotate(rot); pg.shearX(shr);
+        pg.textSize(sz); pg.text(ch,0,0); pg.pop();
+      }
+    }
+    pg.pop();
+  }
+  agg/=N;
+
+  // 中央实心圆(单色,随聚合数据呼吸)
+  pg.noStroke(); pg.fill(mark);
+  const sunAnim=sunR*(0.82+0.34*agg);
+  pg.ellipse(0,0,sunAnim*2,sunAnim*2);
+  pg.pop();
+}
+
+// ===== 交互 =====
+function setMode(m){
+  P.mode=m;
+  document.getElementById('m-csv').classList.toggle('on',m==='csv');
+  document.getElementById('m-man').classList.toggle('on',m==='manual');
+  document.getElementById('csvgroup').classList.toggle('hidden',m!=='csv');
+  document.getElementById('mangroup').classList.toggle('hidden',m!=='manual');
+  if(m==='csv'){ sampleContinuous(pos); updateCsvUI(); } else syncManual();
+}
+function togglePlay(){ playing=!playing;
+  document.getElementById('play').textContent = playing?'⏸ 暂停':'▶ 播放';
+  document.getElementById('play').classList.toggle('on',playing);
+}
+function toggleNight(){ P.night=!P.night;
+  document.getElementById('night').classList.toggle('on',P.night);
+  document.getElementById('night').textContent=P.night?'纸底':'墨底';
+}
+function scrub(i){ pos=parseInt(i); if(playing) togglePlay(); sampleContinuous(pos); updateCsvUI(); }
+function syncMetricUI(){
+  const m=P.metrics;
+  document.getElementById('v-noise').textContent=m.noise+' dB';
+  document.getElementById('v-flow').textContent=m.flow;
+  document.getElementById('v-pm25').textContent=m.pm25;
+  document.getElementById('v-wind').textContent=m.wind;
+}
+function manual(k,v){
+  if(P.mode!=='manual') setMode('manual');
+  P.metrics[k] = (k==='wind')?parseFloat(v):parseInt(v);
+  document.getElementById('sv-'+k).textContent=v;
+  syncMetricUI();
+}
+function syncManual(){
+  ['noise','flow','pm25','wind'].forEach(k=>{
+    document.getElementById('s-'+k).value=P.metrics[k];
+    document.getElementById('sv-'+k).textContent=P.metrics[k];
+  });
+}
+function vp(key,val,label){ P[key]=parseFloat(val); document.getElementById(label).textContent=val; }
+
+function exportPNG(){
+  const s=document.getElementById('status'); s.textContent='渲染 A3 中…';
+  setTimeout(()=>{
+    const pg=createGraphics(2480,3508);
+    renderArt(pg,phase);
+    save(pg,'AFTERGLOW_'+(P.night?'night_':'')+'A3.png');
+    pg.remove(); s.textContent='已导出 ✓';
+  },40);
+}
+</script>
+</body>
+</html>
