@@ -28,12 +28,21 @@
       {
         "title": "原方案 / 学习旅程",
         "url_or_id": "assets/growth-learning-journey.webp"
+      },
+      {
+        "title": "原课前系统图 / 最终汇报第32页",
+        "url_or_id": "assets/folio-repair/growth-system-page32.webp"
+      },
+      {
+        "title": "原课中系统图 / 最终汇报第38页",
+        "url_or_id": "assets/folio-repair/growth-system-page38.webp"
       }
     ],
     "transformations": [
       "原图等比例显示，不覆盖原图文字或重估数值",
       "依原材料重绘关系图，所有结构长度不编码数量",
-      "先保留来源、再组织编辑层与概念美术"
+      "先保留来源、再组织编辑层与概念美术",
+      "主系统图使用完整PDF原页，4000×2250导出；原箭头、往返路径、实虚线、标注与图例不重绘或合并；新增定位与导读分层"
     ],
     "missingness": "未提供的数值与时间不补写",
     "uncertainty": "画像为研究综合，AI预审与服务旅程尚未上线验证。",
@@ -78,6 +87,6 @@
     "uncertainty_addressed": true,
     "color_vision_checked": false,
     "actual_size_render_checked": true,
-    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。"
+    "notes": "已在桌面实际尺寸与390px手机视口检查；新增来源切换、键盘导航、图像放大和原有交互已回归。色觉模拟未独立执行，不声明完成。 完整原页阅读器验证17个角色定位、双图切换、150%与200%缩放，手机可局部滚动且页面无横向溢出。"
   }
 }

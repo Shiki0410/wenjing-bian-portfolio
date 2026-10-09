@@ -49,7 +49,7 @@
  // Restyle only the reconstructed vector layer, never pixels in original research/art plates.
  if(id==='artemis')enemyRecords();
  const io=new IntersectionObserver(entries=>{for(const e of entries){if(!e.isIntersecting)continue;$$('.rv-case-guide a').forEach(a=>a.setAttribute('aria-current',String(a.hash==='#'+e.target.id)));}},{rootMargin:'-10% 0px -70% 0px'});['case-guide-01','experience','source-reading','project-results'].forEach(k=>{const n=$('#'+k);if(n)io.observe(n);});
- document.body.dataset.folioRepair='20261009-r2';
+ document.body.dataset.folioRepair='20261009-r3';
 
  function enemyRecords(){
   const root=$('.artemis-enemies');if(!root)return;root.classList.add('fr-enemy-codex');
