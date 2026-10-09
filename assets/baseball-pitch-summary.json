@@ -1,6 +1,6 @@
 {
   "source": "23-26山本投手数据.csv",
-  "sourceId": "H:/设计作业/设计技术4/中期数据可视化/public/data/23-26山本投手数据.csv",
+  "sourceId": "原项目 public/data/23-26山本投手数据.csv",
   "sha256": "15f38253d83fc14ef932c4681a41f549f5c3b8d70a96020223136a1eb24a1381",
   "player": "Yamamoto, Yoshinobu",
   "unit": "CSV 一行投球记录",

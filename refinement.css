@@ -1,6 +1,8 @@
 /* Research Visualization Master pass: full-span layouts, linked evidence and honest scales. */
 .rv-event-inspector dd{overflow-wrap:anywhere}
 .rv-about-cv{display:inline-block;font-size:14px;line-height:1.8;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;margin-top:8px;padding-bottom:4px}
+body[data-project=tennisatom] .rv-controls button[aria-pressed=true]{color:#14211f}
+@media(max-width:600px){.refined-edition .book-case-nav{left:12px;right:12px;bottom:10px;padding:3px;justify-content:space-between}.refined-edition .book-case-nav a{flex:1;display:flex;align-items:center;justify-content:center;font-size:12px;min-height:44px;padding:8px 6px}.refined-edition .notebook-footer{padding-bottom:84px}}
 .rv-network-art{overflow-x:auto;overscroll-behavior-inline:contain}.rv-network-art svg{min-width:700px}
 @media(max-width:600px){.rv-scroll::before{content:'↔ 横向滑动，查看完整图表';display:block;position:sticky;left:0;font:12px/1.7 var(--mono,monospace);padding:0 0 14px;color:inherit}.rv-network-art::before{content:'↔ 横向滑动，查看完整架构';display:block;font-size:12px;padding-bottom:18px}}
 .refined-edition .chapter-visuals>.comp-panel,
