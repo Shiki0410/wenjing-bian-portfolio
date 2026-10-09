@@ -17,7 +17,7 @@
   if(!id){const contact=$('#contact')||$('.contact');if(contact&&!$('.rv-resume-link',contact))contact.insertAdjacentHTML('beforeend','<a class="rv-resume-link" href="downloads/Wenjing-Bian-CV.pdf" download>综合简历 / 产品 · 研究 · 技术 · 游戏 · 影像 <span>↓ PDF</span></a>');const about=$('#about .about-text');if(about&&!$('.rv-about-cv',about))about.insertAdjacentHTML('beforeend','<a class="rv-about-cv" href="downloads/Wenjing-Bian-CV.pdf" target="_blank" rel="noopener">综合简历 · 四页完整版 ↗</a>');return;}
  const p=window.PORTFOLIO?.projects.find(p=>p.id===id);
  const guide=document.createElement('nav');guide.className='rv-case-guide';guide.setAttribute('aria-label','案例阅读路径');
- guide.innerHTML=[['01','问题与我的职责','.case-overview'],['02','可操作的作品','#experience'],['03','设计与实现过程','#chapter-1'],['04','成果与后续','#project-results']].map(([num,label,target])=>{const n=$(target);if(!n)return '';if(!n.id)n.id='case-guide-'+num;return `<a href="#${n.id}"><b>${num}</b><span>${label}</span></a>`;}).join('');$('.case-hero')?.append(guide);
+ guide.innerHTML=[['01','问题与我的职责','.case-overview'],['02','可操作的作品','#experience'],['03','设计与实现过程','#chapter-1'],['04','成果与后续','#project-results']].map(([num,label,target])=>{const n=$(target);if(!n)return '';if(!n.id)n.id='case-guide-'+num;return `<a href="#${n.id}"><b>${num}</b><span>${label}</span></a>`;}).join('');$('.case-hero')?.after(guide);
  if(id==='rallylens'){rallyEvents();rallyFindings();rallyPaper();}
  if(id==='privacy-city'){privacyDiagnostics();privacyArchitecture();}
  if(id==='tennisatom'){tennisResearch();tennisArt();tennisTechnology();tennisNarrative();}
