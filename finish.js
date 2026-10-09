@@ -25,7 +25,7 @@
  function privacyErrors(){
   // Three existing forward/backward diagrams told the same story. Keep the computation graph once.
   const duplicate=$('.rv-network-spread')?.closest('.rv-panel');
-  const n=panel('ERROR ATLAS / TWO CLASS DENOMINATORS','同样的高召回，可能承担不同的误判。',controls(['NumPy MLP','PyTorch MLP','Random Forest','Decision Tree','Logistic Regression'],'data-finish-confusion')+'<div class="finish-keyline"><b>750</b><span>同一测试集 · 每一格为记录数，不按颜色猜结果。</span></div><div class="finish-reading-grid"><div class="finish-chart" data-finish-confusion-plot></div><aside class="finish-reading" data-finish-confusion-reading aria-live="polite"></aside></div>','依据原 model_comparison.json 的测试集数量、正类比例、召回率与特异度反算整数计数，并核对 Accuracy / Precision 一致性。行归一条带各自以实际类别为分母。合成数据，非真实访客隐私画像。','2×2');
+  const n=panel('ERROR ATLAS / TWO CLASS DENOMINATORS','同样的高召回，可能承担不同的误判。',controls(['NumPy MLP','PyTorch MLP','Random Forest','Decision Tree','Logistic Regression'],'data-finish-confusion')+'<div class="finish-keyline"><b>750</b><span>同一测试集 · 每一格为记录数，不按颜色猜结果。</span></div><div class="finish-reading-grid"><div class="finish-chart" data-finish-confusion-plot></div><aside class="finish-reading" data-finish-confusion-reading aria-live="polite"></aside></div>','依据原 model_comparison.json 的测试集数量、正类比例、召回率与特异度反算整数计数，并核对 Accuracy / Precision 一致性。百分比以各行实际类别为分母。合成数据，非真实访客隐私画像。','2×2');
   if(duplicate)duplicate.replaceWith(n);else chapter(4)?.append(n);
   // The compact topology already provides the exact layer widths. Remove the second copy.
   $$('.depth-panel',chapter(3)).filter(p=>$('.depth-code',p)?.textContent==='NUMPY / COMPUTATION GRAPH').forEach(p=>p.remove());
@@ -102,6 +102,29 @@
  $('[data-finish-close]',dialog).onclick=()=>dialog.close();let returnFocus=null;dialog.addEventListener('close',()=>returnFocus?.focus());
  const roots=['.rv-event-visual','.edit-model-plots','.rv-privacy-plot','.comp-tennis-pipeline','.comp-chain-graph','.comp-bronze-map','[data-environment-timeline]','.depth-system','.edit-loop-circuit','.garden-diagram','.finish-chart','.finish-concept-art','[data-baseball-system]','[data-contact-field]'];
  const wired=new WeakSet();
- function addTools(){roots.forEach(selector=>$$(selector).forEach(root=>{if(wired.has(root)&&$('.finish-tools',root))return;const chart=$('svg',root);if(!chart)return;wired.add(root);const tools=document.createElement('div');tools.className='finish-tools';const btn=document.createElement('button');btn.type='button';btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>放大读图';tools.append(btn);root.append(tools);btn.onclick=()=>{const current=$('svg',root);if(!current)return;returnFocus=btn;const copy=current.cloneNode(true),originals=[current,...current.querySelectorAll('*')],copies=[copy,...copy.querySelectorAll('*')];originals.forEach((a,i)=>{const css=getComputedStyle(a);['fill','stroke','stroke-width','stroke-dasharray','opacity','font-family','font-size','font-weight','letter-spacing','text-anchor'].forEach(k=>copies[i].style.setProperty(k,css.getPropertyValue(k)));});copy.removeAttribute('style');const vb=current.viewBox.baseVal;copy.style.width=Math.max(740,Math.min(innerWidth-85,(innerHeight-210)*vb.width/vb.height))+'px';copy.style.marginInline='auto';$('.finish-dialog-art',dialog).replaceChildren(copy);$('[data-finish-dialog-title]',dialog).textContent=$('title',current)?.textContent||current.getAttribute('aria-label')||'图表阅读';const holder=root.closest('.rv-panel,.comp-panel,.edit-panel,.depth-panel,.component'),note=holder?$('.rv-source,.comp-source,.edit-source,.depth-note,.component-note',holder)?.textContent:'';$('.finish-dialog-note',dialog).textContent=(note||'放大保留当前图表的坐标、单位与选项。')+' 触摸或横向滚动查看完整图；按 Esc 关闭。';dialog.showModal();};}));}
+ const nativeCharts=root=>$$('svg',root).filter(chart=>!chart.closest('.finish-tools'));
+ function addTools(){roots.forEach(selector=>$$(selector).forEach(root=>{
+  if(wired.has(root)&&$('.finish-tools',root))return;
+  const charts=nativeCharts(root);if(!charts.length)return;
+  wired.add(root);const tools=document.createElement('div');tools.className='finish-tools';
+  charts.forEach((chart,index)=>{
+   const btn=document.createElement('button');btn.type='button';
+   const name=$('title',chart)?.textContent||chart.getAttribute('aria-label')||`图表 ${index+1}`;
+   btn.setAttribute('aria-label','放大：'+name);
+   btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>'+(charts.length===1?'放大读图':`放大图 ${index+1}`);
+   tools.append(btn);
+   btn.onclick=()=>{
+    const current=nativeCharts(root)[index];if(!current)return;returnFocus=btn;
+    const copy=current.cloneNode(true),originals=[current,...current.querySelectorAll('*')],copies=[copy,...copy.querySelectorAll('*')];
+    originals.forEach((a,i)=>{const css=getComputedStyle(a);['fill','stroke','stroke-width','stroke-dasharray','opacity','font-family','font-size','font-weight','letter-spacing','text-anchor'].forEach(k=>copies[i].style.setProperty(k,css.getPropertyValue(k)));});
+    copy.removeAttribute('style');const vb=current.viewBox.baseVal;
+    copy.style.width=Math.max(740,Math.min(innerWidth-85,(innerHeight-210)*vb.width/vb.height))+'px';copy.style.marginInline='auto';
+    $('.finish-dialog-art',dialog).replaceChildren(copy);
+    $('[data-finish-dialog-title]',dialog).textContent=$('title',current)?.textContent||current.getAttribute('aria-label')||'图表阅读';
+    const holder=root.closest('.rv-panel,.comp-panel,.edit-panel,.depth-panel,.component'),note=holder?$('.rv-source,.comp-source,.edit-source,.depth-note,.component-note',holder)?.textContent:'';
+    $('.finish-dialog-note',dialog).textContent=(note||'放大保留当前图表的坐标、单位与选项。')+' 触摸或横向滚动查看完整图；按 Esc 关闭。';dialog.showModal();
+   };
+  });root.append(tools);
+ }));}
  addTools();new MutationObserver(addTools).observe(document.querySelector('main'),{childList:true,subtree:true});
 })();
