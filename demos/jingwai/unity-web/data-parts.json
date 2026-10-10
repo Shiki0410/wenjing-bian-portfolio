@@ -1,0 +1,38 @@
+{
+  "compression": "Unity Gzip fallback",
+  "bytes": 31306492,
+  "parts": [
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part01",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part02",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part03",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part04",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part05",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part06",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part07",
+      "bytes": 4194304
+    },
+    {
+      "url": "Build/WebGL_Application_v139_Gzip_r11.data.unityweb.part08",
+      "bytes": 1946364
+    }
+  ]
+}

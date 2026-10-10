@@ -1,0 +1,2 @@
+Chinese runtime UI uses Google Noto Sans SC Regular under SIL Open Font License 1.1. See OFL-NotoSansSC.txt.
+Unity UGUI Runtime version 1.0.0 is used in the isolated candidate; its original source and license are retained in the candidate project.
