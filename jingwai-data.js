@@ -42,7 +42,7 @@
   ],
   "chapters": [],
   "outcomes": [
-    "交付 Unity Windows 首章与 Blender 源文件、关卡脚本、参考和验收记录。"
+    "交付 Unity Windows 与浏览器首章、提示校准原型，以及 Blender 源文件、关卡脚本和验收记录。"
   ],
   "reflection": "录像、音轨编排和更深层的电影仍是后续方案。",
   "links": []
