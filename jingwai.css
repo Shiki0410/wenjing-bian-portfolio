@@ -1,5 +1,5 @@
-@font-face{font-family:'Noto Sans SC JW';src:url('assets/jingwai/NotoSansSC-Regular-Jingwai.woff2') format('woff2');font-weight:400 600;font-display:swap}
-@font-face{font-family:'Noto Sans SC JW';src:url('assets/jingwai/NotoSansSC-Bold-Jingwai.woff2') format('woff2');font-weight:650 900;font-display:swap}
+@font-face{font-family:'Noto Sans SC JW';src:url('assets/jingwai/NotoSansSC-Regular-Jingwai.woff2?v=20261010.3') format('woff2');font-weight:400 600;font-display:swap}
+@font-face{font-family:'Noto Sans SC JW';src:url('assets/jingwai/NotoSansSC-Bold-Jingwai.woff2?v=20261010.3') format('woff2');font-weight:650 900;font-display:swap}
 /* Scoped extension: the existing project covers, grids and typography remain intact. */
 @font-face{font-family:Inter Tight;src:url('assets/InterTight-Latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
 .jingwai-case{--paper:#f3ebd7;--ink:#263244;--line:#c9c0ac;--red:#a44b46;--margin:clamp(22px,4.5vw,66px);font-family:'Inter Tight','Noto Sans SC JW','Microsoft YaHei',sans-serif;background:#adb9b3;color:var(--ink)}

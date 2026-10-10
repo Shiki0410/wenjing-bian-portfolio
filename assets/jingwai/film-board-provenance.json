@@ -1,0 +1,18 @@
+{
+  "created": "2026-10-10",
+  "author": "卞文璟设计约束下的Codex辅助几何绘制",
+  "files": [
+    "memory-leader.svg",
+    "inspection-join.svg",
+    "end-leader.svg"
+  ],
+  "kind": "original vector explanation graphics",
+  "runtime": false,
+  "references": [
+    "用户提供的三张模块网格、图片块、大字号平面参考",
+    "现有作品集 cream/coral/ink/brass/teal 字体与网格"
+  ],
+  "fonts": "SVG中没有文字字形。所有可见标签由 jingwai-film.js 创建，并继承作品集字体。",
+  "imageRule": "contact-sheet中的Unity图直接复用原WebP，未滤镜、修改或生成游戏图。",
+  "causality": "救援方式决定机构记录，送递方式决定接收窗。二者需在07完成检修与光路后才能拍完整图、开结构摄影。"
+}

@@ -7,17 +7,17 @@
     {
       "weight": 400,
       "file": "assets/jingwai/NotoSansSC-Regular-Jingwai.woff2",
-      "characters": 772,
-      "bytes": 120184,
-      "sha256": "bd9c31350e2222c22f0f7287d2cdd4302a6764494e07c2379d9f4c828677dc14",
+      "characters": 698,
+      "bytes": 109476,
+      "sha256": "b4e2488e8a1775224d2f9a29c832000d14e2b4448dfe09f19375ea7f209a2937",
       "source": "H:\\gamedesign\\Application\\XHS-20261010\\NotoSansSC-Regular.ttf"
     },
     {
       "weight": 700,
       "file": "assets/jingwai/NotoSansSC-Bold-Jingwai.woff2",
-      "characters": 772,
-      "bytes": 122776,
-      "sha256": "973b09390ae77576277965eb8e480384588c22582e2b4b8b0094c719d1290adc",
+      "characters": 698,
+      "bytes": 111612,
+      "sha256": "f999e0cadbb10f199d1ad4d6964863f7f84c09be56685a2f47ff433f7858955a",
       "source": "H:\\gamedesign\\Application\\XHS-20261010\\NotoSansSC-Bold.ttf"
     }
   ]
