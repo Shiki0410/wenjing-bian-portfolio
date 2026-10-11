@@ -1,0 +1,5077 @@
+{
+ "home": {
+  "svgs": [
+   {
+    "f": "viz/home-01.svg",
+    "n": 1,
+    "label": "双人练习的方向与球场结构示意，不表示测量轨迹",
+    "w": 277,
+    "h": 150,
+    "sec": "book-cover",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/home-02.svg",
+    "n": 2,
+    "label": "径向图形的统一骨架示意；无环境测量值",
+    "w": 295,
+    "h": 40,
+    "sec": "work",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/home-03.svg",
+    "n": 3,
+    "label": "径向图形的统一骨架示意；无环境测量值",
+    "w": 0,
+    "h": 0,
+    "sec": "work",
+    "hidden": true,
+    "kb": 3
+   },
+   {
+    "f": "viz/home-04.svg",
+    "n": 4,
+    "label": "原最终汇报中的小程序概念界面",
+    "w": 225,
+    "h": 415,
+    "sec": "work",
+    "hidden": false,
+    "kb": 0
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "book-cover",
+    "labels": [
+     "产品与服务 PRODUCT 01 需求 → 触点 → 产品",
+     "游戏与交互 GAME 02 规则 → 行为 → 反馈",
+     "AI 与影像 AI 03 素材 → 导演 → 成片",
+     "数据与视觉 DATA 04 记录 → 编码 → 探索"
+    ],
+    "states": [
+     {
+      "label": "产品与服务 PRODUCT 01 需求 → 触点 → 产品",
+      "imgs": [
+       "assets/rally-court.webp"
+      ],
+      "svg": [
+       "viz/home-g0-s0-0.svg"
+      ]
+     },
+     {
+      "label": "游戏与交互 GAME 02 规则 → 行为 → 反馈",
+      "imgs": [
+       "assets/artemis-boss.webp"
+      ],
+      "svg": [
+       "viz/home-g0-s1-0.svg"
+      ]
+     },
+     {
+      "label": "AI 与影像 AI 03 素材 → 导演 → 成片",
+      "imgs": [
+       "assets/tennis-real-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "数据与视觉 DATA 04 记录 → 编码 → 探索",
+      "imgs": [
+       "assets/baseball-web-hero.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "work",
+    "labels": [
+     "全部 / 11",
+     "产品与服务",
+     "游戏",
+     "AI",
+     "数据"
+    ],
+    "states": [
+     {
+      "label": "全部 / 11",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "产品与服务",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "游戏",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "AI",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "数据",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "rallylens": {
+  "svgs": [
+   {
+    "f": "viz/rallylens-01.svg",
+    "n": 1,
+    "label": "",
+    "w": 130,
+    "h": 76,
+    "sec": "rally-cover",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/rallylens-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 751,
+    "h": 230,
+    "sec": "rally-cover",
+    "hidden": false,
+    "kb": 5
+   },
+   {
+    "f": "viz/rallylens-03.svg",
+    "n": 3,
+    "label": "研究问题如何进入记录字段",
+    "w": 343,
+    "h": 321,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/rallylens-04.svg",
+    "n": 4,
+    "label": "自由对打场地流程示意",
+    "w": 204,
+    "h": 109,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-05.svg",
+    "n": 5,
+    "label": "角色阶段 A场地流程示意",
+    "w": 204,
+    "h": 109,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-06.svg",
+    "n": 6,
+    "label": "角色互换场地流程示意",
+    "w": 204,
+    "h": 109,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-07.svg",
+    "n": 7,
+    "label": "计分回合场地流程示意",
+    "w": 204,
+    "h": 109,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-08.svg",
+    "n": 8,
+    "label": "逐事件编码的检查链",
+    "w": 314,
+    "h": 222,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/rallylens-09.svg",
+    "n": 9,
+    "label": "机位A，原型双机位示例的主画面",
+    "w": 714,
+    "h": 402,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/rallylens-10.svg",
+    "n": 10,
+    "label": "机位B，原型截图中的反向机位",
+    "w": 420,
+    "h": 236,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/rallylens-11.svg",
+    "n": 11,
+    "label": "模型维度固定标签",
+    "w": 130,
+    "h": 365,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-12.svg",
+    "n": 12,
+    "label": "G01_02八维事件矩阵",
+    "w": 538,
+    "h": 365,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 24
+   },
+   {
+    "f": "viz/rallylens-13.svg",
+    "n": 13,
+    "label": "目标域模型的原报告AUC范围",
+    "w": 343,
+    "h": 182,
+    "sec": "chapter-4",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/rallylens-14.svg",
+    "n": 14,
+    "label": "G01_02固定事件2的原A视角",
+    "w": 447,
+    "h": 252,
+    "sec": "chapter-4",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/rallylens-15.svg",
+    "n": 15,
+    "label": "球不挑高，练习才持续。原研究示意图",
+    "w": 387,
+    "h": 180,
+    "sec": "chapter-4",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-16.svg",
+    "n": 16,
+    "label": "共同练习，定位在不同片段。原研究示意图",
+    "w": 387,
+    "h": 180,
+    "sec": "chapter-4",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-17.svg",
+    "n": 17,
+    "label": "重复可以跨越独立尝试。原研究示意图",
+    "w": 387,
+    "h": 180,
+    "sec": "chapter-4",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/rallylens-18.svg",
+    "n": 18,
+    "label": "练习条件，依赖双方的下一次回球。，原研究示意图",
+    "w": 548,
+    "h": 292,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/rallylens-19.svg",
+    "n": 19,
+    "label": "12个DPE的实际回应证据覆盖",
+    "w": 1156,
+    "h": 993,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 7
+   },
+   {
+    "f": "viz/rallylens-20.svg",
+    "n": 20,
+    "label": "原项目手机原型画面，未测试方案",
+    "w": 230,
+    "h": 401,
+    "sec": "experience",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/rallylens-21.svg",
+    "n": 21,
+    "label": "原Fig.5的六处界面与证据注释",
+    "w": 1165,
+    "h": 780,
+    "sec": "rally-annotated-interface",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/rallylens-22.svg",
+    "n": 22,
+    "label": "16次真实事件与五个重叠窗口",
+    "w": 747,
+    "h": 497,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 10
+   },
+   {
+    "f": "viz/rallylens-23.svg",
+    "n": 23,
+    "label": "原论文共享案例的A机位，事件2的固定证据图",
+    "w": 310,
+    "h": 175,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "rally-cover",
+    "labels": [
+     "R3 / 细看交换",
+     "全片段 / 16 拍"
+    ],
+    "states": [
+     {
+      "label": "R3 / 细看交换",
+      "imgs": [
+       "assets/rally-flat-pair-v1.webp",
+       "assets/rally-flat-pair-v1.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g0-s0-0.svg"
+      ]
+     },
+     {
+      "label": "全片段 / 16 拍",
+      "imgs": [
+       "assets/rally-flat-pair-v1.webp",
+       "assets/rally-flat-pair-v1.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g0-s1-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "edit-panel",
+    "labels": [
+     "G01_01 9",
+     "G01_02 16",
+     "G01_03 6",
+     "G01_04 13",
+     "G03_01 13",
+     "G03_02 16",
+     "G03_03 13",
+     "G03_04 15",
+     "G07_01 25",
+     "G07_02 8",
+     "G07_03 14",
+     "G07_04 12"
+    ],
+    "states": [
+     {
+      "label": "G01_01 9",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s0-1.svg"
+      ]
+     },
+     {
+      "label": "G01_02 16",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s1-1.svg"
+      ]
+     },
+     {
+      "label": "G01_03 6",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s2-1.svg"
+      ]
+     },
+     {
+      "label": "G01_04 13",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s3-1.svg"
+      ]
+     },
+     {
+      "label": "G03_01 13",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s4-1.svg"
+      ]
+     },
+     {
+      "label": "G03_02 16",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s5-1.svg"
+      ]
+     },
+     {
+      "label": "G03_03 13",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s6-1.svg"
+      ]
+     },
+     {
+      "label": "G03_04 15",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s7-1.svg"
+      ]
+     },
+     {
+      "label": "G07_01 25",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s8-1.svg"
+      ]
+     },
+     {
+      "label": "G07_02 8",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s9-1.svg"
+      ]
+     },
+     {
+      "label": "G07_03 14",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s10-1.svg"
+      ]
+     },
+     {
+      "label": "G07_04 12",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g1-s0-0.svg",
+       "viz/rallylens-g1-s11-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "edit-panel",
+    "labels": [
+     "○ Offer / 来球条件",
+     "■ Actual / 回应实现"
+    ],
+    "states": [
+     {
+      "label": "○ Offer / 来球条件",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g2-s0-0.svg",
+       "viz/rallylens-g2-s0-1.svg"
+      ]
+     },
+     {
+      "label": "■ Actual / 回应实现",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g2-s1-0.svg",
+       "viz/rallylens-g2-s1-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "rv-panel",
+    "labels": [
+     "01 / 条件",
+     "02 / 定位",
+     "03 / 重复"
+    ],
+    "states": [
+     {
+      "label": "01 / 条件",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g3-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / 定位",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g3-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / 重复",
+      "imgs": [],
+      "svg": [
+       "viz/rallylens-g3-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "comp-panel",
+    "labels": [
+     "01 / 当场目标",
+     "02 / 双方解释",
+     "03 / 模型分解"
+    ],
+    "states": [
+     {
+      "label": "01 / 当场目标",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "02 / 双方解释",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "03 / 模型分解",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "rv-panel",
+    "labels": [
+     "全片段",
+     "0—10 s",
+     "5—15 s",
+     "10—20 s",
+     "15—25 s",
+     "20—30 s"
+    ],
+    "states": [
+     {
+      "label": "全片段",
+      "imgs": [
+       "assets/refinement/figS4_reporting_windows.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g5-s0-0.svg",
+       "viz/rallylens-g5-s0-1.svg"
+      ]
+     },
+     {
+      "label": "0—10 s",
+      "imgs": [
+       "assets/refinement/figS4_reporting_windows.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g5-s1-0.svg",
+       "viz/rallylens-g5-s0-1.svg"
+      ]
+     },
+     {
+      "label": "5—15 s",
+      "imgs": [
+       "assets/refinement/figS4_reporting_windows.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g5-s2-0.svg",
+       "viz/rallylens-g5-s0-1.svg"
+      ]
+     },
+     {
+      "label": "10—20 s",
+      "imgs": [
+       "assets/refinement/figS4_reporting_windows.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g5-s3-0.svg",
+       "viz/rallylens-g5-s0-1.svg"
+      ]
+     },
+     {
+      "label": "15—25 s",
+      "imgs": [
+       "assets/refinement/figS4_reporting_windows.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g5-s4-0.svg",
+       "viz/rallylens-g5-s0-1.svg"
+      ]
+     },
+     {
+      "label": "20—30 s",
+      "imgs": [
+       "assets/refinement/figS4_reporting_windows.webp"
+      ],
+      "svg": [
+       "viz/rallylens-g5-s5-0.svg",
+       "viz/rallylens-g5-s0-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "rv-panel",
+    "labels": [
+     "来源 / Fig.3",
+     "方向维度 / Fig.4",
+     "网前案例 / Fig.S5",
+     "三层原型 / Fig.5"
+    ],
+    "states": [
+     {
+      "label": "来源 / Fig.3",
+      "imgs": [
+       "assets/refinement/fig03_five_sources.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "方向维度 / Fig.4",
+      "imgs": [
+       "assets/refinement/fig04_goal_heatmap_g01_02.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "网前案例 / Fig.S5",
+      "imgs": [
+       "assets/refinement/figS5_goal_heatmap_g01_04.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "三层原型 / Fig.5",
+      "imgs": [
+       "assets/refinement/fig05_rallylens_three_layers.webp"
+      ],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "privacy-city": {
+  "svgs": [
+   {
+    "f": "viz/privacy-city-01.svg",
+    "n": 1,
+    "label": "授权文本、选择与记录的结构示意",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/privacy-city-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/privacy-city-03.svg",
+    "n": 3,
+    "label": "从网页体验，到可复现的离线实验。关系图",
+    "w": 1165,
+    "h": 435,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/privacy-city-04.svg",
+    "n": 4,
+    "label": "五模型 AUC 与 bootstrap 95% 区间",
+    "w": 729,
+    "h": 375,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/privacy-city-05.svg",
+    "n": 5,
+    "label": "五模型查准率和查全率",
+    "w": 729,
+    "h": 375,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/privacy-city-06.svg",
+    "n": 6,
+    "label": "五模型同一实验的分类和概率诊断",
+    "w": 703,
+    "h": 489,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/privacy-city-07.svg",
+    "n": 7,
+    "label": "NumPy MLP测试集混淆矩阵",
+    "w": 684,
+    "h": 547,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 2
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "experience",
+    "labels": [
+     "01 AUC / 排序",
+     "02 F1 / 分类",
+     "03 ECE / 校准",
+     "04 Brier / 概率误差"
+    ],
+    "states": [
+     {
+      "label": "01 AUC / 排序",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "02 F1 / 分类",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "03 ECE / 校准",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "04 Brier / 概率误差",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "source-reading",
+    "labels": [
+     "01 不索取真实权限",
+     "02 同一划分再比较",
+     "03 把误判和信心分开"
+    ],
+    "states": [
+     {
+      "label": "01 不索取真实权限",
+      "imgs": [
+       "assets/folio-repair/privacy-city-flat-v1.webp",
+       "assets/refinement/fig1_architecture.webp",
+       "assets/refinement/fig6_calibration_curve.webp",
+       "assets/privacy-compare.webp",
+       "assets/refinement/fig1_architecture.webp"
+      ],
+      "svg": [
+       "viz/privacy-city-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 同一划分再比较",
+      "imgs": [
+       "assets/folio-repair/privacy-city-flat-v1.webp",
+       "assets/refinement/fig1_architecture.webp",
+       "assets/refinement/fig6_calibration_curve.webp",
+       "assets/privacy-compare.webp",
+       "assets/refinement/fig1_architecture.webp"
+      ],
+      "svg": [
+       "viz/privacy-city-g1-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 把误判和信心分开",
+      "imgs": [
+       "assets/folio-repair/privacy-city-flat-v1.webp",
+       "assets/refinement/fig1_architecture.webp",
+       "assets/refinement/fig6_calibration_curve.webp",
+       "assets/privacy-compare.webp",
+       "assets/refinement/fig1_architecture.webp"
+      ],
+      "svg": [
+       "viz/privacy-city-g1-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "source-reading",
+    "labels": [
+     "01 原报告 / 系统架构",
+     "02 原报告 / 概率校准",
+     "03 原界面 / 五模型导出"
+    ],
+    "states": [
+     {
+      "label": "01 原报告 / 系统架构",
+      "imgs": [
+       "assets/folio-repair/privacy-city-flat-v1.webp",
+       "assets/refinement/fig1_architecture.webp",
+       "assets/refinement/fig6_calibration_curve.webp",
+       "assets/privacy-compare.webp",
+       "assets/refinement/fig1_architecture.webp"
+      ],
+      "svg": [
+       "viz/privacy-city-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原报告 / 概率校准",
+      "imgs": [
+       "assets/folio-repair/privacy-city-flat-v1.webp",
+       "assets/refinement/fig1_architecture.webp",
+       "assets/refinement/fig6_calibration_curve.webp",
+       "assets/privacy-compare.webp",
+       "assets/refinement/fig6_calibration_curve.webp"
+      ],
+      "svg": [
+       "viz/privacy-city-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原界面 / 五模型导出",
+      "imgs": [
+       "assets/folio-repair/privacy-city-flat-v1.webp",
+       "assets/refinement/fig1_architecture.webp",
+       "assets/refinement/fig6_calibration_curve.webp",
+       "assets/privacy-compare.webp",
+       "assets/privacy-compare.webp"
+      ],
+      "svg": [
+       "viz/privacy-city-g2-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "chapter-1",
+    "labels": [
+     "邮箱",
+     "定位",
+     "联系人",
+     "摄像头 / 麦克风",
+     "画像分析"
+    ],
+    "states": [
+     {
+      "label": "邮箱",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "定位",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "联系人",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "摄像头 / 麦克风",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "画像分析",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "",
+    "labels": [
+     "拒绝",
+     "接受"
+    ],
+    "states": [
+     {
+      "label": "拒绝",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "接受",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "comp-panel",
+    "labels": [
+     "A / 行为节奏 8",
+     "B / 阅读行为 8",
+     "C / 风险偏好 10",
+     "D / 情境特征 8",
+     "E / 时序演变 6",
+     "F / 交互效应 8"
+    ],
+    "states": [
+     {
+      "label": "A / 行为节奏 8",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "B / 阅读行为 8",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "C / 风险偏好 10",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "D / 情境特征 8",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "E / 时序演变 6",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "F / 交互效应 8",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "depth-panel",
+    "labels": [
+     "01 / BROWSER 授权情境 情境文本 → 用户选择",
+     "02 / RECORD 行为记录 事件 → 特征定义",
+     "03 / DATASET 实验数据 5,000 合成样本",
+     "04 / MODEL 五条模型路线 MLP / Tree / Forest / LR",
+     "05 / EVALUATE 多角度检查 AUC / F1 / ECE / Brier",
+     "06 / PRODUCT 回到界面 解释 → 原型调整"
+    ],
+    "states": [
+     {
+      "label": "01 / BROWSER 授权情境 情境文本 → 用户选择",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g6-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / RECORD 行为记录 事件 → 特征定义",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g6-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / DATASET 实验数据 5,000 合成样本",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g6-s2-0.svg"
+      ]
+     },
+     {
+      "label": "04 / MODEL 五条模型路线 MLP / Tree / Forest / LR",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g6-s3-0.svg"
+      ]
+     },
+     {
+      "label": "05 / EVALUATE 多角度检查 AUC / F1 / ECE / Brier",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g6-s4-0.svg"
+      ]
+     },
+     {
+      "label": "06 / PRODUCT 回到界面 解释 → 原型调整",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g6-s5-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "edit-panel",
+    "labels": [
+     "NumPy MLP",
+     "PyTorch MLP",
+     "Random Forest",
+     "Decision Tree",
+     "Logistic Regression"
+    ],
+    "states": [
+     {
+      "label": "NumPy MLP",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g7-s0-0.svg",
+       "viz/privacy-city-g7-s0-1.svg"
+      ]
+     },
+     {
+      "label": "PyTorch MLP",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g7-s1-0.svg",
+       "viz/privacy-city-g7-s1-1.svg"
+      ]
+     },
+     {
+      "label": "Random Forest",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g7-s2-0.svg",
+       "viz/privacy-city-g7-s2-1.svg"
+      ]
+     },
+     {
+      "label": "Decision Tree",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g7-s3-0.svg",
+       "viz/privacy-city-g7-s3-1.svg"
+      ]
+     },
+     {
+      "label": "Logistic Regression",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g7-s4-0.svg",
+       "viz/privacy-city-g7-s4-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 8,
+    "sec": "edit-panel",
+    "labels": [
+     "放大图 1",
+     "放大图 2"
+    ],
+    "states": [
+     {
+      "label": "放大图 1",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大图 2",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 9,
+    "sec": "chapter-3",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 10,
+    "sec": "rv-panel",
+    "labels": [
+     "01 / 两类召回",
+     "02 / 校准误差",
+     "03 / 概率误差"
+    ],
+    "states": [
+     {
+      "label": "01 / 两类召回",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g10-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / 校准误差",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g10-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / 概率误差",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g10-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 11,
+    "sec": "rv-panel",
+    "labels": [
+     "NumPy MLP",
+     "PyTorch MLP",
+     "Random Forest",
+     "Decision Tree",
+     "Logistic Regression"
+    ],
+    "states": [
+     {
+      "label": "NumPy MLP",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g11-s0-0.svg"
+      ]
+     },
+     {
+      "label": "PyTorch MLP",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g11-s1-0.svg"
+      ]
+     },
+     {
+      "label": "Random Forest",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g11-s2-0.svg"
+      ]
+     },
+     {
+      "label": "Decision Tree",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g11-s3-0.svg"
+      ]
+     },
+     {
+      "label": "Logistic Regression",
+      "imgs": [],
+      "svg": [
+       "viz/privacy-city-g11-s4-0.svg"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "tennisatom": {
+  "svgs": [
+   {
+    "f": "viz/tennisatom-01.svg",
+    "n": 1,
+    "label": "运动轨迹与冲击时刻的非测量图形",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/tennisatom-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/tennisatom-03.svg",
+    "n": 3,
+    "label": "原主视觉海报的身体、轨迹与测量线局部",
+    "w": 705,
+    "h": 620,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-04.svg",
+    "n": 4,
+    "label": "原PPT访谈编码矩阵，心理阻抗、识别信任、创作主权与深度负荷",
+    "w": 620,
+    "h": 214,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-05.svg",
+    "n": 5,
+    "label": "冲击特效原透明图层的编辑式构图",
+    "w": 604,
+    "h": 900,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/tennisatom-06.svg",
+    "n": 6,
+    "label": "BALL_IMPACT进入ImpactRing",
+    "w": 543,
+    "h": 226,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/tennisatom-07.svg",
+    "n": 7,
+    "label": "特效强度包络示意",
+    "w": 543,
+    "h": 140,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/tennisatom-08.svg",
+    "n": 8,
+    "label": "TennisAtom 七模块管线，以MatchBundle连接分析和内容生成",
+    "w": 1161,
+    "h": 533,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/tennisatom-09.svg",
+    "n": 9,
+    "label": "原项目透卡分层组合，示意非实测",
+    "w": 604,
+    "h": 750,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-10.svg",
+    "n": 10,
+    "label": "SILENT ARCHIVE原视觉样本",
+    "w": 250,
+    "h": 156,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-11.svg",
+    "n": 11,
+    "label": "KINETIC ECHO原视觉样本",
+    "w": 250,
+    "h": 156,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-12.svg",
+    "n": 12,
+    "label": "TACTICAL MATRIX原视觉样本",
+    "w": 250,
+    "h": 156,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-13.svg",
+    "n": 13,
+    "label": "EMOTION SPLASH原视觉样本",
+    "w": 250,
+    "h": 156,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/tennisatom-14.svg",
+    "n": 14,
+    "label": "原分镜五阶段与对应特效",
+    "w": 1153,
+    "h": 275,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 2
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "experience",
+    "labels": [
+     "FILM / 01",
+     "FILM / 02",
+     "FILM / 03",
+     "FILM / 04",
+     "FILM / 05"
+    ],
+    "states": [
+     {
+      "label": "FILM / 01",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "FILM / 02",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "FILM / 03",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "FILM / 04",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "FILM / 05",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "experience",
+    "labels": [
+     "MAIN / V6",
+     "CHEN / V2",
+     "YANG / V2",
+     "LIN / V3",
+     "VIVIAN / V3"
+    ],
+    "states": [
+     {
+      "label": "MAIN / V6",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "CHEN / V2",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "YANG / V2",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "LIN / V3",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "VIVIAN / V3",
+      "imgs": [
+       "assets/tennis-real-1.webp",
+       "assets/tennis-real-2.webp",
+       "assets/tennis-real-3.webp",
+       "assets/tennis-real-4.webp",
+       "assets/tennis-real-5.webp",
+       "assets/tennis-data-main-v6.webp",
+       "assets/tennis-data-chen-v2.webp",
+       "assets/tennis-data-yang-v2.webp",
+       "assets/tennis-data-lin-v3.webp",
+       "assets/tennis-data-vivian-v3.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "source-reading",
+    "labels": [
+     "01 事件要有共同时间",
+     "02 风格不改写测量",
+     "03 审看同样重要"
+    ],
+    "states": [
+     {
+      "label": "01 事件要有共同时间",
+      "imgs": [
+       "assets/tennis-real-3.webp",
+       "assets/refinement/tennis-user-voice.webp",
+       "assets/refinement/tennis-tech-4.webp",
+       "assets/refinement/tennis-report-20.webp",
+       "assets/refinement/tennis-user-voice.webp"
+      ],
+      "svg": [
+       "viz/tennisatom-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 风格不改写测量",
+      "imgs": [
+       "assets/tennis-real-3.webp",
+       "assets/refinement/tennis-user-voice.webp",
+       "assets/refinement/tennis-tech-4.webp",
+       "assets/refinement/tennis-report-20.webp",
+       "assets/refinement/tennis-user-voice.webp"
+      ],
+      "svg": [
+       "viz/tennisatom-g2-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 审看同样重要",
+      "imgs": [
+       "assets/tennis-real-3.webp",
+       "assets/refinement/tennis-user-voice.webp",
+       "assets/refinement/tennis-tech-4.webp",
+       "assets/refinement/tennis-report-20.webp",
+       "assets/refinement/tennis-user-voice.webp"
+      ],
+      "svg": [
+       "viz/tennisatom-g2-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "source-reading",
+    "labels": [
+     "01 原研究 / 用户原话",
+     "02 原技术图 / 特效渲染",
+     "03 原汇报 / 四种风格"
+    ],
+    "states": [
+     {
+      "label": "01 原研究 / 用户原话",
+      "imgs": [
+       "assets/tennis-real-3.webp",
+       "assets/refinement/tennis-user-voice.webp",
+       "assets/refinement/tennis-tech-4.webp",
+       "assets/refinement/tennis-report-20.webp",
+       "assets/refinement/tennis-user-voice.webp"
+      ],
+      "svg": [
+       "viz/tennisatom-g3-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原技术图 / 特效渲染",
+      "imgs": [
+       "assets/tennis-real-3.webp",
+       "assets/refinement/tennis-user-voice.webp",
+       "assets/refinement/tennis-tech-4.webp",
+       "assets/refinement/tennis-report-20.webp",
+       "assets/refinement/tennis-tech-4.webp"
+      ],
+      "svg": [
+       "viz/tennisatom-g3-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原汇报 / 四种风格",
+      "imgs": [
+       "assets/tennis-real-3.webp",
+       "assets/refinement/tennis-user-voice.webp",
+       "assets/refinement/tennis-tech-4.webp",
+       "assets/refinement/tennis-report-20.webp",
+       "assets/refinement/tennis-report-20.webp"
+      ],
+      "svg": [
+       "viz/tennisatom-g3-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "edit-panel",
+    "labels": [
+     "BALL_IMPACT",
+     "BALL_FLIGHT",
+     "ACE_SERVE",
+     "SWING_START"
+    ],
+    "states": [
+     {
+      "label": "BALL_IMPACT",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g4-s0-0.svg",
+       "viz/tennisatom-g4-s0-1.svg"
+      ]
+     },
+     {
+      "label": "BALL_FLIGHT",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g4-s0-0.svg",
+       "viz/tennisatom-g4-s0-1.svg"
+      ]
+     },
+     {
+      "label": "ACE_SERVE",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g4-s0-0.svg",
+       "viz/tennisatom-g4-s0-1.svg"
+      ]
+     },
+     {
+      "label": "SWING_START",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g4-s0-0.svg",
+       "viz/tennisatom-g4-s0-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "edit-panel",
+    "labels": [
+     "冲击 / IMPACT",
+     "风格 / COMIC",
+     "身体 / SKELETON",
+     "分析 / TRACE"
+    ],
+    "states": [
+     {
+      "label": "冲击 / IMPACT",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g5-s0-0.svg",
+       "viz/tennisatom-g5-s0-1.svg"
+      ]
+     },
+     {
+      "label": "风格 / COMIC",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g5-s1-0.svg",
+       "viz/tennisatom-g5-s1-1.svg"
+      ]
+     },
+     {
+      "label": "身体 / SKELETON",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g5-s2-0.svg",
+       "viz/tennisatom-g5-s2-1.svg"
+      ]
+     },
+     {
+      "label": "分析 / TRACE",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g5-s3-0.svg",
+       "viz/tennisatom-g5-s3-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "comp-panel",
+    "labels": [
+     "1 / 视频输入",
+     "2 / 骨骼提取",
+     "3 / 球路分析",
+     "4 / 特效渲染",
+     "5 / AI 内容",
+     "6 / 后期合成",
+     "7 / 交付设施"
+    ],
+    "states": [
+     {
+      "label": "1 / 视频输入",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s0-0.svg"
+      ]
+     },
+     {
+      "label": "2 / 骨骼提取",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s1-0.svg"
+      ]
+     },
+     {
+      "label": "3 / 球路分析",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s2-0.svg"
+      ]
+     },
+     {
+      "label": "4 / 特效渲染",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s3-0.svg"
+      ]
+     },
+     {
+      "label": "5 / AI 内容",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s4-0.svg"
+      ]
+     },
+     {
+      "label": "6 / 后期合成",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s5-0.svg"
+      ]
+     },
+     {
+      "label": "7 / 交付设施",
+      "imgs": [],
+      "svg": [
+       "viz/tennisatom-g6-s6-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "rv-panel",
+    "labels": [
+     "01 / INPUT",
+     "02 / POSE",
+     "03 / TRAJECTORY",
+     "04 / FX RENDER",
+     "05 / AI CONTENT",
+     "06 / POST",
+     "07 / DELIVERY"
+    ],
+    "states": [
+     {
+      "label": "01 / INPUT",
+      "imgs": [
+       "assets/refinement/tennis-tech-1.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "02 / POSE",
+      "imgs": [
+       "assets/refinement/tennis-tech-2.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "03 / TRAJECTORY",
+      "imgs": [
+       "assets/refinement/tennis-tech-3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "04 / FX RENDER",
+      "imgs": [
+       "assets/refinement/tennis-tech-4.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "05 / AI CONTENT",
+      "imgs": [
+       "assets/refinement/tennis-tech-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "06 / POST",
+      "imgs": [
+       "assets/refinement/tennis-tech-6.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "07 / DELIVERY",
+      "imgs": [
+       "assets/refinement/tennis-tech-7.webp"
+      ],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "baseball": {
+  "svgs": [
+   {
+    "f": "viz/baseball-01.svg",
+    "n": 1,
+    "label": "棒球场结构与投打关系示意，不承载比赛统计",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/baseball-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/baseball-03.svg",
+    "n": 3,
+    "label": "原CSV速度直方图",
+    "w": 544,
+    "h": 241,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/baseball-04.svg",
+    "n": 4,
+    "label": "原CSV速度直方图",
+    "w": 543,
+    "h": 240,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/baseball-05.svg",
+    "n": 5,
+    "label": "从四份CSV到三个阅读尺度",
+    "w": 1159,
+    "h": 530,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/baseball-06.svg",
+    "n": 6,
+    "label": "2024各球种投球初速累计分布",
+    "w": 684,
+    "h": 629,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 52
+   },
+   {
+    "f": "viz/baseball-07.svg",
+    "n": 7,
+    "label": "大谷击球速度与角度区间计数",
+    "w": 711,
+    "h": 580,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 35
+   },
+   {
+    "f": "viz/baseball-08.svg",
+    "n": 8,
+    "label": "投球位置散点图，4641 条有效记录",
+    "w": 717,
+    "h": 540,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 706
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "source-reading",
+    "labels": [
+     "01 浏览：先辨认人",
+     "02 比较：先辨认分母",
+     "03 检查：图形旁有数字"
+    ],
+    "states": [
+     {
+      "label": "01 浏览：先辨认人",
+      "imgs": [
+       "assets/baseball-web-detail.webp",
+       "assets/baseball-web-macro.webp",
+       "assets/baseball-web-lab.webp",
+       "assets/baseball-web-atlas.webp",
+       "assets/baseball-web-macro.webp"
+      ],
+      "svg": [
+       "viz/baseball-g0-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 比较：先辨认分母",
+      "imgs": [
+       "assets/baseball-web-detail.webp",
+       "assets/baseball-web-macro.webp",
+       "assets/baseball-web-lab.webp",
+       "assets/baseball-web-atlas.webp",
+       "assets/baseball-web-macro.webp"
+      ],
+      "svg": [
+       "viz/baseball-g0-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 检查：图形旁有数字",
+      "imgs": [
+       "assets/baseball-web-detail.webp",
+       "assets/baseball-web-macro.webp",
+       "assets/baseball-web-lab.webp",
+       "assets/baseball-web-atlas.webp",
+       "assets/baseball-web-macro.webp"
+      ],
+      "svg": [
+       "viz/baseball-g0-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "source-reading",
+    "labels": [
+     "01 原网站 / 宏观视图",
+     "02 原网站 / 实验室",
+     "03 原网站 / 数据图谱"
+    ],
+    "states": [
+     {
+      "label": "01 原网站 / 宏观视图",
+      "imgs": [
+       "assets/baseball-web-detail.webp",
+       "assets/baseball-web-macro.webp",
+       "assets/baseball-web-lab.webp",
+       "assets/baseball-web-atlas.webp",
+       "assets/baseball-web-macro.webp"
+      ],
+      "svg": [
+       "viz/baseball-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原网站 / 实验室",
+      "imgs": [
+       "assets/baseball-web-detail.webp",
+       "assets/baseball-web-macro.webp",
+       "assets/baseball-web-lab.webp",
+       "assets/baseball-web-atlas.webp",
+       "assets/baseball-web-lab.webp"
+      ],
+      "svg": [
+       "viz/baseball-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原网站 / 数据图谱",
+      "imgs": [
+       "assets/baseball-web-detail.webp",
+       "assets/baseball-web-macro.webp",
+       "assets/baseball-web-lab.webp",
+       "assets/baseball-web-atlas.webp",
+       "assets/baseball-web-atlas.webp"
+      ],
+      "svg": [
+       "viz/baseball-g1-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "comp-panel",
+    "labels": [
+     "2024",
+     "2025",
+     "2026"
+    ],
+    "states": [
+     {
+      "label": "2024",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g2-s0-0.svg",
+       "viz/baseball-g2-s0-1.svg"
+      ]
+     },
+     {
+      "label": "2025",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g2-s1-0.svg",
+       "viz/baseball-g2-s1-1.svg"
+      ]
+     },
+     {
+      "label": "2026",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g2-s2-0.svg",
+       "viz/baseball-g2-s2-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "comp-panel",
+    "labels": [
+     "01 / 数据源",
+     "02 / 视图模型",
+     "03 / 视觉编码",
+     "04 / 阅读状态"
+    ],
+    "states": [
+     {
+      "label": "01 / 数据源",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g3-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / 视图模型",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g3-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / 视觉编码",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g3-s2-0.svg"
+      ]
+     },
+     {
+      "label": "04 / 阅读状态",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g3-s3-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "chapter-2",
+    "labels": [
+     "2024 1,474 条记录",
+     "2025 2,792 条记录",
+     "2026 383 条记录"
+    ],
+    "states": [
+     {
+      "label": "2024 1,474 条记录",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g4-s0-0.svg",
+       "viz/baseball-g4-s0-1.svg"
+      ]
+     },
+     {
+      "label": "2025 2,792 条记录",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g4-s0-0.svg",
+       "viz/baseball-g4-s0-1.svg"
+      ]
+     },
+     {
+      "label": "2026 383 条记录",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g4-s0-0.svg",
+       "viz/baseball-g4-s0-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "rv-panel",
+    "labels": [
+     "2024",
+     "2025",
+     "2026"
+    ],
+    "states": [
+     {
+      "label": "2024",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g5-s0-0.svg"
+      ]
+     },
+     {
+      "label": "2025",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g5-s1-0.svg"
+      ]
+     },
+     {
+      "label": "2026",
+      "imgs": [],
+      "svg": [
+       "viz/baseball-g5-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "edit-panel",
+    "labels": [
+     "2024",
+     "2025",
+     "2026"
+    ],
+    "states": [
+     {
+      "label": "2024",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "2025",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "2026",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "depth-panel",
+    "labels": [
+     "山本 · 投球落点",
+     "山本 · 位移分布",
+     "大谷 · 击球速度 × 仰角"
+    ],
+    "states": [
+     {
+      "label": "山本 · 投球落点",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "山本 · 位移分布",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "大谷 · 击球速度 × 仰角",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "artemis": {
+  "svgs": [
+   {
+    "f": "viz/artemis-01.svg",
+    "n": 1,
+    "label": "Hex 相邻格路径结构；非实机关卡",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/artemis-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/artemis-03.svg",
+    "n": 3,
+    "label": "探索者与两个遭遇角色的完整原设定，结合世界CG与造型分析",
+    "w": 777,
+    "h": 630,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/artemis-04.svg",
+    "n": 4,
+    "label": "原项目海报中的完整背包与构筑 UI",
+    "w": 1169,
+    "h": 680,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/artemis-05.svg",
+    "n": 5,
+    "label": "裂变原CG与分镜编号",
+    "w": 777,
+    "h": 463,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/artemis-06.svg",
+    "n": 6,
+    "label": "原场景设定全景与空间分析",
+    "w": 777,
+    "h": 518,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/artemis-07.svg",
+    "n": 7,
+    "label": "",
+    "w": 1185,
+    "h": 353,
+    "sec": "chapter-2",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/artemis-08.svg",
+    "n": 8,
+    "label": "输入、规则、状态与反馈分层协作。关系图",
+    "w": 1165,
+    "h": 435,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/artemis-09.svg",
+    "n": 9,
+    "label": "五节点构筑树，展示分支独立复制能量与分层触发",
+    "w": 704,
+    "h": 387,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 2
+   },
+   {
+    "f": "viz/artemis-10.svg",
+    "n": 10,
+    "label": "",
+    "w": 779,
+    "h": 295,
+    "sec": "fr-enemy-performance",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/artemis-11.svg",
+    "n": 11,
+    "label": "原精英怪动作帧：持盾动作",
+    "w": 779,
+    "h": 121,
+    "sec": "fr-enemy-performance",
+    "hidden": false,
+    "kb": 0
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "project-films",
+    "labels": [
+     "实机 / 03:50",
+     "过场 01 / 01:27",
+     "过场 02 / 01:41",
+     "理念片 / 04:32"
+    ],
+    "states": [
+     {
+      "label": "实机 / 03:50",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "过场 01 / 01:27",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "过场 02 / 01:41",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "理念片 / 04:32",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "project-films",
+    "labels": [
+     "00:16地图 / 六边形空间↗",
+     "01:11背包 / 构筑界面↗",
+     "02:16移动 / 场景探索↗",
+     "03:11战斗 / 遭遇反馈↗"
+    ],
+    "states": [
+     {
+      "label": "00:16地图 / 六边形空间↗",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "01:11背包 / 构筑界面↗",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "02:16移动 / 场景探索↗",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "03:11战斗 / 遭遇反馈↗",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "experience",
+    "labels": [
+     "◎ 当前格",
+     "W 可行走",
+     "D 高度差 2",
+     "S 不可行走",
+     "A 可行走",
+     "↙ 可行走",
+     "↘ 地图边界"
+    ],
+    "states": [
+     {
+      "label": "◎ 当前格",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "W 可行走",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "D 高度差 2",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "S 不可行走",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "A 可行走",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "↙ 可行走",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "↘ 地图边界",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "experience",
+    "labels": [
+     "W ↑",
+     "A ←",
+     "S ↓",
+     "D →"
+    ],
+    "states": [
+     {
+      "label": "W ↑",
+      "imgs": [
+       "assets/artemis-world.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "A ←",
+      "imgs": [
+       "assets/artemis-world.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "S ↓",
+      "imgs": [
+       "assets/artemis-world.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "D →",
+      "imgs": [
+       "assets/artemis-world.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "source-reading",
+    "labels": [
+     "01 不是点击就移动",
+     "02 构筑改变触发路径",
+     "03 预警先于伤害"
+    ],
+    "states": [
+     {
+      "label": "01 不是点击就移动",
+      "imgs": [
+       "assets/artemis-boss.webp",
+       "assets/composition/artemis-character-heavy.webp",
+       "assets/artemis-build.webp",
+       "assets/composition/artemis-cg-laboratory.webp",
+       "assets/composition/artemis-character-heavy.webp"
+      ],
+      "svg": [
+       "viz/artemis-g4-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 构筑改变触发路径",
+      "imgs": [
+       "assets/artemis-boss.webp",
+       "assets/composition/artemis-character-heavy.webp",
+       "assets/artemis-build.webp",
+       "assets/composition/artemis-cg-laboratory.webp",
+       "assets/composition/artemis-character-heavy.webp"
+      ],
+      "svg": [
+       "viz/artemis-g4-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 预警先于伤害",
+      "imgs": [
+       "assets/artemis-boss.webp",
+       "assets/composition/artemis-character-heavy.webp",
+       "assets/artemis-build.webp",
+       "assets/composition/artemis-cg-laboratory.webp",
+       "assets/composition/artemis-character-heavy.webp"
+      ],
+      "svg": [
+       "viz/artemis-g4-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "source-reading",
+    "labels": [
+     "01 原设定 / 角色造型",
+     "02 原实机 / 构筑界面",
+     "03 原 CG / 实验室"
+    ],
+    "states": [
+     {
+      "label": "01 原设定 / 角色造型",
+      "imgs": [
+       "assets/artemis-boss.webp",
+       "assets/composition/artemis-character-heavy.webp",
+       "assets/artemis-build.webp",
+       "assets/composition/artemis-cg-laboratory.webp",
+       "assets/composition/artemis-character-heavy.webp"
+      ],
+      "svg": [
+       "viz/artemis-g5-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原实机 / 构筑界面",
+      "imgs": [
+       "assets/artemis-boss.webp",
+       "assets/composition/artemis-character-heavy.webp",
+       "assets/artemis-build.webp",
+       "assets/composition/artemis-cg-laboratory.webp",
+       "assets/artemis-build.webp"
+      ],
+      "svg": [
+       "viz/artemis-g5-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原 CG / 实验室",
+      "imgs": [
+       "assets/artemis-boss.webp",
+       "assets/composition/artemis-character-heavy.webp",
+       "assets/artemis-build.webp",
+       "assets/composition/artemis-cg-laboratory.webp",
+       "assets/composition/artemis-cg-laboratory.webp"
+      ],
+      "svg": [
+       "viz/artemis-g5-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "comp-panel",
+    "labels": [
+     "01 裂变 ↗",
+     "02 重建 ↗",
+     "03 承诺 ↗",
+     "04 异议 ↗"
+    ],
+    "states": [
+     {
+      "label": "01 裂变 ↗",
+      "imgs": [
+       "assets/composition/artemis-cg-fracture.webp",
+       "assets/composition/artemis-cg-tower.webp",
+       "assets/composition/artemis-cg-assembly.webp",
+       "assets/composition/artemis-cg-laboratory.webp"
+      ],
+      "svg": [
+       "viz/artemis-g6-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 重建 ↗",
+      "imgs": [
+       "assets/composition/artemis-cg-fracture.webp",
+       "assets/composition/artemis-cg-tower.webp",
+       "assets/composition/artemis-cg-assembly.webp",
+       "assets/composition/artemis-cg-laboratory.webp"
+      ],
+      "svg": [
+       "viz/artemis-g6-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 承诺 ↗",
+      "imgs": [
+       "assets/composition/artemis-cg-fracture.webp",
+       "assets/composition/artemis-cg-tower.webp",
+       "assets/composition/artemis-cg-assembly.webp",
+       "assets/composition/artemis-cg-laboratory.webp"
+      ],
+      "svg": [
+       "viz/artemis-g6-s2-0.svg"
+      ]
+     },
+     {
+      "label": "04 异议 ↗",
+      "imgs": [
+       "assets/composition/artemis-cg-fracture.webp",
+       "assets/composition/artemis-cg-tower.webp",
+       "assets/composition/artemis-cg-assembly.webp",
+       "assets/composition/artemis-cg-laboratory.webp"
+      ],
+      "svg": [
+       "viz/artemis-g6-s3-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "comp-panel",
+    "labels": [
+     "全景",
+     "建筑局部",
+     "设定结构页"
+    ],
+    "states": [
+     {
+      "label": "全景",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g7-s0-0.svg"
+      ]
+     },
+     {
+      "label": "建筑局部",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g7-s1-0.svg"
+      ]
+     },
+     {
+      "label": "设定结构页",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g7-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 8,
+    "sec": "chapter-2",
+    "labels": [
+     "待机",
+     "起步",
+     "持续移动",
+     "停步"
+    ],
+    "states": [
+     {
+      "label": "待机",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g8-s0-0.svg",
+       "viz/artemis-g8-s0-1.svg"
+      ]
+     },
+     {
+      "label": "起步",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g8-s1-0.svg",
+       "viz/artemis-g8-s0-1.svg"
+      ]
+     },
+     {
+      "label": "持续移动",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g8-s2-0.svg",
+       "viz/artemis-g8-s0-1.svg"
+      ]
+     },
+     {
+      "label": "停步",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g8-s3-0.svg",
+       "viz/artemis-g8-s0-1.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 9,
+    "sec": "depth-panel",
+    "labels": [
+     "01 / INPUT 动作意图 W / A / S / D",
+     "02 / WORLD 空间与资源 Hex / Slot / Inventory",
+     "03 / STATE 角色状态 Idle → Start → Loop → End",
+     "04 / BUILD 构筑效果链 Root → Neighbor → Effect",
+     "05 / ENEMY 敌人状态 预警 / 判定 / 阶段",
+     "06 / PRESENT 视听反馈 动画 / UI / 场景"
+    ],
+    "states": [
+     {
+      "label": "01 / INPUT 动作意图 W / A / S / D",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g9-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / WORLD 空间与资源 Hex / Slot / Inventory",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g9-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / STATE 角色状态 Idle → Start → Loop → End",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g9-s2-0.svg"
+      ]
+     },
+     {
+      "label": "04 / BUILD 构筑效果链 Root → Neighbor → Effect",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g9-s3-0.svg"
+      ]
+     },
+     {
+      "label": "05 / ENEMY 敌人状态 预警 / 判定 / 阶段",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g9-s4-0.svg"
+      ]
+     },
+     {
+      "label": "06 / PRESENT 视听反馈 动画 / UI / 场景",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g9-s5-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 10,
+    "sec": "comp-panel",
+    "labels": [
+     "启动根节点",
+     "推进下一层",
+     "重置"
+    ],
+    "states": [
+     {
+      "label": "启动根节点",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g10-s0-0.svg"
+      ]
+     },
+     {
+      "label": "重置",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g10-s1-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 11,
+    "sec": "fr-enemy-performance",
+    "labels": [
+     "01 / 前摇",
+     "02 / 命中检查",
+     "03 / 后摇"
+    ],
+    "states": [
+     {
+      "label": "01 / 前摇",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g11-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / 命中检查",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g11-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / 后摇",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g11-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 12,
+    "sec": "fr-enemy-performance",
+    "labels": [
+     "持盾动作",
+     "射击动作",
+     "状态变化"
+    ],
+    "states": [
+     {
+      "label": "持盾动作",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g12-s0-0.svg"
+      ]
+     },
+     {
+      "label": "射击动作",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g12-s1-0.svg"
+      ]
+     },
+     {
+      "label": "状态变化",
+      "imgs": [],
+      "svg": [
+       "viz/artemis-g12-s2-0.svg"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "bronze": {
+  "svgs": [
+   {
+    "f": "viz/bronze-01.svg",
+    "n": 1,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/bronze-02.svg",
+    "n": 2,
+    "label": "十集的明暗双线与叙事回收",
+    "w": 587,
+    "h": 406,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 4
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "experience",
+    "labels": [
+     "01 朱契 01:37",
+     "02 青焰 01:29",
+     "03 蜀眸 02:16",
+     "04 钟界 02:08",
+     "05 问名 02:00",
+     "06 鸮陨 01:16",
+     "07 向北 03:27",
+     "08 南渡 01:45",
+     "09 祀戎 01:39",
+     "10 拓归 03:40"
+    ],
+    "states": [
+     {
+      "label": "01 朱契 01:37",
+      "imgs": [
+       "assets/bronze-ep01-1.webp",
+       "assets/bronze-ep01-2.webp",
+       "assets/bronze-ep01-3.webp",
+       "assets/bronze-ep01-4.webp",
+       "assets/bronze-ep01-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "02 青焰 01:29",
+      "imgs": [
+       "assets/bronze-ep02-1.webp",
+       "assets/bronze-ep02-2.webp",
+       "assets/bronze-ep02-3.webp",
+       "assets/bronze-ep02-4.webp",
+       "assets/bronze-ep02-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "03 蜀眸 02:16",
+      "imgs": [
+       "assets/bronze-ep03-1.webp",
+       "assets/bronze-ep03-2.webp",
+       "assets/bronze-ep03-3.webp",
+       "assets/bronze-ep03-4.webp",
+       "assets/bronze-ep03-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "04 钟界 02:08",
+      "imgs": [
+       "assets/bronze-ep04-1.webp",
+       "assets/bronze-ep04-2.webp",
+       "assets/bronze-ep04-3.webp",
+       "assets/bronze-ep04-4.webp",
+       "assets/bronze-ep04-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "05 问名 02:00",
+      "imgs": [
+       "assets/bronze-ep05-1.webp",
+       "assets/bronze-ep05-2.webp",
+       "assets/bronze-ep05-3.webp",
+       "assets/bronze-ep05-4.webp",
+       "assets/bronze-ep05-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "06 鸮陨 01:16",
+      "imgs": [
+       "assets/bronze-ep06-1.webp",
+       "assets/bronze-ep06-2.webp",
+       "assets/bronze-ep06-3.webp",
+       "assets/bronze-ep06-4.webp",
+       "assets/bronze-ep06-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "07 向北 03:27",
+      "imgs": [
+       "assets/bronze-ep07-1.webp",
+       "assets/bronze-ep07-2.webp",
+       "assets/bronze-ep07-3.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-ep07-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "08 南渡 01:45",
+      "imgs": [
+       "assets/bronze-ep08-1.webp",
+       "assets/bronze-ep08-3.webp",
+       "assets/bronze-ep08-4.webp",
+       "assets/bronze-ep08-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "09 祀戎 01:39",
+      "imgs": [
+       "assets/bronze-ep09-1.webp",
+       "assets/bronze-ep09-2.webp",
+       "assets/bronze-ep09-3.webp",
+       "assets/bronze-ep09-4.webp",
+       "assets/bronze-ep09-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "10 拓归 03:40",
+      "imgs": [
+       "assets/bronze-ep10-1.webp",
+       "assets/bronze-ep10-2.webp",
+       "assets/bronze-ep10-3.webp",
+       "assets/bronze-ep10-4.webp",
+       "assets/bronze-ep10-5.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "experience",
+    "labels": [
+     "← 上一集",
+     "下一集 →"
+    ],
+    "states": []
+   },
+   {
+    "group": 2,
+    "sec": "",
+    "labels": [
+     "00:09.23 ↗",
+     "放大 ＋"
+    ],
+    "states": [
+     {
+      "label": "00:09.23 ↗",
+      "imgs": [
+       "assets/bronze-ep06-1.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "放大 ＋",
+      "imgs": [
+       "assets/bronze-ep06-1.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "",
+    "labels": [
+     "00:23.07 ↗",
+     "放大 ＋"
+    ],
+    "states": [
+     {
+      "label": "00:23.07 ↗",
+      "imgs": [
+       "assets/bronze-ep06-2.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "放大 ＋",
+      "imgs": [
+       "assets/bronze-ep06-2.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "",
+    "labels": [
+     "00:36.91 ↗",
+     "放大 ＋"
+    ],
+    "states": [
+     {
+      "label": "00:36.91 ↗",
+      "imgs": [
+       "assets/bronze-ep06-3.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "放大 ＋",
+      "imgs": [
+       "assets/bronze-ep06-3.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "",
+    "labels": [
+     "00:50.75 ↗",
+     "放大 ＋"
+    ],
+    "states": [
+     {
+      "label": "00:50.75 ↗",
+      "imgs": [
+       "assets/bronze-ep06-4.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "放大 ＋",
+      "imgs": [
+       "assets/bronze-ep06-4.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "",
+    "labels": [
+     "01:04.60 ↗",
+     "放大 ＋"
+    ],
+    "states": [
+     {
+      "label": "01:04.60 ↗",
+      "imgs": [
+       "assets/bronze-ep06-5.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "放大 ＋",
+      "imgs": [
+       "assets/bronze-ep06-5.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "source-reading",
+    "labels": [
+     "01 5 / 铺陈",
+     "02 1 / 断裂",
+     "03 4 / 整合"
+    ],
+    "states": [
+     {
+      "label": "01 5 / 铺陈",
+      "imgs": [
+       "assets/bronze-owl-study.webp",
+       "assets/bronze-xingchen-study.webp",
+       "assets/bronze-spirit-source.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-xingchen-study.webp"
+      ],
+      "svg": [
+       "viz/bronze-g7-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 1 / 断裂",
+      "imgs": [
+       "assets/bronze-owl-study.webp",
+       "assets/bronze-xingchen-study.webp",
+       "assets/bronze-spirit-source.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-xingchen-study.webp"
+      ],
+      "svg": [
+       "viz/bronze-g7-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 4 / 整合",
+      "imgs": [
+       "assets/bronze-owl-study.webp",
+       "assets/bronze-xingchen-study.webp",
+       "assets/bronze-spirit-source.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-xingchen-study.webp"
+      ],
+      "svg": [
+       "viz/bronze-g7-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 8,
+    "sec": "source-reading",
+    "labels": [
+     "01 原人设 / 考古常服",
+     "02 原汇报 / 器灵原则",
+     "03 EP.07 原成片 / 02:17.22"
+    ],
+    "states": [
+     {
+      "label": "01 原人设 / 考古常服",
+      "imgs": [
+       "assets/bronze-owl-study.webp",
+       "assets/bronze-xingchen-study.webp",
+       "assets/bronze-spirit-source.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-xingchen-study.webp"
+      ],
+      "svg": [
+       "viz/bronze-g8-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原汇报 / 器灵原则",
+      "imgs": [
+       "assets/bronze-owl-study.webp",
+       "assets/bronze-xingchen-study.webp",
+       "assets/bronze-spirit-source.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-spirit-source.webp"
+      ],
+      "svg": [
+       "viz/bronze-g8-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 EP.07 原成片 / 02:17.22",
+      "imgs": [
+       "assets/bronze-owl-study.webp",
+       "assets/bronze-xingchen-study.webp",
+       "assets/bronze-spirit-source.webp",
+       "assets/bronze-ep07-4.webp",
+       "assets/bronze-ep07-4.webp"
+      ],
+      "svg": [
+       "viz/bronze-g8-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 9,
+    "sec": "comp-panel",
+    "labels": [
+     "01—05 / 铺陈",
+     "06 / 断裂",
+     "07—10 / 整合"
+    ],
+    "states": [
+     {
+      "label": "01—05 / 铺陈",
+      "imgs": [],
+      "svg": [
+       "viz/bronze-g9-s0-0.svg"
+      ]
+     },
+     {
+      "label": "06 / 断裂",
+      "imgs": [],
+      "svg": [
+       "viz/bronze-g9-s0-0.svg"
+      ]
+     },
+     {
+      "label": "07—10 / 整合",
+      "imgs": [],
+      "svg": [
+       "viz/bronze-g9-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 10,
+    "sec": "depth-panel",
+    "labels": [
+     "01 / DESIGN 人设与器灵 角色一致性",
+     "02 / STORYBOARD 分镜与视听 镜头组织",
+     "03 / GENERATE 生成与返修 多轮素材选择",
+     "04 / COMPOSITE 后期与成片 剪辑 / 声音 / 合成"
+    ],
+    "states": [
+     {
+      "label": "01 / DESIGN 人设与器灵 角色一致性",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "02 / STORYBOARD 分镜与视听 镜头组织",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "03 / GENERATE 生成与返修 多轮素材选择",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "04 / COMPOSITE 后期与成片 剪辑 / 声音 / 合成",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "afterglow": {
+  "svgs": [
+   {
+    "f": "viz/afterglow-01.svg",
+    "n": 1,
+    "label": "径向图形的统一骨架示意；无环境测量值",
+    "w": 0,
+    "h": 0,
+    "sec": "case-hero",
+    "hidden": true,
+    "kb": 3
+   },
+   {
+    "f": "viz/afterglow-02.svg",
+    "n": 2,
+    "label": "径向图形的统一骨架示意；无环境测量值",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/afterglow-03.svg",
+    "n": 3,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/afterglow-04.svg",
+    "n": 4,
+    "label": "四个参数控制的径向文字形态示意",
+    "w": 632,
+    "h": 632,
+    "sec": "comp-panel",
+    "hidden": false,
+    "kb": 11
+   },
+   {
+    "f": "viz/afterglow-05.svg",
+    "n": 5,
+    "label": "AFTERGLOW四通道19时刻样本",
+    "w": 705,
+    "h": 489,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 10
+   },
+   {
+    "f": "viz/afterglow-06.svg",
+    "n": 6,
+    "label": "08:00编码轮廓",
+    "w": 357,
+    "h": 220,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 33
+   },
+   {
+    "f": "viz/afterglow-07.svg",
+    "n": 7,
+    "label": "06:00编码轮廓",
+    "w": 350,
+    "h": 250,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 19
+   },
+   {
+    "f": "viz/afterglow-08.svg",
+    "n": 8,
+    "label": "09:00编码轮廓",
+    "w": 350,
+    "h": 250,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 36
+   },
+   {
+    "f": "viz/afterglow-09.svg",
+    "n": 9,
+    "label": "18:00编码轮廓",
+    "w": 350,
+    "h": 250,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 37
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "source-reading",
+    "labels": [
+     "01 静态不是全部",
+     "02 V3 → V4",
+     "03 远近两个层级"
+    ],
+    "states": [
+     {
+      "label": "01 静态不是全部",
+      "imgs": [
+       "assets/afterglow-render-concourse.webp",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-render-dome.webp",
+       "assets/afterglow-mapping-board.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g0-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 V3 → V4",
+      "imgs": [
+       "assets/afterglow-render-concourse.webp",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-render-dome.webp",
+       "assets/afterglow-mapping-board.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g0-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 远近两个层级",
+      "imgs": [
+       "assets/afterglow-render-concourse.webp",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-render-dome.webp",
+       "assets/afterglow-mapping-board.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g0-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "source-reading",
+    "labels": [
+     "01 原项目 / 编码图",
+     "02 原项目 / 状态板",
+     "03 原渲染 / 穹顶投影"
+    ],
+    "states": [
+     {
+      "label": "01 原项目 / 编码图",
+      "imgs": [
+       "assets/afterglow-render-concourse.webp",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-render-dome.webp",
+       "assets/afterglow-mapping-board.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原项目 / 状态板",
+      "imgs": [
+       "assets/afterglow-render-concourse.webp",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-render-dome.webp",
+       "assets/afterglow-state-board.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原渲染 / 穹顶投影",
+      "imgs": [
+       "assets/afterglow-render-concourse.webp",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-render-dome.webp",
+       "assets/afterglow-render-dome.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g1-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "rv-panel",
+    "labels": [
+     "01 / 人流",
+     "02 / 噪声",
+     "03 / PM2.5",
+     "04 / 风"
+    ],
+    "states": [
+     {
+      "label": "01 / 人流",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "02 / 噪声",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "03 / PM2.5",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "04 / 风",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "chapter-2",
+    "labels": [
+     "样本 01",
+     "样本 02",
+     "样本 03"
+    ],
+    "states": [
+     {
+      "label": "样本 01",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-low.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g3-s0-0.svg",
+       "viz/afterglow-g3-s0-1.svg",
+       "viz/afterglow-g3-s0-2.svg"
+      ]
+     },
+     {
+      "label": "样本 02",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-mid.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g3-s0-0.svg",
+       "viz/afterglow-g3-s0-1.svg",
+       "viz/afterglow-g3-s0-2.svg"
+      ]
+     },
+     {
+      "label": "样本 03",
+      "imgs": [
+       "assets/afterglow-version-bridge.svg",
+       "assets/afterglow-mapping-board.webp",
+       "assets/afterglow-state-board.webp",
+       "assets/afterglow-high.webp"
+      ],
+      "svg": [
+       "viz/afterglow-g3-s0-0.svg",
+       "viz/afterglow-g3-s0-1.svg",
+       "viz/afterglow-g3-s0-2.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "chapter-3",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "chapter-3",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "growth-compass": {
+  "svgs": [
+   {
+    "f": "viz/growth-compass-01.svg",
+    "n": 1,
+    "label": "课外与课中的两条五阶段旅程；图形不表示满意度或能力数值",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/growth-compass-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 4
+   },
+   {
+    "f": "viz/growth-compass-03.svg",
+    "n": 3,
+    "label": "焦虑努力型的原方案插画",
+    "w": 371,
+    "h": 326,
+    "sec": "chapter-1",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/growth-compass-04.svg",
+    "n": 4,
+    "label": "研究问题、前台触点与后台资源的对应",
+    "w": 1149,
+    "h": 541,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/growth-compass-05.svg",
+    "n": 5,
+    "label": "探索兴趣原故事板",
+    "w": 200,
+    "h": 125,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/growth-compass-06.svg",
+    "n": 6,
+    "label": "预见课程原故事板",
+    "w": 200,
+    "h": 125,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/growth-compass-07.svg",
+    "n": 7,
+    "label": "低成本试听原故事板",
+    "w": 200,
+    "h": 125,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/growth-compass-08.svg",
+    "n": 8,
+    "label": "调整并承诺原故事板",
+    "w": 200,
+    "h": 125,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/growth-compass-09.svg",
+    "n": 9,
+    "label": "成长留存原故事板",
+    "w": 200,
+    "h": 125,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/growth-compass-10.svg",
+    "n": 10,
+    "label": "",
+    "w": 1207,
+    "h": 679,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 3
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "experience",
+    "labels": [
+     "01 选课前",
+     "02 学习中",
+     "03 朋辈问诊"
+    ],
+    "states": [
+     {
+      "label": "01 选课前",
+      "imgs": [
+       "assets/growth-tasting-original.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "02 学习中",
+      "imgs": [
+       "assets/growth-canvas-original.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "03 朋辈问诊",
+      "imgs": [
+       "assets/growth-clinic-original.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "source-reading",
+    "labels": [
+     "01 课前：降低选择的信息差",
+     "02 课中：把问题变具体",
+     "03 协作：不把职责都交给 AI"
+    ],
+    "states": [
+     {
+      "label": "01 课前：降低选择的信息差",
+      "imgs": [
+       "assets/growth-canvas-original.webp",
+       "assets/growth-personas.webp",
+       "assets/growth-course-journey.webp",
+       "assets/growth-learning-journey.webp",
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 课中：把问题变具体",
+      "imgs": [
+       "assets/growth-canvas-original.webp",
+       "assets/growth-personas.webp",
+       "assets/growth-course-journey.webp",
+       "assets/growth-learning-journey.webp",
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g1-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 协作：不把职责都交给 AI",
+      "imgs": [
+       "assets/growth-canvas-original.webp",
+       "assets/growth-personas.webp",
+       "assets/growth-course-journey.webp",
+       "assets/growth-learning-journey.webp",
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g1-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "source-reading",
+    "labels": [
+     "01 原研究 / 综合画像",
+     "02 原方案 / 选课旅程",
+     "03 原方案 / 学习旅程"
+    ],
+    "states": [
+     {
+      "label": "01 原研究 / 综合画像",
+      "imgs": [
+       "assets/growth-canvas-original.webp",
+       "assets/growth-personas.webp",
+       "assets/growth-course-journey.webp",
+       "assets/growth-learning-journey.webp",
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原方案 / 选课旅程",
+      "imgs": [
+       "assets/growth-canvas-original.webp",
+       "assets/growth-personas.webp",
+       "assets/growth-course-journey.webp",
+       "assets/growth-learning-journey.webp",
+       "assets/growth-course-journey.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原方案 / 学习旅程",
+      "imgs": [
+       "assets/growth-canvas-original.webp",
+       "assets/growth-personas.webp",
+       "assets/growth-course-journey.webp",
+       "assets/growth-learning-journey.webp",
+       "assets/growth-learning-journey.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g2-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "chapter-1",
+    "labels": [
+     "01 焦虑努力型",
+     "02 积极探索型",
+     "03 受挫明确型",
+     "04 被动适应型"
+    ],
+    "states": [
+     {
+      "label": "01 焦虑努力型",
+      "imgs": [
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g3-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 积极探索型",
+      "imgs": [
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g3-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 受挫明确型",
+      "imgs": [
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g3-s2-0.svg"
+      ]
+     },
+     {
+      "label": "04 被动适应型",
+      "imgs": [
+       "assets/growth-personas.webp"
+      ],
+      "svg": [
+       "viz/growth-compass-g3-s3-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "chapter-1",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "chapter-2",
+    "labels": [
+     "课前 / 选择",
+     "课中 / 支持",
+     "课后 / 延续"
+    ],
+    "states": [
+     {
+      "label": "课前 / 选择",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g5-s0-0.svg"
+      ]
+     },
+     {
+      "label": "课中 / 支持",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g5-s0-0.svg"
+      ]
+     },
+     {
+      "label": "课后 / 延续",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g5-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "rv-panel",
+    "labels": [
+     "01 / 理解课程",
+     "02 / 开始作业",
+     "03 / 调整目标"
+    ],
+    "states": [
+     {
+      "label": "01 / 理解课程",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g6-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / 开始作业",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g6-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 / 调整目标",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g6-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "depth-panel",
+    "labels": [
+     "课外 / 选择课程",
+     "课中 / 完成作业"
+    ],
+    "states": [
+     {
+      "label": "课外 / 选择课程",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "课中 / 完成作业",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 8,
+    "sec": "depth-panel",
+    "labels": [
+     "01探索兴趣",
+     "02预见课程",
+     "03低成本试听",
+     "04调整并承诺",
+     "05成长留存"
+    ],
+    "states": [
+     {
+      "label": "01探索兴趣",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g8-s0-0.svg",
+       "viz/growth-compass-g8-s0-1.svg",
+       "viz/growth-compass-g8-s0-2.svg"
+      ]
+     },
+     {
+      "label": "02预见课程",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g8-s0-0.svg",
+       "viz/growth-compass-g8-s0-1.svg",
+       "viz/growth-compass-g8-s0-2.svg"
+      ]
+     },
+     {
+      "label": "03低成本试听",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g8-s0-0.svg",
+       "viz/growth-compass-g8-s0-1.svg",
+       "viz/growth-compass-g8-s0-2.svg"
+      ]
+     },
+     {
+      "label": "04调整并承诺",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g8-s0-0.svg",
+       "viz/growth-compass-g8-s0-1.svg",
+       "viz/growth-compass-g8-s0-2.svg"
+      ]
+     },
+     {
+      "label": "05成长留存",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g8-s0-0.svg",
+       "viz/growth-compass-g8-s0-1.svg",
+       "viz/growth-compass-g8-s0-2.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 9,
+    "sec": "depth-panel",
+    "labels": [
+     "课中 / 作业与支持",
+     "课前 / 选课与课程资源"
+    ],
+    "states": [
+     {
+      "label": "课中 / 作业与支持",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "课前 / 选课与课程资源",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 10,
+    "sec": "depth-panel",
+    "labels": [
+     "总览",
+     "150%",
+     "200%"
+    ],
+    "states": [
+     {
+      "label": "总览",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "150%",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "200%",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 11,
+    "sec": "depth-panel",
+    "labels": [
+     "学生",
+     "朋辈导师 Agent",
+     "教师",
+     "学院",
+     "技术 / AI 预审模型",
+     "企业 / 校友",
+     "正反案例",
+     "设计方法论 / 行业标准",
+     "作业数据"
+    ],
+    "states": [
+     {
+      "label": "学生",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s0-0.svg"
+      ]
+     },
+     {
+      "label": "朋辈导师 Agent",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s1-0.svg"
+      ]
+     },
+     {
+      "label": "教师",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s2-0.svg"
+      ]
+     },
+     {
+      "label": "学院",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s3-0.svg"
+      ]
+     },
+     {
+      "label": "技术 / AI 预审模型",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s4-0.svg"
+      ]
+     },
+     {
+      "label": "企业 / 校友",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s5-0.svg"
+      ]
+     },
+     {
+      "label": "正反案例",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s6-0.svg"
+      ]
+     },
+     {
+      "label": "设计方法论 / 行业标准",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s7-0.svg"
+      ]
+     },
+     {
+      "label": "作业数据",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g11-s8-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 12,
+    "sec": "depth-panel",
+    "labels": [
+     "清除角色定位",
+     "放大完整原页 ↗"
+    ],
+    "states": [
+     {
+      "label": "清除角色定位",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g12-s0-0.svg"
+      ]
+     },
+     {
+      "label": "放大完整原页 ↗",
+      "imgs": [],
+      "svg": [
+       "viz/growth-compass-g12-s0-0.svg"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "looplab": {
+  "svgs": [
+   {
+    "f": "viz/looplab-01.svg",
+    "n": 1,
+    "label": "材料到制作与交接的服务结构",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/looplab-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 6
+   },
+   {
+    "f": "viz/looplab-03.svg",
+    "n": 3,
+    "label": "",
+    "w": 276,
+    "h": 110,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/looplab-04.svg",
+    "n": 4,
+    "label": "",
+    "w": 276,
+    "h": 110,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/looplab-05.svg",
+    "n": 5,
+    "label": "",
+    "w": 276,
+    "h": 110,
+    "sec": "depth-panel",
+    "hidden": false,
+    "kb": 0
+   },
+   {
+    "f": "viz/looplab-06.svg",
+    "n": 6,
+    "label": "LoopLab供需、制作与归档的循环",
+    "w": 603,
+    "h": 399,
+    "sec": "edit-panel",
+    "hidden": false,
+    "kb": 2
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "experience",
+    "labels": [
+     "确认需求 →",
+     "重新开始"
+    ],
+    "states": [
+     {
+      "label": "安排交接 →",
+      "imgs": [
+       "assets/loop-materials.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "重新开始",
+      "imgs": [
+       "assets/loop-materials.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "source-reading",
+    "labels": [
+     "01 先界定交易对象",
+     "02 交接要留下明确状态",
+     "03 通知横跨模块"
+    ],
+    "states": [
+     {
+      "label": "01 先界定交易对象",
+      "imgs": [
+       "assets/folio-repair/looplab-flat-v1.webp",
+       "assets/loop-source-03.webp",
+       "assets/loop-source-09.webp",
+       "assets/loop-source-11.webp",
+       "assets/loop-source-03.webp"
+      ],
+      "svg": [
+       "viz/looplab-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 交接要留下明确状态",
+      "imgs": [
+       "assets/folio-repair/looplab-flat-v1.webp",
+       "assets/loop-source-03.webp",
+       "assets/loop-source-09.webp",
+       "assets/loop-source-11.webp",
+       "assets/loop-source-03.webp"
+      ],
+      "svg": [
+       "viz/looplab-g1-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 通知横跨模块",
+      "imgs": [
+       "assets/folio-repair/looplab-flat-v1.webp",
+       "assets/loop-source-03.webp",
+       "assets/loop-source-09.webp",
+       "assets/loop-source-11.webp",
+       "assets/loop-source-03.webp"
+      ],
+      "svg": [
+       "viz/looplab-g1-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "source-reading",
+    "labels": [
+     "01 原汇报 / 需求研究",
+     "02 原汇报 / MVP",
+     "03 原汇报 / 线上线下旅程"
+    ],
+    "states": [
+     {
+      "label": "01 原汇报 / 需求研究",
+      "imgs": [
+       "assets/folio-repair/looplab-flat-v1.webp",
+       "assets/loop-source-03.webp",
+       "assets/loop-source-09.webp",
+       "assets/loop-source-11.webp",
+       "assets/loop-source-03.webp"
+      ],
+      "svg": [
+       "viz/looplab-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原汇报 / MVP",
+      "imgs": [
+       "assets/folio-repair/looplab-flat-v1.webp",
+       "assets/loop-source-03.webp",
+       "assets/loop-source-09.webp",
+       "assets/loop-source-11.webp",
+       "assets/loop-source-09.webp"
+      ],
+      "svg": [
+       "viz/looplab-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 原汇报 / 线上线下旅程",
+      "imgs": [
+       "assets/folio-repair/looplab-flat-v1.webp",
+       "assets/loop-source-03.webp",
+       "assets/loop-source-09.webp",
+       "assets/loop-source-11.webp",
+       "assets/loop-source-11.webp"
+      ],
+      "svg": [
+       "viz/looplab-g2-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "depth-panel",
+    "labels": [
+     "01 / 材料交换",
+     "02 / 制作预约",
+     "03 / 小量团购",
+     "04 / 项目档案",
+     "05 / 校园取件"
+    ],
+    "states": [
+     {
+      "label": "01 / 材料交换",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "02 / 制作预约",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "03 / 小量团购",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "04 / 项目档案",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "05 / 校园取件",
+      "imgs": [],
+      "svg": [
+       "viz/looplab-g3-s4-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "chapter-3",
+    "labels": [
+     "01 发现需求",
+     "02 发布与上传",
+     "03 确认与制作",
+     "04 通知与取件",
+     "05 归档与再流转"
+    ],
+    "states": [
+     {
+      "label": "01 发现需求",
+      "imgs": [
+       "assets/loop-source-11.webp",
+       "assets/loop-source-08.webp"
+      ],
+      "svg": [
+       "viz/looplab-g4-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 发布与上传",
+      "imgs": [
+       "assets/loop-source-11.webp",
+       "assets/loop-source-08.webp"
+      ],
+      "svg": [
+       "viz/looplab-g4-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 确认与制作",
+      "imgs": [
+       "assets/loop-source-11.webp",
+       "assets/loop-source-08.webp"
+      ],
+      "svg": [
+       "viz/looplab-g4-s0-0.svg"
+      ]
+     },
+     {
+      "label": "04 通知与取件",
+      "imgs": [
+       "assets/loop-source-11.webp",
+       "assets/loop-source-08.webp"
+      ],
+      "svg": [
+       "viz/looplab-g4-s0-0.svg"
+      ]
+     },
+     {
+      "label": "05 归档与再流转",
+      "imgs": [
+       "assets/loop-source-11.webp",
+       "assets/loop-source-08.webp"
+      ],
+      "svg": [
+       "viz/looplab-g4-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "chapter-3",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "chapter-3",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 7,
+    "sec": "edit-panel",
+    "labels": [
+     "01 / 校园 SaaS",
+     "02 / 高级功能",
+     "03 / 企业合作",
+     "04 / 服务佣金",
+     "05 / 免费基础入口"
+    ],
+    "states": [
+     {
+      "label": "01 / 校园 SaaS",
+      "imgs": [],
+      "svg": [
+       "viz/looplab-g7-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 / 高级功能",
+      "imgs": [],
+      "svg": [
+       "viz/looplab-g7-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 / 企业合作",
+      "imgs": [],
+      "svg": [
+       "viz/looplab-g7-s0-0.svg"
+      ]
+     },
+     {
+      "label": "04 / 服务佣金",
+      "imgs": [],
+      "svg": [
+       "viz/looplab-g7-s0-0.svg"
+      ]
+     },
+     {
+      "label": "05 / 免费基础入口",
+      "imgs": [],
+      "svg": [
+       "viz/looplab-g7-s0-0.svg"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "garden": {
+  "svgs": [
+   {
+    "f": "viz/garden-01.svg",
+    "n": 1,
+    "label": "绘梦奇扇的扇形结构示意",
+    "w": 263,
+    "h": 131,
+    "sec": "case-hero",
+    "hidden": false,
+    "kb": 1
+   },
+   {
+    "f": "viz/garden-02.svg",
+    "n": 2,
+    "label": "",
+    "w": 888,
+    "h": 373,
+    "sec": "source-reading",
+    "hidden": false,
+    "kb": 3
+   },
+   {
+    "f": "viz/garden-03.svg",
+    "n": 3,
+    "label": "清风散雾的代码园景示意",
+    "w": 610,
+    "h": 420,
+    "sec": "rv-panel",
+    "hidden": false,
+    "kb": 2
+   }
+  ],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "experience",
+    "labels": [
+     "01 秋",
+     "02 冬",
+     "03 春",
+     "04 夏",
+     "05 绘梦奇扇",
+     "06 游览模式"
+    ],
+    "states": [
+     {
+      "label": "01 秋",
+      "imgs": [
+       "assets/garden-autumn.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "02 冬",
+      "imgs": [
+       "assets/garden-winter.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "03 春",
+      "imgs": [
+       "assets/garden-spring.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "04 夏",
+      "imgs": [
+       "assets/garden-summer.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "05 绘梦奇扇",
+      "imgs": [
+       "assets/garden-fan.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "06 游览模式",
+      "imgs": [
+       "assets/garden-tour.webp"
+      ],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "source-reading",
+    "labels": [
+     "01 文字带来可读的变化",
+     "02 两种模式，不同目的",
+     "03 适配不是只缩放屏幕"
+    ],
+    "states": [
+     {
+      "label": "01 文字带来可读的变化",
+      "imgs": [
+       "assets/garden-dialogue.webp",
+       "assets/garden-fan-guide.webp",
+       "assets/garden-tour.webp",
+       "assets/garden-night.webp",
+       "assets/garden-fan-guide.webp"
+      ],
+      "svg": [
+       "viz/garden-g1-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 两种模式，不同目的",
+      "imgs": [
+       "assets/garden-dialogue.webp",
+       "assets/garden-fan-guide.webp",
+       "assets/garden-tour.webp",
+       "assets/garden-night.webp",
+       "assets/garden-fan-guide.webp"
+      ],
+      "svg": [
+       "viz/garden-g1-s1-0.svg"
+      ]
+     },
+     {
+      "label": "03 适配不是只缩放屏幕",
+      "imgs": [
+       "assets/garden-dialogue.webp",
+       "assets/garden-fan-guide.webp",
+       "assets/garden-tour.webp",
+       "assets/garden-night.webp",
+       "assets/garden-fan-guide.webp"
+      ],
+      "svg": [
+       "viz/garden-g1-s2-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 2,
+    "sec": "source-reading",
+    "labels": [
+     "01 原游戏 / 奇扇教学",
+     "02 原游戏 / 游览模式",
+     "03 团队实机 / 探索场景"
+    ],
+    "states": [
+     {
+      "label": "01 原游戏 / 奇扇教学",
+      "imgs": [
+       "assets/garden-dialogue.webp",
+       "assets/garden-fan-guide.webp",
+       "assets/garden-tour.webp",
+       "assets/garden-night.webp",
+       "assets/garden-fan-guide.webp"
+      ],
+      "svg": [
+       "viz/garden-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "02 原游戏 / 游览模式",
+      "imgs": [
+       "assets/garden-dialogue.webp",
+       "assets/garden-fan-guide.webp",
+       "assets/garden-tour.webp",
+       "assets/garden-night.webp",
+       "assets/garden-tour.webp"
+      ],
+      "svg": [
+       "viz/garden-g2-s0-0.svg"
+      ]
+     },
+     {
+      "label": "03 团队实机 / 探索场景",
+      "imgs": [
+       "assets/garden-dialogue.webp",
+       "assets/garden-fan-guide.webp",
+       "assets/garden-tour.webp",
+       "assets/garden-night.webp",
+       "assets/garden-night.webp"
+      ],
+      "svg": [
+       "viz/garden-g2-s0-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 3,
+    "sec": "rv-panel",
+    "labels": [
+     "雾 → 风 水面散雾",
+     "云 → 月 天心明月"
+    ],
+    "states": [
+     {
+      "label": "雾 → 风 水面散雾",
+      "imgs": [],
+      "svg": [
+       "viz/garden-g3-s0-0.svg"
+      ]
+     },
+     {
+      "label": "云 → 月 天心明月",
+      "imgs": [],
+      "svg": [
+       "viz/garden-g3-s1-0.svg"
+      ]
+     }
+    ]
+   },
+   {
+    "group": 4,
+    "sec": "chapter-2",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 5,
+    "sec": "chapter-3",
+    "labels": [
+     "适应宽度",
+     "放大细节",
+     "精读"
+    ],
+    "states": [
+     {
+      "label": "适应宽度",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "放大细节",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "精读",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 6,
+    "sec": "depth-panel",
+    "labels": [
+     "01 / NPC 对话与触发 发现 → 接近 → 对话",
+     "02 / CAMERA 视角与探索 观察 → 定位 → 行动",
+     "03 / ADAPTATION 小程序适配 网页输入 → 跨端交互"
+    ],
+    "states": [
+     {
+      "label": "01 / NPC 对话与触发 发现 → 接近 → 对话",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "02 / CAMERA 视角与探索 观察 → 定位 → 行动",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "03 / ADAPTATION 小程序适配 网页输入 → 跨端交互",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ },
+ "jingwai": {
+  "svgs": [],
+  "groups": [
+   {
+    "group": 0,
+    "sec": "play",
+    "labels": [
+     "在本页开始试玩 ↗",
+     "全屏游戏"
+    ],
+    "states": [
+     {
+      "label": "游戏已展开",
+      "imgs": [],
+      "svg": []
+     },
+     {
+      "label": "全屏游戏",
+      "imgs": [],
+      "svg": []
+     }
+    ]
+   },
+   {
+    "group": 1,
+    "sec": "chapter-2",
+    "labels": [
+     "01 餐车接住",
+     "02 钩索接回",
+     "03 撑杆托住"
+    ],
+    "states": [
+     {
+      "label": "01 餐车接住",
+      "imgs": [
+       "assets/jingwai/chandelier-v138.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "02 钩索接回",
+      "imgs": [
+       "assets/jingwai/family-v133.webp"
+      ],
+      "svg": []
+     },
+     {
+      "label": "03 撑杆托住",
+      "imgs": [
+       "assets/jingwai/brace-v133.webp"
+      ],
+      "svg": []
+     }
+    ]
+   }
+  ]
+ }
+}
