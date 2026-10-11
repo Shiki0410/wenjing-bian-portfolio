@@ -20,10 +20,11 @@
   --cobalt-t:#dfe3ff;
     --warn:#ff4d12;
   --display:'Inter Tight','Helvetica Neue',Arial,sans-serif;
-  --cjk:'PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  --sans:'Inter Tight','PingFang SC','Hiragino Sans GB','Noto Sans SC','Microsoft YaHei',sans-serif;
-  --mono:ui-monospace,'SFMono-Regular','JetBrains Mono',Consolas,monospace;
-  --viz-font:'Inter Tight','PingFang SC','Microsoft YaHei',sans-serif;
+  --cjk:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --sans:'Inter Tight','Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --mono:'JetBrains Mono','Noto Sans SC',ui-monospace,Consolas,monospace;
+  --script:'Instrument Serif','Times New Roman',serif;
+  --viz-font:'Inter Tight','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
   --m:clamp(18px,3.4vw,56px);
   --nav:56px;
   --ease:cubic-bezier(.7,0,.2,1);
@@ -44,7 +45,7 @@ button{font:inherit;color:inherit}
 main{position:relative}
 
 /* paper grain, printed feel */
-body::after{content:"";position:fixed;inset:0;z-index:400;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+body::after{content:"";position:fixed;inset:0;z-index:400;pointer-events:none;opacity:.03;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* ---------- type atoms ---------- */
@@ -545,3 +546,4 @@ dialog.lb button{position:fixed;right:18px;top:16px;background:#fff;border:0;pad
 .player.split video{grid-row:1/4}
 .player.split .list{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media (max-width:900px){.player.split{grid-template-columns:1fr}.player.split video{grid-row:auto}}
+:where(img[width][height]){height:auto}

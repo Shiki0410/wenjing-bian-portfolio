@@ -84,7 +84,7 @@
     async init(el) {
       let data; try { data = await load('assets/composition/rally-events.json'); } catch (e) { $('.rt-plot', el).innerHTML = '<p class="mod-note">数据加载失败。</p>'; return; }
       const ids = [...new Set(data.map(d => d.dpe_id))];
-      const pick = $('.rt-pick', el), svg = $('svg', el);
+      const pick = $('.rt-pick', el), svg = $('.rt-plot svg', el);
       pick.innerHTML = ids.map((id, i) => `<button type="button" aria-pressed="${i ? 'false' : 'true'}" data-id="${id}">${id.replace('DPE_', '')}</button>`).join('');
       const draw = id => {
         const ev = data.filter(d => d.dpe_id === id).sort((a, b) => a.event_time_a_s - b.event_time_a_s);
@@ -194,7 +194,7 @@
         <p class="mod-note">48→64→32→1，共 5,249 个参数。前向、反向传播与梯度检查以 NumPy 手写实现。</p></div></div>`);
     },
     init(el) {
-      const go = () => { if (reduce) return; const s = $('svg', el); s.classList.remove('run'); void s.getBoundingClientRect(); s.classList.add('run'); };
+      const go = () => { if (reduce) return; const s = $('.mlp svg', el); s.classList.remove('run'); void s.getBoundingClientRect(); s.classList.add('run'); };
       $('.mlp-go', el).addEventListener('click', go);
     }
   };
@@ -792,7 +792,7 @@
       <p class="mod-note">源于《最终汇报》课前系统图（第 32 页）与课中系统图（第 38 页）。主图是完整原页：不裁图例、不重写箭头、不合并往返路线。蓝色定位圈和右侧文字是新增导读，不属于原图。</p>`),
     init(el) {
       let set = ROLES.in, z = 1, rx = 800, ry = 450;
-      const svg = $('svg', el), ring = $('.ring', el), zoom = $('.sm-zoom', el);
+      const svg = $('.sm-zoom svg', el), ring = $('.ring', el), zoom = $('.sm-zoom', el);
       const apply = () => { zoom.style.transform = `scale(${z})`; zoom.style.transformOrigin = `${rx / 16}% ${ry / 9}%`; };
       const pick = i => {
         const [n, x, y, a, b] = set.roles[i]; rx = x; ry = y;

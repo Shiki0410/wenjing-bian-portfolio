@@ -299,3 +299,94 @@ body.t-film .nav:not(.solid) .nav-mark i{background:#c86763}
 .b-text p{max-width:38em}
 .mod-body p{font-size:12.5px;line-height:1.7}
 @media (max-width:900px){.tpo-ann{display:none}.tc-top a{white-space:nowrap}}
+
+/* =============================================================
+   LOCKED REFERENCES → reusable devices
+   R1 Ruri Dragon poster  : grotesk wordmark, swatch tag, info strip, quote block
+   R2 carpe diem          : 3-tone blue cel + italic serif script, rotated
+   R3 Tastes like meat    : HUD micro-rows with ▲ separators, data in mono
+   R4 Persona 3 Reload PV : diagonal glass shards between scenes
+   ============================================================= */
+
+/* R2 — script word behind each act title */
+.cut{position:relative}
+.cut .script{position:absolute;right:-.04em;top:-.62em;z-index:0;pointer-events:none;
+  font:italic 400 clamp(64px,9vw,150px)/1 var(--script);letter-spacing:-.02em;color:var(--cobalt);opacity:.16;
+  transform:rotate(-8deg);transform-origin:right bottom;white-space:nowrap}
+.cut .no,.cut .head,.cut .lead{position:relative;z-index:1}
+/* R3 — HUD readout under every act title */
+.cut .hud{grid-column:1/-1;margin:22px 0 0;padding-top:8px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;
+  font:500 11.5px/1.6 var(--mono);letter-spacing:.06em;color:var(--ink)}
+.cut .hud i{font-style:normal;font-size:8px;color:var(--cobalt)}
+.cut .hud span:first-child{background:var(--ink);color:var(--paper);padding:0 6px}
+
+/* R4 — glass shards between acts */
+.shards{height:clamp(56px,7vw,110px);margin:clamp(20px,3vw,40px) calc(var(--m) * -1) 0;overflow:hidden}
+.shards svg{width:100%;height:100%}
+.shards .s0{fill:var(--cobalt)}
+.shards .s1{fill:var(--sky);opacity:.8}
+.shards .s2{fill:none;stroke:var(--ink);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.shards.rv{clip-path:inset(0 100% 0 0);transition:clip-path 1s var(--out)}
+.shards.rv.in{clip-path:inset(0 0 0 0)}
+.t-afterglow .shards .s0,.t-afterglow .shards .s1{fill:var(--ink)}
+.t-afterglow .shards .s1{opacity:.35}
+
+/* R3 — project file spec sheet */
+.filespec{grid-column:1/-1;background:var(--ink);color:#e9ecf6;padding:0;margin-top:8px}
+.fs-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:12px 18px;background:var(--cobalt);color:#fff;font:500 11.5px/1.4 var(--mono);letter-spacing:.08em}
+.fs-head b{font:800 15px/1.2 var(--display);letter-spacing:.02em}
+.filespec dl{margin:0;padding:6px 18px 4px}
+.fs-row{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:13px 0;border-bottom:1px dashed rgba(233,236,246,.22)}
+.fs-row:last-child{border-bottom:0}
+.fs-row dt{font:700 14px/1.5 var(--cjk);color:#fff}
+.fs-row dt small{display:block;font:500 10.5px/1.6 var(--mono);letter-spacing:.12em;color:var(--sky)}
+.fs-row dd{margin:0;font:400 14.5px/1.8 var(--sans);color:#e9ecf6}
+.fs-row .chip{display:inline-block;margin:0 6px 6px 0;padding:2px 8px;border:1px solid rgba(233,236,246,.35);font:500 12.5px/1.6 var(--mono);letter-spacing:.02em}
+.fs-row .fs-src{display:inline-flex;align-items:center;gap:6px;margin:0 8px 8px 0;padding:5px 10px;background:transparent;border:1px solid var(--sky);color:#fff;font:500 13px/1.4 var(--sans);cursor:zoom-in}
+.fs-row .fs-src:hover,.fs-row .fs-src:focus-visible{background:var(--sky);color:var(--ink)}
+.fs-foot{display:flex;flex-wrap:wrap;gap:6px 24px;padding:10px 18px;border-top:1px solid rgba(233,236,246,.22);font:500 11.5px/1.6 var(--mono);letter-spacing:.04em;color:#b9c2e0}
+@media (max-width:700px){.fs-row{grid-template-columns:1fr;gap:6px}.cut .script{font-size:56px;top:-.3em}}
+.shards .s3{fill:var(--ink)}
+.shards .s2{fill:var(--paper);stroke:var(--ink)}
+.shards .hl{stroke:var(--ink);stroke-width:1;vector-effect:non-scaling-stroke}
+.ph.on-dark{background:var(--cobalt)!important}
+.ph.on-dark svg{background:var(--cobalt)}
+.logline .k span{opacity:.9}
+.act{padding:clamp(48px,6vw,96px) 0 clamp(24px,3vw,48px);border-bottom:0}
+.b-stats b.long{font-size:clamp(24px,2.4vw,38px);white-space:nowrap}
+.b-stats small{font-size:12.5px;color:var(--ink-2)}
+/* documents, charts and screens are never cropped; only film stills fill their frame */
+.gallery .fig .ph{background:var(--sheet)}
+.gallery .fig .ph img{object-fit:contain}
+.gallery .fig .ph img:is([src*="bronze-ep"],[src*="tennis-real"],[src*="garden-"],[src*="jingwai/"],[src*="frames/"],[src*="artemis-cg"],[src*="artemis-cutscene"],[src*="rally-court"],[src*="artemis-arena"],[src*="artemis-boss"]){object-fit:cover}
+.cut .script{font-size:calc(clamp(64px,9vw,150px) * var(--fs,1));opacity:.12;top:-.9em}
+/* original report charts → house duotone; hover shows the untouched original */
+.fig .ph img:is([src*="refinement/fig"],[src*="refinement/tennis-report"],[src*="refinement/tennis-tech"]){filter:url(#duo);transition:filter .35s}
+.fig:hover .ph img,.fig:focus-within .ph img{filter:none}
+.fig .ph:has(img[src*="refinement/fig"])::after{content:"原图 · 悬停看原色";position:absolute;right:8px;top:8px;padding:2px 6px;background:var(--ink);color:var(--paper);font:500 10.5px/1.5 var(--mono);letter-spacing:.04em;opacity:.85;pointer-events:none}
+.fig .ph{position:relative}
+.fig .ph img[src*="folio-repair/svg/"]{filter:url(#duo)}
+.cut h2,.tc-cols .sub,.b-sub,h3{text-wrap:balance}
+.chars .c{white-space:nowrap}
+/* TennisAtom — the original poster is the title card */
+.tpo{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,64px);align-items:end;min-height:auto}
+.tpo-poster{margin:0;grid-column:1;grid-row:1;max-height:76svh}
+.tpo-poster .ph{aspect-ratio:1414/2000;max-height:72svh;margin-inline:auto;background:#fff;box-shadow:12px 12px 0 var(--cobalt)}
+.tpo-poster .ph img{width:100%;height:100%;object-fit:contain}
+.tpo-poster figcaption{margin-top:12px}
+.tpo-id{grid-column:2;grid-row:1;align-self:center;text-align:left}
+.tpo-id .tc-name{font-size:clamp(64px,9vw,170px)}
+.tpo-cn{letter-spacing:.5em;font-size:clamp(20px,2.2vw,32px)}
+.tpo-thesis{margin:clamp(20px,3vw,40px) 0 0;padding:14px 18px;border-left:4px solid var(--cobalt);background:var(--sheet);max-width:28em}
+.tpo-thesis p{margin:6px 0 0;font:900 clamp(18px,1.7vw,24px)/1.55 var(--cjk)}
+.tpo-thesis .mono{color:var(--cobalt)}
+.tpo-keys{display:flex;flex-wrap:wrap;gap:6px 16px;margin:16px 0 0;padding:0;list-style:none;color:var(--ink-2)}
+.tpo-keys li::before{content:"● ";color:var(--cobalt)}
+@media (max-width:900px){.tpo{grid-template-columns:1fr}.tpo-id{grid-column:1;grid-row:2}}
+.ph.duo-img svg image{filter:url(#duo);transition:filter .35s}
+.fig:hover .ph.duo-img svg image{filter:none}
+/* snaps with two harvested views: sit side by side, never taller than the screen */
+.tp-media:has(> .fig + .fig){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.tp-media .fig .ph svg,.tp-media .fig .ph img{max-height:64vh;width:100%;object-fit:contain}
+.tp-media .fig + .fig figcaption{display:none}
+.fig .ph img[src$="afterglow-version-bridge.svg"]{filter:url(#duo)}

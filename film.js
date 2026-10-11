@@ -52,7 +52,8 @@
     ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px 6% 0px', threshold: 0 })
     : null;
   const reveal = root => $$('.rv,.clip,.chars', root).forEach(el => (io ? io.observe(el) : el.classList.add('in')));
-  const chars = (text, cls = '') => `<span class="chars ${cls}" aria-label="${esc(text)}">${String(text).split('\n').map(line => `<span class="ln" aria-hidden="true">${[...line].map((c, i) => c === ' ' ? ' ' : `<span class="c" style="--i:${i}">${esc(c)}</span>`).join('')}</span>`).join('')}</span>`;
+  const glyphs = l => l.match(/[“‘（《「『]*.[，。、；：？！”’）》」』…—]*/gu) || [];
+  const chars = (text, cls = '') => `<span class="chars ${cls}" aria-label="${esc(text)}">${String(text).split('\n').map(line => `<span class="ln" aria-hidden="true">${glyphs(line).map((c, i) => c === ' ' ? ' ' : `<span class="c" style="--i:${i}">${esc(c)}</span>`).join('')}</span>`).join('')}</span>`;
 
   /* ---------- lazy inline SVG ---------- */
   const svgIO = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { svgIO.unobserve(e.target); loadSvg(e.target); } }), { rootMargin: '600px 0px' }) : null;
@@ -64,7 +65,23 @@
       t = t.replace(/<style>([\s\S]*?)<\/style>/g, (m, css) => `<style>${css.replace(/\.(v\d+)\b/g, `.${k}$1`)}</style>`)
         .replace(/class="([^"]*)"/g, (m, c) => `class="${c.split(/\s+/).map(x => (/^v\d+$/.test(x) ? k + x : x)).join(' ')}"`)
         .replace(/\bid="([^"]+)"/g, `id="${k}-$1"`).replace(/url\(#([^)]+)\)/g, `url(#${k}-$1)`).replace(/href="#([^"]+)"/g, `href="#${k}-$1"`);
+      // fold any saturated non-blue colour (orange, red, green, pink…) into the blue palette at the same lightness
+      t = t.replace(/#([0-9a-f]{6}|[0-9a-f]{3})\b/gi, (m, h) => {
+        if (h.length === 3) h = [...h].map(c => c + c).join('');
+        const n = parseInt(h, 16), r = (n >> 16) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+        const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
+        if (d < .12) return m;
+        const s = d / (1 - Math.abs(2 * l - 1));
+        let hue = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; hue = (hue * 60 + 360) % 360;
+        if (hue >= 190 && hue <= 265) return m;
+        return `hsl(229 ${Math.round(Math.min(1, s) * 92)}% ${Math.round(l * 100)}%)`;
+      });
       el.innerHTML = t;
+      // charts drawn only in light ink were made for a blue panel: give them one
+      const cols = (t.match(/(?:fill|stroke):\s*(#[0-9a-f]{3,6})/gi) || []).map(c => c.split(/:\s*/)[1]);
+      const lum = h => { h = h.slice(1); if (h.length === 3) h = [...h].map(c => c + c).join(''); const n = parseInt(h, 16); return (.2126 * (n >> 16) + .7152 * (n >> 8 & 255) + .0722 * (n & 255)) / 255; };
+      if (cols.length && cols.every(c => lum(c) > .72)) el.classList.add('on-dark');
+      if (t.includes('href="assets/refinement/') || t.includes('href="assets/composition/tennis-')) el.classList.add('duo-img');
       const s = $('svg', el); if (s) { s.removeAttribute('width'); s.removeAttribute('height'); s.setAttribute('role', 'img'); }
     } catch (e) { el.textContent = '图表加载失败'; }
   };
@@ -75,6 +92,8 @@
   const lightbox = () => {
     const lb = $('#lb'); if (!lb || !lb.showModal) return;
     document.addEventListener('click', e => {
+      const sb = e.target.closest('[data-lb]');
+      if (sb) { $('img', lb).src = sb.dataset.lb; $('img', lb).alt = sb.textContent.trim(); $('p', lb).textContent = sb.textContent.trim(); lb.showModal(); return; }
       const im = e.target.closest('.fig .ph img'); if (!im) return;
       $('img', lb).src = im.currentSrc || im.src; $('img', lb).alt = im.alt; $('p', lb).textContent = im.alt; lb.showModal();
     });
@@ -100,7 +119,7 @@
     if (b.text) return `<div class="b-text rv${b.side === 'r' ? ' r' : ''}${span(b)}">${b.h ? `<h3>${esc(b.h)}</h3>` : ''}${[].concat(b.text).map(t => `<p>${md(t)}</p>`).join('')}</div>`;
     if (b.sub) return `<h3 class="b-sub rv${span(b)}">${esc(b.sub)}</h3>`;
     if (b.list) return `<ol class="b-list rv${b.cols ? ' cols' : ''}${span(b)}"${b.cols ? ` style="--n:${b.cols}"` : ''}>${b.list.map(x => Array.isArray(x) ? `<li><div><b>${esc(x[0])}</b><span>${md(x[1] || '')}</span></div></li>` : `<li><span>${md(x)}</span></li>`).join('')}</ol>`;
-    if (b.stats) return `<div class="b-stats rv${span(b)}">${b.stats.map(([v, l, s]) => `<div><b>${esc(v)}</b><span>${esc(l)}</span>${s ? `<small>${esc(s)}</small>` : ''}</div>`).join('')}</div>`;
+    if (b.stats) return `<div class="b-stats rv${span(b)}">${b.stats.map(([v, l, s]) => `<div><b${String(v).length > 7 ? ' class="long"' : ''}>${esc(v)}</b><span>${esc(l)}</span>${s ? `<small>${esc(s)}</small>` : ''}</div>`).join('')}</div>`;
     if (b.quote) return `<blockquote class="b-quote rv${span(b)}"><p>${md(b.quote)}</p>${b.cite ? `<cite>${esc(b.cite)}</cite>` : ''}</blockquote>`;
     if (b.pair) { const s = (x, k) => `<div class="side ${k}"><span class="mono">${esc(x.mono || '')}</span>${x.h ? `<h4>${esc(x.h)}</h4>` : ''}${[].concat(x.p || []).map(t => `<p>${md(t)}</p>`).join('')}</div>`; return `<div class="b-pair rv${span(b)}">${s(b.pair.a, 'a')}<span class="vs">${esc(b.pair.vs || '≠')}</span>${s(b.pair.b, 'b')}</div>`; }
     if (b.table) return `<div class="b-table rv${span(b)}"><table><thead><tr>${b.table.head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${b.table.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
@@ -238,6 +257,39 @@
     reveal(document); onScroll();
   };
 
+  /* glass-shard band between acts: deterministic per act, so the cut is the same on every visit */
+  const shards = seed => {
+    let s = String(seed).split('').reduce((a, c) => a * 31 + c.charCodeAt(0), 7) >>> 0;
+    const r = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
+    // a slash burst: thin slivers leaning the same way, densest around one focal point, like a PV cut
+    const c = 260 + r() * 880, H = 120;
+    const polys = Array.from({ length: 30 }, (_, k) => {
+      const g = (r() + r() + r()) / 3 - .5, bx = c + g * 1500, w = k % 7 ? 3 + r() * 26 : 40 + r() * 70;
+      const sk = 120 + r() * 160, top = r() < .35 ? r() * 50 : 0, bot = r() < .35 ? H - r() * 40 : H;
+      const cls = k % 7 ? (k % 3 ? 's0' : 's1') : (k % 2 ? 's2' : 's3');
+      const p = [[bx, bot], [bx + w, bot], [bx + w + sk * (1 - top / H), top], [bx + sk * (1 - top / H), top]];
+      return `<polygon class="${cls}" points="${p.map(([x, y]) => `${x.toFixed(0)},${y.toFixed(0)}`).join(' ')}"/>`;
+    }).join('');
+    return `<div class="shards rv" aria-hidden="true"><svg viewBox="0 0 1400 ${H}" preserveAspectRatio="none"><line x1="0" y1="${(60 + r() * 30).toFixed(0)}" x2="1400" y2="${(40 + r() * 30).toFixed(0)}" class="hl"/>${polys}</svg></div>`;
+  };
+  const fileSpec = (p, m) => {
+    if (!m) return '';
+    const row = (k, v) => v ? `<div class="fs-row"><dt>${k}</dt><dd>${v}</dd></div>` : '';
+    const src2 = n => (/\.\w{3,4}$/.test(n) ? `assets/${n}` : `assets/${n}.webp`);
+    return `<section class="filespec rv" aria-label="项目档案">
+      <header class="fs-head"><span>FILE SPEC</span><b>SC-${p.number} · ${esc(p.name.toUpperCase())}</b><span class="fs-code">${esc(p.year)} ▲ ${esc(p.label)}</span></header>
+      <dl>
+        ${row('分析单位<small>UNIT</small>', esc(m.unit))}
+        ${row('样本<small>SAMPLE</small>', esc(m.sample))}
+        ${row('测量<small>MEASURES</small>', (m.measures || []).map(x => `<span class="chip">${esc(x)}</span>`).join(''))}
+        ${row('原始材料<small>SOURCES</small>', (m.sources || []).map(([tt, a]) => `<button type="button" data-lb="${esc(src2(a))}" class="fs-src">${esc(tt)} ${I('ne')}</button>`).join(''))}
+        ${row('局限<small>LIMIT</small>', esc(m.limit))}
+        ${row('待检验<small>OPEN</small>', esc(m.open))}
+        ${m.credit ? row(`${esc(m.credit[0])}<small>CREDIT</small>`, esc(m.credit[1])) : ''}
+      </dl>
+      <footer class="fs-foot"><span>ROLE ▸ ${esc(p.role)}</span><span>STATUS ▸ ${esc(p.status)}</span></footer>
+    </section>`;
+  };
   const strip = (a, b, c) => `<div class="strip rv" aria-hidden="true"><span class="x"></span><span><b>${esc(a[0])}</b>${esc(a[1])}</span><span>${esc(b[0])}<br>${esc(b[1])}</span><span class="st"></span><span class="code">${esc(c[0])}<small>${esc(c[1])}</small></span><span class="gl">${I('globe')}</span></div>`;
 
   const sceneCard = p => {
@@ -273,6 +325,7 @@
     const p = byId(id) || projects[0], s = S[p.id] || {};
     const i = projects.indexOf(p), prev = projects[(i - 1 + projects.length) % projects.length], next = projects[(i + 1) % projects.length];
     document.title = `${p.number} ${p.name} — 卞文璟作品集`;
+    const md0 = $('meta[name=description]'); if (md0 && p.summary) md0.setAttribute('content', `${p.name} · ${p.cn}：${p.summary}`);
     $('.nav-scene b') && ($('.nav-scene b').textContent = `SCENE ${p.number} / ${pad(projects.length)}`);
     const cjk = /[一-鿿]/.test(p.name);
     const acts = s.acts || [];
@@ -306,17 +359,25 @@
       <div class="case">
         <nav class="toc" aria-label="本页段落"><p>SEQUENCE</p>${acts.map((a, k) => `<a href="#${a.id || 'act-' + (k + 1)}"><b>${pad(k + 1)}</b><span>${esc(a.toc || a.kicker || a.title)}</span></a>`).join('')}<a href="#end"><b>${pad(acts.length + 1)}</b><span>交付与下一步</span></a></nav>
         <div class="acts">
-          ${acts.map((a, k) => `<section class="act" id="${a.id || 'act-' + (k + 1)}">
-            <header class="cut"><span class="no rv">${pad(k + 1)}</span><div class="head"><p class="kicker rv">${esc(a.kicker || '')}</p><h2>${chars(a.title)}</h2></div>${a.lead ? `<p class="lead rv">${md(a.lead)}</p>` : ''}</header>
-            <div class="blocks">${(a.blocks || []).map(b => block(b, p.id)).join('')}</div>
-          </section>`).join('')}
+          ${acts.map((a, k) => {
+            const f0 = figNo + 1, body = (a.blocks || []).map(b => block(b, p.id)).join(''), f1 = figNo;
+            const mods = (a.blocks || []).filter(b => b.module || b.snap || b.tabs || b.player).length;
+            const words = (a.title + (a.lead || '') + JSON.stringify(a.blocks || []).replace(/"[a-z]+":|[\[\]{}",]/g, '')).replace(/\s/g, '').length;
+            const script = (String(a.kicker || '').split('/').map(x => x.trim()).find(x => /[A-Za-z]{3}/.test(x)) || '').toLowerCase();
+            const hud = [`SC-${p.number}`, `ACT ${pad(k + 1)}/${pad(acts.length)}`, f1 >= f0 ? `FIG ${pad(f0)}${f1 > f0 ? '—' + pad(f1) : ''}` : 'TEXT', mods ? `${mods} INTERACTIVE` : 'STATIC', `READ ≈ ${Math.max(1, Math.round(words / 450))} MIN`];
+            return `${k ? shards(p.number + k) : ''}<section class="act" id="${a.id || 'act-' + (k + 1)}">
+            <header class="cut"><span class="no rv">${pad(k + 1)}</span><div class="head"><p class="kicker rv">${esc(a.kicker || '')}</p><h2>${chars(a.title)}</h2></div>${a.lead ? `<p class="lead rv">${md(a.lead)}</p>` : ''}${script ? `<span class="script" style="--fs:${Math.min(1, 6 / script.length).toFixed(2)}" aria-hidden="true">${esc(script)}</span>` : ''}<p class="hud rv" aria-hidden="true">${hud.map(h => `<span>${esc(h)}</span>`).join('<i>▲</i>')}</p></header>
+            <div class="blocks">${body}</div>
+          </section>`;
+          }).join('')}
           <section class="act" id="end">
             <header class="cut"><span class="no rv">${pad(acts.length + 1)}</span><div class="head"><p class="kicker rv">CREDITS / 交付</p><h2>${chars(s.endTitle || '交付了什么，下一步做什么')}</h2></div></header>
             <div class="endcard">
               <div class="done rv"><h3>DELIVERED</h3><ul>${(s.done || p.outcomes || []).map(o => `<li>${md(o)}</li>`).join('')}</ul></div>
               <div class="next rv"><h3>NEXT</h3><p>${md(s.next || p.reflection || '')}</p></div>
+              ${fileSpec(p, (window.META || {})[p.id])}
               ${s.bound ? `<p class="note bound rv">${md(s.bound)}</p>` : ''}
-              <div class="links rv">${(s.links || []).map(([t, u, k]) => `<a class="btn${k ? ' ' + k : ' line'}" href="${esc(u)}"${/^https?:|\.pdf$|demos\//.test(u) ? ' target="_blank" rel="noopener"' : ''}>${esc(t)} ${I('ne')}</a>`).join('')}</div>
+              <div class="links rv">${[...(s.links || []), ...(p.links || []).filter(([, u]) => !(s.links || []).some(l => l[1] === u))].map(([t, u, k]) => `<a class="btn${k ? ' ' + k : ' line'}" href="${esc(u)}"${/^https?:|\.pdf$|demos\//.test(u) ? ' target="_blank" rel="noopener"' : ''}>${esc(t)} ${I('ne')}</a>`).join('')}</div>
             </div>
           </section>
         </div>
@@ -336,6 +397,19 @@
       $$('.act').forEach(a => tio.observe(a));
     }
   };
+
+  /* reserve each image's box from its recorded pixel size, so the page doesn't jump while loading */
+  const SIZES = window.IMG_SIZES || {};
+  const sizeImg = im => {
+    if (im.hasAttribute('width')) return;
+    const a = im.getAttribute('src'); if (!a) return;
+    let k; try { k = decodeURI(new URL(a, location.href).pathname).replace(/^.*?(?=(assets|media|demos)\/)/, ''); } catch (e) { return; }
+    const s = SIZES[k]; if (s) { im.setAttribute('width', s[0]); im.setAttribute('height', s[1]); }
+  };
+  const sizeAll = root => $$('img', root).forEach(sizeImg);
+  sizeAll(document);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { if (n.nodeType !== 1) return; n.tagName === 'IMG' ? sizeImg(n) : sizeAll(n); })))
+    .observe(document.body, { childList: true, subtree: true });
 
   if (document.body.dataset.page === 'case') kase(); else home();
 })();

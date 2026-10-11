@@ -2,7 +2,8 @@
 (() => {
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const src = n => (/^(assets|viz|media|demos|downloads)\//.test(n) ? n : /\.\w{3,4}$/.test(n) ? `assets/${n}` : `assets/${n}.webp`);
-  const chars = t => `<span class="chars" aria-label="${esc(t)}">${String(t).split('\n').map(l => `<span class="ln" aria-hidden="true">${[...l].map((c, i) => c === ' ' ? ' ' : `<span class="c" style="--i:${i}">${esc(c)}</span>`).join('')}</span>`).join('')}</span>`;
+  const glyphs = l => l.match(/[“‘（《「『]*.[，。、；：？！”’）》」』…—]*/gu) || [];
+  const chars = t => `<span class="chars" aria-label="${esc(t)}">${String(t).split('\n').map(l => `<span class="ln" aria-hidden="true">${glyphs(l).map((c, i) => c === ' ' ? ' ' : `<span class="c" style="--i:${i}">${esc(c)}</span>`).join('')}</span>`).join('')}</span>`;
   const hexPath = (cx, cy, r) => Array.from({ length: 6 }, (_, k) => { const a = Math.PI / 3 * k + Math.PI / 6; return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`; }).join(' ');
 
   /* small motif used on home scene cards (and repeated large on title cards) */
@@ -45,10 +46,10 @@
 
     portrait: (p, s, T) => `${top(p, T, s)}
       <div class="tpo">
-        <p class="tpo-type" aria-hidden="true"><span>THE</span><span>PORTRAIT</span><span>OF THE</span><span>BODY</span></p>
-        <div class="tpo-layers clip"><img src="assets/tennis-real-8.webp" alt="真人定制影片截图：动作描边与发光特效" class="ly duo">
-          <svg class="tpo-ann" viewBox="0 0 600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M330 300 L470 240"/><text x="476" y="238">M3 球路</text><path d="M320 640 L470 700"/><text x="476" y="706">M2 骨骼 · 33 点</text><path d="M215 560 L90 500"/><text x="10" y="490">M4 描边特效</text><circle cx="330" cy="300" r="7"/><circle cx="320" cy="640" r="7"/><circle cx="215" cy="560" r="7"/></svg></div>
-        <div class="tpo-id"><h1 class="tc-name" id="tc-name">${chars('Tennis\nAtom')}</h1><p class="tpo-cn">身体的肖像</p></div>
+        <figure class="tpo-poster clip"><div class="ph"><img class="duo" src="assets/tennis-poster.webp" alt="项目主视觉海报：THE PORTRAIT OF THE BODY / 身体的肖像" fetchpriority="high"></div><figcaption class="mono">MAIN VISUAL · 2026.06.06 · FINAL PROJECT</figcaption></figure>
+        <div class="tpo-id"><h1 class="tc-name" id="tc-name">${chars('Tennis\nAtom')}</h1><p class="tpo-cn">身体的肖像</p>
+          <blockquote class="tpo-thesis"><span class="mono">CORE THESIS · 核心立论</span><p>让数据不只是身体的成绩单，而成为身体的一幅肖像。</p></blockquote>
+          <ul class="tpo-keys mono"><li>MediaPipe · BlazePose</li><li>Ghost Trail · Freeze Frame</li><li>心流时间设计 · 数据驱动慢放</li></ul></div>
       </div>
       <div class="tc-cols"><p class="sub rv">${esc(s.sub)}</p>${meta(s, p)}</div>`,
 
@@ -57,7 +58,7 @@
         <div class="board clip"><div class="row h"><span>PLAYER</span><span>ROLE</span><span>RECORDS</span><span>YEARS</span></div>
           <div class="row"><span>YAMAMOTO</span><span>PITCH</span><b data-n="4649">4,649</b><span>24 · 25 · 26</span></div>
           <div class="row"><span>OHTANI</span><span>IMPACT</span><b data-n="6139">6,139</b><span>24 · 25 · 26</span></div>
-          <div class="row f"><span>STATCAST / CSV × 4</span><span></span><span>2026.03—05</span><span>PITCH × IMPACT</span></div></div>
+          <div class="row f"><span>STATCAST / CSV × 4</span><span></span><span>2024.03.20—2026.04.14</span><span>PITCH × IMPACT</span></div></div>
         <figure class="ticket clip"><div class="ph"><img src="assets/frames/bb-title-card.webp" alt="原网站开场：YAMAMOTO × OHTANI DATA CINEMA" fetchpriority="high"></div><figcaption><b>ADMIT ONE</b><span>SCENE ${p.number}</span></figcaption></figure>
         <svg class="diamond" viewBox="0 0 400 400" aria-hidden="true"><path d="M200 30 L370 200 L200 370 L30 200 Z"/><path d="M200 120 L280 200 L200 280 L120 200 Z"/><rect x="180" y="180" width="40" height="40"/></svg>
       </div>

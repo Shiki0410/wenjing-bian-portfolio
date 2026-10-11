@@ -35,13 +35,13 @@ window.HOME = {
   avail: '上海 · 每周 4 天 · 10 月中旬可到岗，至少 3 个月',
   credits: [
     ['DIRECTED & DESIGNED BY', '卞文璟 / Wenjing Bian'],
-    ['SCHOOL', '同济大学 设计创意学院<br>视觉传达设计 × 人工智能'],
-    ['NEXT', '浙江大学<br>人工智能与设计（推免）'],
+    ['SCHOOL', '同济大学 设计创意学院 · 视觉传达设计 × 人工智能'],
+    ['NEXT', '浙江大学 人工智能与设计（推免）'],
     ['LANGUAGE', '雅思 6.5 · CET-6 506'],
     ['RESEARCH METHODS', '半结构访谈 · 视频回溯 · 问卷 · 主题编码 · 用户旅程 · 服务蓝图 · 数据标注'],
     ['BUILD', 'Python · NumPy · PyTorch · OpenCV · MediaPipe · React · ECharts · GSAP · three.js · p5.js'],
     ['GAME & MOTION', 'Unity / C# · Blender · Seedance · After Effects · DaVinci Resolve · Codex'],
-    ['TEAMS', 'RallyLens 研究团队 · 橙狮体育 × TennisAtom · Artemis 六人组 · 游园画境 同济团队 · AFTERGLOW、Growth Compass 三人组 · LoopLab 小组']
+    ['TEAMS', 'RallyLens 研究团队 · 橙狮体育 × TennisAtom · Artemis 六人组 · 游园画境 同济团队 · AFTERGLOW、Growth Compass 三人组 · LoopLab Team12（11 人）']
   ],
   research: {}
 };
