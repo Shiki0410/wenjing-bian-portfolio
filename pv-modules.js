@@ -161,7 +161,8 @@
         if (rec.done) return; rec.done = true;
         const a = +b.dataset.a, t = ((performance.now() - st) / 1000).toFixed(1);
         set('t', t + 's'); set('d', a ? '接受' : '拒绝');
-        $('.pv-fb', el).textContent = `${a ? '已接受' : '已拒绝'} · 先确认请求范围：${SCEN[cur][3]}`;
+        $('.pv-fb', el).innerHTML = `${a ? '已接受' : '已拒绝'} · 先确认请求范围：${SCEN[cur][3]} <button type="button" class="pv-again">重来一次</button>`;
+        $('.pv-again', el).addEventListener('click', e => { e.stopPropagation(); reset(cur); });
       }));
       bindTabs(el, reset);
     }

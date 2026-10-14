@@ -116,6 +116,7 @@
 .phone-btns button+button{background:var(--cobalt);color:#fff}
 .phone-btns button:hover{filter:brightness(1.08)}
 .pv-fb{margin:12px 4px 2px;min-height:3.2em;font-size:13.5px;line-height:1.6;color:var(--sky)}
+.pv-again{display:inline-block;margin-left:6px;padding:3px 10px;border:1px solid currentColor;border-radius:99px;background:transparent;color:inherit;font:700 12px/1.4 inherit;cursor:pointer}.pv-again:hover{background:var(--sky);color:var(--ink)}
 .pv-log dl{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:10px 0 0}
 .pv-log dl div{background:var(--paper);padding:12px}
 .pv-log dt{font:500 11px/1.4 var(--mono);color:var(--mute);letter-spacing:.06em}

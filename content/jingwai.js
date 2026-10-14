@@ -5,93 +5,129 @@
   meta: [['YEAR', '2026'], ['FORMAT', 'Unity 首章 Demo · Windows / 浏览器'], ['DESIGN', '世界观、关卡与交互设计 · 美术方向与制作统筹', 1], ['BUILD', 'Codex · Unity / C# · Blender · 脚本、道具、纸本界面与 Shader', 1]],
   stripB: 'ORPHÉE / 025 号片盘 · 个人项目',
   logline: {
-    q: '摄影在很多游戏里只是收集截图。我想让它真正介入故事：走进一卷电影，改一次事故，再回到现实，查清自己改了什么。',
-    a: '一个人完成世界观、人物关系、记忆代价和连续关卡脚本；把“看不懂、够不着、做了没区别”的试玩问题拆成物件状态、按键和反馈要求，再用自然语言组织 Codex 实现 Unity 脚本、Blender 资产、纸本界面与渲染，每次修改都回到引擎画面核对。',
-    r: 'Unity 首章 Demo，Windows 与浏览器都能直接试玩：三种救援办法、三条送信路线，结果彼此不同。录像、多层电影是后续设计，还没有制作。'
+    q: '摄影在很多游戏里只是收集截图。我想让它真的介入故事：走进一卷电影，改一次事故，回到现实后查清自己改了什么。',
+    a: '个人项目。世界观、人物关系、记忆代价和连续关卡脚本由我完成；试玩里出现的“看不懂、够不着、做了没区别”，我逐条写成物件状态、按键和反馈要求，交给 Codex 做 Unity 脚本、Blender 资产、纸本界面和 Shader，每次修改都回到引擎画面核对。',
+    r: '交付 Unity v1.3.8 首章 Demo，有 Windows 与浏览器两个入口。救援方式改变人物动作与检修证据，送递方式改变接收窗的准备操作。录像与多层电影没有实现。'
   },
   stats: [['12 秒', '艾达失去的记忆'], ['3 种', '救援办法'], ['3 条', '原信送法'], ['94 秒', '首章实机选编']],
   home: {
     tag: '走进电影 · 送信 · 查证',
     thumbs: ['jingwai/workbench-v138', 'jingwai/ada-v138'],
-    jump: [['三种救法', 'rescue'], ['一封信，三条路', 'letter'], ['和 AI 一起做', 'ai']],
+    jump: [['三种救法', 'rescue'], ['一封信，三条路', 'letter'], ['制作与验收', 'make']],
     tools: 'CODEX · UNITY / C# · BLENDER · SHADER'
   },
   acts: [
     {
-      id: 'why', kicker: '01 / WHY THIS GAME', toc: '故事与问题', title: '23:17 之前，\n艾达还站在吊灯下。',
-      lead: '封存代价：23:16:50—23:17:02。排演可以重来；一旦封存，她就再也记不起这一刻。',
+      id: 'why', toc: '故事背景', kicker: 'REEL 025 · 23:16:50', title: '23:17 之前，\n艾达还站在吊灯下。',
+      open: { t: 'reel', imgs: [['jingwai/chandelier-v138', '吊灯与吊索'], ['assets/frames/jw-026-letter.webp', '026 · 原信装袋、盖戳、留底'], ['jingwai/workbench-v138', '07 · 机构与光路']] },
+      lead: '问题：怎样让一次救援有重量。封存让艾达活下来，也拿走她 23:16:50—23:17:02 的记忆；排演可以重来，封存不能。',
+      role: '我写了世界观、人物关系、委托单和记忆代价。',
       blocks: [
-        { text: ['你在余映局放映一卷旧胶片。画面里，吊索已经断开，马丁还在撑着，米娅站在母亲身旁。艾达想活下来，也想和家人拍一张照片。', '相机把你带进电影，停在事故发生前。搬动物件，排演一次，再拍下改变后的画面。救人有三种办法，但灯怎样被接住、马丁能不能松手、照片里有谁，会继续改变回到街上之后的事。', '正式封存后，艾达活了下来，却失去这十二秒的记忆。她没交出去的原信还在。你要把它交到米娅手里，再沿着这次救援留下的证据，走到对岸的影院。'] },
-        { fig: 'jingwai/projection-study.svg', cap: '摄影 → 介入 → 查证：相机、电影和现实的关系（结构图）', span: 'b-text r' },
-        { gallery: [['jingwai/chandelier-v138', '01 事故停在发生前 · 025 / 吊灯与吊索'], ['assets/frames/jw-026-letter.webp', '02 带着结果回到现实 · 026 / 原信装袋、盖戳、留底'], ['jingwai/workbench-v138', '03 回到街上，查证这次改变 · 07 / 机构与光路']], n: 3, ar: '16/9' },
-        { module: 'jwFlow' },
-        { note: '首章 · Unity v1.3.8 实机帧：01、03 是留底截图，02 截自实机选编视频。' }
+        { sub: '你在余映局，放一卷旧胶片。', en: 'THE SCREENING' },
+        { module: 'jwSlip' },
+        { text: ['在《镜外》里，电影会摄取人的灵魂：胶片留下当事人的一部分意识，也留下她没来得及完成的事。余映局接到这类求助，就派放映员走进一小段电影，搬动物件、试放、补拍，再把结果带回现实。', '第 25 号委托来自艾达。她要回冬庭饭店见丈夫马丁和女儿米娅，随身带着一封写给女儿的信。吊索已经松脱，马丁抓着它走不开，米娅还在等一张合影。下一秒，吊灯就要落下。', '放映员要在灯落下前救下艾达，拍下这次结果，并把她没交出去的原信交到现实里的米娅手里。结果正式封存以后，艾达会忘掉这十二秒。'] },
+        { note: '摄影与排演可以重试；实体封存杆压到底，才正式改写现实并支付艾达的十二秒。' },
+        { note: '首章 · Unity v1.3.8 实机帧：开场三张里，吊灯与 07 是留底截图，026 截自实机选编视频。' }
       ]
     },
     {
-      id: 'play', kicker: 'PLAY THE BUILD / 试玩首章', toc: '试玩与实机', title: '从吊灯下，\n走到对岸影院。',
-      lead: '直接玩 Unity 首章：走进电影救人，再回到现实送信、查证。用电脑、键盘和鼠标玩最好；点开始才会下载游戏。',
+      id: 'design', toc: '设计逻辑', kicker: 'DESIGN LOGIC · OBSERVE / INTERVENE / VERIFY', title: '让摄影留下\n可以查证的后果',
+      open: { t: 'local', label: 'LOGIC', cap: '设计逻辑' },
+      lead: '目标：一张照片要能改变人物经历，也要在现实里被查证。首章用三个动作回答，观察、介入、查证，并把“尝试”和“结果”分开。',
+      role: '我定下规则，写成按键、状态和反馈要求。',
+      blocks: [
+        { module: 'jwLoop' },
+        { list: [['尝试可以重来，结果不能撤回', '摄影与排演可以重试，失败不扣任何东西；实体封存杆压到底，才算结果，才支付记忆。'], ['分支把证据留在实物上', '撞痕、合影、锁位是实物证据，决定后面检修要做什么，不是换一段结局文字。'], ['同一封原信，从酒店走到现实', '运单、照片和回执都不能代替它，只有亲手交给米娅才算送到。']] }
+      ]
+    },
+    {
+      id: 'refs', toc: '借鉴参考', kicker: 'REFERENCES · VIEWFINDER / WILL / OUTER WILDS', title: '参考了三部作品',
+      open: { t: 'local', label: 'REFERENCES', cap: '借鉴参考' },
+      lead: '方法：设计之前，我读了三部作品怎样处理相机、顺序和工具。资料来自官方文字和开发者说明；镜外在此基础上做自己的转译，没有做对比实验。',
+      role: '我整理参考，决定各取哪一处。',
+      blocks: [{ module: 'jwRefs' }]
+    },
+    {
+      id: 'world', toc: '世界与机制', kicker: 'WORLD · MECHANISM', title: '首章的世界\n分片内和现实两层',
+      open: { t: 'local', label: 'WORLD', cap: '世界与机制' },
+      lead: '设计与实现：片内是 025 酒店、026 邮局、027 车站三段电影；现实是档案室、07 号街区和对岸的影院。相机与实体操作把两层连在一起。',
+      role: '我画出空间关系和操作流程，Codex 搭建场景。',
+      blocks: [{ module: 'jwWorld' }]
+    },
+    {
+      id: 'play', toc: '试玩原型', kicker: 'PLAY THE BUILD · UNITY WEBGL', title: '首章可以直接试玩',
+      open: { t: 'num', num: '94', unit: 'SEC', label: 'WINDOWS 首章实机选编 · v1.3.8 · 撑杆救援 → 封存 → 送信 → 07 检修 → 拍照搭路' },
+      lead: '交付：保留的 v1.3.8 首章，用键盘和鼠标游玩，点开始才会下载游戏。这是首章，不代表后来扩展的完整方案。',
+      role: '我定验收路线，Codex 驱动输入并录制 94 秒选编。',
       blocks: [
         { module: 'liveDemo', opt: { code: 'PLAY / UNITY WEBGL', title: '镜外 · 首章', src: 'demos/jingwai/index.html', poster: 'assets/frames/jw-07-stairs.webp' } },
+        { sub: '94 秒实机选编', en: 'FIRST CHAPTER · 94 s' },
         { video: [{ src: 'jingwai-first-chapter-v138.mp4', poster: 'assets/frames/jw-07-repair.webp', title: 'Windows 首章实机选编 · 94 秒 · v1.3.8', note: '撑杆救援 → 封存 → 送信 → 07 检修 → 拍照搭路。Unity 原生运行，输入由程序驱动；剪过、切过机位，字幕是后加的，没有声音。' }], n: 1 }
       ]
     },
     {
-      id: 'rescue', kicker: '02 / ACTION → CONSEQUENCE', toc: '三种救援', title: '灯接住了，\n马丁却未必能松手。',
-      lead: '餐车留下撞痕，钩索让马丁空出手，撑杆留下锁位。到了 07 号，你要按这些证据读撞痕、对齐合影，或者重搭支撑。三条路都救下艾达，也都付出同样的记忆代价。',
+      id: 'rescue', toc: '三种救法', kicker: 'ACTION → CONSEQUENCE · 025 → 07', title: '救艾达有三种办法',
+      open: { t: 'slash' },
+      lead: '设计与实现：餐车接住灯，钩索接回吊索，撑杆托住灯底。三种都救下艾达，也都付出同样的记忆代价，但留下的证据不同，到 07 号要按证据检修。',
+      role: '我设计三条分支的证据和检修要求。',
       blocks: [
-        { tabs: { title: '025 / INTERVENE · 方法 → 证据 → 下一步', items: [
-          { label: '餐车接住', img: 'assets/frames/jw-025-hall.webp', icap: '025 宴会厅：吊灯下的艾达、马丁与米娅 · v1.3.8 实机选编帧', h: '接住落灯，留下撞痕。', p: ['把餐车推到吊灯下，接住落下的灯。艾达避开了危险，灯座却撞坏了；马丁仍要处理吊索。'], dl: [['025 / 救援', '推车接灯，排演确认，再拍下艾达获救的画面。'], ['留下的证据', '受损灯座与撞痕。照片记录了灯落在哪里、怎样被接住。'], ['07 / 检修', '拍撞痕，读刻线，按这次损伤调整器械与光路。']] },
-          { label: '钩索接回', img: 'jingwai/family-v133', icap: '钩索路线 / 三人合影 · v1.3.3 留存帧', h: '把索接回去，让马丁松手。', p: ['拍清断索和吊环，用钩索接回受力点。灯没有摔下，马丁终于能走到家人身边；艾达想要的合影，这时才拍得成。'], dl: [['025 / 救援', '对准挂点接索，排演后把三个人一起拍进画面。'], ['留下的证据', '同一次放映中的三人合影。只拍到艾达也能救人，完整合影另有用途。'], ['07 / 检修', '用写着三个人名字的镂空框，对齐照片里的马丁、艾达与米娅，拍下校准片；合影不完整时，改用公共片继续。']] },
-          { label: '撑杆托住', img: 'jingwai/brace-v133', icap: '撑杆路线 / 低位握轮与支撑 · v1.3.3 留存帧', h: '从下面托住，记下锁位。', p: ['把撑杆放到吊灯下，转动低位握轮，让托头贴住灯底，再锁住。艾达可以离开，马丁仍抓着原索。灯被临时撑住了，吊索还没修好。'], dl: [['025 / 救援', '放稳撑杆，伸长到接触灯底，锁止后排演。'], ['留下的证据', '两段伸长行程与三节锁位，记录这次支撑怎样成立。'], ['07 / 检修', '对照锁位照片，调节检修架的两段套管；铜环对齐后合总锁，抬起挡光闸。']] }
-        ] } },
-        { fig: 'jingwai/frame-v136', cap: '钩索路线到了 07 号：马丁留下的取景架，镂空框对准照片里的三个人，按左键拍下 · v1.3.6 实机帧', span: 'inset' }
+        { module: 'jwRescue' },
+        { sub: '钩索路线在 07 号：对着照片取景', en: 'HOOK ROUTE · 07' },
+        { fig: 'jingwai/frame-v136', cap: '马丁留下的取景架：镂空框对准照片里的三个人，按左键拍下 · v1.3.6 实机帧' }
       ]
     },
     {
-      id: 'letter', kicker: '03 / ONE LETTER, THREE ROUTES', toc: '一封原信', title: '救下母亲，\n把她的信交给女儿。',
-      lead: '原信只有一封。可以经过 026 邮局和 027 邮车，也可以自己带回街上。车到站后，信还要从柜里取出来，亲手递给米娅；送递记录随后告诉你，07 号该用哪扇接收窗。',
+      id: 'letter', toc: '三条送法', kicker: 'ONE LETTER · THREE ROUTES', title: '原信怎么\n送到米娅手里',
+      open: { t: 'local', label: 'LETTER', cap: '三条送法' },
+      lead: '设计与实现：原信只有一封，可以经 026 邮局和 027 邮车，也可以自己带回街上。送法决定 07 号用哪扇接收窗，信最后都要亲手递给米娅。',
+      role: '我写送递规则和三扇窗的准备操作，Codex 实现并建三个场景模型。',
       blocks: [
-        { list: [['01 / 赶上邮车 · 让信随车离站', '在邮局装袋、盖戳。到 027 拍停行驶中的邮车，把邮袋装上架，再继续放映。**上层收件柜 → 取出原信 → 米娅亲收 → 固定窗**：到站纸指向已经就位的固定窗，接下来把光对进去。'], ['02 / 错过后补送 · 空车走了，信还在', '把同一只邮袋带回 026，放上补送盘。转动分拣轮对准 07，压下转送杆，让袋子通过出件口。**侧下方补送盘 → 取出原信 → 米娅亲收 → 滑动窗**：补送纸指向侧面的滑窗，握住把手拉回 07 白线，再对光。'], ['03 / 亲手送到 · 自己把信交给她', '从 025 带回原信，直接递给米娅。她收到信后，07 号台侧会留下马丁的检修便条。**米娅亲收 → 马丁的便条 → 便携窗**：按便条找到便携窗，拿起它，装到黄铜座上。']], cols: 3 },
-        { fig: 'jingwai/letter-route-study.svg', cap: '原信从头到尾只有一封：送递关系图', span: 'inset' },
-        { sub: '两条线索，汇在同一张检修图里。' },
-        { module: 'jwMatrix' },
-        { fig: 'jingwai/inspection-join.svg', cap: '救援决定检修哪件机构，送信决定用哪扇接收窗。到站纸记录邮袋去了哪里，交信和检修仍要亲手完成。07 号：机构检修 ＋ 光路对准 → 拍清完整检修图，之后才能拍桥与楼梯搭路。', span: 'third' },
-        { gallery: [['jingwai/paper-note-v138', '07 / READ FIRST · 送递便条：说明信怎样抵达，也指出这次要找的接收窗'], ['jingwai/paper-map-v138', '07 / AFTER REPAIR · 完整检修图：完成检修与光路后开盖拍清整张图，才开放桥与楼梯的摄影']], n: 2, ar: '16/10', span: 'b-text r' },
-        { fig: 'jingwai/structure-v136', cap: '检修图记进场记簿后，举镜拍桥与楼梯样机，用照片补上去影院的路 · v1.3.6 实机帧', span: 'inset' }
+        { sub: '三条送法，三扇接收窗', en: 'FIXED · SLIDING · PORTABLE' },
+        { module: 'jwDelivery' },
+        { sub: '三个场景的模型', en: 'POST OFFICE · TRAM · STREET' },
+        { module: 'jwSets' },
+        { sub: '07 号的两条线索', en: 'READ FIRST · AFTER REPAIR' },
+        { module: 'jwClues' }
       ]
     },
     {
-      id: 'ai', kicker: '04 / DESIGN WITH AI', toc: '与 AI 制作', title: '撑杆拿起来以后，\n还得让人知道怎么用。',
-      lead: '“这个伸缩杆怎么用？”是试玩里反复出现的问题。我让 Codex 把低位握轮、托头接触和锁止接成一段完整操作，并据此修改提示。故事、玩法和画面的取舍由我决定。',
+      id: 'result', toc: '结果差别', kicker: 'CONSEQUENCE · EVIDENCE / MEMORY / ORIGINAL', title: '三种救法\n留下不同的东西',
+      open: { t: 'local', label: 'CONSEQUENCE', cap: '游玩结果' },
+      lead: '结果：救法决定 07 号检修什么，送法决定用哪扇接收窗，两个条件拼成九种组合。三种救法都救下艾达，送递也不决定一家人的生死。',
+      role: '我整理分支对照；九种组合是机制推演，没有逐一验收。',
+      blocks: [{ module: 'jwJoin' }, { module: 'jwOutcomes' }]
+    },
+    {
+      id: 'novel', toc: '创新点', kicker: 'DESIGN POSITION · COMPARED WITH THE REFERENCES', title: '和参考相比的\n三处不同',
+      open: { t: 'local', label: 'DESIGN POSITION', cap: '创新点' },
+      lead: '结果：参考作品各有成熟的做法。镜外把相机的“记录”和“承担责任”分开，并让每条分支留下可以查证的实物。',
+      role: '这是我对设计位置的判断，没有做玩家研究。',
+      blocks: [{ module: 'jwInnovation' }]
+    },
+    {
+      id: 'make', toc: '制作与验收', kicker: 'PRODUCTION · BUILD / HALL / SHADER / CHECK', title: '制作过程\n和四次检查',
+      open: { t: 'local', label: 'PRODUCTION', cap: '制作与验收' },
+      lead: '交付与实现：每件东西先写成合同，交给 Codex 做 Unity 脚本、Blender 资产、纸本界面和渲染，再回到引擎画面核对。',
+      role: '我写合同，决定取舍，也决定什么算通过。',
       blocks: [
-        { list: [['THE BRACE · 撑杆要能从下面用', '原来的“拿起、寻找细节”解释不了用途。我要求把低位握轮、托头接触和锁止做清楚，让提示跟着动作走。'], ['THE LETTER · 到站之后，还要交信', '信在柜里时，米娅不能说自己收到了。我把到柜、取信、递交分成三个状态，让人物对白和物件位置一起变化。'], ['THE CONSEQUENCE · 三种救法接到下一关', '餐车看撞痕，钩索对合影，撑杆重搭锁位。我把各自的前置条件、可操作部件和失败恢复写进连续关卡脚本，再交给 AI 实现。'], ['THE FRAME · 尺、纸和握柄看得清', '判断范围、机位、遮挡、描边与局部灯光一起调整。每次修改都回到引擎画面，看玩家能不能认出部件、读到线索。']], cols: 2 },
-        { module: 'jwPrompt' },
-        { list: [['知道要做什么', '提示接得住当前动作，人物和原件指得清楚。'], ['手上真能操作', '够得到握柄，按键有回应，失败后能继续尝试。'], ['做法留下差别', '照片、人物动作和下一段检修随选择改变。'], ['画面能帮上忙', '轮廓、灯光和纸面让可操作部件与证据更清楚。']], cols: 4 },
-        { note: '每次 AI 交回来的东西，我都按这四条验收。提示校准实验室（demos/jingwai/#lab）用的是 4 组固定样例和人工打分。' }
+        { module: 'jwMake' },
+        { sub: '大厅用珊瑚色，机关用黄铜', en: 'HALL · PALETTE' },
+        { module: 'jwHall' },
+        { sub: 'Shader 的四个分层', en: 'SHADER · OUTLINE · LOCAL LIGHT' },
+        { module: 'jwShader' },
+        { sub: '四次检查，各改了什么', en: 'FOUR CHECKS' },
+        { module: 'jwChecks' }
       ]
     },
     {
-      id: 'material', kicker: '05 / IMAGE & MATERIAL', toc: '画面与材质', title: '珊瑚色大厅，\n黄铜里的机关。',
-      lead: '拱窗、长桌和吊灯把画面摆成一场家庭电影。奶油与珊瑚铺开空间，墨蓝压住结构，黄铜留给握轮、锁扣和灯架；近处的轮廓和局部光帮人辨认工具，青绿远景把对岸影院推到河的另一边。',
-      blocks: [
-        { html: '<div class="swatches"><span style="--c:#f1e6cf">奶油 / 纸</span><span style="--c:#c86763">珊瑚 / 建筑</span><span style="--c:#2b3157">墨蓝 / 结构</span><span style="--c:#b58a3a">黄铜 / 机械</span><span style="--c:#7fb5ad">青绿 / 远景</span></div>' },
-        { gallery: [['jingwai/ada-v138', 'A / CHARACTER · 人物：帽檐、肩袖与手部动作'], ['jingwai/forwarding-v135', 'B / APPARATUS · 器械：07 号左侧检修台的光筒、握轮与接收窗 · v1.3.5'], ['jingwai/editing-v138', 'C / EDITING TABLE · 剪辑台：原盘入槽，封存杆到底'], ['jingwai/arrival-note-v138', 'D / EVIDENCE · 街头线索：先看见便条，再用相机留底']], n: 4, ar: '16/10' },
-        { text: ['在《取景器》里，照片能变成脚下的路；《WILL》改变叙事顺序，也改变人物的命运。这两种做法让我开始考虑摄影和前后顺序怎样参与解谜。《星际拓荒》的工具资料用来整理线索关系。我正在玩《空之轨迹》，也把实机截图留作轮廓、材料和远近层次的参考。'], h: '我从这些作品里带回了什么' },
-        { html: '<div class="links"><a class="btn line sm" href="https://blog.playstation.com/2023/06/08/create-destroy-and-rewind-in-viewfinder-out-july-18-play-the-demo-today/" target="_blank" rel="noopener">Viewfinder / 开发者说明 ↗</a><a class="btn line sm" href="https://www.mobiusdigitalgames.com/news/filling-out-the-toolbox" target="_blank" rel="noopener">Outer Wilds / 工具设计 ↗</a></div>' }
-      ]
-    },
-    {
-      id: 'next', kicker: '06 / WHAT COMES NEXT', toc: '这卷胶片之后', title: '这卷胶片\n之后。',
-      lead: '现在完成的是首章 Demo：从救艾达开始，经过原信交付与 07 号检修，走到对岸影院。',
-      blocks: [
-        { text: ['摄影、搬动物件、排演和封存，把同一次选择留在照片、人物动作与路上。Unity Windows · v1.3.8，保留 Blender 源文件、关卡脚本与制作记录。'], h: '现在：首章 Demo' },
-        { text: ['我想把单张照片延伸到录像：拆开声音、动作和时间，用手里的素材重新剪接情节。玩家继续进入下一层电影，直到“回到现实”也成为一件需要确认的事。这是后续设想，还没有制作；先写完整故事与连续关卡，再扩展机制。'], h: '接下来：电影里还有电影', side: 'r' },
-        { fig: 'jingwai/layered-film-study.svg', cap: '后续设想：电影里套着电影', span: 'inset' }
-      ]
+      id: 'next', toc: '首章之后', kicker: 'WHAT COMES NEXT · REEL 026', title: '首章之后',
+      open: { t: 'local', label: 'REEL / v1.3.8', cap: '当前首章与后续方案分开登记。' },
+      lead: '交付与结果：现在完成的是首章 Demo，从救艾达开始，经过原信送递与 07 号检修，走到对岸影院。后面的录像与多层电影只是设想。',
+      role: '边界由我登记：做完的、测过的、只是设想的分开写。',
+      blocks: [{ module: 'jwNow' }]
     }
   ],
   done: ['Unity Windows 与浏览器首章、提示校准原型，以及 Blender 源文件、关卡脚本和验收记录。'],
-  next: '录像、音轨编排和更深层的电影仍是后续方案。先把完整故事和连续关卡写完，再扩展机制。',
+  next: '录像、音轨编排和更深层的电影还是后续方案。先把完整故事和连续关卡写完，再扩展机制。',
   links: [['直接试玩首章', 'demos/jingwai/index.html', 'blue'], ['作品说明 PDF', 'downloads/Wenjing-Bian-Jingwai-VibeCoding.pdf'], ['提示校准实验室', 'demos/jingwai/index.html#lab']]
 };

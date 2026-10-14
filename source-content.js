@@ -1,10 +1,10 @@
 /* Corrections grounded in the final source documents, before any page renderer. */
 (() => {
  const r=window.PORTFOLIO.projects.find(p=>p.id==='rallylens');
-  r.metrics=[['2,204 次','逐事件分析'],['150 段','双机位训练片段'],['10+ 位','专业教练回访'],['10+ 位','测试球员深度回访']];
+  r.metrics=[['2,204 个','方向性事件'],['150 段','双机位训练片段'],['7 位','教练读片'],['6 名','球员回访']];
   r.intro+=' 多对球友的长期跟踪训练，让记录不止停留在单次回顾。';
   r.responsibilities=['主导研究设计、参与者招募、访谈与用户研究，组织长期训练记录和回顾过程。','参与模型算法设计、底层数据架构设计，以及模型训练、验证与效果分析。','参与视频与事件标注、可视化分析和论文写作，将研究发现转化为方向分轨、分层检查与并列陈述。'];
-  r.role='研究设计 · 模型算法与数据架构 · 可视化交互';
+  r.role='研究课题负责人 · 用户研究、数据架构与交互原型 · 共同第一作者';
  const a=window.PORTFOLIO.projects.find(p=>p.id==='afterglow');
  a.chapters[0].text='原编码图为人流、噪声、PM2.5 与风分配密度、形变、字形和运动通道。V4 代码中，人流同时改变环幅与方向数，PM2.5 驱动字号和外圈膨胀；字重为独立的手动开关。设计映射与实际参数控制分别说明。';
  const p=window.PORTFOLIO.projects.find(p=>p.id==='looplab');
@@ -14,7 +14,7 @@
  p.chapters[0].cards=[['自提柜','短距离、自助交接'],['闲鱼 / 校园群','闲置材料的信息与匹配'],['Material Bank','材料信息与样本组织'],['电商制作','文件、报价与制作履约'],['云端档案','项目保存与设计标签']];
  p.chapters[1].text='材料交换、制作预约、小量团购、项目档案和校园取件地图构成五类核心模块；通知承担跨模块提醒。原方案中的项目档案保存作品照片或 3D 扫描，不是材料库存档案。';
  p.outcomes[0]='交付相邻产品机制比较、五类 MVP 模块、线上线下旅程与商业模式方案。';
- p.cover='loop-source-09';p.coverAlt='原项目最终汇报中的 MVP 模块与小程序概念界面';
+ p.cover='loop-source-09';p.coverAlt='项目方案中的 MVP 模块与小程序概念界面';
   p.role='桌面与竞品研究 · 服务流程与产品表达';
   p.metrics[2]=['线上 × 线下','材料信息与校园交接'];
   p.responsibilities[2]='整理需求、服务流程与商业模式之间的关系，形成一致的产品表达。';
@@ -22,7 +22,7 @@
   p.reflection='';
  const t=window.PORTFOLIO.projects.find(p=>p.id==='tennisatom');
  t.color='#ff5b00';t.tone='#fff0e8';
-  t.role='团队统筹 · 用户研究与原型整合 · 原型创作 · 视频全栈创作 · 个性化算法架构设计 · 实地调研反馈';
+  t.role='项目统筹、用户研究、产品原型与全流程影像制作';
   t.tools=['半结构访谈 / 主题编码 / 用户旅程','MediaPipe 33 点姿态 / TrackNetV2 球路','事件交叉匹配 / ADSR 特效包络','MatchBundle 数据契约','OpenCV / Remotion 双路径渲染','p5.js / three.js / WebGL','FFmpeg / 动态文字 / 声音合成'];
   t.responsibilities=['统筹团队分工、用户研究、原型创作与系统整合，连接实地调研反馈和制作决策。','参与个性化算法架构设计，将姿态、球路与事件组织为共同数据契约，再映射到特效与内容生成。','负责视频全栈创作与整合，协调真人影像、程序化视觉、动态文字、声音及最终成片。'];
   t.chapters[2].text='七模块管线从视频、骨骼与球轨迹进入 MatchBundle，再连接特效、AI 内容、后期合成和分发。数据结构承接运动信息，也为不同风格保留共同的输入。';
@@ -32,7 +32,7 @@
   t.chapters[4].text='项目介绍展开身体的肖像如何连接运动分析、风格生成与影像制作。五支个人成片呈现不同球员的动作与个性，完整制作系统让这些表达可以被组织、审看与交付。';
   t.links.push(['观看项目介绍','https://www.bilibili.com/video/BV1Us3F6LEyz/']);
   const game=window.PORTFOLIO.projects.find(p=>p.id==='artemis');
-   if(game)game.links=[['观看结题实机 · 小红书','https://www.xiaohongshu.com/discovery/item/696d05a1000000000a029c7b?source=webshare&xhsshare=pc_web&xsec_token=YBHZK_W9wFOSMD3f7eMjhRpNweEZYovKwlDE4n_9wuaW4=&xsec_source=pc_share'],['观看理念宣传片 · 04:33','https://www.bilibili.com/video/BV1BurDBCEQP/']];
+   if(game)game.links=[['观看实机 · 小红书','https://www.xiaohongshu.com/discovery/item/696d05a1000000000a029c7b?source=webshare&xhsshare=pc_web&xsec_token=YBHZK_W9wFOSMD3f7eMjhRpNweEZYovKwlDE4n_9wuaW4=&xsec_source=pc_share'],['观看理念宣传片 · 04:33','https://www.bilibili.com/video/BV1BurDBCEQP/']];
   window.PORTFOLIO.order=['rallylens','privacy-city','tennisatom','baseball','artemis','bronze','afterglow','growth-compass','looplab','garden'];
   window.PORTFOLIO.projects.sort((a,b)=>window.PORTFOLIO.order.indexOf(a.id)-window.PORTFOLIO.order.indexOf(b.id));
   window.PORTFOLIO.projects.forEach((p,i)=>p.number=String(i+1).padStart(2,'0'));

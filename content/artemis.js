@@ -1,137 +1,149 @@
+/* Artemis · 2026-10-13 rebuild.
+   Evidence: H:/final Unity scripts, F:/游戏PV project films.
+   Seven acts: world -> gameplay -> hex tile + backpack -> state machine -> characters -> UI -> cutscene CG.
+   Every block has a stable id; pages/artemis.js looks blocks up by id, never by index. */
 (window.SCENES = window.SCENES || {})['artemis'] = {
-  theme: 'operator', key: 'artemis-boss', keyCap: 'Boss 战 · 原游戏实机',
-  sub: '在废土上捡零件，把火箭一块块拼回天上。',
-  meta: [['YEAR', '2025—2026'], ['FORMAT', '六人团队 · 课程游戏作品'], ['ROLE', '主角与敌人行为逻辑 · 战斗实现 · 理念宣传片', 1], ['TOOLS', 'Unity / C# · 状态机 · 战斗设计 · 场景交互', 1]],
-  stripB: '六人团队 · 行为与战斗',
+  theme: 'operator', key: 'artemis-boss', keyCap: '第一场 Boss 战 · 游戏实机',
+  sub: '月亮碎裂之后，我们仍然选择重返星海。',
+  meta: [['YEAR', '2025.09—2026.01'], ['FORMAT', '航天探索与战斗游戏 · 课程团队作品'], ['ROLE', '战斗机制设计与 Unity / C# 开发 · 主角与敌人状态机 · 理念宣传片', 1], ['TOOLS', 'Unity / C# · 状态机 · 战斗设计 · 场景交互', 1]],
+  stripB: '角色行为 · 构筑与战斗',
   logline: {
-    q: '去废土找资源，打架考验手和脑子，拼火箭是一次次科学试错。这三件事怎么咬合成一个让人停不下来的循环？',
-    a: '我写主角和敌人的状态机与行为逻辑，让触发条件、角色动作和战斗反馈接得上；设计并实现了两类机制敌人、两场 Boss 战和对应的场景交互；理念宣传片是我一个人做的。',
-    r: '六人团队交付了可以演示的游戏。这一页的移动、构筑和敌人机制，都是对着工程脚本整理的。'
+    q: '月亮碎裂，地面重建了秩序。探索者离开塔楼，在废土寻找零件，尝试重新发射火箭。这段旅程由探索、构筑和战斗三部分支撑。',
+    a: '我负责战斗机制设计与 Unity / C# 实现：主角和敌人的状态机与行为逻辑，两类机制精英敌人（盾枪阶段切换、钩爪位移），以及两场 Boss 战。两场完整 Boss 战的全流程全场景全建模设计由我完成，包括状态机的维护与玩家状态的协同化处理，其中一场是含攻击、格挡、处决的全 3D 战斗。游戏理念宣传片由我独立制作。',
+    r: '团队做出了覆盖探索、背包构筑、遭遇战与 Boss 战的可演示游戏；我交付其中的战斗模块和理念宣传片。页面里的规则图对照 Unity 工程重绘，角色、美术与影片使用项目已有素材。'
   },
-  stats: [['2 类', '机制敌人'], ['2 场', 'Boss 战'], ['Hex 地图', '移动 / 构筑 / 预警'], ['4 支', '实机 · 过场 · 理念片']],
+  stats: [['2 类', '机制敌人'], ['2 场', 'Boss 战'], ['HEX', '移动 / 构筑 / 预警'], ['4 支', '实机 · 过场 · 理念片']],
   home: {
-    tag: '探索 · 构筑 · 战斗',
-    thumbs: ['artemis-world', 'artemis-build'],
-    jump: [['按一下 W，要过几道检查', 'logic'], ['零件怎样连成一条效果链', 'build'], ['敌人先亮招，再出手', 'combat']],
+    tag: '探索 · 构筑 · 战斗', thumbs: ['artemis-world', 'artemis-build'],
+    jump: [['月亮碎裂之后', 'world'], ['地块与背包的共同结构', 'question'], ['人物与战斗机制', 'combat']],
     tools: 'UNITY / C# · 状态机 · 战斗设计'
   },
   acts: [
     {
-      id: 'films', kicker: 'FILM ROOM / 先进入世界', toc: '影片', title: '先进这个世界，\n再拆开看它怎么转。',
-      lead: '实机、两段过场、一支理念片。点下面的时间点，直接跳过去。',
+      id: 'world', toc: '世界观', kicker: '01 / WORLD',
+      title: '月亮碎裂之后，\n还有人要去星空。',
+      open: { img: 'composition/artemis-cg-fall', cap: '过场 CG · 坠落后的地景', rail: 'RETURN TO THE STARS' },
+      lead: '灾变、重建、集体的承诺与个人的异议，构成出发前的世界。废土上的行动指向一次新的发射。',
       blocks: [
-        { player: { title: '实机 · 过场 · 理念 / 原项目成片', items: [
-          { src: 'artemis-gameplay.mp4', poster: 'composition/artemis-gameplay', label: '01 实机 · 03:50', desc: '一段实机从头到尾：六边形地图、背包构筑、遭遇战。', marks: [[16, '地图 / 六边形空间'], [71, '背包 / 构筑界面'], [136, '移动 / 场景探索'], [191, '战斗 / 遭遇反馈']] },
-          { src: 'artemis-cutscene-one.mp4', poster: 'composition/artemis-cutscene-one', label: '02 过场 01 · 01:27', desc: '月亮碎了，秩序重建。大幅 CG 配动态文字，讲灾变、重建、集体的承诺，和一个不同意的人。', marks: [[6, '文字 / 世界的开场'], [27, '断裂 / 动态排版'], [51, '承诺 / 群像'], [72, '异议 / 实验室']] },
-          { src: 'artemis-cutscene-two.mp4', poster: 'composition/artemis-cutscene-two', label: '03 过场 02 · 01:41', desc: '从仰望星空，切到真实的航天影像。绘制场景和历史资料交替出现（资料镜头为引用素材）。', marks: [[7, '发射 / 绘制场景'], [31, '1957 / 历史资料'], [59, '飞行 / 资料影像'], [83, '登月 / 资料影像']] },
-          { src: 'artemis-concept-film.mp4', poster: 'composition/artemis-concept-film', label: '04 理念片 · 04:32', desc: '我个人剪的。角色设定、构筑玩法、过场和航天资料串成一条线，讲清这个游戏想说什么。', marks: [[19, '角色 / 造型设定'], [84, '构筑 / 玩法说明'], [160, '世界 / 过场叙事'], [226, '航天 / 历史资料']] }
-        ] } }
+        { id: 'world-story', text: ['过场一里，月面碎裂，建筑重新竖起，人群围向同一束光。实验室里的探索者留下另一个选择：离开既定秩序，重新尝试太空探索。', '玩法延续这个问题。玩家在地面搜集零件、编辑组合，在遭遇战里检验自己的操作与构筑。火箭的拼装给这条旅程一个明确的目标。'] },
+        { id: 'fall-space', module: 'artemisFall', opt: {
+          frame: 'assets/artemis/fall-scene.webp', time: '02:55.3',
+          seq: [['assets/artemis/seq/fall-1.webp', '02:53.6'], ['assets/artemis/seq/fall-2.webp', '02:54.3'], ['assets/artemis/seq/fall-3.webp', '02:55.3'], ['assets/artemis/seq/fall-4.webp', '02:56.0'], ['assets/artemis/seq/fall-5.webp', '02:56.7']],
+          layers: [
+            { k: 'FRONT', n: '前景', h: '宇航员', box: [55, 57, 38, 43], p: '白色线稿的宇航员坐在右下角，头盔和背包最亮。人物从上一镜头的黑底里淡入，停在砖墙前面。' },
+            { k: 'MID', n: '中景', h: '窗外的发射场', box: [27.5, 0, 46.5, 33], p: '墙上的窗口里是发射架与火箭。窗口从画面上沿进入，向中央移动，同时人物从下沿离开，镜头从人物转向发射设施。' },
+            { k: 'BACK', n: '后景', h: '砖墙与侧光', box: [0, 0, 100, 100], p: '深蓝砖墙和两侧暗影构成背景。背景的亮度压低，让线稿人物与窗外的发射场都能读出来。' }
+          ] } },
+        { id: 'world-source', note: '画面截自理念宣传片 02:53—02:57。影片中的航天历史镜头属于引用资料，与虚构世界分开阅读。' }
       ]
     },
     {
-      id: 'question', kicker: 'QUESTION / 核心问题', toc: '问题与规则', title: '科学试错，\n怎么变成手上的操作？',
-      lead: '机制图对着原脚本和演示录屏画；概念 CG、界面提案、实机画面各自标明。',
+      id: 'architecture', toc: '玩法与架构', kicker: '02 / GAMEPLAY',
+      title: '玩法与架构',
+      lead: '玩家在六边形地图上移动、拾取零件，在背包里组合效果，在遭遇战中检验结果。我负责角色行为、敌人机制和对应的场景交互。',
       blocks: [
-        { text: ['废土给资源，战斗考操作，拼火箭是在做试错实验。我管的是角色怎么切状态、敌人怎么行动、战斗场景怎么搭。下面对着工程里的六边形地图脚本，把移动、零件效果链和敌人机制一样一样拆开。'], h: '项目背景' },
-        { list: ['主角与敌人的状态机和行为逻辑：触发条件、动作、战斗反馈。', '两类机制敌人、两场 Boss 战和对应的场景交互。', '游戏理念宣传片：航天探索和组合玩法。'], span: 'half' },
-        { module: 'hexRules' },
-        { viz: 2, cap: '输入只给目标，规则决定动作能不能继续。Idle → Start → Move → Stop 依次接；输入先查六边形是否相邻，再交给 SetHexPath；逻辑走完和动画播完分开算。下面那条支线是攻击的预警、判定和阶段变化（没有标时长，因为脚本里由配置决定）。' },
-        { list: [['按键不等于移动', '先过邻接和路径检查，状态机才接动作。'], ['怎么连，就怎么触发', '零件之间的连线决定效果往哪条分支走。'], ['先亮招，再伤人', '敌人先把攻击范围亮出来，再看玩家躲没躲开。']], cols: 3 },
-        { sub: '设计依据' },
-        { list: [['移动先过安检', 'WASD 选一个相邻格；边界、能不能走、高度差、冷却都过了，才提交路径。· 输入 → 路径检查'], ['动画来接力', '起步、停步靠动画结束事件接上；走着的时候一直看队列和距离。· 待机 / 起步 / 移动 / 停步'], ['构筑一层层推', '左键点根节点，右键推下一层；能量和修饰数据顺着连线往下传。· 槽位 / 能量 / 子节点'], ['敌人留线索', '钩爪的预警和判定用同一片格子；阶段切换看血量门槛，退出时清干净。· 预警 / 避让 / 恢复']], cols: 4 }
+        { id: 'loop', module: 'artemisLoop', opt: { steps: [
+          { k: '01', t: '探索', img: 'assets/artemis/gameplay-terrain.webp', tc: '实机 00:37', h: '地图提供路径与拾取位置', p: 'Hex 地图限定可走的格子和资源所在的位置。拾取到的零件进入背包，下一次组合有了新的选择。', c: 'HexSystem / MapCell / Inventory' },
+          { k: '02', t: '构筑', img: 'assets/artemis/gameplay-pack.webp', tc: '实机 01:18', h: '连接关系决定输出', p: '按 TAB 进入编辑，槽位里的零件出口边对上相邻零件的入口边才会相连。根节点触发后，修饰数据沿连接继续传递。', c: 'BackpackSlot / BulletModifierData' },
+          { k: '03', t: '战斗', img: 'assets/artemis/boss2-173.webp', tc: '实机 02:53', h: '遭遇战检验当前组合', p: '预警和命中检查给玩家反馈，构筑参数由武器接收。战斗之后回到探索，继续调整组合。', c: 'GunItem / Elite1 / Elite2' }
+        ] } },
+        { id: 'architecture-map', module: 'artemisSystem', opt: {
+          nodes: [
+            { k: 'INPUT', n: '动作意图', c: 'WASD · TAB · 鼠标', code: 'PlayerMovement', p: '键鼠输入转成移动目标和构筑指令。左键、右键分别触发背包的根节点与下一层。' },
+            { k: 'WORLD', n: '空间与资源', c: 'Hex · Slot · Inventory', code: 'HexSystem / MapCell / BackpackSlot', p: '同一套六边形邻接关系连接地块、槽位和零件存取，规定动作能否执行。' },
+            { k: 'STATE', n: '角色状态', c: 'Idle · Start · Loop · End', code: 'PlayerIdleState / PlayerMoveStartState / PlayerMoveLoopState / PlayerMoveEndState', p: '路径提交后切换状态，动画结束事件决定何时进入下一状态。' },
+            { k: 'BUILD', n: '构筑效果链', c: 'Root · Neighbor · Effect', code: 'BackpackSlot.TriggerTreeCoroutine / ItemComponent / BulletModifierData', p: '从根节点出发，修饰数据的副本沿相邻零件传播，能量不足时当前分支停止。' },
+            { k: 'ENEMY', n: '敌人行为', c: '预警 · 命中 · 阶段', code: 'Elite1TransformState / Elite2HookState', p: '精英一在条件满足时变身；精英二缓存射线格子，前摇结束后核对玩家位置。' },
+            { k: 'PRESENT', n: '视听反馈', c: '动画 · UI · 场景', code: 'GunItem / Animancer / UI', p: '状态、效果和攻击的结果在画面、界面和场景里给出反馈。' }
+          ],
+          edges: [['INPUT', 'WORLD', '目标'], ['WORLD', 'STATE', '路径'], ['WORLD', 'BUILD', '槽位'], ['WORLD', 'ENEMY', '格子'], ['STATE', 'PRESENT', '动作'], ['BUILD', 'PRESENT', '效果'], ['ENEMY', 'PRESENT', '攻击反馈']] } },
+        { id: 'architecture-source', note: '依据 HexSystem、BackpackSlot、角色状态机、Elite1 / Elite2 与 GunItem。六个职责区是页面归纳，工程中不存在六个独立子系统；连线表示依赖和输出。' }
       ]
     },
     {
-      id: 'world', kicker: 'WORLD / 让角色带着世界的痕迹', toc: '美术与世界', title: '人物身上，\n要看得出这个世界。',
-      lead: '角色设定、CG、界面、场景，一样样摆出来，各自注明出处。',
+      id: 'question', toc: '地块与背包', kicker: '03 / HEX TILE × BACKPACK',
+      title: '六边形地块\n与背包槽位',
+      open: { stage: 'artemis', label: 'HEX 13 × 9', cap: '地形为规则示意，点一块地面，主角沿六邻格走过去。' },
+      lead: '地图上的相邻格决定移动和拾取，背包里的相邻槽位决定零件怎样连接。两个界面共用六边形的邻接关系。',
       blocks: [
-        { viz: 3, cap: 'ASTRONAUTS：探索者和两个遭遇角色的原设定。01 EXPLORER 蓝灰 · 琥珀 · 工程装备 / 02 ENCOUNTER 亮色 · 高反差 · 生物轮廓 / 03 ENCOUNTER 兜帽 · 冷色 · 细长比例。' },
-        { text: ['探索者一身工程装备，配琥珀色面罩，一看就是宇航员；遇到的另外两个角色，靠明暗反差、轮廓和身材比例拉开距离。把人物放回废墟里一起看，才知道他们是从哪片土地上走出来的。'], h: '同一个世界，三种视觉重心' },
-        { gallery: [['composition/artemis-character-heavy', '重型角色 · 原设定'], ['composition/artemis-character-machine', '机械角色 · 原设定']], n: 2, free: 1, span: 'half' },
-        { note: '角色和场景出自原游戏美术目录和 PV 素材，是设定图，不是实时画面。' },
-        { sub: '界面：操作区一个不少。' },
-        { viz: 4, cap: '项目海报上的背包与构筑界面。' },
-        { gallery: [['artemis-original-01', 'UI 提案 · 主菜单初始状态'], ['artemis-original-02', 'UI 提案 · 火箭发射与悬停'], ['artemis-build', '实机 · 构筑界面']], n: 3 },
-        { note: '背包画面截自展示海报；主菜单出自 uishow.pptx，是设计提案。' },
-        { sub: '四张 CG，怎么剪成一段过场。' },
-        { snap: { group: 6, title: 'CG → 过场 01', items: [
-          { label: '01 裂变', h: '月亮和碎石，占据同一个尺度。', p: ['圆圆的月面，碎块往外飞——开场先把尺度拉到最大。○ → ▰'] },
-          { label: '02 重建', h: '从碎片，转向垂直的秩序。', p: ['峭壁、塔楼、近处的人，比例一下拉开；暖光把视线顺着建筑往上带。▱ → ↑'] },
-          { label: '03 承诺', h: '群像，成为叙事的声音。', p: ['一群人面朝中间的光，暗的前景围住亮的中心；字幕和动态文字在这里接上。◁ ● ▷'] },
-          { label: '04 异议', h: '另一种选择，发生在边缘。', p: ['前景一个宇航员，背后是实验室，层层叠叠；颜色从暖转冷，蓝白收场。▰ / ○'] }
-        ] } },
-        { note: '四张原 CG 按过场 01 的顺序排，这里只读构图和剪辑。' },
-        { snap: { group: 7, title: '把一张场景，读成空间关系', items: [
-          { label: '全景', p: ['横着铺开的天和地，把竖着的塔楼衬得特别显眼。'], dl: [['01 ATMOSPHERE', '天幕 · 横向展开'], ['02 LANDMARK', '塔楼 · 垂直锚点'], ['03 GROUND', '地景 · 水平连接']] },
-          { label: '建筑局部', p: ['凑近看塔楼、台阶和平台。'] },
-          { label: '设定结构页', p: ['整体气氛和局部建筑的原始设定页。'] }
-        ] } },
-        { note: '场景出自原游戏 PV 素材。切换只是换取景范围，画面没有改动。' },
+        { id: 'hex-dual', module: 'artemisHexDual' },
+        { id: 'hex-shots', module: 'artemisHexShots', opt: {
+          map: ['assets/artemis/gameplay-terrain.webp', '地块 · 实机 00:37', '橙色六边形铺满行走区域，粉红圆点是目标标记。'],
+          pack: ['assets/artemis/pack-parts.webp', '背包 · 实机 01:20（局部）', '大六边形是已放入的零件，六个边上的白色菱形是连接口；小六边形是空槽。'] } },
+        { id: 'build', module: 'artemisBuild' },
+        { id: 'parts', module: 'artemisParts' },
+        { id: 'hex-source', note: '依据 HexSystem、BackpackSlot、BulletModifierData、StatModifierItem、TeleportItem。零件图标取自项目素材；槽位拓扑与耗能是标注的执行示例，不是游戏平衡参数。' }
       ]
     },
     {
-      id: 'logic', kicker: 'IMPLEMENTATION / 一次输入，几层检查', toc: '状态机与架构', title: '按一下 W，\n要过几道关？',
-      lead: 'WASD 先选一个相邻六边形，过了边界、能否行走、高度差三道检查，才交给状态机。',
+      id: 'logic', toc: '状态机', kicker: '04 / STATE MACHINE',
+      title: '角色状态机',
+      lead: '主角的移动在这里完整讲一遍。路径队列保存目标，动画结束事件推动状态切换，移动中收到新路径不会重新起步。',
       blocks: [
-        { snap: { group: 8, title: 'Hex 地图中的玩家移动主链', items: [
-          { label: '待机', h: 'PlayerIdleState', dl: [['进入', '角色初始化，或停步动画结束后进入。'], ['执行', '初始化待机动画，注册移动、跳跃等输入监听。'], ['离开', '有效 Hex 路径提交后进入起步；待机状态也保留 Move.started 输入入口。']] },
-          { label: '起步', h: 'PlayerMoveStartState', dl: [['进入', 'SetHexPath 写入目标；当前不在起步或持续移动时，切入起步。'], ['执行', '播放起步动画，朝路径目标调整方向与速度。'], ['离开', '起步动画的 OnEnd 回调进入持续移动；公共移动逻辑也会检查路径是否已经结束。']] },
-          { label: '持续移动', h: 'PlayerMoveLoopState', dl: [['进入', '起步动画结束后进入，播放循环移动动画。'], ['执行', '跟随 currentHexTarget；距离小于 0.4 个世界单位时检查队列，有后续点就继续取点。'], ['离开', '最后一个目标到达后清空当前目标，进入停步；导航失效时也有自动停步检查。']] },
-          { label: '停步', h: 'PlayerMoveEndState', dl: [['进入', '目标已到达且路径队列为空，或持续移动中的导航结束。'], ['执行', '按前脚位置选左脚或右脚停步动画；满足近墙条件时播放靠墙结束动作。'], ['离开', '结束动画的 OnEnd 回调返回待机；新路径可以再次发起起步。']] }
+        { id: 'move-states', module: 'artemisStates', opt: { states: [
+          { k: 'IDLE', t: '待机', cls: 'PlayerIdleState', enter: '角色初始化，或停步动画结束。', run: '播放待机动画，注册移动、跳跃等输入监听。', exit: '有效 Hex 路径提交后切入起步。' },
+          { k: 'START', t: '起步', cls: 'PlayerMoveStartState', enter: 'SetHexPath 写入目标；当前不在起步或持续移动时进入。', run: '播放起步动画，朝路径目标调整方向与速度。', exit: '起步动画的 OnEnd 回调进入持续移动；公共逻辑同时检查路径结束。' },
+          { k: 'LOOP', t: '持续移动', cls: 'PlayerMoveLoopState', enter: '起步动画结束，播放循环移动动画。', run: '跟随 currentHexTarget；距离小于 0.4 个世界单位时检查队列，有后续点就继续取点。', exit: '最后目标到达且队列为空时进入停步；导航失效时也检查停止。' },
+          { k: 'END', t: '停步', cls: 'PlayerMoveEndState', enter: '最后目标到达，或导航结束。', run: '根据前脚位置选择左脚或右脚停步动画；近墙时使用靠墙结束动作。', exit: '结束动画的 OnEnd 回调返回待机。新路径可以重新发起起步。' }
         ] } },
-        { list: [['目标和动画各管各的', 'SetHexPath 存目标队列，移动状态只读方向。正在走的时候来了新路径，只换目标，不重新起步。'], ['换状态先收拾干净', 'ChangeState 先跑旧状态的 OnExit，再跑新状态的 OnEnter；输入监听在进出时挂上、摘掉。']], cols: 2 },
-        { note: '这里只画移动主链，跳跃、攀爬、落地等分支没画。到达阈值 0.4 个世界单位。' },
-        { snap: { group: 9, title: '六层，各干各的', items: [
-          { label: 'INPUT', h: '动作意图 · W / A / S / D', p: ['输入先变成相邻六边形目标，再检查格子是否存在、IsWalkable、高度差是否不超过 1，以及指令冷却。'] },
-          { label: 'WORLD', h: '空间与资源 · Hex / Slot / Inventory', p: ['同一套 Hex 空间连接移动、槽位拾取和零件存取；世界规则提供动作的执行条件。'] },
-          { label: 'STATE', h: '角色状态 · Idle → Start → Loop → End', p: ['状态切换管理进入、执行和退出；路径队列与动画 OnEnd 分工，持续移动时可以更新目标而不重复起步。'] },
-          { label: 'BUILD', h: '构筑效果链 · Root → Neighbor → Effect', p: ['从根节点传递触发和效果，结合相邻零件与能量条件组织组合；构筑结构和战斗反馈相接。'] },
-          { label: 'ENEMY', h: '敌人状态 · 预警 / 判定 / 阶段', p: ['Elite2 先标出射线格子，再做命中检查；Elite1 按血量门槛切换阶段，再结合距离和冷却选择动作。'] },
-          { label: 'PRESENT', h: '视听反馈 · 动画 / UI / 场景', p: ['动作、数值、状态变化，最后都要让玩家看见。我盯的是三件事：前摇看不看得懂、状态退出清没清干净、玩家明不明白刚才发生了什么。'] }
-        ] } },
-        { note: '按原 Unity 工程整理的客户端架构。我负责其中的角色与敌人行为和战斗部分。' }
+        { id: 'state-separation', list: [['路径队列', 'SetHexPath 保存目标队列。移动中的新路径更新目标，不重新播放起步动画。'], ['状态生命周期', 'ChangeState 执行旧状态 OnExit 和新状态 OnEnter；输入监听在进入、退出时注册与清理。']], cols: 2 },
+        { id: 'state-source', note: '依据 PlayerIdleState、PlayerMoveStartState、PlayerMoveLoopState、PlayerMoveEndState 与公共移动逻辑。到达阈值为 0.4 世界单位；跳跃、攀爬、落地分支未画出。上方演示的时长是示意值。' }
       ]
     },
     {
-      id: 'build', kicker: 'CONSTRUCTION / 连接决定效果', toc: '构筑效果链', title: '零件怎么连，\n效果就怎么走。',
-      lead: '盯着能量怎么顺着分支往下流，比看零件清单有用。',
+      id: 'combat', toc: '人物与机制', kicker: '05 / PERSONNEL FILE',
+      title: '人物与机制',
+      lead: '探索者携带工程装备；重甲守卫配盾与短枪；机械敌人使用钩爪。每个角色的造型和它的机制放在同一张档案里。',
       blocks: [
-        { module: 'buildTree' },
-        { note: '按工程里的 HexSystem、BackpackSlot、ItemComponent 重画。五个节点和耗能是举例；同一个父节点下的两个分支，各拿一份数据副本。原游戏里左键启动、右键推进。' },
-        { sub: '编辑 → 启动 → 推进' },
-        { list: [['TAB · 编辑连接', '切换背包编辑模式，组织槽位和零件的关系。'], ['左键 · 启动根节点', '每个起始槽位拿到独立的初始能量和修饰数据副本。'], ['能量检查 · 执行当前效果', '检查并扣除 energyCost，调用 TriggerEffect，再通知订阅者。'], ['右键 · 推进下一层', '复制当前结果，触发相连的子槽位；子节点各自继续这套流程。'], ['分支有自己的停止条件', '剩余能量不够支付当前零件时，直接结束这条分支，跳过当前效果和后续子节点。'], ['武器接收构筑后的参数', 'GunItem 拿到有效位置和修饰数据后生成子弹，传入速度、持续时间、伤害倍率和额外弹数；方向来自指定目标或鼠标所在的 XZ 平面。']], cols: 3 },
-        { note: '流程出自 HexSystem、BackpackSlot、GunItem，只表示执行顺序。' }
+        { id: 'player-design', fig: 'composition/artemis-hero', cap: '探索者 · 工程装备与琥珀色面罩的宇航员' },
+        { id: 'player-mechanism', text: ['探索者的工程装备与宇航员面罩贯穿世界观。角色在地块上移动、拾取资源，并把背包组合用于战斗。主角状态机管理动作衔接，地图与槽位规则限定动作发生的条件。'] },
+        { id: 'elite1-design', fig: 'folio-repair/artemis-elite1-design', cap: '精英一 · 重甲、管线、盾与短枪的角色设定' },
+        { id: 'elite1-rule', text: ['canTransform、尚未变身、血量比例达到配置门槛，三个条件同时满足才进入变身。变身期间开启无敌，完成后开盾，再按距离、弹药与冷却选择射击待机、换弹、近战、追击或待机。退出时撤掉无敌。'] },
+        { id: 'elite1-lab', module: 'artemisElite1' },
+        { id: 'elite1-motion', charts: { title: '精英一的动作帧', items: [
+          { label: '持盾', chart: { type: 'crop', src: 'assets/folio-repair/artemis-elite1-motion-sheet.webp', iw: 1800, x: 0, y: 270, w: 1800, h: 280, alt: '精英一持盾动作帧' }, p: ['抬盾与持盾姿态。变身完成后调用 EnableShield。'] },
+          { label: '射击', chart: { type: 'crop', src: 'assets/folio-repair/artemis-elite1-motion-sheet.webp', iw: 1800, x: 0, y: 552, w: 1800, h: 270, alt: '精英一瞄准、射击与端枪动作帧' }, p: ['瞄准、射击与端枪动作；是否进入射击由范围、冷却与弹药共同判断。'] },
+          { label: '状态变化', chart: { type: 'crop', src: 'assets/folio-repair/artemis-elite1-motion-sheet.webp', iw: 1800, x: 0, y: 825, w: 1800, h: 307, alt: '精英一发光、受击与消失动作帧' }, p: ['发光、受击与消失的动作素材。'] }
+        ] } },
+        { id: 'elite2-design', fig: 'folio-repair/artemis-elite2-design', cap: '精英二 · 三角头部、外露关节与机械轮廓' },
+        { id: 'elite2-rule', text: ['发现玩家后检查近战、钩爪距离和冷却。进入钩爪状态时停止移动并转向玩家，记录射线格子。前摇结束时只对仍在这些格子里的玩家执行拉拽。后摇结束或状态中断，预警格与协程都会清理。'] },
+        { id: 'elite2-lab', module: 'artemisElite2' },
+        { id: 'boss-pair', module: 'artemisBoss', opt: {
+          boss1: ['artemis-boss', 'Boss 一', '六边场地中的触手与范围攻击。红色格子是攻击范围，处理触手才有机会攻击本体。'],
+          boss2: [
+            ['assets/artemis/boss2-183.webp', '实机 03:03', '远处的 Boss 站在栈桥另一端，玩家沿栈桥接近。'],
+            ['assets/artemis/boss2-192.5.webp', '实机 03:12', '粉色笔触是挥击特效，Boss 悬在半空向玩家俯冲。'],
+            ['assets/artemis/boss2-203.webp', '实机 03:23', '近身交手，玩家举着发光的长刃，Boss 披着紫色斗篷。']
+          ] } },
+        { id: 'combat-source', note: '机制依据 Elite1IdleState、Elite1TransformState 与 Elite2HookState。血量门槛、距离、冷却和前后摇时长做成可配置参数，演示里的数值取自 Elite1SO、Elite2SO 的默认值，关卡内以实际配置为准。我完成了两场完整 Boss 战的全流程全场景全建模设计，包括状态机的维护与玩家状态的协同化处理：Boss 一围绕触手和范围攻击展开，Boss 二是全 3D 动作战斗，包含攻击、格挡与处决。Boss 二的三帧截自实机录屏 03:03、03:12、03:23。角色设定与动作帧使用项目美术素材。' }
       ]
     },
     {
-      id: 'combat', kicker: 'COMBAT / 先看懂，再反应', toc: '敌人与战斗', title: '先看懂，\n再出手。',
-      lead: '亮招、判定、换阶段——战斗节奏得让人读得懂。预警时长、距离、变身门槛都在 EnemySO 里配。',
+      id: 'ui', toc: '界面', kicker: '06 / INTERFACE',
+      title: '界面设计',
+      lead: '地图 HUD 贴着场地边缘，背包界面用六边形槽位展开零件与说明，主菜单以发射场景开场。截图均来自实机录屏，编号只用来标注信息层级。',
       blocks: [
-        { sub: 'ELITE 02 · 钩爪先亮范围，再看你走没走。' },
-        { text: ['发现玩家先看能不能近战；玩家在钩爪距离里、冷却也好了，就进钩爪状态。造型：三角脑袋、关节外露、一身机械棱角。'], span: 'half' },
-        { fig: 'folio-repair/artemis-elite2-design', cap: '精英 02 · 机器人原设定', span: 'half' },
-        { snap: { group: 11, title: '亮了招，还要再确认一次', items: [
-          { label: '前摇', h: '标出射线格子', p: ['停下脚步，转向玩家，把那一路六边形标亮。'] },
-          { label: '命中检查', h: '再核对一次玩家位置', p: ['还站在亮格里的才会被拉过去；躲开了，这一下就落空。'] },
-          { label: '后摇', h: '清理，回到追击', p: ['换成后摇的颜色，等一会儿把预警擦掉；中途被打断也会擦干净。'] }
+        { id: 'ui-inspector', module: 'artemisUI' },
+        { id: 'ui-source', note: '三张界面均截自实机录屏；编号是页面标注，不是游戏中的按钮。' }
+      ]
+    },
+    {
+      id: 'films', toc: '过场 CG 与影片', kicker: '07 / CUTSCENE & FILMS',
+      title: '过场 CG\n与影片',
+      lead: '过场的构图和动态文字叙述虚构世界，理念片把玩法说明和航天历史放在一起。点缩略图或箭头切换画面，影片默认不自动播放。',
+      blocks: [
+        { id: 'cg-contact', module: 'artemisCG' },
+        { id: 'film-player', module: 'artemisFilms', opt: { items: [
+          { src: 'media/artemis-gameplay.mp4', poster: 'assets/composition/artemis-gameplay.webp', label: '实机', len: '03:50', desc: '六边形地图、背包构筑、遭遇战与两场 Boss 战。', marks: [[16, '地图'], [71, '背包'], [136, '探索'], [183, 'Boss 二']] },
+          { src: 'media/artemis-cutscene-one.mp4', poster: 'assets/composition/artemis-cutscene-one.webp', label: '过场一', len: '01:27', desc: '月亮碎裂后的重建、承诺与异议。', marks: [[6, '开场文字'], [27, '断裂'], [51, '群像'], [72, '实验室']] },
+          { src: 'media/artemis-cutscene-two.mp4', poster: 'assets/composition/artemis-cutscene-two.webp', label: '过场二', len: '01:41', desc: '绘制的发射场景与引用的历史航天影像交替出现。', marks: [[7, '发射'], [31, '1957 · 历史资料'], [59, '飞行资料'], [83, '登月资料']] },
+          { src: 'media/artemis-concept-film.mp4', poster: 'assets/composition/artemis-concept-film.webp', label: '理念片', len: '04:32', desc: '由我独立制作，说明角色、构筑玩法、世界叙事与航天探索。', marks: [[19, '角色'], [84, '构筑'], [160, '世界叙事'], [173.5, '宇航员跌落'], [226, '航天资料']] }
         ] } },
-        { note: '按 Elite2HookState 重画的示意。' },
-        { sub: 'ELITE 01 · 血掉到门槛，换一种打法。' },
-        { text: ['能变身、还没变过、血量比例到了门槛——三条都满足才变身，一个标记保证只变一次。变身时无敌；变完开盾，再按距离和冷却挑下一步：射击待机、换弹、近战、追击或待机。退出变身时撤掉无敌。造型：厚重的身板、背上的管线、一面盾和一把短枪。'], span: 'half' },
-        { gallery: [['folio-repair/artemis-elite1-design', '精英 01 · 重甲守卫原设定'], ['folio-repair/artemis-elite1-unarmored', '精英 01 · 卸甲形态原设定']], n: 2, free: 1, span: 'half' },
-        { snap: { group: 12, title: '原动作帧：举盾、射击、状态变化', items: [
-          { label: '持盾动作', p: ['抬盾、持盾。变身之后盾就打开。'] },
-          { label: '射击动作', p: ['瞄准、开枪、端枪。变身后照样按距离、弹药、冷却挑动作。'] },
-          { label: '状态变化', p: ['发光、受击、消失。'] }
-        ] } },
-        { sub: '实机里的预警和反馈。' },
-        { gallery: [['folio-repair/artemis-telegraph-field', '战斗录屏 00:40 · 场地上的预警'], ['folio-repair/artemis-telegraph-response', '战斗录屏 00:56 · 躲开之后的反馈']], n: 2, ar: '16/9' },
-        { gallery: [['artemis-boss', 'Boss 战 · 实机截图'], ['artemis-arena', '战斗场景与机制素材']], n: 2, ar: '16/9' },
-        { note: '设定和动作帧来自原美术目录；规则对照 Elite2HookState、Elite1TransformState。' }
+        { id: 'film-source', note: '项目成片来自 F:/游戏PV。历史影像保留引用语境；影片里的叙事不作为玩家测试或玩法平衡的证据。' }
       ]
     }
   ],
-  done: ['角色行为、敌人机制、两场 Boss 战和场景交互。', '团队交付了可演示的游戏；理念宣传片由我独立完成。'],
-  next: '还要再查两件事：提交移动时的格坐标和角色真实位置对不对得上；路径走完、钩爪退出、敌人换阶段之后，状态有没有清干净。',
-  links: [['观看结题实机 · 小红书', 'https://www.xiaohongshu.com/discovery/item/696d05a1000000000a029c7b?source=webshare&xhsshare=pc_web&xsec_token=YBHZK_W9wFOSMD3f7eMjhRpNweEZYovKwlDE4n_9wuaW4=&xsec_source=pc_share', 'blue'], ['观看理念宣传片 · Bilibili', 'https://www.bilibili.com/video/BV1BurDBCEQP/']]
+  done: ['战斗机制设计与实现：主角和敌人的状态机、两类机制精英敌人、两场 Boss 战与场景交互。', '团队完成可演示游戏；我交付战斗模块和独立制作的理念宣传片。'],
+  next: '后续检查移动提交时的格坐标与角色位置是否一致，以及路径结束、钩爪退出和阶段变化之后的清理。玩家首次上手与平衡性尚未验证。',
+  links: [['观看实机 · 小红书', 'https://www.xiaohongshu.com/discovery/item/696d05a1000000000a029c7b?source=webshare&xhsshare=pc_web&xsec_token=YBHZK_W9wFOSMD3f7eMjhRpNweEZYovKwlDE4n_9wuaW4=&xsec_source=pc_share', 'blue'], ['观看理念宣传片 · Bilibili', 'https://www.bilibili.com/video/BV1BurDBCEQP/']]
 };

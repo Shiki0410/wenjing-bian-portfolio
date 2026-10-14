@@ -390,3 +390,6 @@ body.t-film .nav:not(.solid) .nav-mark i{background:#c86763}
 .tp-media .fig .ph svg,.tp-media .fig .ph img{max-height:64vh;width:100%;object-fit:contain}
 .tp-media .fig + .fig figcaption{display:none}
 .fig .ph img[src$="afterglow-version-bridge.svg"]{filter:url(#duo)}
+/* bespoke pages (body.pg) show every figure as it is */
+body.pg .fig .ph img,body.pg .fig .ph img[src*="folio-repair/svg/"]{filter:none!important}
+body.pg .fig .ph::after{content:none!important}

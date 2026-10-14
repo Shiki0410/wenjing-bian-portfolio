@@ -1,0 +1,129 @@
+{
+  "source": [
+    {
+      "file": "23-26山本投手数据.csv",
+      "originalPath": "H:/设计作业/设计技术4/中期数据可视化/public/data/23-26山本投手数据.csv",
+      "sha256": "15f38253d83fc14ef932c4681a41f549f5c3b8d70a96020223136a1eb24a1381",
+      "rows": 4649,
+      "columns": 118
+    },
+    {
+      "file": "23-26大谷打者数据.csv",
+      "originalPath": "H:/设计作业/设计技术4/中期数据可视化/public/data/23-26大谷打者数据.csv",
+      "sha256": "8ec9418bd12e091e3b9485d8870048f8383171a77612873e5b893d3bcb1810b9",
+      "rows": 6139,
+      "columns": 118
+    },
+    {
+      "file": "23-26道奇队投手数据.csv",
+      "originalPath": "H:/设计作业/设计技术4/中期数据可视化/public/data/23-26道奇队投手数据.csv",
+      "sha256": "fcca0f6cf796738a595a14cf77eb3b2da12f4c6489db4c2710857aacca663d67",
+      "rows": 99,
+      "columns": 76
+    },
+    {
+      "file": "23-26道奇队打者数据.csv",
+      "originalPath": "H:/设计作业/设计技术4/中期数据可视化/public/data/23-26道奇队打者数据.csv",
+      "sha256": "7b39bcc7e97d56a14cbf4c0d161f4b055cf6384a274da09c93b7fab0611e4236",
+      "rows": 59,
+      "columns": 76
+    }
+  ],
+  "unit": "one pitch, not one plate appearance",
+  "raw": 4649,
+  "typed": 4641,
+  "located": 4641,
+  "untyped": [
+    {
+      "id": "776779:30:1",
+      "sourceRow": 1182,
+      "date": "2025-08-11",
+      "hasCoordinates": false
+    },
+    {
+      "id": "777119:19:3",
+      "sourceRow": 1564,
+      "date": "2025-07-13",
+      "hasCoordinates": false
+    },
+    {
+      "id": "778563:4:1",
+      "sourceRow": 3176,
+      "date": "2025-03-18",
+      "hasCoordinates": false
+    },
+    {
+      "id": "746092:6:4",
+      "sourceRow": 3327,
+      "date": "2024-09-22",
+      "hasCoordinates": false
+    },
+    {
+      "id": "745737:14:1",
+      "sourceRow": 3593,
+      "date": "2024-06-07",
+      "hasCoordinates": false
+    },
+    {
+      "id": "747207:4:1",
+      "sourceRow": 4170,
+      "date": "2024-05-01",
+      "hasCoordinates": false
+    },
+    {
+      "id": "744867:23:1",
+      "sourceRow": 4268,
+      "date": "2024-04-25",
+      "hasCoordinates": false
+    },
+    {
+      "id": "746160:10:4",
+      "sourceRow": 4368,
+      "date": "2024-04-19",
+      "hasCoordinates": false
+    }
+  ],
+  "years": [
+    {
+      "year": 2024,
+      "raw": 1474,
+      "typed": 1469,
+      "speedValid": 1471,
+      "dates": [
+        "2024-03-21",
+        "2024-09-28"
+      ]
+    },
+    {
+      "year": 2025,
+      "raw": 2792,
+      "typed": 2789,
+      "speedValid": 2790,
+      "dates": [
+        "2025-03-18",
+        "2025-09-25"
+      ]
+    },
+    {
+      "year": 2026,
+      "raw": 383,
+      "typed": 383,
+      "speedValid": 383,
+      "dates": [
+        "2026-03-26",
+        "2026-04-14"
+      ]
+    }
+  ],
+  "transformations": [
+    "RFC4180 quoted CSV parsing; empty numeric cells remain null",
+    "no sampling, no jitter, no synthetic coordinates",
+    "retained source row and game:at-bat:pitch identifiers",
+    "spatial view requires pitch_type, pitch_name, finite plate_x and plate_z",
+    "year AND pitch code filter; means exclude missing speed; axes fixed across filters"
+  ],
+  "definitions": "https://baseballsavant.mlb.com/csv-docs",
+  "caveat": "2026 plate positions use middle-of-plate and ABS strike-zone definitions; through 2025 front-of-plate/operator definitions. Do not interpret a cross-year shift as ability change.",
+  "claudeLabMatchesRawPitch": true,
+  "battingView": "New directional plot uses original unrounded CSV coordinates. Existing lab.json preserved, not used for that plot."
+}

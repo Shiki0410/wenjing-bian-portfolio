@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Ma+Shan+Zheng&family=Barlow+Condensed:wght@900&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@1,800&family=Archivo:wdth,wght@62..125,700..900&family=Chakra+Petch:wght@600&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Space+Grotesk:wght@700&family=Archivo+Black&family=DM+Serif+Display:ital@0;1&display=swap');
+/* Home scene posters — eleven projects, eleven visual languages.
+   The art half is each project's own poster; the info half shares one PV layout (giant scene number, subtitle-bar
+   tag line, why / my part / output, chapter index, one cut button) and takes its type and colour from the card:
+   --acc accent · --hc-fd display face · --bar/--bar-fg subtitle bar · --go/--go-fg button · --hc-body text face */
+.scenes .hp{position:relative;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);min-height:max(660px,90svh);border-top:0;overflow:hidden;--gx:clamp(16px,3.2vw,56px)}
+.scenes .hp:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.55fr)}
+.scenes .hp:nth-child(even) .hc-art{order:2}
+.hc-art{position:relative;min-height:inherit;overflow:hidden}
+.hc-vt{writing-mode:vertical-rl;text-orientation:upright}
+.hc-info{position:relative;display:flex;flex-direction:column;gap:clamp(14px,1.5vw,20px);min-width:0;padding:clamp(24px,3.4vw,56px) var(--gx);font-family:var(--hc-body,'Noto Sans SC',sans-serif)}
+.hc-head{display:flex;align-items:flex-end;gap:clamp(10px,1.2vw,18px);padding-bottom:12px;border-bottom:3px solid currentColor}
+.hc-big{flex:none;font:var(--hc-bw,900) clamp(84px,8.6vw,148px)/.76 var(--hc-fd,'Inter Tight',sans-serif);font-stretch:var(--hc-fs,100%);font-style:var(--hc-fi,normal);letter-spacing:-.06em;color:var(--acc,currentColor);margin:0 0 -.04em -.04em}
+.hc-no{display:flex;flex-direction:column;gap:3px;margin:0 0 4px;min-width:0;font:500 10.5px/1.35 'JetBrains Mono',monospace;letter-spacing:.1em;opacity:.8}
+.hc-tag{margin:0}
+.hc-tag span{padding:.24em .6em;background:var(--bar,#121316);color:var(--bar-fg,#fff);font:var(--hc-tw,700) clamp(15px,1.25vw,19px)/1.95 var(--hc-tagf,'Noto Sans SC',sans-serif);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hc-qar{margin:0;display:flex;flex-direction:column}
+.hc-qar div{display:grid;grid-template-columns:5.4em minmax(0,1fr);gap:10px;padding:9px 0;border-top:1px solid color-mix(in srgb,currentColor 22%,transparent)}
+.hc-qar dt{font:700 12px/1.85 var(--hc-body,'Noto Sans SC',sans-serif);letter-spacing:.06em;color:var(--acc,currentColor)}
+.hc-qar dd{margin:0;font:400 13.5px/1.8 var(--hc-body,'Noto Sans SC',sans-serif);opacity:.9}
+.hc-ch-k{margin:0 0 4px;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;opacity:.6}
+.hc-ch ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;margin:0;padding:0;list-style:none}
+.hc-ch a{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px solid color-mix(in srgb,currentColor 22%,transparent);color:inherit;text-decoration:none;font:600 13px/1.4 var(--hc-body,'Noto Sans SC',sans-serif);transition:padding .2s,color .2s}
+.hc-ch a:hover{padding-left:6px;color:var(--acc,currentColor)}
+.hc-ch b{flex:none;font:600 10px/1 'JetBrains Mono',monospace;color:var(--acc,currentColor)}
+.hc-foot{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.hc-go{display:inline-flex;align-items:center;gap:14px;padding:13px 20px;background:var(--go,#121316);color:var(--go-fg,#fff);border:var(--go-bd,0);border-radius:var(--go-r,0);text-decoration:none;font:800 14px/1 var(--hc-body,'Noto Sans SC',sans-serif);letter-spacing:.04em;transition:transform .2s}
+.hc-go i{font-style:normal;font-size:18px;transition:transform .2s}
+.hc-go:hover{transform:translateY(-2px)}.hc-go:hover i{transform:translateX(4px)}
+.hc-tools{flex:1 1 180px;margin:0;font:500 10px/1.6 'JetBrains Mono',monospace;letter-spacing:.06em;opacity:.65}
+
+/* the per-card voice of the info half */
+.hp-rallylens{--acc:#1f3bff;--bar:#121316;--bar-fg:#f7f6f1;--go:#1f3bff;--hc-tagf:var(--eva-mono)}
+.hp-privacy-city{--acc:#1f3bff;--hc-bw:200;--bar:#1f3bff;--go:#1f3bff;--go-r:99px}
+.hp-privacy-city .hc-tag span{border-radius:8px}
+.hp-tennisatom{--acc:#5aaeff;--hc-fd:'Barlow Condensed','Inter Tight',sans-serif;--hc-bw:900;--bar:#1f3bff;--bar-fg:#fff;--go:#1f3bff}
+.hp-baseball{--acc:#ff4f00;--hc-fd:'Inter Tight',sans-serif;--hc-bw:300;--bar:#ecedef;--bar-fg:#0b0d10;--go:#ff4f00;--go-fg:#0b0d10}
+.hp-artemis{--acc:#ffd23f;--hc-fd:'Anton','Archivo',sans-serif;--hc-bw:400;--bar:#ffd23f;--bar-fg:#0d1020;--go:#1f3bff;--hc-tagf:'Noto Sans SC',sans-serif}
+.hp-bronze{--acc:#c9a45c;--hc-fd:var(--eva-min);--hc-body:var(--eva-min);--bar:#c0392b;--bar-fg:#f8efe0;--go:#c9a45c;--go-fg:#14120e;--hc-tagf:var(--eva-min);--hc-tw:900}
+.hp-afterglow{--acc:#fff;--bar:#fff;--bar-fg:#0e0e0c;--go:#fff;--go-fg:#0e0e0c}
+.hp-growth-compass{--acc:#ff3da6;--hc-fd:'Bricolage Grotesque',sans-serif;--hc-bw:800;--bar:#ffe14d;--bar-fg:#0d1020;--go:#1f3bff;--go-r:99px}
+.hp-looplab{--acc:#1f3bff;--hc-fd:'Space Grotesk',sans-serif;--hc-bw:700;--bar:#0d1020;--bar-fg:#ecedef;--go:#1f3bff}
+.hp-garden{--acc:#e0664a;--hc-fd:var(--eva-min);--hc-body:var(--eva-min);--bar:#f3ede0;--bar-fg:#14161c;--go:#b8412f;--go-fg:#f3ede0;--hc-tagf:var(--eva-min);--hc-tw:900}
+.hp-jingwai{--acc:#c86763;--hc-fd:'DM Serif Display',serif;--hc-bw:400;--hc-fi:italic;--bar:#1d2a44;--bar-fg:#f1e6cf;--go:#1d2a44;--go-fg:#f1e6cf}
+
+/* cast: how I work */
+.way{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);border-top:1.5px solid var(--ink);padding-top:clamp(20px,2.6vw,32px)}
+.way-k{grid-column:1/4;margin:0;color:var(--cobalt)}
+.way-t{grid-column:4/13;display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(16px,2.4vw,36px);align-items:start}
+.way-t p{margin:0;font-size:15px;line-height:1.85;color:var(--ink-2)}
+.way-t p:first-child{font:900 clamp(19px,1.75vw,26px)/1.6 var(--cjk);color:var(--ink);letter-spacing:-.01em}
+
+/* 01 RallyLens — R252 newsprint */
+.scenes .hp-rallylens{background:#e6e5df;color:#121316}
+.hp-rallylens .hc-art{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(8,1fr);background:#f7f6f1;margin:clamp(14px,2vw,28px);outline:12px solid #f7f6f1}
+.hp-rallylens .ht{grid-area:1/1/9/13;width:100%;height:100%;object-fit:cover;object-position:30% 50%;filter:grayscale(1) contrast(1.6) brightness(1.05);-webkit-mask:radial-gradient(circle,#000 46%,transparent 52%) 0 0/5px 5px;mask:radial-gradient(circle,#000 46%,transparent 52%) 0 0/5px 5px}
+.hp-rallylens .w1{grid-area:1/1/3/6;background:#f7f6f1;position:relative;z-index:1}
+.hp-rallylens .w2{grid-area:1/1/4/5;background:#f7f6f1;position:relative;z-index:1}
+.hp-rallylens .bx{border:1.5px solid #1f3bff;margin:-.75px;z-index:2;position:relative}
+.hp-rallylens .nm{grid-area:1/1/4/9;z-index:3;margin:0;display:flex;flex-direction:column;padding:2% 0 0 2%;font:900 clamp(60px,8vw,140px)/.8 'Inter Tight',sans-serif;letter-spacing:-.07em}
+.hp-rallylens .cl{z-index:4;display:grid;place-items:center;background:#f7f6f1;border:1.5px solid #1f3bff;margin:-.75px;font:900 clamp(20px,2.8vw,46px)/1 'Noto Sans SC',sans-serif}
+.hp-rallylens .cl.inv{background:#121316;color:#f7f6f1}
+.hp-rallylens .tp{grid-area:7/1/8/8;z-index:5;align-self:end;margin:0 0 6% -2%;transform:rotate(-1.4deg);white-space:nowrap}
+.hp-rallylens .tp span{background:#121316;color:#f7f6f1;padding:.35em .7em;font:700 clamp(12px,1.2vw,18px) var(--eva-mono)}
+.hp-rallylens .tl{grid-area:7/10/9/13;z-index:5;margin:0;align-self:end;justify-self:end;padding:4px 8px 2px;background:#f7f6f1;border:1.5px solid #1f3bff;font:200 clamp(36px,4vw,70px)/1 'Inter Tight',sans-serif;letter-spacing:-.05em}
+.hp-rallylens .tl small{display:block;font:500 10px/1.4 var(--eva-mono);letter-spacing:.08em;color:#1f3bff}
+
+/* 02 Privacy City — R447 clay city + glass dialog */
+.scenes .hp-privacy-city{background:radial-gradient(ellipse at 30% 50%,#fff,#e2e9f4);color:#0b1530}
+.hp-privacy-city .bg{position:absolute;right:-4%;top:8%;width:92%;height:92%;object-fit:contain;object-position:right center}
+.hp-privacy-city .nm{position:absolute;left:var(--gx);top:clamp(24px,4vw,60px);margin:0;font:200 clamp(60px,8vw,140px)/.86 'Inter Tight',sans-serif;letter-spacing:-.06em;color:#1f3bff}
+.hp-privacy-city .dlg{position:absolute;left:var(--gx);bottom:var(--gx);width:min(320px,70%);padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 60px -20px rgba(31,59,255,.4)}
+.hp-privacy-city .dlg .t{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:700 13px 'Noto Sans SC',sans-serif}
+.hp-privacy-city .dlg .t i{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#27c3ff,#1f3bff)}
+.hp-privacy-city .dlg .t span{margin-left:auto;font:500 9px 'JetBrains Mono',monospace;color:#7a86a6}
+.hp-privacy-city .dlg .q{margin:0 0 12px;font:800 16px/1.4 'Noto Sans SC',sans-serif}
+.hp-privacy-city .dlg .b{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0}
+.hp-privacy-city .dlg .b span{padding:9px 0;border-radius:10px;background:#e9edf6;text-align:center;font:700 13px 'Noto Sans SC',sans-serif}
+.hp-privacy-city .dlg .b .ok{background:#1f3bff;color:#fff}
+.hp-privacy-city .cards{position:absolute;right:var(--gx);bottom:var(--gx);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;padding:0;list-style:none}
+.hp-privacy-city .cards li{padding:10px 12px;border-radius:12px;background:linear-gradient(160deg,#3b63ff,#1f3bff);color:#fff}
+.hp-privacy-city .cards b{display:block;font:300 24px/1 'Inter Tight',sans-serif}
+.hp-privacy-city .cards span{font:500 11px 'Noto Sans SC',sans-serif;opacity:.85}
+
+/* 03 TennisAtom — night navy, chrome TENNIS over outline ATOM, film band, sky + cobalt (as its case page) */
+.scenes .hp-tennisatom{background:#0a1240;color:#ecedef}
+.hp-tennisatom .hc-art{background:#0a1240}
+.hp-tennisatom .gr{position:absolute;inset:0;background:linear-gradient(rgba(90,174,255,.1) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(90,174,255,.1) 1px,transparent 1px) 0 0/48px 48px}
+.hp-tennisatom .words{position:absolute;left:4%;top:3%;z-index:2;display:flex;flex-direction:column;font-family:'Barlow Condensed','Archivo Narrow','Inter Tight',sans-serif;font-weight:900;text-transform:uppercase;line-height:.74;white-space:nowrap;pointer-events:none}
+.hp-tennisatom .w1{margin:0;font-size:clamp(96px,14.5vw,250px);background:linear-gradient(180deg,#ecedef 32%,rgba(236,237,239,0) 96%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hp-tennisatom .w2{margin:-.06em 0 0 .06em;font-size:clamp(77px,11.6vw,200px);color:rgba(31,59,255,.3);-webkit-text-stroke:2px #5aaeff}
+.hp-tennisatom .film{position:absolute;z-index:1;left:-12%;right:-12%;top:52%;transform:rotate(-9deg);background:#050a26;border-block:1px solid rgba(90,174,255,.5);padding:0 0 0}
+.hp-tennisatom .hl{display:block;height:16px;background:repeating-linear-gradient(90deg,#0a1240 0 10px,#050a26 10px 24px);background-size:24px 8px;background-repeat:repeat-x;background-position:0 4px}
+.hp-tennisatom .fr{display:flex;gap:8px;padding:0 8px}
+.hp-tennisatom .fr img{flex:1;min-width:0;aspect-ratio:16/10;object-fit:cover;filter:grayscale(.55) contrast(1.1) brightness(.85) saturate(1.3);opacity:.95}
+.hp-tennisatom .vrt{position:absolute;left:1.4%;top:6%;margin:0;writing-mode:vertical-rl;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.2em;color:#5aaeff}
+.hp-tennisatom .cp{position:absolute;z-index:3;left:5%;right:5%;bottom:calc(clamp(54px,6vw,84px) + 18px)}
+.hp-tennisatom .nm{margin:0;font:900 clamp(34px,4.4vw,76px)/1.05 'Noto Sans SC',sans-serif;letter-spacing:.02em;color:#fff;text-shadow:0 2px 0 #0a1240}
+.hp-tennisatom .q{margin:8px 0 0;font:500 clamp(13px,1.2vw,17px)/1.6 'Noto Sans SC',sans-serif;color:#d6e4ff}
+.hp-tennisatom .stats{position:absolute;z-index:3;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;list-style:none;background:#1f3bff}
+.hp-tennisatom .stats li{padding:12px clamp(8px,1.2vw,18px);border-left:1px solid rgba(255,255,255,.3);font:500 clamp(10px,.9vw,12px)/1.4 'Noto Sans SC',sans-serif;color:#d6e4ff}
+.hp-tennisatom .stats li:first-child{border-left:0}
+.hp-tennisatom .stats b{display:block;font:900 clamp(22px,2.4vw,38px)/1 'Barlow Condensed','Inter Tight',sans-serif;color:#fff}
+.hp-tennisatom .hc-info{background:#0d1020;color:#ecedef}
+
+/* 04 Pitch / Impact — ink #0b0d10, paper #ecedef, orange #ff4f00; same drawing language as its case page */
+.scenes .hp-baseball{background:#ecedef;color:#0b0d10}
+.hp-baseball .hc-art{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto minmax(0,1fr) auto;gap:12px;padding:clamp(20px,3vw,44px) var(--gx)}
+.hp-baseball .bar{grid-column:1/-1;display:flex;justify-content:center;align-items:center;gap:.8em;margin:0;padding:10px 16px;background:#0b0d10;border-bottom:6px solid #ff4f00;color:#ecedef;font:700 clamp(12px,1.2vw,17px)/1 'JetBrains Mono',monospace;letter-spacing:.2em;white-space:nowrap;overflow:hidden}
+.hp-baseball .bar i{font-style:normal;color:#ff4f00}
+.hp-baseball .field{grid-column:1/9;grid-row:2;position:relative;min-height:340px;background:#0b0d10;overflow:hidden;touch-action:pan-y;cursor:crosshair}
+.hp-baseball .park,.hp-baseball .dots{position:absolute;inset:0;width:100%;height:100%}
+.hp-baseball .park .grid line{stroke:rgba(236,237,239,.09);stroke-width:1}
+.hp-baseball .park .grid text{fill:#6b7480;font:500 9px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.hp-baseball .park .line path,.hp-baseball .park .line ellipse{fill:none;stroke:rgba(236,237,239,.42);stroke-width:1.2}
+.hp-baseball .park .zone{fill:none;stroke:#ecedef;stroke-width:1.6}
+.hp-baseball .park .zone2{fill:none;stroke:rgba(236,237,239,.3);stroke-width:1}
+.hp-baseball .dia{position:absolute;left:14px;top:14px;width:clamp(64px,8vw,104px);fill:none;stroke:#ff4f00;stroke-width:1.6}
+.hp-baseball .yrs{position:absolute;left:14px;bottom:14px;display:flex;gap:6px;z-index:2}
+.hp-baseball .yrs button{padding:7px 11px;border:1.5px solid #ecedef;background:transparent;color:#ecedef;font:700 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;cursor:pointer;transition:background .15s,color .15s}
+.hp-baseball .yrs button:hover{background:rgba(236,237,239,.16)}
+.hp-baseball .yrs button.on{background:#ecedef;color:#0b0d10}
+.hp-baseball .yrs button.o.on{background:#ff4f00;border-color:#ff4f00;color:#0b0d10}
+.hp-baseball .rd{position:absolute;left:14px;bottom:56px;right:14px;margin:0;pointer-events:none;font:500 11px/1.4 'JetBrains Mono',monospace;letter-spacing:.08em;color:#ff4f00}
+.hp-baseball .cnt{position:absolute;right:0;top:0;display:grid;gap:2px;padding:12px 18px 10px;background:#ecedef;color:#0b0d10;min-width:min(250px,56%);pointer-events:none}
+.hp-baseball .cnt .mono{font:500 10px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#6b7480}
+.hp-baseball .cnt b{font:300 clamp(44px,5vw,78px)/.95 'Inter Tight',sans-serif;letter-spacing:-.04em}
+.hp-baseball .cnt small{font:500 10px 'JetBrains Mono',monospace;letter-spacing:.1em}
+.hp-baseball .nm{grid-column:9/13;grid-row:2;align-self:start;margin:0;display:flex;flex-direction:column;font:800 clamp(36px,4.4vw,80px)/.84 'Inter Tight',sans-serif;letter-spacing:-.01em;color:#0b0d10;text-transform:uppercase}
+.hp-baseball .nm i{font-style:normal;color:#ff4f00;font-size:.5em;line-height:.9}
+.hp-baseball .sub{grid-column:9/13;grid-row:2;align-self:end;margin:0;padding:12px 14px;background:#0b0d10;color:#ecedef;font:700 clamp(14px,1.3vw,19px)/1.55 'Noto Sans SC',sans-serif}
+.hp-baseball .vs{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:1fr auto 1fr;gap:10px;margin:0}
+.hp-baseball .vs span{padding:10px 14px;background:#f6f6f3;border:2px solid #0b0d10;font:600 13px 'Noto Sans SC',sans-serif}
+.hp-baseball .vs span.b{background:#0b0d10;color:#ecedef}
+.hp-baseball .vs b{display:block;font:300 clamp(36px,3.6vw,60px)/1 'Inter Tight',sans-serif;letter-spacing:-.04em}
+.hp-baseball .vs i{align-self:center;font:300 30px 'Inter Tight',sans-serif;color:#ff4f00;font-style:normal}
+.hp-baseball .hc-info{background:#0b0d10;color:#ecedef}
+
+
+/* 05 Artemis — paper, cobalt slab, black ARTE over outlined MIS, hazard stripe (as its case page) */
+.scenes .hp-artemis{background:#ecedef;color:#0d1020}
+.hp-artemis .hc-art{background:#ecedef}
+.hp-artemis .sl{position:absolute;right:0;top:0;bottom:0;width:62%;background:#1f3bff;clip-path:polygon(34% 0,100% 0,100% 100%,0 100%)}
+.hp-artemis .lo{position:absolute;left:0;bottom:0;width:70%;height:30%;background:#0a1240;clip-path:polygon(0 38%,100% 0,100% 100%,0 100%)}
+.hp-artemis .kana{position:absolute;left:clamp(14px,2.4vw,36px);top:clamp(24px,4vw,56px);margin:0;writing-mode:vertical-rl;font:400 clamp(36px,4.4vw,72px)/1.04 'Dela Gothic One','ZCOOL QingKe HuangYou',sans-serif;color:#1f3bff;letter-spacing:.02em}
+.hp-artemis .nm{position:absolute;z-index:2;left:clamp(70px,9vw,150px);top:clamp(20px,3.4vw,52px);margin:0;display:flex;flex-direction:column;font:400 clamp(100px,13vw,232px)/.8 'Anton','Archivo',sans-serif;color:#0d1020;letter-spacing:.005em}
+.hp-artemis .nm span:last-child{color:transparent;-webkit-text-stroke:2px #0d1020}
+.hp-artemis .fig{position:absolute;z-index:3;right:6%;bottom:2%;height:84%;width:auto;max-width:70%;object-fit:contain}
+.hp-artemis .front{position:absolute;z-index:4;right:4%;top:clamp(24px,4vw,56px);margin:0;text-align:right;font:400 clamp(22px,2.6vw,42px)/.95 'Anton',sans-serif;color:#ffd23f;text-shadow:3px 3px 0 #0a1240}
+.hp-artemis .hz{position:absolute;z-index:5;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(-45deg,#0d1020 0 10px,#ffd23f 10px 20px)}
+.hp-artemis .hc-info{background:#0d1020;color:#ecedef}
+
+/* 06 天命 — R456 bronze */
+.scenes .hp-bronze{background:radial-gradient(ellipse at 40% 50%,#2c251b,#0f0d0a 70%);color:#e7d3a6}
+.hp-bronze .hc-art{display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,50px);padding:clamp(20px,3vw,44px)}
+.hp-bronze .still{height:min(80vh,720px);width:auto;box-shadow:0 30px 70px rgba(0,0,0,.7),0 0 0 1px rgba(201,164,92,.4)}
+.hp-bronze .nm{order:-1;margin:0;display:flex;gap:10px;font:400 clamp(90px,10vw,180px)/1 var(--eva-cjk);color:#c9a45c}
+.hp-bronze .nm small{font-size:.36em;margin-top:.6em;color:#e7d3a6}
+.hp-bronze .sub{margin:0;font:500 15px/1.8 var(--eva-cjk);letter-spacing:.2em}
+.hp-bronze .hc-info{font-family:var(--eva-cjk)}
+
+/* 07 AFTERGLOW — R531 */
+.scenes .hp-afterglow{background:#0e0e0c;color:#fff}
+.hp-afterglow .hc-art{display:flex;flex-direction:column;justify-content:center;padding:clamp(20px,3vw,44px) var(--gx)}
+.hp-afterglow .nm{margin:0;display:flex;flex-direction:column;font:900 clamp(90px,12vw,220px)/.8 'Inter Tight',sans-serif;letter-spacing:-.07em}
+.hp-afterglow .nm span:last-child{display:flex;align-items:center}
+.hp-afterglow .nm i{display:inline-block;width:.86em;height:.86em;border-radius:50%;overflow:hidden;background:#f4efe6;margin:0 .02em}
+.hp-afterglow .nm i img{width:100%;height:100%;object-fit:cover;object-position:50% 36%;transform:scale(1.45);filter:grayscale(1) contrast(1.25)}
+.hp-afterglow .sub{margin:20px 0 0;font:700 clamp(16px,1.5vw,22px)/1.5 'Noto Sans SC',sans-serif}
+
+/* 08 Growth Compass — ink night, dashed rings, a cobalt window, outline + pink 成长罗盘, yellow chips (as its case page) */
+.scenes .hp-growth-compass{background:#0d1020;color:#ecedef}
+.hp-growth-compass .hc-art{background:radial-gradient(ellipse at 50% 60%,#14193a,#0d1020 70%)}
+.hp-growth-compass .rg{position:absolute;left:50%;top:58%;border:1.5px dashed rgba(90,174,255,.55);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hp-growth-compass .r1{width:min(112%,130vh);aspect-ratio:1}.hp-growth-compass .r2{width:min(78%,92vh);aspect-ratio:1;border-style:solid;border-color:rgba(90,174,255,.25)}
+.hp-growth-compass .en{position:absolute;left:var(--gx);top:var(--gx);margin:0;z-index:2;font:800 clamp(24px,2.6vw,42px)/.92 'Bricolage Grotesque','Inter Tight',sans-serif;letter-spacing:-.02em;color:#fff}
+.hp-growth-compass .chips{position:absolute;z-index:3;right:var(--gx);top:var(--gx);display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;max-width:46%;margin:0;padding:0;list-style:none}
+.hp-growth-compass .chips li{padding:6px 10px;background:#ffe14d;color:#0d1020;font:700 clamp(11px,1vw,14px)/1.2 'Noto Sans SC',sans-serif;border-radius:3px;box-shadow:3px 3px 0 #1f3bff}
+.hp-growth-compass .win{position:absolute;left:12%;right:12%;top:22%;border:3px solid #1f3bff;background:#1f3bff;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.hp-growth-compass .tb{display:flex;justify-content:space-between;align-items:center;margin:0;padding:5px 8px;font:500 10px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:#fff}
+.hp-growth-compass .tb i{width:10px;height:10px;border:1.5px solid #fff}
+.hp-growth-compass .pic{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.hp-growth-compass .nm{position:absolute;z-index:4;left:0;right:0;bottom:clamp(40px,7vw,100px);margin:0;display:flex;justify-content:space-between;padding:0 6%;font:900 clamp(74px,9.4vw,172px)/.9 'Noto Sans SC',sans-serif;letter-spacing:-.03em}
+.hp-growth-compass .nm .o{color:transparent;-webkit-text-stroke:2px #fff}
+.hp-growth-compass .nm .f{color:#ff3da6}
+.hp-growth-compass .hc-info{background:#0d1020;color:#ecedef}
+
+/* 09 LoopLab — cobalt dotted field, a paper sheet with tape, Loop in ink / Lab in cobalt (as its case page) */
+.scenes .hp-looplab{background:#ecedef;color:#0d1020}
+.hp-looplab .hc-art{display:grid;place-items:center;padding:clamp(20px,3vw,44px);background:#1f3bff radial-gradient(rgba(255,255,255,.22) 1.2px,transparent 1.6px) 0 0/16px 16px}
+.hp-looplab .sheet{position:relative;width:min(560px,92%);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:22px 20px 20px;background:#f8f9fb;color:#0d1020;transform:rotate(-1.6deg);box-shadow:0 30px 60px -20px rgba(0,0,10,.55)}
+.hp-looplab .tp{position:absolute;z-index:2;top:-12px;width:96px;height:24px;background:rgba(255,77,141,.6);transform:rotate(-5deg)}
+.hp-looplab .tp.a{left:6%}.hp-looplab .tp.b{right:8%;background:rgba(90,174,255,.65);transform:rotate(4deg)}
+.hp-looplab .hd{grid-column:1/-1;display:flex;justify-content:space-between;margin:0;padding-bottom:6px;border-bottom:2px solid #0d1020;font:700 10px 'Space Mono','JetBrains Mono',monospace}
+.hp-looplab .nm{margin:0;display:flex;flex-direction:column;font:700 clamp(64px,6.4vw,112px)/.84 'Space Grotesk',sans-serif;letter-spacing:-.06em}
+.hp-looplab .nm .b{color:#1f3bff}
+.hp-looplab .pic{width:100%;height:100%;min-height:140px;object-fit:cover}
+.hp-looplab .cols{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin:0}
+.hp-looplab .cols b{padding:6px 0;border-top:4px solid #0d1020;text-align:center;font:900 14px 'Noto Sans SC',sans-serif}
+.hp-looplab .cols b:first-child{border-color:#ff4d8d}
+.hp-looplab .hc-info{background:#ecedef;color:#0d1020}
+
+/* 10 游园画境 — ink, lattice, vermilion disc, a cream four-petal window around the photo (as its case page; no green, no violet) */
+.scenes .hp-garden{background:#14161c;color:#f3ede0}
+.hp-garden .hc-art{display:flex;align-items:center;justify-content:center;gap:clamp(10px,2vw,30px);background:#14161c}
+.hp-garden .lat{position:absolute;inset:0;background:radial-gradient(circle at 0 0,transparent 15px,rgba(243,237,224,.07) 16px 17px,transparent 18px) 0 0/48px 48px,radial-gradient(circle at 24px 24px,transparent 15px,rgba(243,237,224,.07) 16px 17px,transparent 18px) 0 0/48px 48px}
+.hp-garden .sun{position:absolute;left:8%;top:12%;width:clamp(70px,10vw,150px);aspect-ratio:1;border-radius:50%;background:#b8412f}
+.hp-garden .qf{position:relative;width:min(60vh,36vw);min-width:240px;aspect-ratio:1;flex:none}
+.hp-garden .qf .ring{position:absolute;inset:0;background:#f3ede0;clip-path:url(#hc-qf)}
+.hp-garden .qf img{position:absolute;inset:3.4%;width:93.2%;height:93.2%;object-fit:cover;clip-path:url(#hc-qf)}
+.hp-garden .nm{margin:0 0 0 -3vw;position:relative;z-index:2;font:400 clamp(70px,7.6vw,140px)/1.04 'Ma Shan Zheng',var(--eva-min),serif;color:#f3ede0;text-shadow:3px 3px 0 #b8412f}
+.hp-garden .sub{margin:0;font:400 16px/1.6 var(--eva-min);letter-spacing:.3em;color:#cfc4aa}
+.hp-garden .hc-info{background:#14161c}
+
+/* 11 镜外 — R519 film strip */
+.scenes .hp-jingwai{background:#f1e6cf;color:#1d2a44}
+.hp-jingwai .strip{position:absolute;left:-8%;right:-8%;top:16%;display:flex;flex-direction:column;background:#141210;transform:rotate(-10deg)}
+.hp-jingwai .hl{height:20px;background:repeating-linear-gradient(90deg,#141210 0 10px,#f1e6cf 10px 24px,#141210 24px 34px);background-size:34px 10px;background-position:0 5px;background-repeat:repeat-x;border-top:5px solid #141210;border-bottom:5px solid #141210}
+.hp-jingwai .fr{display:flex;gap:8px;padding:0 8px}
+.hp-jingwai .fr img{flex:1;min-width:0;aspect-ratio:16/10;object-fit:cover;filter:sepia(.2)}
+.hp-jingwai .nm{position:absolute;left:var(--gx);bottom:clamp(24px,4vw,60px);margin:0;display:flex;align-items:baseline;gap:.2em;font:900 clamp(90px,10vw,190px)/.9 var(--eva-cjk);letter-spacing:-.04em}
+.hp-jingwai .nm small{font:400 .34em/1 var(--eva-lat);color:#c86763;letter-spacing:0}
+.hp-jingwai .dot{position:absolute;right:16%;bottom:16%;width:clamp(44px,4vw,74px);aspect-ratio:1;border-radius:50%;background:#c86763}
+
+@media (max-width:820px){
+  .scenes .hp,.scenes .hp:nth-child(even){grid-template-columns:1fr}
+  .scenes .hp:nth-child(even) .hc-art{order:0}
+  .hc-art{min-height:72svh}
+    .hp-bronze .hc-art{flex-direction:column}.hp-bronze .still{height:auto;width:80%}
+  .hp-garden .hc-art{flex-direction:column;padding:70px 0 30px}.hp-garden .qf{width:74vw}.hp-garden .nm{margin:0}.hp-garden .nm .hc-vt,.hp-garden .sub .hc-vt{writing-mode:horizontal-tb}
+  .hp-artemis .fig{height:66%;right:2%}.hp-artemis .nm{left:62px}
+  .hp-privacy-city .dlg{left:6%;width:88%;top:auto;bottom:90px}
+  .hp-baseball .hc-art{grid-template-rows:auto minmax(340px,1fr) auto auto auto}
+  .hp-baseball .field{grid-column:1/-1;grid-row:2}.hp-baseball .nm{grid-column:1/-1;grid-row:3;flex-direction:row;align-items:baseline;gap:.15em;font-size:clamp(30px,9.6vw,56px);white-space:nowrap}.hp-baseball .sub{grid-column:1/-1;grid-row:4;align-self:auto}.hp-baseball .vs{grid-row:5}
+  .hc-big{font-size:clamp(72px,24vw,110px)}
+  .way-k,.way-t{grid-column:1/-1}.way-t{grid-template-columns:1fr;margin-top:12px}
+}
+@media (max-width:480px){
+  .hc-ch ol{grid-template-columns:1fr}
+  .hc-qar div{grid-template-columns:1fr;gap:2px}
+  .hp-baseball .vs span{padding:8px 10px;font-size:11.5px}.hp-baseball .vs b{font-size:32px}
+}
+/* type per scene: heavy Song for the bronze, garden and film posters, as on their case pages */
+.hp-bronze{--eva-cjk:var(--eva-min)}
+.hp-bronze .nm,.hp-jingwai .nm{font-family:var(--eva-min)!important;font-weight:900!important}
+.hp-jingwai .nm small{font-family:'DM Serif Display',serif!important;font-style:italic}
+.scenes .hp:not(.hp-baseball):not(.hp-artemis):not(.hp-tennisatom) .nm{letter-spacing:-.03em}
+
+/* ===== home frame: hero script word, crossing ticker bands, section script words, slate, extras, credits ===== */
+.open-script{position:absolute;z-index:4;right:4%;bottom:7%;font:italic 400 clamp(40px,6.6vw,108px)/1 'Instrument Serif','DM Serif Display',serif;color:#d6e4ff;transform:rotate(-6deg);transform-origin:right bottom;white-space:nowrap;pointer-events:none;text-shadow:0 2px 0 rgba(10,18,64,.35)}
+
+.tk-wrap{position:relative;height:clamp(150px,15vw,210px);overflow:hidden;background:var(--paper)}
+.tk{position:absolute;left:-6%;width:112%;overflow:hidden;white-space:nowrap}
+.tk-a{top:14%;transform:rotate(-1.6deg);background:var(--cobalt);color:#fff;padding:.46em 0;z-index:2;box-shadow:0 4px 0 var(--ink)}
+.tk-b{top:46%;transform:rotate(1.1deg);background:var(--ink);color:var(--pale,#d6e4ff);padding:.46em 0;z-index:1}
+.tk-in{display:inline-flex;gap:0;animation:tkRun 46s linear infinite;will-change:transform}
+.tk-b .tk-in{animation-duration:62s;animation-direction:reverse}
+.tk span{display:inline-flex;align-items:baseline;gap:.5em;padding:0 1.1em;font:900 clamp(20px,2.7vw,40px)/1 'Inter Tight','Noto Sans SC',sans-serif;letter-spacing:-.02em;text-transform:uppercase;font-style:italic}
+.tk span::after{content:"";width:.32em;height:.32em;margin-left:1.1em;background:currentColor;transform:rotate(45deg);align-self:center;flex:none}
+.tk span b{font:500 .42em/1 var(--mono,'JetBrains Mono',monospace);letter-spacing:.08em;opacity:.8}
+.tk-b span{font-family:'Noto Sans SC','Inter Tight',sans-serif;font-style:normal;font-size:clamp(16px,2vw,28px);letter-spacing:.12em}
+@keyframes tkRun{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tk-in{animation:none}}
+
+.sec-title{position:relative}
+.sec-script{position:absolute;left:clamp(150px,28vw,430px);top:-.6em;z-index:2;font:italic 400 clamp(38px,6vw,96px)/1 'Instrument Serif','DM Serif Display',serif;color:var(--cobalt);transform:rotate(-5deg);transform-origin:left bottom;white-space:nowrap;pointer-events:none}
+body[data-page=home] #scenes .sec-script{left:clamp(220px,40vw,640px);top:-.5em}
+body[data-page=home] #extras .sec-script{left:clamp(200px,34vw,520px)}
+
+.slate a{--c:var(--cobalt)}
+.slate .n{display:flex;align-items:center;gap:8px}
+.slate .n::after{content:"";order:-1;width:10px;height:10px;background:var(--c);flex:none;transition:transform .3s var(--out)}
+.slate a:hover .n::after{background:#fff;transform:rotate(45deg) scale(1.2)}
+
+.extras{gap:clamp(24px,3.4vw,52px)}
+.extra{position:relative;overflow:hidden;background:var(--sheet);border:1.5px solid var(--ink);border-top-width:1.5px;padding:22px 24px 34px;box-shadow:9px 9px 0 var(--cobalt)}
+.extra:nth-child(2){box-shadow:9px 9px 0 var(--ink)}
+.extra .ex-no{position:absolute;right:14px;top:-.12em;font:italic 400 clamp(90px,10vw,150px)/1 'Instrument Serif','DM Serif Display',serif;color:rgba(31,59,255,.12);pointer-events:none}
+.extra>*:not(.ex-no){position:relative}
+.extra::after{content:"";position:absolute;left:24px;bottom:12px;width:96px;height:8px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px)}
+
+.credits h2 .ln{padding-bottom:.2em;margin-bottom:-.14em}
+.credits h2 .ln:last-child{font-family:'Instrument Serif','DM Serif Display',serif;font-style:italic;font-weight:400;letter-spacing:-.03em;color:var(--sky)}
+@media (max-width:820px){
+  .sec-script,body[data-page=home] #scenes .sec-script,body[data-page=home] #extras .sec-script{left:auto;right:0;top:-.3em}
+  .open-script{right:3%;bottom:5%}
+  .extra{box-shadow:6px 6px 0 var(--cobalt)}.extra:nth-child(2){box-shadow:6px 6px 0 var(--ink)}
+}
+@media (max-width:820px){.credits .roll{row-gap:14px}.credits .role{margin:0;padding-bottom:6px}}
+.hp-garden .fan{margin-bottom:90px}
+.hp-garden .fan i::after{content:"";position:absolute;left:50%;bottom:-16px;width:14px;height:22px;margin-left:-7px;border-radius:50% 50% 40% 40%;background:#b84a3a}
+@media (max-width:820px){.hp-garden .fan{margin-bottom:70px}.hp-garden .fan i{height:70px}}
+
+/* scene list preview + title link */
+.slate{position:relative}
+.slate-pv{position:absolute;left:0;top:0;z-index:5;width:280px;margin:0;pointer-events:none;opacity:0;transition:opacity .2s}
+.slate-pv.on{opacity:1}
+.slate-pv img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);filter:saturate(.9)}
+.slate-pv i{position:absolute;left:0;right:0;bottom:-6px;height:6px;background:var(--cobalt);clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
+.slate-pv.art img{opacity:0}
+.slate-pv.art{aspect-ratio:16/10;background:#0b0d10 radial-gradient(circle,#ff4f00 0 2px,transparent 2.4px) 0 0/14px 14px;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
+.open-title{display:inline-block;margin-top:6px;color:var(--cobalt);text-decoration:none;border-bottom:1.5px solid currentColor}
+.open-title:hover{color:var(--ink)}
+
+/* ===== extras: honours / volunteering / certificates ===== */
+.records{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(36px,5vw,72px);align-items:start}
+.rec{border-top:1.5px solid var(--ink);padding-top:14px;min-width:0}
+.rec.lg{grid-row:span 2}
+.rec header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.rec header .mono{color:var(--cobalt);font-size:11px;letter-spacing:.12em}
+.rec h3{margin:0;font:800 clamp(24px,2.6vw,36px)/1.1 var(--display);letter-spacing:-.03em}
+.rec ul{list-style:none;margin:14px 0 0;padding:0}
+.rec li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 18px;padding:12px 0;border-top:1px solid var(--rule)}
+.rec li:first-child{border-top:0}
+.rec li time{color:var(--cobalt);font-size:12px;line-height:1.8;letter-spacing:.06em;white-space:nowrap}
+.rec li p{margin:0;font-size:15px;line-height:1.75;color:var(--ink)}
+.rec li:not(:has(time)){grid-template-columns:1fr}
+@media (max-width:860px){
+  .records{grid-template-columns:1fr}
+  .rec.lg{grid-row:auto}
+  .rec li{grid-template-columns:78px minmax(0,1fr);gap:4px 12px}
+}

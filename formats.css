@@ -1,0 +1,397 @@
+/* =============================================================
+   FORMATS — eleven projects, eleven kinds of document.
+   rallylens dual feed · privacy OS windows · tennis magazine spread ·
+   baseball scoreboard · artemis game menu · bronze handscroll ·
+   afterglow ring timetable · growth notebook · looplab catalog ·
+   garden moon gate · jingwai 35mm film
+   ============================================================= */
+.f-rallylens .part,.f-privacy-city .part,.f-tennisatom .part,.f-baseball .part,.f-artemis .part,.f-bronze .part,.f-afterglow .part,.f-growth-compass .part,.f-looplab .part,.f-garden .part,.f-jingwai .part{row-gap:clamp(14px,1.6vw,24px)}
+[class*=" f-"] .part .pt-h,[class^="f-"] .part .pt-h{font-size:clamp(26px,3.2vw,54px)}
+[class*=" f-"] .part .pt-h .pl{transform:none;opacity:1}
+[class*=" f-"] .part .pt-m{transform:none;opacity:1}
+[class*=" f-"] .act-v{display:none}
+
+/* =================================================================
+   01 RALLYLENS — DUAL FEED: a net runs down the page, every part is a
+   shot sent to the other side
+   ================================================================= */
+body.f-rallylens .case{background:
+  linear-gradient(90deg,transparent calc(50% - 5px),rgba(13,16,32,.08) calc(50% - 5px),rgba(13,16,32,.08) calc(50% + 5px),transparent calc(50% + 5px)),
+  repeating-linear-gradient(0deg,transparent 0 9px,rgba(13,16,32,.28) 9px 10px) 50% 0/10px 100% no-repeat,var(--paper)}
+.tpl-dual{display:block;width:min(64%,900px);margin:clamp(80px,9vw,150px) 0 0;padding:clamp(20px,2.2vw,32px);background:var(--sheet);border-top:8px solid var(--cobalt);box-shadow:0 0 0 1px var(--rule),14px 14px 0 rgba(31,59,255,.12);position:relative}
+.parts>.tpl-dual:nth-of-type(even){margin-left:auto;border-top-color:var(--ink);box-shadow:0 0 0 1px var(--rule),-14px 14px 0 rgba(13,16,32,.1)}
+.tpl-dual:has(.pt-w){width:100%}
+.tpl-dual>*+*{margin-top:clamp(14px,1.6vw,22px)}
+.du-tag{display:flex;justify-content:space-between;align-items:center;gap:12px;font:600 11px/1.3 var(--mono);letter-spacing:.1em;color:var(--mute)}
+.du-tag b{background:var(--cobalt);color:#fff;padding:4px 10px;font-size:12px;letter-spacing:.06em}
+.parts>.tpl-dual:nth-of-type(even) .du-tag{flex-direction:row-reverse}
+.parts>.tpl-dual:nth-of-type(even) .du-tag b{background:var(--ink)}
+.du-arc{position:absolute;top:calc(100% + 6px);left:62%;width:46%;height:clamp(50px,6vw,100px);overflow:visible;fill:none;stroke:var(--cobalt);stroke-width:2;stroke-dasharray:6 6;vector-effect:non-scaling-stroke;transform:scaleY(-1)}
+.parts>.tpl-dual:nth-of-type(even) .du-arc{left:auto;right:62%;stroke:var(--ink);transform:scale(-1,-1)}
+.tpl-dual:last-child .du-arc{display:none}
+.tpl-dual .pt-h{font-size:clamp(26px,3vw,50px)}
+.tpl-dual .pt-en{display:none}
+.tpl-dual .pt-m .fig .ph::before,.tpl-dual .pt-m .fig .ph::after{display:none}
+body.f-rallylens .logline .grid{grid-template-columns:1fr 1fr 1fr}
+body.f-rallylens .logline{background:linear-gradient(90deg,var(--cobalt) 50%,var(--ink) 50%)}
+body.f-rallylens .act-rail a.on{color:var(--cobalt)}
+
+/* =================================================================
+   02 PRIVACY CITY — an operating-system desktop; every part is a dialog
+   ================================================================= */
+body.f-privacy-city .case{background:#e8eef9;background-image:radial-gradient(rgba(31,59,255,.22) 1px,transparent 1.2px);background-size:22px 22px}
+.tpl-window{display:block;width:min(100%,1000px);margin:clamp(56px,6vw,100px) auto 0 0;background:#fff;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;box-shadow:12px 12px 0 var(--cobalt),12px 12px 0 1.5px var(--ink)}
+.parts>.tpl-window:nth-of-type(3n+2){margin-left:clamp(0px,8vw,140px)}
+.parts>.tpl-window:nth-of-type(3n){margin-left:clamp(0px,16vw,280px)}
+.tpl-window:has(.pt-w){width:100%;margin-left:0!important}
+.win-bar{display:flex;align-items:center;gap:12px;padding:8px 10px 8px 12px;background:var(--cobalt);color:#fff;font:600 11px/1.3 var(--mono);letter-spacing:.08em;border-bottom:1.5px solid var(--ink);cursor:default}
+.win-dots{display:flex;gap:6px}
+.win-dots i{width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid var(--ink)}
+.win-dots i:nth-child(2){background:var(--pale)}
+.win-dots i:nth-child(3){background:var(--sky)}
+.win-bar b{flex:1;font:700 12px/1.3 var(--mono);letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.win-cl{opacity:.8;white-space:nowrap}
+.win-x{flex:none;cursor:pointer;width:28px;height:22px;border:1.5px solid #fff;background:transparent;color:#fff;font:700 13px/1 var(--mono)}
+.win-x:hover{background:#fff;color:var(--cobalt)}
+.tpl-window>*:not(.win-bar){margin-left:clamp(16px,2.2vw,32px);margin-right:clamp(16px,2.2vw,32px)}
+.tpl-window>.pt-h{margin-top:clamp(18px,2vw,28px)}
+.tpl-window>:last-child{margin-bottom:clamp(18px,2vw,28px)}
+.tpl-window>*+*{margin-top:clamp(14px,1.6vw,22px)}
+.tpl-window .pt-en{display:inline-block;background:var(--pale);color:var(--cobalt);padding:3px 7px;margin-bottom:.6em}
+.tpl-window .pt-m .fig .ph::before,.tpl-window .pt-m .fig .ph::after{display:none}
+.tpl-window .pt-m{border:1px solid var(--rule)}
+.tpl-window.min>*:not(.win-bar):not(.pt-h){display:none}
+.tpl-window.min>.pt-h{margin-bottom:18px;opacity:.6}
+.tpl-window::after{content:"拒绝          接受";display:block;margin:clamp(14px,1.6vw,22px) clamp(16px,2.2vw,32px) clamp(16px,2vw,24px);padding-top:12px;border-top:1px dashed var(--rule);text-align:right;font:700 12px/1 var(--mono);letter-spacing:.2em;color:var(--cobalt);white-space:pre}
+body.f-privacy-city .logline{background:#e8eef9;color:var(--ink);padding-top:clamp(40px,5vw,80px)}
+body.f-privacy-city .logline .grid{max-width:980px;margin:0 auto;display:block;background:#fff;border:1.5px solid var(--ink);border-radius:10px;box-shadow:12px 12px 0 var(--cobalt);padding:0 0 18px}
+body.f-privacy-city .logline .grid::before{content:"PRIVACY CITY 想要了解：这个项目";display:block;padding:9px 14px;background:var(--ink);color:#fff;font:600 11px/1.3 var(--mono);letter-spacing:.1em;border-radius:8px 8px 0 0}
+body.f-privacy-city .logline .it{border:0;padding:16px 22px 0 58px;position:relative}
+body.f-privacy-city .logline .it::before{content:"";position:absolute;left:22px;top:20px;width:18px;height:18px;border:2px solid var(--cobalt);background:var(--cobalt);box-shadow:inset 0 0 0 3px #fff}
+body.f-privacy-city .logline .k b{font-size:22px;color:var(--cobalt)}
+body.f-privacy-city .logline .k span{opacity:1;color:var(--mute)}
+body.f-privacy-city .logline p{color:var(--ink-2);font-size:15px}
+body.f-privacy-city .logline .stats{max-width:980px;margin:28px auto 0;color:var(--ink)}
+
+/* =================================================================
+   03 TENNISATOM — an athlete magazine: every part is a two-page spread
+   ================================================================= */
+.tpl-spread{--ink:#0d1020;--ink-2:#394058;--mute:#565c72;--paper:#f3f4f7;--sheet:#fff;--rule:rgba(13,16,32,.14);--cobalt:#1f3bff;
+  display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,5vw,80px);row-gap:clamp(14px,1.6vw,22px);align-content:start;background:var(--paper);color:var(--ink);
+  margin:clamp(70px,8vw,140px) calc(var(--m) * -.4) 0;padding:clamp(46px,5vw,72px) clamp(22px,3vw,48px) clamp(50px,5vw,72px);position:relative;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.tpl-spread::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:60px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(13,16,32,.12) 45%,rgba(13,16,32,.22) 50%,rgba(13,16,32,.12) 55%,transparent);pointer-events:none}
+.tpl-spread>*{grid-column:2}
+.tpl-spread>.pt-m{grid-column:1;grid-row:1/8}
+.parts>.tpl-spread:nth-of-type(even)>*{grid-column:1}
+.parts>.tpl-spread:nth-of-type(even)>.pt-m{grid-column:2}
+.tpl-spread>.pt-w,.tpl-spread>.pt-n{grid-column:1/-1!important}
+.tpl-spread:not(:has(.pt-m))>*{grid-column:1/-1!important}
+.tpl-spread .pt-h{font:900 clamp(34px,4.8vw,88px)/.98 var(--display),var(--cjk);font-family:var(--cjk);letter-spacing:-.04em;text-transform:uppercase}
+.tpl-spread .pt-h .pl:last-child{color:var(--cobalt)}
+.tpl-spread .pt-en{font:800 11px/1 var(--mono);letter-spacing:.3em;color:var(--mute);border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:.8em}
+.tpl-spread .pt-t .b-text p:first-child::first-letter{float:left;font:900 3.6em/.82 var(--display);color:var(--cobalt);margin:.04em .08em 0 0}
+.tpl-spread .pt-t .b-text{columns:2;column-gap:22px}
+.tpl-spread .pt-t .b-text p{font-size:14.5px;line-height:1.85}
+.tpl-spread .pt-m .fig .ph{box-shadow:none}
+.tpl-spread .pt-m .fig .ph::before,.tpl-spread .pt-m .fig .ph::after{display:none}
+.sp-folio{position:absolute;bottom:18px;font:600 11px/1 var(--mono);letter-spacing:.2em;color:var(--mute)}
+.sp-folio.l{left:clamp(22px,3vw,48px)}
+.sp-folio.r{right:clamp(22px,3vw,48px)}
+.sp-run{position:absolute;top:18px;left:clamp(22px,3vw,48px);right:clamp(22px,3vw,48px);display:flex;justify-content:space-between;font:700 10.5px/1 var(--mono);letter-spacing:.3em;color:var(--mute);border-bottom:1px solid var(--rule);padding-bottom:8px}
+.sp-run::after{content:"THE PORTRAIT OF THE BODY"}
+.tpl-spread .pt-script{right:6%;top:60px;font-size:clamp(50px,6vw,110px);color:var(--cobalt);transform:rotate(-8deg)}
+body.f-tennisatom .logline{background:#04081c}
+body.f-tennisatom .logline .grid{grid-template-columns:1.2fr 1fr 1fr}
+body.f-tennisatom .logline .it{border-top:4px solid var(--sky)}
+body.f-tennisatom .logline .k b{font:900 clamp(56px,6vw,100px)/.9 var(--display);color:var(--sky)}
+
+/* =================================================================
+   04 PITCH × IMPACT — a stadium scoreboard; parts are LED panels
+   ================================================================= */
+body.f-baseball .case{background:#02040f;background-image:radial-gradient(circle at 50% -20%,rgba(90,174,255,.18),transparent 60%)}
+.tpl-board{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);background:#050a1e;border:3px solid #1d2c5e;outline:1px solid rgba(90,174,255,.3);outline-offset:6px;padding:clamp(16px,2vw,28px);margin-top:clamp(70px,8vw,130px);box-shadow:inset 0 0 80px rgba(90,174,255,.08)}
+.tpl-board>*{grid-column:1/-1}
+.sb-top{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:2px solid #1d2c5e;font:700 11px/1.2 var(--mono);letter-spacing:.24em;color:var(--sky)}
+.sb-top b{color:#fff;letter-spacing:.14em}
+.tpl-board .pt-h{color:#eef4ff;font-size:clamp(34px,5vw,92px);line-height:1.04;-webkit-mask:radial-gradient(circle,#000 62%,transparent 66%) 0 0/4px 4px;mask:radial-gradient(circle,#000 62%,transparent 66%) 0 0/4px 4px;text-shadow:0 0 22px rgba(90,174,255,.65)}
+.tpl-board .pt-en{display:none}
+.tpl-board .pt-m{grid-column:1/8}
+.tpl-board .pt-t{grid-column:8/13}
+.tpl-board .pt-x{grid-column:1/-1}
+.parts>.tpl-board:nth-of-type(even) .pt-m{grid-column:6/13;grid-row:3}
+.parts>.tpl-board:nth-of-type(even) .pt-t{grid-column:1/6;grid-row:3}
+.tpl-board.no-t .pt-m{grid-column:1/-1!important}
+.tpl-board:not(:has(.pt-m)) .pt-t{grid-column:1/-1}
+.tpl-board .pt-m .fig .ph{border:2px solid #1d2c5e}
+.tpl-board .pt-m .fig .ph::before,.tpl-board .pt-m .fig .ph::after{display:none}
+.tpl-board .b-stats b,.tpl-board .b-list li::before{color:var(--sky);text-shadow:0 0 12px rgba(90,174,255,.6)}
+body.f-baseball .act-v{display:block;position:relative;top:0;float:none;height:auto;margin:clamp(30px,4vw,60px) calc(var(--m) * -1) 0;background:var(--sky);overflow:hidden;white-space:nowrap}
+body.f-baseball .act-v span{display:inline-block;writing-mode:horizontal-tb;font:800 13px/1 var(--mono);letter-spacing:.24em;color:#02040f;-webkit-text-stroke:0;transform:none;padding:9px 0;animation:tick 28s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+body.f-baseball .logline{background:#02040f;border-top:3px solid #1d2c5e;border-bottom:3px solid #1d2c5e}
+body.f-baseball .logline .it{background:#050a1e;border:2px solid #1d2c5e;padding:16px}
+body.f-baseball .logline .k b{color:var(--sky);text-shadow:0 0 16px rgba(90,174,255,.7)}
+body.f-baseball .logline .stats .stat b{-webkit-mask:radial-gradient(circle,#000 62%,transparent 66%) 0 0/4px 4px;mask:radial-gradient(circle,#000 62%,transparent 66%) 0 0/4px 4px}
+
+/* =================================================================
+   05 ARTEMIS — a game menu: left command list, chamfered HUD panels
+   ================================================================= */
+body.f-artemis .case{background:#0b0d18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 56 16v32L28 64 0 48V16ZM28 64v33' fill='none' stroke='%236f8bff' stroke-opacity='.09'/%3E%3C/svg%3E")}
+@media (min-width:1100px){
+  body.f-artemis .case{padding-left:calc(var(--m) + 230px)}
+  body.f-artemis .act-rail{opacity:1;pointer-events:auto;left:var(--m);right:auto;top:calc(var(--nav) + 40px);transform:none;align-items:stretch;gap:6px;width:210px}
+  body.f-artemis .act-rail a{justify-content:flex-start;gap:10px;padding:10px 12px;background:#141828;color:#c3c9dd;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);font:700 12.5px/1.3 var(--cjk)}
+  body.f-artemis .act-rail a b{display:inline;font:700 11px var(--mono);color:#6f8bff}
+  body.f-artemis .act-rail a span{max-width:none;opacity:1;background:none;color:inherit;padding:0;font:inherit}
+  body.f-artemis .act-rail a::after{display:none}
+  body.f-artemis .act-rail a.on{background:#6f8bff;color:#0b0d18}
+  body.f-artemis .act-rail a.on b{color:#0b0d18}
+  body.f-artemis .act-rail::before{content:"MENU · ARTEMIS";font:700 10px var(--mono);letter-spacing:.3em;color:#6f8bff;margin-bottom:6px}
+}
+.tpl-panel{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);position:relative;margin-top:clamp(60px,7vw,120px);padding:clamp(24px,2.8vw,42px);background:linear-gradient(135deg,rgba(111,139,255,.1),transparent 45%),#121628;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,32px 100%,0 calc(100% - 32px))}
+.tpl-panel>*{grid-column:1/-1}
+.pn-tab{display:flex;align-items:center;gap:12px;font:700 11px/1.2 var(--mono);letter-spacing:.2em;color:#6f8bff}
+.pn-tab b{background:#6f8bff;color:#0b0d18;padding:4px 9px;letter-spacing:.06em}
+.pn-stripe{position:absolute;right:42px;top:0;width:clamp(90px,12vw,180px);height:12px;background:repeating-linear-gradient(-45deg,#6f8bff 0 7px,transparent 7px 14px)}
+.pn-c{position:absolute;width:22px;height:22px;border:2px solid #6f8bff}
+.pn-c.tl{left:12px;top:12px;border-right:0;border-bottom:0}
+.pn-c.br{right:12px;bottom:12px;border-left:0;border-top:0}
+.tpl-panel .pt-h{grid-column:1/8;font-size:clamp(28px,3.8vw,68px);letter-spacing:.02em}
+.tpl-panel .pt-en{display:none}
+.tpl-panel .pt-m{grid-column:7/13;grid-row:2/6}
+.tpl-panel .pt-t{grid-column:1/7}
+.tpl-panel .pt-x{grid-column:1/-1}
+.parts>.tpl-panel:nth-of-type(even) .pt-h,.parts>.tpl-panel:nth-of-type(even) .pt-t{grid-column:7/13}
+.parts>.tpl-panel:nth-of-type(even) .pt-m{grid-column:1/7}
+.tpl-panel.no-t .pt-m,.tpl-panel:not(:has(.pt-t)) .pt-m{grid-column:1/-1!important;grid-row:auto}
+.tpl-panel .pt-m .fig .ph{clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.tpl-panel .pt-m .fig .ph::before,.tpl-panel .pt-m .fig .ph::after{display:none}
+body.f-artemis .logline{background:#0b0d18;padding-top:clamp(40px,5vw,70px)}
+body.f-artemis .logline .grid{background:#121628;padding:28px;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,32px 100%,0 calc(100% - 32px))}
+body.f-artemis .logline .grid::before{content:"MISSION BRIEF · 任务简报";grid-column:1/-1;font:700 11px var(--mono);letter-spacing:.3em;color:#6f8bff}
+body.f-artemis .logline .k b{color:#6f8bff}
+
+/* =================================================================
+   06 天命 — a handscroll: parts unroll right to left, vertical serif
+   ================================================================= */
+body.f-bronze .case{background:#060a20;background-image:linear-gradient(rgba(214,228,255,.05) 1px,transparent 1px);background-size:100% 46px}
+.f-bronze .parts.hscroll{display:flex;align-items:flex-start;gap:clamp(26px,3vw,52px);overflow-x:auto;direction:rtl;scroll-snap-type:x proximity;margin:clamp(20px,3vw,40px) calc(var(--m) * -1) 0;padding:20px var(--m) 34px;scrollbar-width:thin;scrollbar-color:var(--sky) transparent;cursor:grab}
+.f-bronze .parts.hscroll.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.f-bronze .parts.hscroll>*{direction:ltr;flex:0 0 min(88vw,1060px);scroll-snap-align:start}
+.f-bronze .parts.hscroll>.blocks.p0{margin-top:0}
+.hs-nav{display:flex;justify-content:space-between;align-items:center;margin-top:clamp(30px,4vw,60px);padding:10px 0;border-top:1px solid rgba(214,228,255,.25);border-bottom:1px solid rgba(214,228,255,.25)}
+.hs-nav button{cursor:pointer;border:1px solid var(--sky);background:transparent;color:var(--sky);font:700 16px/1 var(--mono);width:44px;height:34px}
+.hs-nav button:hover{background:var(--sky);color:#060a20}
+.hs-nav .mono{color:#8f99bd}
+.tpl-scroll{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(20px,2.4vw,36px);row-gap:16px;margin:0;padding:clamp(28px,3vw,44px);border:1px solid rgba(214,228,255,.35);outline:1px solid rgba(214,228,255,.14);outline-offset:7px;background:#0b1236;position:relative}
+.tpl-scroll>*{grid-column:1}
+.tpl-scroll>.pt-h{grid-column:2;grid-row:1/9;writing-mode:vertical-rl;font:900 clamp(32px,3.6vw,60px)/1.25 'Noto Serif SC',var(--cjk);letter-spacing:.14em;justify-self:end}
+.tpl-scroll .pt-en{display:none}
+.sc-seal{position:absolute;right:-12px;top:-16px;z-index:4;writing-mode:vertical-rl;padding:8px 6px;background:var(--cobalt);color:#fff;font:900 14px/1 'Noto Serif SC',var(--cjk);letter-spacing:.2em;transform:rotate(-4deg);box-shadow:0 0 0 2px #060a20,0 0 0 3px var(--cobalt)}
+.sc-en{position:absolute;left:clamp(28px,3vw,44px);bottom:12px;font:600 10px/1 var(--mono);letter-spacing:.3em;color:#8f99bd}
+.tpl-scroll .pt-m .fig .ph::before,.tpl-scroll .pt-m .fig .ph::after{display:none}
+body.f-bronze .logline{background:#060a20}
+body.f-bronze .logline .grid{direction:rtl}
+body.f-bronze .logline .it{direction:ltr;border-color:rgba(214,228,255,.4)}
+body.f-bronze .logline .k b{font-family:'Noto Serif SC',var(--cjk);color:var(--pale)}
+
+/* =================================================================
+   07 AFTERGLOW — the station clock: circular frames, rings of type
+   ================================================================= */
+.tpl-ring{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);justify-items:center;position:relative;margin-top:clamp(90px,10vw,170px)}
+.tpl-ring>*{grid-column:2/12;width:100%}
+.rg-ring{grid-column:3/11;grid-row:1;width:100%;max-width:660px;aspect-ratio:1;overflow:visible;animation:rg 90s linear infinite;pointer-events:none}
+.rg-ring circle{fill:none;stroke:rgba(214,228,255,.25);stroke-width:1}
+.rg-ring text{fill:var(--pale);font:700 13px var(--mono);letter-spacing:.32em}
+@keyframes rg{to{transform:rotate(360deg)}}
+.tpl-ring>.pt-m{grid-column:3/11;grid-row:1;align-self:center;width:min(72%,470px);z-index:2}
+.tpl-ring:not(.is-viz)>.pt-m .fig .ph{border-radius:50%;aspect-ratio:1;overflow:hidden}
+.tpl-ring:not(.is-viz)>.pt-m .fig .ph img{height:100%;object-fit:cover}
+.tpl-ring>.pt-m .fig .ph::before,.tpl-ring>.pt-m .fig .ph::after{display:none}
+.tpl-ring>.pt-m .fig figcaption{margin:12px auto 0}
+.tpl-ring.is-viz>.pt-m{width:min(100%,920px);grid-column:2/12;grid-row:2}
+.tpl-ring.is-viz>.rg-ring{display:none}
+.tpl-ring>.pt-h{grid-row:2;text-align:center;font-size:clamp(30px,4.4vw,80px)}
+.tpl-ring.is-viz>.pt-h{grid-row:1}
+.tpl-ring .pt-en{letter-spacing:.4em;color:var(--sky)}
+.tpl-ring>.pt-t,.tpl-ring>.pt-x{grid-column:3/11}
+.tpl-ring>.pt-w,.tpl-ring>.pt-n{grid-column:1/-1}
+.rg-time{position:absolute;left:0;top:-.1em;font:900 clamp(70px,10vw,190px)/1 var(--display);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.2px rgba(214,228,255,.35);pointer-events:none}
+body.f-afterglow .logline{background:#04081c}
+body.f-afterglow .logline .grid{display:block;max-width:980px;margin:0 auto;border-top:2px solid var(--pale)}
+body.f-afterglow .logline .it{display:grid;grid-template-columns:140px 1fr;gap:24px;border-top:0;border-bottom:1px solid rgba(214,228,255,.25);padding:14px 0}
+body.f-afterglow .logline .k{flex-direction:column;align-items:flex-start;gap:4px}
+body.f-afterglow .logline .k b{font:700 28px var(--mono);color:var(--sky)}
+body.f-afterglow .logline p{margin:0}
+
+/* =================================================================
+   08 GROWTH COMPASS — a research notebook: graph paper, tape, marker
+   ================================================================= */
+body.f-growth-compass .case{background:#f7f9fd;background-image:linear-gradient(rgba(31,59,255,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(31,59,255,.075) 1px,transparent 1px);background-size:24px 24px}
+.tpl-note{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);position:relative;margin-top:clamp(70px,8vw,130px);padding:clamp(26px,3vw,46px);background:#fff;box-shadow:0 1px 0 rgba(13,16,32,.05),0 18px 40px rgba(10,18,64,.1);transform:rotate(-.5deg)}
+.parts>.tpl-note:nth-of-type(even){transform:rotate(.6deg)}
+.tpl-note>*{grid-column:1/-1}
+.nt-tape{position:absolute;top:-15px;left:42%;width:150px;height:30px;background:rgba(90,174,255,.45);transform:rotate(-3deg)}
+.parts>.tpl-note:nth-of-type(even) .nt-tape{left:12%;transform:rotate(4deg)}
+.nt-no{font:italic 400 20px/1 var(--script);color:var(--cobalt);letter-spacing:.02em}
+.nt-hand{position:absolute;right:5%;top:22px;z-index:3;font:italic 400 clamp(30px,3.6vw,58px)/1 var(--script);color:var(--cobalt);transform:rotate(-7deg)}
+.tpl-note .pt-script{display:none}
+.tpl-note .pt-h{grid-column:1/9;font-size:clamp(28px,3.4vw,58px)}
+.tpl-note .pt-h .pl{display:inline;background:linear-gradient(transparent 58%,rgba(90,174,255,.38) 58%,rgba(90,174,255,.38) 92%,transparent 92%)}
+.tpl-note .pt-h .pl::after{content:"\A";white-space:pre}
+.tpl-note .pt-en{display:none}
+.tpl-note .pt-m{grid-column:7/13;grid-row:2/6;transform:rotate(2deg)}
+.tpl-note .pt-m .fig .ph{padding:10px 10px 40px;background:#fff;box-shadow:0 8px 22px rgba(10,18,64,.16)}
+.tpl-note .pt-m .fig .ph::before,.tpl-note .pt-m .fig .ph::after{display:none}
+.tpl-note .pt-t{grid-column:1/7}
+.parts>.tpl-note:nth-of-type(even) .pt-m{grid-column:1/7;transform:rotate(-2deg)}
+.parts>.tpl-note:nth-of-type(even) .pt-t,.parts>.tpl-note:nth-of-type(even) .pt-h{grid-column:7/13}
+.tpl-note:not(:has(.pt-m)) .pt-t,.tpl-note:not(:has(.pt-t)) .pt-m{grid-column:1/-1!important;grid-row:auto;transform:none}
+.tpl-note .b-list.cols li{background:#e3ecff;padding:16px;border:0;transform:rotate(-1deg);box-shadow:0 4px 10px rgba(10,18,64,.08)}
+.tpl-note .b-list.cols li:nth-child(even){transform:rotate(1.2deg)}
+body.f-growth-compass .logline{background:#fff;color:var(--ink);border-left:clamp(30px,5vw,80px) solid #f7f9fd;box-shadow:inset 3px 0 0 rgba(31,59,255,.35)}
+body.f-growth-compass .logline .it{border-color:var(--ink)}
+body.f-growth-compass .logline .k b{font:italic 400 clamp(40px,4vw,62px)/1 var(--script);color:var(--cobalt)}
+body.f-growth-compass .logline .k span{opacity:1;color:var(--mute)}
+body.f-growth-compass .logline p{color:var(--ink-2)}
+body.f-growth-compass .logline .stats{color:var(--ink)}
+@media (min-width:1100px){
+  body.f-growth-compass .act-rail{opacity:1;pointer-events:auto;right:0;gap:4px}
+  body.f-growth-compass .act-rail a{background:var(--pale);color:var(--ink);padding:10px 12px 10px 14px;border-radius:8px 0 0 8px;font:700 12px var(--cjk)}
+  body.f-growth-compass .act-rail a span{max-width:none;opacity:1;background:none;color:inherit;padding:0;font:inherit}
+  body.f-growth-compass .act-rail a::after{display:none}
+  body.f-growth-compass .act-rail a b{display:none}
+  body.f-growth-compass .act-rail a.on{background:var(--cobalt);color:#fff;transform:translateX(-8px)}
+}
+
+/* =================================================================
+   09 LOOPLAB — a material catalog: item codes, spec grid, barcodes
+   ================================================================= */
+body.f-looplab .case{background:#fff}
+.tpl-item{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:0;row-gap:0;border:1.5px solid var(--ink);margin-top:clamp(56px,6vw,100px);background:#fff}
+.tpl-item>*{grid-column:1/-1;padding:clamp(16px,1.8vw,24px)}
+.it-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;padding:10px 16px!important;border-bottom:1.5px solid var(--ink);font:600 11px/1.3 var(--mono);letter-spacing:.16em}
+.it-head b{font:900 clamp(22px,2.2vw,32px)/1 var(--display);letter-spacing:-.02em;color:var(--cobalt)}
+.it-head .pt-bar{width:clamp(80px,9vw,130px);height:30px}
+.tpl-item>.pt-h{grid-column:1/6;border-right:1px solid var(--ink);font-size:clamp(24px,2.8vw,46px)}
+.tpl-item .pt-en{display:none}
+.tpl-item>.pt-m{grid-column:6/13;grid-row:2/5;background:#f1f3f7;border-bottom:1px solid var(--ink)}
+.tpl-item>.pt-t{grid-column:1/6;border-right:1px solid var(--ink)}
+.tpl-item>.pt-x,.tpl-item>.pt-w,.tpl-item>.pt-n{border-top:1px solid var(--ink)}
+.tpl-item:not(:has(.pt-m))>.pt-h,.tpl-item:not(:has(.pt-m))>.pt-t{grid-column:1/-1;border-right:0}
+.tpl-item .pt-m .fig .ph::before,.tpl-item .pt-m .fig .ph::after{display:none}
+.tpl-item .b-list li{border-bottom:1px dashed var(--rule)}
+.tpl-item .b-list.cols li{border-top:1px solid var(--ink)}
+.parts>.tpl-item:nth-of-type(even)>.pt-h,.parts>.tpl-item:nth-of-type(even)>.pt-t{grid-column:8/13;border-right:0;border-left:1px solid var(--ink)}
+.parts>.tpl-item:nth-of-type(even)>.pt-m{grid-column:1/8}
+body.f-looplab .logline{background:#fff;color:var(--ink);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+body.f-looplab .logline .grid{gap:0}
+body.f-looplab .logline .it{border:0;border-right:1px solid var(--ink);padding:18px}
+body.f-looplab .logline .it:last-child{border-right:0}
+body.f-looplab .logline .k b{font:900 26px var(--display);color:var(--cobalt)}
+body.f-looplab .logline .k b::before{content:"LL-0";font-size:.7em}
+body.f-looplab .logline .k span{opacity:1;color:var(--mute)}
+body.f-looplab .logline p{color:var(--ink-2)}
+body.f-looplab .logline .stats{color:var(--ink)}
+
+/* =================================================================
+   10 游园画境 — a garden guide: moon-gate frames, vertical poems
+   ================================================================= */
+body.f-garden .case{background:#eef2f8;background-image:radial-gradient(ellipse at 20% 0%,rgba(90,174,255,.12),transparent 50%),radial-gradient(ellipse at 90% 60%,rgba(31,59,255,.06),transparent 50%)}
+.tpl-moon{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);align-items:center;position:relative;margin-top:clamp(90px,10vw,170px)}
+.tpl-moon>*{grid-column:1/-1}
+.tpl-moon>.pt-m{grid-column:1/8;grid-row:1/4;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 16px #fff,0 0 0 17px rgba(13,16,32,.25),0 30px 60px rgba(10,18,64,.15)}
+.tpl-moon>.pt-m>*,.tpl-moon>.pt-m .fig,.tpl-moon>.pt-m .fig .ph{height:100%}
+.tpl-moon>.pt-m .fig .ph img{height:100%;object-fit:cover}
+.tpl-moon>.pt-m .fig figcaption{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);margin:0;max-width:70%;text-align:center}
+.tpl-moon>.pt-m .fig .ph::before,.tpl-moon>.pt-m .fig .ph::after{display:none}
+.tpl-moon.is-viz>.pt-m{aspect-ratio:auto;border-radius:0;box-shadow:none}
+.tpl-moon>.pt-h{grid-column:9/13;grid-row:1/3;writing-mode:vertical-rl;justify-self:center;font:900 clamp(34px,4.2vw,70px)/1.3 'Noto Serif SC',var(--cjk);letter-spacing:.16em}
+.tpl-moon .pt-en{writing-mode:vertical-rl;letter-spacing:.3em;color:var(--mute)}
+.tpl-moon>.pt-t{grid-column:8/13;grid-row:3}
+.parts>.tpl-moon:nth-of-type(even)>.pt-m{grid-column:6/13}
+.parts>.tpl-moon:nth-of-type(even)>.pt-h{grid-column:1/5}
+.parts>.tpl-moon:nth-of-type(even)>.pt-t{grid-column:1/6}
+.tpl-moon:not(:has(.pt-m))>.pt-h{grid-column:1/-1;writing-mode:horizontal-tb;justify-self:start}
+.tpl-moon:not(:has(.pt-m))>.pt-t{grid-column:1/-1;grid-row:auto}
+.mn-tag{position:absolute;left:clamp(8px,2vw,30px);top:-10px;z-index:4;writing-mode:vertical-rl;padding:10px 7px;background:var(--cobalt);color:#fff;font:900 15px/1 'Noto Serif SC',var(--cjk);letter-spacing:.2em}
+.mn-lattice{position:absolute;right:0;top:-40px;width:clamp(120px,14vw,220px);aspect-ratio:1;opacity:.28;pointer-events:none;background:
+  linear-gradient(45deg,transparent 46%,var(--cobalt) 46% 54%,transparent 54%) 0 0/30px 30px,linear-gradient(-45deg,transparent 46%,var(--cobalt) 46% 54%,transparent 54%) 0 0/30px 30px;border-radius:50%}
+body.f-garden .logline{background:#e3ebf7;color:var(--ink)}
+body.f-garden .logline .it{border-color:var(--ink)}
+body.f-garden .logline .k b{font-family:'Noto Serif SC',var(--cjk);color:var(--cobalt)}
+body.f-garden .logline .k span{opacity:1;color:var(--mute)}
+body.f-garden .logline p{color:var(--ink-2)}
+body.f-garden .logline .stats{color:var(--ink)}
+
+/* =================================================================
+   11 镜外 — 35mm film: every part is a frame with sprockets and slate
+   ================================================================= */
+body.f-jingwai .case{background:#05060b}
+.tpl-frame35{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);position:relative;margin:clamp(40px,5vw,80px) calc(var(--m) * -1) 0;padding:clamp(54px,5vw,70px) calc(var(--m) + 12px);background:#12141c;
+  --hole:repeating-linear-gradient(90deg,transparent 0 16px,#05060b 16px 34px,transparent 34px 52px)}
+.tpl-frame35::before,.tpl-frame35::after{content:"";position:absolute;left:0;right:0;height:16px;background:var(--hole);background-color:transparent}
+.tpl-frame35::before{top:12px}
+.tpl-frame35::after{bottom:12px}
+.tpl-frame35>*{grid-column:1/-1}
+.fx-no{position:absolute;left:calc(var(--m) + 12px);top:34px;font:700 11px/1 var(--mono);letter-spacing:.3em;color:var(--sky)}
+.fx-tc{position:absolute;right:calc(var(--m) + 12px);top:34px;font:700 11px/1 var(--mono);letter-spacing:.2em;color:#8f99bd}
+.fx-slug{font:700 12px/1.4 var(--mono);letter-spacing:.14em;color:#8f99bd;border-bottom:1px solid #2a2f45;padding-bottom:10px;text-transform:uppercase}
+.tpl-frame35>.pt-h{grid-column:1/9;font:900 clamp(30px,4vw,72px)/1.12 'Noto Serif SC',var(--cjk);color:#f2f3f7}
+.tpl-frame35 .pt-en{display:none}
+.tpl-frame35>.pt-m{grid-column:1/9}
+.tpl-frame35>.pt-m .fig .ph{background:#000;padding:3.2% 0;box-shadow:0 0 0 1px #2a2f45}
+.tpl-frame35>.pt-m .fig .ph::before,.tpl-frame35>.pt-m .fig .ph::after{display:none}
+.tpl-frame35>.pt-t{grid-column:9/13;grid-row:3/6;align-self:start}
+.tpl-frame35>.pt-t .b-text p{font-size:15px;line-height:2;color:#c9cde0}
+.parts>.tpl-frame35:nth-of-type(even)>.pt-m,.parts>.tpl-frame35:nth-of-type(even)>.pt-h{grid-column:5/13}
+.parts>.tpl-frame35:nth-of-type(even)>.pt-t{grid-column:1/5}
+.tpl-frame35:not(:has(.pt-m))>.pt-t,.tpl-frame35:not(:has(.pt-t))>.pt-m{grid-column:1/-1!important;grid-row:auto}
+body.f-jingwai .logline{background:#05060b;text-align:center}
+body.f-jingwai .logline .grid{display:block;max-width:760px;margin:0 auto}
+body.f-jingwai .logline .it{border:0;padding:18px 0}
+body.f-jingwai .logline .k{justify-content:center;flex-direction:column;align-items:center;gap:6px}
+body.f-jingwai .logline .k b{font:900 30px 'Noto Serif SC',var(--cjk);color:var(--sky)}
+body.f-jingwai .logline p{font:400 15.5px/2 var(--mono),var(--cjk);font-family:var(--cjk);color:#c9cde0}
+
+/* small screens: every format falls back to a single column, keeping its chrome */
+@media (max-width:860px){
+  .tpl-dual,.parts>.tpl-dual:nth-of-type(even){width:100%;margin-left:0}
+  .du-arc{display:none}
+  .parts>.tpl-window{margin-left:0!important}
+  .tpl-spread{grid-template-columns:1fr;margin-left:0;margin-right:0}
+  .tpl-spread>*,.parts>.tpl-spread:nth-of-type(even)>*{grid-column:1!important;grid-row:auto!important}
+  .tpl-spread::before{display:none}
+  .tpl-spread .pt-t .b-text{columns:1}
+  .tpl-note,.parts>.tpl-note:nth-of-type(even){transform:none}
+  .tpl-item>*,.parts>.tpl-item:nth-of-type(even)>*{border-left:0!important;border-right:0!important}
+  .tpl-moon>.pt-m{aspect-ratio:1;max-width:86vw;justify-self:center}
+  .tpl-moon>.pt-h{writing-mode:horizontal-tb!important}
+  .f-bronze .parts.hscroll>*{flex-basis:90vw}
+  .tpl-scroll{grid-template-columns:1fr}
+  .tpl-scroll>.pt-h{grid-column:1;grid-row:auto;writing-mode:horizontal-tb}
+  .tpl-frame35{margin-left:calc(var(--m) * -1);margin-right:calc(var(--m) * -1)}
+  .rg-ring{max-width:92vw}
+  body.f-artemis .case{padding-left:var(--m)}
+}
+
+/* parts without a picture: text takes the whole panel */
+.tpl-panel:not(:has(.pt-m))>.pt-h,.tpl-panel:not(:has(.pt-m))>.pt-t,.tpl-board:not(:has(.pt-m))>.pt-t{grid-column:1/-1!important}
+.tpl-window .pt-en{display:none}
+/* narrow columns re-flow their own lists */
+.pt-t,.pt-x{container-type:inline-size}
+@container (max-width:620px){.b-list.cols{grid-template-columns:repeat(2,minmax(0,1fr))!important}.b-list.cols li{transform:none!important}}
+@container (max-width:380px){.b-list.cols{grid-template-columns:1fr!important}}
+body.f-privacy-city .logline .stats,body.f-privacy-city .logline .stat b{color:var(--ink)}
+body.f-privacy-city .logline .stat b{color:var(--cobalt)}
+
+.tpl-scroll .pt-m .fig .ph,.tpl-scroll .pt-x .fig .ph{display:flex;justify-content:center;background:#060a20}
+.tpl-scroll .pt-m .fig .ph img,.tpl-scroll .pt-x .fig .ph img{max-height:70vh;width:auto;max-width:100%}
+.tpl-scroll .gallery .fig .ph img{max-height:none;width:100%}
+
+.tpl-ring:has(>.pt-m .gallery)>.pt-h,.tpl-ring:not(:has(>.pt-m))>.pt-h{grid-row:1;grid-column:3/11;align-self:center;z-index:2;max-width:62%}
+.tpl-ring:has(>.pt-m .gallery)>.pt-m{grid-row:2;grid-column:1/-1;width:100%;max-width:none}
+.tpl-ring:has(>.pt-m .gallery)>.pt-m .fig figcaption{max-width:100%;width:auto}
+.tpl-ring:not(:has(>.pt-m))>.rg-ring{max-width:520px}
+.sp-run{font-size:0}
+.sp-run::after{font-size:10.5px}

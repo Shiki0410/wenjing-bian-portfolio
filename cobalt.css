@@ -477,12 +477,12 @@ dialog.lb button{position:fixed;right:18px;top:16px;background:#fff;border:0;pad
 @media (max-width:900px){
   .nav-links{display:none}
   .nav{grid-template-columns:1fr auto}
-  .open-visual{position:relative;width:100%;top:0;margin-bottom:12px}
+  .open-visual{position:relative;width:100%;top:0;margin-bottom:32px;grid-column:1/-1}
   .open-cols .c1,.open-cols .c2,.open-cols .c3{grid-column:1/-1;margin-top:12px;justify-content:flex-start}
   .open-quote{display:none}
   .sec-title .no,.sec-title h2,.sec-title .side{grid-column:1/-1}
   .cast-photo,.cast-text{grid-column:1/-1}
-  .cast-photo{max-width:420px}
+  .cast-photo{max-width:420px}.cast-photo .vname{right:10px;max-height:90%;font-size:clamp(38px,9vw,64px)}
   .cast-body{grid-template-columns:1fr}
   .slate a{grid-template-columns:44px 1fr auto}
   .slate .c,.slate .k{display:none}
