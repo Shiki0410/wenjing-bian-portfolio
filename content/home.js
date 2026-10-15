@@ -4,13 +4,13 @@
 window.HOME = {
   place: 'SHANGHAI · TONGJI UNIV. → ZJU',
   reel: ['jingwai', 'rallylens', 'bronze', 'tennisatom', 'artemis', 'privacy-city'],
-  c2h: '我在做的事',
-  c2: '用户研究、AI 原型、游戏系统和影像，我都做。11 个项目，每一页都有研究依据、设计过程和能打开操作的成果。',
-  castSide: '视觉传达设计与人工智能双学士，2027 届。这一节讲背景、做事方式，以及每项能力分别在哪些项目里用到。',
-  lead: '我是卞文璟。我习惯从<em>访谈和录像</em>里找问题，用<em>交互、代码和影像</em>去回答它。',
+  c2h: '最近在做',
+  c2: '研究羽毛球搭档怎样一起练球，也做游戏、影像和服务设计。这里收了 2023 到 2026 年的 11 个项目，点进去能看到调研材料、原型和成片。',
+  castSide: '',
+  lead: '我是卞文璟。比起一个人怎么用产品，我更关心<em>两个人、一群人</em>一起做事时怎么配合，又在哪里误会了对方。',
   about: [
-    '同济大学设计创意学院视觉传达设计（人工智能双学士学位）2027 届在读，GPA 4.25 / 5.0，已推免浙江大学人工智能与设计项目。',
-    '2025 年 12 月起担任同济大学学业发展与指导中心会长，统筹朋辈导师库和跨学院支持活动，协助学生处开展帮扶，完成百余人团队的架构调整与规范建设。做过的方向有双人运动研究、行为建模、游戏系统、个性化视频和校园服务。'
+    '同济大学设计创意学院视觉传达设计专业，人工智能双学士学位，2027 届，GPA 4.25 / 5.0，已推免至浙江大学人工智能与设计项目。',
+    '2025 年 12 月起担任同济大学学业发展与指导中心会长，管理全校朋辈导师库，配合学生处做跨学院的学业帮扶，也带着百余人的团队重新理顺了分工和工作规范。'
   ],
   facts: [
     ['SCHOOL', '同济大学 设计创意学院', '视觉传达设计（人工智能双学士）· 2027 届'],
@@ -23,19 +23,19 @@ window.HOME = {
     ['INTERNSHIP', '上海 · 每周 4—5 天', '连续 6 个月']
   ],
   way: [
-    '项目一般从访谈、录像和问卷开始，找出卡住的是谁、卡在哪个环节。说不清的体验，我会拆成事件、状态、旅程或数据格式，用原型、游戏、网站和影像实现出来。',
-    '实现时我会用代码和 AI 工具，设计取舍自己判断。每个项目页里，实测数据、示意图和尚未验证的部分都分开标注。'
+    '多数项目从现场开始：跟拍训练、做访谈、发问卷，弄清楚是谁在哪一步卡住。体验说不清的时候，我会拆出其中的事件、状态和时间线，做成能上手操作的原型、游戏、网站或影片。',
+    '写代码时我大量使用 Claude 和 Codex，方案怎么取舍由我决定，生成的结果逐项核对。项目页里的实测数据、示意图和还没验证的部分，都单独标了出来。'
   ],
   skills: [
-    { en: 'User Research', cn: '用户研究', text: '访谈、视频回溯、问卷和旅程梳理。RallyLens 的研究设计、访谈和回访由我主导。', proof: ['rallylens', 'tennisatom', 'growth-compass'] },
-    { en: 'AI × Product', cn: 'AI 产品与模型', text: '行为记录、模型比较与评估；用自然语言组织 AI 写代码，结果逐项核对。', proof: ['privacy-city', 'jingwai', 'rallylens'] },
-    { en: 'Game Systems', cn: '游戏与交互系统', text: '关卡脚本、状态机、敌人机制和跨端适配，保证每次操作都有对应的反馈。', proof: ['jingwai', 'artemis', 'garden'] },
-    { en: 'Visual & Motion', cn: '视觉与影像', text: 'AIGC 短剧、运动影像、数据网站和生成图形。', proof: ['bronze', 'tennisatom', 'afterglow', 'baseball'] }
+    { en: 'User Research', cn: '用户研究', text: '访谈、视频回溯、问卷和用户旅程。RallyLens 从招募、访谈到回访都由我主导。', proof: ['rallylens', 'tennisatom', 'growth-compass'] },
+    { en: 'AI × Product', cn: 'AI 产品与模型', text: '行为记录、模型对比与评估。原型代码多由 AI 编程工具生成，需求拆解和结果核对由我负责。', proof: ['privacy-city', 'jingwai', 'rallylens'] },
+    { en: 'Game Systems', cn: '游戏与交互系统', text: '关卡脚本、状态机、敌人机制，以及从网页版到微信小程序的适配。', proof: ['jingwai', 'artemis', 'garden'] },
+    { en: 'Visual & Motion', cn: '视觉与影像', text: '十集 AIGC 短剧、个性化运动影片、数据网站和生成图形。', proof: ['bronze', 'tennisatom', 'afterglow', 'baseball'] }
   ],
   /* swatch beside each line of the scene list: the colour each project page opens with */
   accent: { rallylens: '#1f3bff', 'privacy-city': '#27c3ff', tennisatom: '#5aaeff', baseball: '#ff4f00', artemis: '#ffd23f', bronze: '#c0392b', afterglow: '#0e0e0c', 'growth-compass': '#ff3da6', looplab: '#1f3bff', garden: '#b8412f', jingwai: '#c86763' },
-  scenesSide: '每个项目都可以点开，看完整的研究和设计过程。',
-  extrasSide: '设计项目之外参与的两项研究，下面写明我的实际分工；研究之后是获奖、志愿者经历和资格证书。',
+  scenesSide: '点开任一项目，可以看到完整的调研和设计过程。',
+  extrasSide: '设计项目之外，我还参与过两项图像方向的研究，下面写了具体分工；再往下是获奖、志愿者经历和证书。',
   avail: '上海 · 每周 4—5 天 · 连续 6 个月',
   credits: [
     ['DIRECTED & DESIGNED BY', '卞文璟 / Wenjing Bian'],
