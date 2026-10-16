@@ -555,3 +555,7 @@ html body.pg-baseball{--ink:#0b0d10;--ink-2:#2b323c;--navy:#0b0d10;--cobalt-t:#e
 /* the shared pitch-mix bars read three CSS variables for their first three pitch types; align them with the pitch-type colours used in this page */
 .pg-baseball .pm,.pg-baseball .pm-legend{--cobalt:#5aaeff;--navy:#ffd400;--sky:#ff4f00}
 .pg-baseball .pm-bar span{mix-blend-mode:normal;color:var(--ink);font-weight:700}
+
+/* 10-15 polish */
+.bb-local .mx-r button:not(.hi):not(.z){color:var(--ink)}
+.bb-local .mx-r button[aria-pressed=true]:not(.hi){color:var(--ink);background:#fff}

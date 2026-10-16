@@ -13,6 +13,47 @@
   const FLOW = [24, 58, 145, 172, 98, 82, 105, 89, 81, 85, 95, 130, 185, 160, 115, 90, 68, 42, 15], NOISE = [52, 65, 88, 92, 78, 74, 79, 76, 73, 75, 78, 84, 94, 90, 82, 77, 70, 60, 50], PM = [18, 22, 35, 42, 40, 38, 45, 48, 52, 55, 50, 48, 52, 55, 58, 62, 60, 58, 52], WIND = [1.2, 1.5, 3.2, 4.5, 3.8, 2.7, 2.5, 2.1, 1.8, 2, 2.3, 3.5, 4.8, 4.2, 3, 2.4, 1.9, 1.4, 1];
   const TIMES = ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'];
 
+
+  /* ---- own chart types (VZ.T is shared; these are registered here only) ---- */
+  const vzesc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const vzlin = (d0, d1, r0, r1) => v => r0 + (v - d0) / ((d1 - d0) || 1) * (r1 - r0);
+  if (window.VZ && VZ.T) {
+    /* V3 step vs V4 linear, two panels, with the gap at 06:30 marked */
+    VZ.T['ag-lerp'] = (s, W) => {
+      const two = W >= 640, pw = two ? (W - 28) / 2 : W, ph = 250, H = two ? ph : ph * 2 + 16;
+      let g = '';
+      s.panels.forEach((p, k) => {
+        const ox = two ? k * (pw + 28) : 0, oy = two ? 0 : k * (ph + 16), l = 44, r = 14, t = 40, b = 34;
+        const x = vzlin(6, 8, ox + l, ox + pw - r), y = vzlin(p.min, p.max, oy + ph - b, oy + t);
+        const [a, bb, c] = p.v, mid = (a + bb) / 2;
+        g += '<text class="t-h" x="' + (ox + l) + '" y="' + (oy + 16) + '" font-size="15">' + vzesc(p.name) + '</text>';
+        g += '<text class="t-m" x="' + (ox + pw - r) + '" y="' + (oy + 16) + '" font-size="10.5" text-anchor="end">' + vzesc(p.unit) + '</text>';
+        g += '<line class="s1" x1="' + (ox + l) + '" x2="' + (ox + l + 22) + '" y1="' + (oy + 30) + '" y2="' + (oy + 30) + '" stroke-width="3"/><text class="t-m" x="' + (ox + l + 28) + '" y="' + (oy + 33) + '" font-size="10.5">V4 线性过渡</text>';
+        g += '<line class="s3" x1="' + (ox + l + 112) + '" x2="' + (ox + l + 134) + '" y1="' + (oy + 30) + '" y2="' + (oy + 30) + '" stroke-width="2" stroke-dasharray="4 3"/><text class="t-m" x="' + (ox + l + 140) + '" y="' + (oy + 33) + '" font-size="10.5">V3 整点跳变</text>';
+        p.ticks.forEach(v => { g += '<line class="gr" x1="' + (ox + l) + '" x2="' + (ox + pw - r) + '" y1="' + y(v) + '" y2="' + y(v) + '"/><text class="t-m" x="' + (ox + l - 6) + '" y="' + (y(v) + 4) + '" font-size="10" text-anchor="end">' + v + '</text>'; });
+        [6, 7, 8].forEach(h => { g += '<text class="t-m" x="' + x(h) + '" y="' + (oy + ph - b + 16) + '" font-size="10" text-anchor="middle">0' + h + ':00</text>'; });
+        g += '<line class="ax" x1="' + (ox + l) + '" x2="' + (ox + pw - r) + '" y1="' + (oy + ph - b) + '" y2="' + (oy + ph - b) + '"/>';
+        /* gap between the two readings */
+        g += '<path class="a1" opacity=".12" d="M' + x(6) + ' ' + y(a) + 'L' + x(7) + ' ' + y(bb) + 'V' + y(a) + 'Z M' + x(7) + ' ' + y(bb) + 'L' + x(8) + ' ' + y(c) + 'V' + y(bb) + 'Z"/>';
+        g += '<path class="s3" fill="none" stroke-width="2" stroke-dasharray="4 3" d="M' + x(6) + ' ' + y(a) + 'H' + x(7) + 'V' + y(bb) + 'H' + x(8) + 'V' + y(c) + '"/>';
+        g += '<path class="s1" fill="none" stroke-width="3" d="M' + x(6) + ' ' + y(a) + 'L' + x(7) + ' ' + y(bb) + 'L' + x(8) + ' ' + y(c) + '"/>';
+        [[6, a], [7, bb], [8, c]].forEach(([h, v], i) => { g += '<circle class="s1" cx="' + x(h) + '" cy="' + y(v) + '" r="4" fill="#fff" stroke-width="2.2"/><text class="t-m" x="' + (i === 2 ? x(h) - 8 : x(h) + (i ? -8 : 8)) + '" y="' + (y(v) - 10) + '" font-size="11" font-weight="700" text-anchor="' + (i === 2 ? 'end' : i ? 'end' : 'start') + '">' + v + '</text>'; });
+        /* 06:30 call-out */
+        const mx = x(6.5);
+        g += '<line class="s3" x1="' + mx + '" x2="' + mx + '" y1="' + y(a) + '" y2="' + y(mid) + '" stroke-width="1.5"/><circle cx="' + mx + '" cy="' + y(a) + '" r="3.5" class="s3" fill="#fff" stroke-width="1.6"/><circle cx="' + mx + '" cy="' + y(mid) + '" r="3.5" class="a1"/>';
+        g += '<text class="t-m" x="' + (mx + 8) + '" y="' + (y((a + mid) / 2) + 4) + '" font-size="10.5" font-weight="700">06:30 差 ' + vzesc(p.gap) + '</text>';
+      });
+      return { H, g };
+    };
+    /* the 19-sample chart with the two peaks marked */
+    VZ.T['ag-multi'] = (s, W) => {
+      const o = VZ.T.multi(s, W), n = s.series.length, rh = s.rowH || 66, l = W < 520 ? 74 : 128, r = 14, top = 6, m = s.x.length, step = (W - l - r) / (m - 1), x = i => l + i * step;
+      let bg = '', lab = '';
+      (s.marks || []).forEach(([i, t]) => { bg += '<rect x="' + (x(i) - step * .6) + '" y="' + (top + 22) + '" width="' + (step * 1.2) + '" height="' + (n * rh) + '" fill="currentColor" opacity=".09"/>'; lab += '<text class="t-m" x="' + x(i) + '" y="' + (top + 14) + '" font-size="11" font-weight="700" text-anchor="middle">' + vzesc(t) + '</text>'; });
+      return { H: o.H + 22, g: bg + '<g transform="translate(0 22)">' + o.g + '</g>' + lab };
+    };
+  }
+
   /* flat four-ring version of the stage; takes over when three.js cannot load, so the stage is never an empty box */
   const fallback = host => {
     const rings = [['FLOW · 人流 · ', FLOW, 15, 200], ['NOISE · 噪声 · ', NOISE, 50, 96], ['PM2.5 · ', PM, 15, 65], ['WIND · 风 · ', WIND, .5, 5]];
@@ -141,7 +182,7 @@
     a_space(a, k, u) {
       const { esc, md, src } = k;
       return `<header class="g-thin">
-          ${ring('PAPER · SCREEN · DOME · 纸面 · 屏幕 · 穹顶 · 远看轮廓 · 近看纹理 · 还是方案 · PAPER · SCREEN · DOME · 纸面 · 屏幕 · 穹顶 · ', 186, 'gth-r')}
+          ${ring('PAPER · SCREEN · DOME · 纸面 · 屏幕 · 穹顶 · 远看轮廓 · 近看纹理 · 提案阶段 · PAPER · SCREEN · DOME · 纸面 · 屏幕 · 穹顶 · ', 186, 'gth-r')}
           <img class="gth-img" src="${src(a.open.img)}" alt="${esc(a.open.cap)}" loading="lazy">
           <p class="gth-script" aria-hidden="true">${esc(a.open.script)}</p>
           <div class="gth-copy"><h2>${md(a.title)}</h2><p>${md(a.lead)}</p><small class="mono">${esc(a.kicker)} · ${esc(a.open.cap)}</small></div>
@@ -150,11 +191,12 @@
           <h3 class="gl-h">${esc(u.o(0).sub)}</h3>
           <div class="gp-a">${u.b(1)}</div>
           <div class="gp-b">${u.b(2)}</div>
-          <ol class="gp-3">${(u.o(3).list || []).map(([h, t]) => `<li><h4>${esc(h)}</h4><p>${esc(t)}</p></li>`).join('')}</ol>
+          <div class="gp-c">${u.b(3)}</div>
+          <ol class="gp-3">${(u.o(4).list || []).map(([h, t]) => `<li><h4>${esc(h)}</h4><p>${esc(t)}</p></li>`).join('')}</ol>
         </section>
-        <section class="g-out" aria-label="${esc(u.o(4).sub)}">
-          <h3 class="gl-h">${esc(u.o(4).sub)}</h3>
-          ${u.b(5)}${u.b(6)}${u.b(7)}
+        <section class="g-out" aria-label="${esc(u.o(5).sub)}">
+          <h3 class="gl-h">${esc(u.o(5).sub)}</h3>
+          ${u.b(6)}${u.b(7)}
         </section>
         ${u.rest()}`;
     }

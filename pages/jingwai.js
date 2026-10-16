@@ -278,9 +278,9 @@
      jwRescue — three rescue methods, each with a code-drawn diagram and the evidence it leaves
      ================================================================ */
   const RESC = [
-    { mode: 'cart', no: '01', label: '餐车接住', ev: '受损灯座与撞痕', h: '接住落灯，留下撞痕。', p: '把餐车推到吊灯下，接住落下的灯。艾达避开了危险，灯座却撞坏了；马丁仍要处理吊索。', dl: [['025 / 救援', '推车接灯，排演确认，拍下艾达获救的画面。'], ['留下的证据', '受损灯座与撞痕。照片记录了灯落在哪里、怎样被接住。'], ['07 / 检修', '拍撞痕，读刻线，按这次损伤调整器械与光路。']], img: 'assets/frames/jw-025-hall.webp', icap: '025 宴会厅 · v1.3.8 实机选编帧', crop: true },
-    { mode: 'hook', no: '02', label: '钩索接回', ev: '完整三人合影', h: '把索接回去，让马丁松手。', p: '拍清断索和吊环，用钩索接回受力点。灯没有摔下，马丁终于能走到家人身边；艾达想要的合影，这时才拍得成。', dl: [['025 / 救援', '对准挂点接索，排演后把三个人一起拍进画面。'], ['留下的证据', '同一次放映中的三人合影。只拍到艾达也能救人，完整合影另有用途。'], ['07 / 检修', '用写着三个人名字的镂空框，对齐照片里的马丁、艾达与米娅，拍下校准片；合影不完整时，改用公共片继续。']], img: 'jingwai/family-v133', icap: '钩索路线 · 三人合影 · v1.3.3 留存帧' },
-    { mode: 'brace', no: '03', label: '撑杆托住', ev: '两段行程与三节锁位', h: '从下面托住，记下锁位。', p: '把撑杆放到吊灯下，转动低位握轮，让托头贴住灯底，再锁住。艾达可以离开，马丁仍抓着原索。灯被临时撑住了，吊索还没修好。', dl: [['025 / 救援', '放稳撑杆，伸长到接触灯底，锁止后排演。'], ['留下的证据', '两段伸长行程与三节锁位，记录这次支撑怎样成立。'], ['07 / 检修', '对照锁位照片，调节检修架的两段套管；铜环对齐后合总锁，抬起挡光闸。']], img: 'jingwai/brace-v133', icap: '撑杆路线 · 低位握轮与支撑 · v1.3.3 留存帧' }
+    { mode: 'cart', no: '01', label: '餐车接住', ev: '受损灯座与撞痕', h: '餐车接住落灯，灯座留下撞痕', p: '把餐车推到吊灯下，接住落下的灯。艾达避开了危险，灯座却撞坏了；马丁仍要处理吊索。', dl: [['025 / 救援', '推车接灯，排演确认，拍下艾达获救的画面。'], ['留下的证据', '受损灯座与撞痕。照片记录了灯落在哪里、怎样被接住。'], ['07 / 检修', '拍撞痕，读刻线，按这次损伤调整器械与光路。']], img: 'assets/frames/jw-025-hall.webp', icap: '025 宴会厅 · v1.3.8 实机选编帧', crop: true },
+    { mode: 'hook', no: '02', label: '钩索接回', ev: '完整三人合影', h: '钩索接回吊索，马丁可以松手', p: '拍清断索和吊环，用钩索接回受力点。灯没有摔下，马丁终于能走到家人身边；艾达想要的合影，这时才拍得成。', dl: [['025 / 救援', '对准挂点接索，排演后把三个人一起拍进画面。'], ['留下的证据', '同一次放映中的三人合影。只拍到艾达也能救人，完整合影另有用途。'], ['07 / 检修', '用写着三个人名字的镂空框，对齐照片里的马丁、艾达与米娅，拍下校准片；合影不完整时，改用公共片继续。']], img: 'jingwai/family-v133', icap: '钩索路线 · 三人合影 · v1.3.3 留存帧' },
+    { mode: 'brace', no: '03', label: '撑杆托住', ev: '两段行程与三节锁位', h: '撑杆托住灯底，记下锁位', p: '把撑杆放到吊灯下，转动低位握轮，让托头贴住灯底，再锁住。艾达可以离开，马丁仍抓着原索。灯被临时撑住了，吊索还没修好。', dl: [['025 / 救援', '放稳撑杆，伸长到接触灯底，锁止后排演。'], ['留下的证据', '两段伸长行程与三节锁位，记录这次支撑怎样成立。'], ['07 / 检修', '对照锁位照片，调节检修架的两段套管；铜环对齐后合总锁，抬起挡光闸。']], img: 'jingwai/brace-v133', icap: '撑杆路线 · 低位握轮与支撑 · v1.3.3 留存帧' }
   ];
   M.jwRescue = {
     html: () => `<section class="jr" data-noeva aria-label="三种救法">
@@ -507,7 +507,7 @@
           new ResizeObserver(size).observe(host);
           api = { show }; el.dataset.sets = '3d'; size(); show(cur);
           addEventListener('pagehide', () => rd.dispose(), { once: true });
-        }).catch(err => { q('.js3-load').textContent = '三维库没有加载成功'; console.warn('jwSets', err); });
+        }).catch(err => { q('.js3-load').textContent = '三维库没有加载成功，背景为首章实机画面'; { const st = q('.js3-stage'); if (st) { st.style.background = 'center/cover url(assets/frames/jw-07-stairs.webp)'; } } console.warn('jwSets', err); });
       };
       new IntersectionObserver((es, ob) => { if (es[0].isIntersecting) { ob.disconnect(); start(); } }, { rootMargin: '300px' }).observe(el);
     }
@@ -594,7 +594,7 @@
      ================================================================ */
   const posSvg = [
     '<svg viewBox="0 0 260 130" role="img" aria-label="尝试可以反复，封存只有一次"><title>排演与封存分开</title><rect x="10" y="20" width="150" height="90" rx="45" fill="none" stroke="#3f8a86" stroke-width="3" stroke-dasharray="7 6"/><path d="M60 45a28 28 0 1 1-8 30" fill="none" stroke="#3f8a86" stroke-width="3"/><path d="M44 78l8-8-1 11z" fill="#3f8a86"/><text x="85" y="70" font-size="17" fill="#1d2a44">尝试</text><path d="M160 65H200" stroke="#1d2a44" stroke-width="3"/><rect x="200" y="38" width="50" height="54" fill="#c86763"/><text x="225" y="72" font-size="17" text-anchor="middle" fill="#faf4e6">封存</text></svg>',
-    '<svg viewBox="0 0 260 130" role="img" aria-label="三条分支各留下一件实物证据"><title>分支留下实物证据</title><path d="M20 65H70M70 65L120 24H170M70 65H170M70 65L120 106H170" fill="none" stroke="#1d2a44" stroke-width="3"/><g fill="#faf4e6" stroke="#1d2a44" stroke-width="3"><rect x="170" y="10" width="76" height="28"/><rect x="170" y="51" width="76" height="28"/><rect x="170" y="92" width="76" height="28"/></g><g font-size="15" fill="#1d2a44"><text x="208" y="30" text-anchor="middle">撞痕</text><text x="208" y="71" text-anchor="middle">合影</text><text x="208" y="112" text-anchor="middle">锁位</text></g><circle cx="20" cy="65" r="8" fill="#c86763"/></svg>',
+    '<svg viewBox="0 0 300 130" role="img" aria-label="三条分支各留下一件实物证据，在 07 号对应不同的检修操作"><title>分支留下实物证据</title><path d="M20 65H62M62 65L100 24H138M62 65H138M62 65L100 106H138" fill="none" stroke="#1d2a44" stroke-width="3"/><circle cx="20" cy="65" r="8" fill="#c86763"/><text x="6" y="92" font-size="11" fill="#1d2a44">救援</text><text x="148" y="9" font-size="10" fill="#c86763">留下的证据 → 07 号检修</text><rect x="138" y="14" width="158" height="34" fill="#faf4e6" stroke="#1d2a44" stroke-width="2.5"/><text x="146" y="29" font-size="14" font-weight="700" fill="#1d2a44">撞痕</text><text x="146" y="43" font-size="11" fill="#1d2a44">读刻线，按损伤调光路</text><rect x="138" y="55" width="158" height="34" fill="#faf4e6" stroke="#1d2a44" stroke-width="2.5"/><text x="146" y="70" font-size="14" font-weight="700" fill="#1d2a44">合影</text><text x="146" y="84" font-size="11" fill="#1d2a44">人名框逐人对位</text><rect x="138" y="96" width="158" height="34" fill="#faf4e6" stroke="#1d2a44" stroke-width="2.5"/><text x="146" y="111" font-size="14" font-weight="700" fill="#1d2a44">锁位</text><text x="146" y="125" font-size="11" fill="#1d2a44">对照锁位，调两段套管</text></svg>',
     '<svg viewBox="0 0 260 130" role="img" aria-label="同一封原信从片内走到现实"><title>唯一原件贯穿片内与现实</title><rect x="6" y="14" width="248" height="46" fill="#f3d3cf" opacity=".7"/><rect x="6" y="70" width="248" height="46" fill="#d7e9e6" opacity=".9"/><text x="12" y="30" font-size="13" fill="#1d2a44">片内</text><text x="12" y="86" font-size="13" fill="#1d2a44">现实</text><path d="M60 38H120L150 94H214" fill="none" stroke="#c86763" stroke-width="3.5"/><g transform="translate(60 38)"><rect x="-12" y="-8" width="24" height="16" fill="#faf4e6" stroke="#1d2a44" stroke-width="2.5"/><path d="M-12 -8L0 2L12 -8" fill="none" stroke="#1d2a44" stroke-width="2"/></g><g transform="translate(214 94)"><rect x="-12" y="-8" width="24" height="16" fill="#faf4e6" stroke="#1d2a44" stroke-width="2.5"/><path d="M-12 -8L0 2L12 -8" fill="none" stroke="#1d2a44" stroke-width="2"/></g></svg>'
   ];
   M.jwInnovation = {
@@ -714,11 +714,11 @@
   M.jwNow = {
     html: () => `<section class="jnw" data-noeva aria-label="现在与后续">
       <div class="jnw-now"><p class="jnw-big" aria-hidden="true">v1.3.8</p><h3>现在做完的</h3>
-        <p>摄影、搬动物件、排演和封存，让同一次选择留在照片、人物动作和路上。Unity Windows 版本为 v1.3.8。</p>
+        <p>摄影、搬动物件、排演和封存都已实现；救援方式会改变人物动作和 07 号要做的检修。Unity Windows 版本为 v1.3.8。</p>
         <ul>${[['首章 Demo', 'Windows / 浏览器'], ['提示校准实验室', '4 组固定样例'], ['Blender 源文件', '三个场景与功能资产'], ['关卡脚本', '送递、检修、封存规则'], ['验收记录', '固定机位的引擎帧']].map(([a, b]) => `<li><i aria-hidden="true">✓</i><b>${a}</b><span class="mono">${b}</span></li>`).join('')}</ul></div>
       <div class="jnw-next"><h3>后续设想：电影里再套一层电影</h3>
         <figure><img src="assets/jingwai/layered-film-study.svg" alt="电影里套着电影的结构设想图" loading="lazy"><figcaption class="mono">结构设想 · 非游戏截图 · 还没有做</figcaption></figure>
-        <p>想把单张照片延伸到录像：拆开声音、动作和时间，用手里的素材重新剪接情节。玩家走进下一层电影，直到“回到现实”也成了一件需要确认的事。先写完整故事和连续关卡，再扩展机制。</p></div>
+        <p>想把单张照片延伸到录像：拆开声音、动作和时间，用手里的素材重新剪接情节。玩家走进下一层电影，直到“回到现实”也成了一件需要确认的事。这部分放在完整故事和连续关卡之后。</p></div>
     </section>`
   };
 })();

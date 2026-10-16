@@ -291,3 +291,37 @@ body.pg.pg-looplab{
   .lbz{grid-template-columns:1fr}.lbz article{transform:none}
 }
 @media (max-width:520px){.lm-cols{grid-template-columns:repeat(5,1fr)}.lm-cols p{font-size:13px}.lr-list button{grid-template-columns:30px 1fr}.lr-list small{display:none}}
+
+/* ---- polish 10-15 ---- */
+.lm-r{grid-column:8/-1;grid-row:2/4;display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-width:0}
+.lm-r .lm-sub{grid-column:auto;grid-row:auto;margin:0}
+.lm-r .lm-cols{display:block;margin:0;padding:0;list-style:none;border-top:4px solid var(--ink)}
+.lm-r .lm-cols li{display:grid;grid-template-columns:34px 56px 1fr auto;align-items:baseline;gap:8px;padding:13px 2px;border-bottom:1.5px solid var(--ink);font:500 14px var(--cn)}
+.lm-r .lm-cols li:first-child{border-top:0;box-shadow:inset 6px 0 0 var(--pk);padding-left:14px}
+.lm-r .lm-cols i{font:700 11px var(--sm);font-style:normal;color:var(--cobalt)}
+.lm-r .lm-cols b{font:900 20px var(--cn)}
+.lm-r .lm-cols em{font-style:normal;font-size:10.5px;color:var(--mute);letter-spacing:.08em}
+.lm-r .lm-meta{grid-column:auto;margin:0}
+@media(max-width:900px){.lm-r{grid-column:1/-1;grid-row:auto}.lm-r .lm-cols li{grid-template-columns:30px 48px 1fr}.lm-r .lm-cols em{display:none}}
+.lm-fig img{max-height:min(34vh,330px)}
+.lm-fig{grid-row:3}
+.lm-r .lm-cols,.lm-r .lm-meta,.lm-r .lm-sub{align-self:stretch}
+@media(max-width:900px){.lm-fig{grid-row:auto}}
+.lm-sub{text-wrap:balance}
+.lm-r .lm-cols li span{font:500 12.5px var(--cn);color:var(--ink-2)}
+.pg-looplab .act.end .filespec dd{color:#e9ecf6}
+.pg-looplab .act.end .filespec dt{color:#fff}
+.pg-looplab .act.end .filespec dt small{color:var(--sky)}
+.pg-looplab .act.end .filespec .chip{color:var(--ink);background:#dfe5ff;border-color:#dfe5ff}
+@media(max-width:900px){.lr{grid-template-columns:minmax(0,1fr)}.lr-stage,.lr-side,.lr-detail,.lr-list{min-width:0}.lr-list button{min-width:0}}
+@media(max-width:520px){
+  .lr-c.tr,.lr-c.tl{display:none}
+  .lr-view{aspect-ratio:1/1}
+  .lf-t{font-size:20px}.lf-l,.lf-v{font-size:24px}.lf-h{font-size:24px}
+  .lf-bar svg{min-height:200px}
+}
+.pg-looplab :is(.lr-row.h,.lr-foot,.lr-paper>header span,.lm-fig figcaption,.ll-foot,.lc-h,.lr-c,.lh-read b,.lr-flow li){font-size:11px}
+.lm-cols span,.lr-list small{font-size:11px}
+.pg-looplab .case :is(small,dt,i.mono,em.mono,.lv-t,.lv-fit span,.lr-next,.lr-tag b,.lr-detail p.mono,.ls-stu p.mono,.ll-cap .mono){font-size:11px}
+.pg-looplab .case .lr-tag b{font-size:11px}
+.pg-looplab .case :is(b.mono,span.mono){font-size:11px}

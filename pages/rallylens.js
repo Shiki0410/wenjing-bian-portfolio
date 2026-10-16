@@ -127,6 +127,7 @@
     const dim = e => (stateFilter && e.st !== stateFilter) || (win != null && !(e.t >= mode.windows[win][0] && e.t <= mode.windows[win][1]));
     const hitAttrs = e => `data-hit="${e.n}" tabindex="0" role="button" aria-label="第 ${e.n} 拍，${e.t.toFixed(2)} 秒，${who(e.dir)}"`;
     let g = '', H, cursorBottom;
+    const capT = (str, y) => { const x0 = narrow ? 0 : left, per = narrow ? Math.max(12, Math.floor((W - 4) / 12.5)) : 999, ls = []; for (let i = 0; i < str.length; i += per) ls.push(str.slice(i, i + per)); return ls.map((ln, i) => `<text class="r26-svg-label" x="${x0}" y="${y - (ls.length - 1 - i) * 16}">${ln}</text>`).join(''); };
     if (mode.id === 'r3') {
       // hit ladder: P01 lane above, P02 lane below, flights curved between consecutive hits, gaps measured underneath
       const yA = 70, yU = 110, yB = 150; H = 338; cursorBottom = 306;
@@ -165,17 +166,17 @@
         const a = inMode.filter(e => e.r === r), x1 = X(a[0]), x2 = X(a.at(-1)), bx = Math.max(left - 4, x1 - 10), bw = Math.max(20, x2 - x1 + 20);
         g += `<rect class="r26-rallyband" x="${bx}" y="26" width="${bw}" height="${yB - 26 + 28}"/><text class="r26-svg-label strong" x="${bx + bw / 2}" y="16" text-anchor="middle">R${r}</text>`;
         for (let i = 1; i < a.length; i++) if (a[i - 1].dir !== 'unknown' && a[i].dir !== 'unknown') g += `<line class="r26-pairline" x1="${X(a[i - 1])}" x2="${X(a[i])}" y1="${Y(a[i - 1])}" y2="${Y(a[i])}"/>`;
-        if (mode.id === 'all') g += `<text class="r26-svg-label" x="${Math.min(right - 2, Math.max(left + 14, bx + bw / 2))}" y="${yB + 66}" text-anchor="middle" style="font-size:11.5px">${a.length} 拍${r === 4 ? ' · 被截断' : ''}</text>`;
+        if (mode.id === 'all') g += `<text class="r26-svg-label" x="${Math.min(right - 2, Math.max(left + 14, bx + bw / 2))}" y="${yB + 66}" text-anchor="middle" style="font-size:11.5px">${a.length} 拍${r === 4 && !narrow ? ' · 被截断' : ''}</text>`;
       });
       inMode.forEach(e => {
         const x = X(e), y = Y(e), s = e.n === sel;
         g += `<g class="r26-hit${dim(e) ? ' dim' : ''}" ${hitAttrs(e)}>${s ? `<circle class="r26-selection" cx="${x}" cy="${y}" r="11"/>` : ''}<circle r="12" cx="${x}" cy="${y}" fill="transparent"/>${mark(e.dir, x, y, 5)}${stateMark(e.st, x, y + 19)}${!timeAxis ? `<text class="r26-svg-label" x="${x}" y="${e.dir === 'B_to_A' ? y + 33 : y - 12}" text-anchor="middle" style="font-size:11px">#${e.n}</text>${narrow ? '' : `<text class="r26-svg-label" x="${x}" y="${e.dir === 'B_to_A' ? y + 45 : y - 23}" text-anchor="middle" style="font-size:10px;opacity:.6">${e.t.toFixed(1)}s</text>`}` : ''}</g>`;
       });
       if (mode.id === 'all') {
-        g += `<text class="r26-svg-label" x="${left}" y="${H - 14}">${timeAxis ? '横轴是真实秒数。R1 一拍出界，R2 和 R3 以出界结束，R4 被片段边界截断。' : '16 拍按事件顺序等距排列（论文 Fig.1a 的排法），间距不表示时间。'}</text>`;
+        g += capT(timeAxis ? '横轴是真实秒数。R1 一拍出界，R2 和 R3 以出界结束，R4 被片段边界截断。' : '16 拍按事件顺序等距排列（论文 Fig.1a 的排法），间距不表示时间。', H - 14);
       } else {
         mode.windows.forEach(([lo, hi, count], i) => { const y = 176 + i * 36, on = win === i; g += `<g class="r26-win${on ? ' on' : ''}" data-win="${i}" tabindex="0" role="button" aria-pressed="${on}" aria-label="${lo} 到 ${hi} 秒，${count} 拍"><rect class="r26-window" x="${Xt(lo)}" y="${y}" width="${Xt(hi) - Xt(lo)}" height="28"/><text class="r26-svg-label" x="${Xt(lo) + 8}" y="${y + 18}">${lo}–${hi} s · ${count} 拍</text></g>`; });
-        g += `<text class="r26-svg-label" x="${left}" y="${H - 8}">窗口长 10 s、步长 5 s，相邻窗口重叠；点窗口可只看窗口里的事件。</text>`;
+        g += capT('窗口长 10 s、步长 5 s，相邻窗口重叠；点窗口可只看窗口里的事件。', H - 8);
       }
     }
     g += `<line class="r26-cursor" x1="0" x2="0" y1="${mode.id === 'r3' ? 30 : 22}" y2="${cursorBottom}" style="display:none"/>`;
@@ -748,7 +749,7 @@
     switch(b.key){
       case 'track':return section({h:'同一段 30 秒，从整段看到单拍。'},localModule('rallylensTrack',{modes:b.modes}),'r26-track-section');
       case 'state':return section({...b,h:'回应状态有三种，不用猜。'},`<div class="r26-states">${b.items.map(([id,h,p],i)=>`<article data-state="${id}"><b>${['●','×','◇'][i]} ${E(h)}</b><p>${E(p)}</p></article>`).join('')}</div>`);
-      case 'evening':return section({...b,h:'球友的一晚，任务会改变。'},`<ol class="r26-steps">${b.steps.map(([h,p],i)=>`<li><small>${String(i+1).padStart(2,'0')}</small><b>${E(h)}</b><p>${E(p)}</p></li>`).join('')}</ol>`);
+      case 'evening':return section({...b,h:'一个晚上的对练怎么安排'},`<ol class="r26-steps">${b.steps.map(([h,p],i)=>`<li><small>${String(i+1).padStart(2,'0')}</small><b>${E(h)}</b><p>${E(p)}</p></li>`).join('')}</ol>`);
       case 'versus':return section(b,`<div class="r26-compare"><header><span>比较项目</span><b>职业比赛 / 专业训练</b><b>本研究的业余对练</b></header>${b.rows.map(([h,x,y])=>`<div><h4>${E(h)}</h4><p>${E(x)}</p><p>${E(y)}</p></div>`).join('')}<footer>专业训练的练习任务由教练或 drill 定义；本研究保留每位搭档自己理解的目标与条件。§2.2</footer></div>`);
       case 'transfer':return section(b,aucPlot(b,k)+`<p class="r26-foot">${E(b.data)}</p>`);
       case 'returns':case 'formative':case 'rq': {
@@ -763,10 +764,10 @@
       case 'sources':return section(b,coverageNested()+`<p class="r26-foot">${E(b.cap)}</p>`);
       case 'chain':case 'order':return section(b,`<ol class="r26-steps ${b.key==='order'?'vertical':''}">${b.steps.map((x,i)=>`<li><small>${String(i+1).padStart(2,'0')}</small><b>${E(Array.isArray(x)?x[0]:x)}</b>${Array.isArray(x)?`<p>${E(x[1])}</p>`:''}</li>`).join('')}</ol>`);
       case 'agree':return section(b,agreeSVG()+`<div class="r26-numbers">${b.nums.map(([n,x])=>`<div><b>${E(n)}</b><p>${E(x)}</p></div>`).join('')}</div><p class="r26-foot">95.0% 是每片段较小事件数 / 较大事件数的均值，不是逐事件识别准确率。</p>`);
-      case 'timeline':return section(b,`<ol class="r26-materials">${b.items.map(x=>`<li><small>${E(x.t)}</small><div><h4>${E(x.h)}</h4><p>${E(x.p)}</p><p>${E(x.who)}</p></div><span>${E(x.exp)}</span></li>`).join('')}</ol>`);
-      case 'bounds':return section({...b,h:'这些材料能回答什么，不能回答什么。'},`<ol class="r27-chips wide">${b.items.map((x,i)=>`<li><small>${String(i+1).padStart(2,'0')}</small>${E(x)}</li>`).join('')}</ol>`);
+      case 'timeline':return section(b,`<div class="r28-tline" role="img" aria-label="五份材料产生的先后顺序">${b.items.map((x,i)=>`<span class="${i<2?'a':i===2?'c':'p'}"><i></i><b>${E(x.h)}</b><small>${E(x.t)}</small></span>`).join('')}</div><ol class="r26-materials">${b.items.map(x=>`<li><small>${E(x.t)}</small><div><h4>${E(x.h)}</h4><p>${E(x.p)}</p><p>${E(x.who)}</p></div><span>${E(x.exp)}</span></li>`).join('')}</ol>`);
+      case 'bounds':return section({...b,h:'证据边界'},`<ol class="r27-chips wide">${b.items.map((x,i)=>`<li><small>${String(i+1).padStart(2,'0')}</small>${E(x)}</li>`).join('')}</ol>`);
       case 'one':return section(b,`<div class="r26-ratio"><b>${E(b.num)}<small> / ${E(b.of)}</small></b><p>相同的喂球计划<br>可比较的角色阶段</p></div><div class="r27-sixteen" role="img" aria-label="16 个可比较的角色阶段：1 个计划相同，6 个计划相反（其中 3 个两人都评执行了、搭档合适），其余 9 个既不相同也不相反"><ol>${Array.from({length:16},(_,i)=>`<li class="${i===0?'same':i<4?'opp ok':i<7?'opp':''}"></li>`).join('')}</ol><p><i class="same"></i>计划相同 1<i class="opp ok"></i>计划相反，两人都评“执行了、搭档合适” 3<i class="opp"></i>计划相反，其他 3<i></i>其余 9</p></div>`,'r26-highlight');
-      case 'ratios':return section({...b,h:'卡片的八项比较，各有自己的分母。'},`<ol class="r26-ratios">${b.rows.map(([h,n,d,unit])=>`<li><div><b>${E(h)}</b><small>分母：${E(unit)}</small></div><span class="r26-ratio-track"><i style="width:${n/d*100}%"></i></span><strong>${n}/${d}</strong></li>`).join('')}</ol><p class="r26-foot">${E(b.note)}</p>`);
+      case 'ratios':return section({...b,h:'卡片的八项比较，各有自己的分母。'},`<p class="r28-ratio-key"><i></i>蓝色是本节讨论的三项：计划相同、计划相反，以及相反时两人仍评“执行了、搭档合适”。</p><ol class="r26-ratios">${b.rows.map(([h,n,d,unit],ri)=>`<li class="${ri<3?'hot':''}"><div><b>${E(h)}</b><small>分母：${E(unit)}</small></div><span class="r26-ratio-track"><i style="width:${n/d*100}%"></i></span><strong>${n}/${d}</strong></li>`).join('')}</ol><p class="r26-foot">${E(b.note)}</p>`);
       case 'five':{const ts=[...new Set(b.rows.map(x=>x.t))];return section(b,`<div class="r27-five">${ts.map((t,i)=>`<section><header><small>${String(i+1).padStart(2,'0')}</small><b>${E(t)}</b></header>${b.rows.filter(x=>x.t===t).map(x=>`<article class="${x.k}"><h4>${E(x.who)}</h4><p>${E(x.x)}</p><span>${E(x.tag)}</span></article>`).join('')}</section>`).join('')}</div><p class="r26-foot">阶段卡的完整样子见“实验怎么设计”；后来的说法与教练读法均为转述，各自保留自己的时间范围。</p>`);}
       case 'three':return section(b,`<div class="r26-cases">${b.items.map(x=>`<article data-case="${x.id}"><header><span>FIG.2 ${x.id.toUpperCase()} · ${E(x.tab)}</span><h4>${E(x.h)}</h4></header><div class="r26-case-diagram">${casesSVG(x.id)}<small>依据说法重绘 · 非测量轨迹</small></div><div class="r26-case-voices"><p data-partner="${['P02','P06','P10'].includes(x.who[0])?'b':'a'}"><b>${['P02','P06','P10'].includes(x.who[0])?'□':'○'} ${E(x.who[0])}</b>${E(x.a)}</p><p data-partner="${['P02','P06','P10'].includes(x.who[1])?'b':'a'}"><b>${['P02','P06','P10'].includes(x.who[1])?'□':'○'} ${E(x.who[1])}</b>${E(x.b)}</p><p class="r26-case-card">${E(x.card)}</p></div><p class="r26-case-reading">${E(x.so)}</p><details><summary>相关片段与反例</summary>${x.extra.map(([h,p])=>`<p><b>${E(h)}</b> ${E(p)}</p>`).join('')}</details>${source(x.src)}</article>`).join('')}</div>`);
       case 'stand':return section(b,`<div class="r26-three-cols">${b.cols.map(([h,t,p])=>`<article><small>${E(h)}</small><h4>${E(t)}</h4><p>${E(p)}</p></article>`).join('')}</div>`);
@@ -905,4 +906,28 @@
       root.querySelectorAll('.rl-chart, .r-title, .r-manga, .ra-axis, .r-p3').forEach(el => io.observe(el));
     }
   };
+})();
+
+;/* 2026-10-15 polish: type-size floor (small labels >= 11px, running text >= 14px) */
+(() => {
+  const SKIP = /(note|foot|cap|source|src|hint|meta|tag|legend|mono|pill|chip|badge|kbd|num|axis|label)/i;
+  let timer = 0;
+  const run = () => {
+    const root = document.querySelector('#main') || document.body;
+    root.querySelectorAll('*').forEach(e => {
+      if (e.closest('svg') || ['SCRIPT', 'STYLE', 'OPTION'].includes(e.tagName)) return;
+      let t = '';
+      for (const n of e.childNodes) if (n.nodeType === 3) t += n.textContent;
+      t = t.trim(); if (!t) return;
+      const fs = parseFloat(getComputedStyle(e).fontSize);
+      if (fs < 11) e.style.setProperty('font-size', '11px', 'important');
+      else if (fs < 14 && t.length >= 28 && !SKIP.test(String(e.className)) && !e.closest('[class*="note"],[class*="foot"],[class*="cap"],[class*="source"]')) e.style.setProperty('font-size', '14px', 'important');
+    });
+  };
+  const sched = () => { if (!timer) timer = setTimeout(() => { timer = 0; run(); }, 500); };
+  const start = () => {
+    sched();
+    new MutationObserver(sched).observe(document.querySelector('#main') || document.body, { childList: true, subtree: true });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();

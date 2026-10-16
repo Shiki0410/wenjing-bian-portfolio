@@ -434,3 +434,54 @@ body.pg.pg-garden .yb-copy h2 .el+.el{padding-left:1.2em!important;color:var(--y
 .gf-tabs button em{font-size:14px}
 .pg-garden .vid .cap span{font-size:13px}
 body.pg.pg-garden .yh-t{margin-bottom:18px}
+
+/* ================= 2026-10-15 polish ================= */
+/* shared green/navy accents (nav, progress bar, end roll, tabs) -> 黛青 / 墨 */
+body.pg.pg-garden{--cobalt:#2f4a5a;--cobalt-d:#1f3441;--cobalt-t:#dfe7e8;--navy:#14161c;--sky:#c4622d;--pale:#dfe7e8;--mute:#6a6c64}
+/* figure captions: plain line under the picture, no dark tag */
+.pg-garden .fig figcaption{background:transparent;padding:8px 0 0;display:flex;gap:10px;align-items:baseline;color:#4d4f48}
+.pg-garden .fig figcaption b{font:500 10.5px var(--mono);letter-spacing:.1em;color:var(--yr)}
+/* stills: four cards on a tidy two-row grid, no dead space under the big card */
+.ys.s0{grid-column:1/6;grid-row:2/4;transform:rotate(-1deg);align-self:start}
+.ys.s1{grid-column:6/10;grid-row:2;margin-top:0}
+.ys.s2{grid-column:10/13;grid-row:2/4;margin-top:0;align-self:start}
+.ys.s3{grid-column:6/10;grid-row:3;margin-top:0}
+.ys.s0 img{aspect-ratio:16/11}.ys.s2 img{aspect-ratio:3/4}
+/* garden map: picture fills the column height so nothing floats under it */
+.gmap-body{align-items:stretch}
+.gmap-fig{display:flex}.gmap-fig img{height:100%;min-height:100%;aspect-ratio:auto}
+/* seasons / guide sections: less dead air */
+.y-guide .fig{max-width:880px;margin-inline:auto}
+/* state machine (mine) */
+.gn-sm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(16px,3vw,40px);align-items:center;margin-top:10px}
+.gn-view{border:1px solid var(--yl);background:var(--yw)}
+.gn-view svg{display:block;width:100%;height:auto}
+.gn-cam,.gn-pl,.gn-npc{transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.gn-tip{transition:opacity .3s}.gn-state[data-st=talk] .gn-tip{opacity:0}
+.gn-states{display:grid;gap:10px}
+.gn-node{padding:12px 16px;border:2px solid var(--yi);border-radius:34px;background:var(--yp);opacity:.55;transition:opacity .3s,background .3s}
+.gn-node b{display:block;font:700 22px/1.3 var(--gh)}
+.gn-node span{display:block;font-size:11px;color:var(--yr);letter-spacing:.08em}
+.gn-node p{margin:6px 0 0;font:400 14px/1.7 var(--gt)}
+.gn-state[data-st=explore] .gn-node.ex{opacity:1;background:#dfe7e0}
+.gn-state[data-st=talk] .gn-node.dl{opacity:1;background:#f1e2cf}
+.gn-btns{display:flex;gap:10px;flex-wrap:wrap}
+.gn-btns button{flex:1 1 150px;padding:9px 12px;border:1px solid var(--yi);background:var(--yw);color:var(--yi);font:500 14px var(--gt);cursor:pointer}
+.gn-btns button:hover:not(:disabled){background:var(--yi);color:var(--yp)}
+.gn-btns button:disabled{opacity:.35;cursor:default}
+@media (max-width:820px){
+  .ys.s0,.ys.s1,.ys.s2,.ys.s3{grid-row:auto;grid-column:auto;transform:none}.ys.s0{grid-column:1/-1}
+  .gn-sm{grid-template-columns:1fr}
+  .gmap-fig img{height:auto;aspect-ratio:16/10}
+  body.pg.pg-garden .yh-t{font-size:19vw}
+  .yf-handle{height:34px}
+}
+.pg-garden .case .fig figcaption,.pg-garden .case .gallery .fig figcaption,.pg-garden .case .tab-pane .fig figcaption{margin:0;width:auto;max-width:none;position:static;background:transparent;color:#4d4f48;padding:8px 0 0}
+.y-ui{padding-bottom:clamp(20px,3vw,44px)}
+.y-ui .gallery{align-items:start}
+.y-ui .fig .ph{aspect-ratio:16/9}
+.garden-season-section{padding-bottom:clamp(24px,3vw,48px)}
+/* nav over the ink cover: light text until the bar turns solid */
+body.pg-garden .nav:not(.solid){color:#ece4d2}
+body.pg-garden .nav:not(.solid) :is(a,span,b,em){color:#ece4d2}
+body.pg-garden .nav:not(.solid) .nav-bar{background:#ece4d2}

@@ -24,7 +24,7 @@ window.META = {
     measures: ['姿态关键点', 'TrackNetV2 球路', '击球事件与 ADSR 特效强度', '动态文字与声音节奏'],
     sources: [],
     limit: '分镜、透卡和风格样本是设计稿；这次没有重测算法性能。',
-    open: '动作分析决定不了一个人想被怎样看见，成片还得靠人审、靠人取舍。',
+    open: '成片保留哪些片段、发不发出去，仍由球员本人审看决定。',
     credit: ['AWARD', '同济大学设计创意学院 信息可视化最佳创作奖 · 团队 · 2026.06']
   },
   baseball: {
@@ -42,7 +42,7 @@ window.META = {
     measures: ['六边形邻接与 SetHexPath 寻路', '背包零件的能量分支', 'Elite2 射线前摇', 'Elite1 血量阈值变身'],
     sources: [['设定 · 重装角色', 'composition/artemis-character-heavy'], ['实机 · 构筑界面', 'artemis-build'], ['精英 02 · 设定', 'folio-repair/artemis-elite2-design'], ['精英 01 · 动作帧', 'folio-repair/artemis-elite1-motion-sheet']],
     limit: '机制图按工程脚本和演示录屏整理；手上没有帧数、伤害统计和玩家测试。',
-    open: '能演示不等于平衡，玩家第一次上手会卡在哪里还没测。',
+    open: '数值平衡和新玩家第一次上手会卡在哪里，还没有做玩家测试。',
     credit: ['ROLE', '个人负责战斗机制设计与 Unity / C# 实现：主角与敌人状态机、2 类机制精英敌人、2 场 Boss 战']
   },
   bronze: {
@@ -57,9 +57,9 @@ window.META = {
     unit: '一个时刻样本，以及它渲染出的字环状态',
     sample: 'V4 内置 19 个时刻样本 · 06:00 至次日 00:00 · 4 路输入',
     measures: ['人流', '噪声 dB', 'PM2.5', '风速 m/s'],
-    sources: [['编码图', 'afterglow-mapping-board'], ['状态板', 'afterglow-state-board'], ['渲染 · 穹顶投影', 'afterglow-render-dome']],
+    sources: [],
     limit: '19 个样本是代码里写死的演示数据，不是上海南站实测；空间图是渲染提案。',
-    open: '图形好看不代表路人读得懂，观看距离和现场亮度都要到站里测。',
+    open: '路人能否读懂图形，以及观看距离和现场亮度的影响，还需要到站内实测。',
     credit: ['TEAM', 'Wenjing Bian、Qianheng Zhang、Xianyue Xiao']
   },
   'growth-compass': {

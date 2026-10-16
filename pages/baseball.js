@@ -75,11 +75,11 @@
         const pos = s => { const [, m, dd] = s.split('-').map(Number); return (Date.UTC(2025, m - 1, dd) - t0) / (t1 - t0); };
         const MON = ['APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT'];
         fit(host, W => {
-          const mob = W < 640, lx = mob ? 0 : 84, pw = W - lx - 6, rowH = mob ? 150 : 176, up = mob ? 56 : 66, dn = mob ? 44 : 54, top = 22, H = top + rowH * 3 + 8;
+          const mob = W < 640, lx = mob ? 0 : 84, pw = W - lx - 6, rowH = mob ? 184 : 176, ex = mob ? 34 : 0, up = mob ? 56 : 66, dn = mob ? 44 : 54, top = 22, H = top + rowH * 3 + 8;
           let g = '';
           MON.forEach((m, i) => { const x = lx + pos(`2025-${String(i + 4).padStart(2, '0')}-01`) * pw; g += `<line class="tl-m" x1="${x}" y1="${top - 6}" x2="${x}" y2="${H - 8}"/>` + tx(x + 4, 14, [m], { fs: 10, cls: 'tl-t' }); });
           Y.forEach((r, i) => {
-            const base = top + i * rowH + 18 + up, x0 = lx;
+            const base = top + i * rowH + 18 + ex + up, x0 = lx;
             g += `<line class="tl-b" x1="${x0}" y1="${base}" x2="${x0 + pw}" y2="${base}"/>`;
             r.b.forEach(([dt, n]) => { const x = lx + pos(dt) * pw, h = Math.max(2, n / maxB * dn); g += `<line class="tl-o" x1="${x.toFixed(1)}" y1="${base}" x2="${x.toFixed(1)}" y2="${(base + h).toFixed(1)}"><title>${dt} · 大谷 ${n} 条</title></line>`; });
             r.p.forEach(([dt, n]) => { const x = lx + pos(dt) * pw, h = Math.max(3, n / maxP * up); g += `<line class="tl-y" x1="${x.toFixed(1)}" y1="${base}" x2="${x.toFixed(1)}" y2="${(base - h).toFixed(1)}"><title>${dt} · 山本 ${n} 球</title></line>`; });
@@ -303,7 +303,7 @@
 
   /* ====================== EXPLORE · pitch field with real filters ====================== */
   M.baseballPlate = {
-    html: () => shell('PITCH FIELD', '每个圆点都有一条源记录', `<div class="bb-controls"><label>进垒图年份<select class="bb-year" aria-label="进垒图年份"><option value="all">全部年份</option><option>2024</option><option>2025</option><option>2026</option></select></label><label>进垒图球种<select class="bb-type" aria-label="进垒图球种"><option value="all">全部球种</option>${TYPES.map(([c,t]) => `<option value="${c}">${c} · ${t}</option>`).join('')}</select></label><button type="button" class="bb-reset">重置筛选</button></div><div class="bb-legend" role="group" aria-label="球种图例，点击即筛选"></div><div class="bb-plate-layout"><div class="bb-plot"><div class="bb-points"><p class="bb-loading">读取本地逐球 CSV 快照…</p></div><p class="bb-hover" aria-live="off">鼠标移到点上读数，点击固定为当前检查的一球。</p></div><aside class="bb-ledger"><div class="bb-totals" aria-live="polite"></div><div class="bb-record-control"><button type="button" class="bb-prev" aria-label="上一球">←</button><label>单球序号<input class="bb-index" type="number" min="1" value="1" aria-label="筛选内单球序号"></label><button type="button" class="bb-next" aria-label="下一球">→</button></div><dl class="bb-single" aria-live="polite"></dl></aside></div><div class="bb-mx-wrap"><p class="bb-mx-h mono">YEAR × PITCH TYPE · 每格是有效进垒点数，点格子即筛选</p><div class="bb-mx"></div></div><p class="bb-status" aria-live="polite"></p><p class="bb-source">坐标保持 CSV 原值，单位 ft，捕手视角；方框宽 17 in、高 1.5—3.5 ft，仅作统一参照，不代表每位打者的实际好球区。2026 年测量平面和好球区定义改变，不能直接归因于球员表现。</p><details><summary>核对缺失记录与数据来源</summary><div class="bb-audit"></div></details><div class="bb-links"><button type="button" class="bb-export">下载当前真实子集 CSV</button><a href="assets/baseball/evidence-audit.json" target="_blank" rel="noopener">源文件 SHA-256 与转换记录 ↗</a><a href="https://baseballsavant.mlb.com/csv-docs" target="_blank" rel="noopener">Statcast 字段定义 ↗</a></div>`),
+    html: () => shell('PITCH FIELD', '每个圆点对应一行 CSV 记录', `<div class="bb-controls"><label>进垒图年份<select class="bb-year" aria-label="进垒图年份"><option value="all">全部年份</option><option>2024</option><option>2025</option><option>2026</option></select></label><label>进垒图球种<select class="bb-type" aria-label="进垒图球种"><option value="all">全部球种</option>${TYPES.map(([c,t]) => `<option value="${c}">${c} · ${t}</option>`).join('')}</select></label><button type="button" class="bb-reset">重置筛选</button></div><div class="bb-legend" role="group" aria-label="球种图例，点击即筛选"></div><div class="bb-plate-layout"><div class="bb-plot"><div class="bb-points"><p class="bb-loading">读取本地逐球 CSV 快照…</p></div><p class="bb-hover" aria-live="off">鼠标移到点上读数，点击固定为当前检查的一球。</p></div><aside class="bb-ledger"><div class="bb-totals" aria-live="polite"></div><div class="bb-record-control"><button type="button" class="bb-prev" aria-label="上一球">←</button><label>单球序号<input class="bb-index" type="number" min="1" value="1" aria-label="筛选内单球序号"></label><button type="button" class="bb-next" aria-label="下一球">→</button></div><dl class="bb-single" aria-live="polite"></dl></aside></div><div class="bb-mx-wrap"><p class="bb-mx-h mono">YEAR × PITCH TYPE · 每格是有效进垒点数，点格子即筛选</p><div class="bb-mx"></div></div><p class="bb-status" aria-live="polite"></p><p class="bb-source">坐标保持 CSV 原值，单位 ft，捕手视角；方框宽 17 in、高 1.5—3.5 ft，仅作统一参照，不代表每位打者的实际好球区。2026 年测量平面和好球区定义改变，不能直接归因于球员表现。</p><details><summary>核对缺失记录与数据来源</summary><div class="bb-audit"></div></details><div class="bb-links"><button type="button" class="bb-export">下载当前真实子集 CSV</button><a href="assets/baseball/evidence-audit.json" target="_blank" rel="noopener">源文件 SHA-256 与转换记录 ↗</a><a href="https://baseballsavant.mlb.com/csv-docs" target="_blank" rel="noopener">Statcast 字段定义 ↗</a></div>`),
     async init(el) {
       try {
         const d = await data(), raw = d.pitch, year = el.querySelector('.bb-year'), type = el.querySelector('.bb-type');
@@ -422,7 +422,7 @@
 
   /* ====================== EXPLORE · readouts that follow the filter ====================== */
   M.baseballMetricCard = {
-    html: () => shell('METRIC CONTRACT', '读数必须对应它的字段', `<div class="bb-metric-cards"></div><p class="bb-check"></p>`),
+    html: () => shell('METRIC CONTRACT', '每个读数对应的字段', `<div class="bb-metric-cards"></div><p class="bb-check"></p>`),
     async init(el) {
       try {
         const [d, L] = await Promise.all([data(), lab()]), box = el.querySelector('.bb-metric-cards'), chk = el.querySelector('.bb-check');
@@ -548,7 +548,6 @@
       const { s, md, esc } = k, L = s.logline || {};
       const pat = ['tri', 'dot', 'wave', 'arrow'];
       return `<section class="b-rows" aria-label="项目摘要">
-        <ol class="br-stats">${(s.stats || []).map(([v, l], i) => `<li class="c${i}"><span>${esc(l)}</span><i class="pt ${pat[i]}" aria-hidden="true"></i><b>${esc(v)}</b></li>`).join('')}</ol>
         <div class="br-text">${[['問', L.q], ['做', L.a], ['果', L.r]].map(([c, t]) => `<p><b>${c}</b>${md(t)}</p>`).join('')}</div>
       </section>`;
     },

@@ -76,7 +76,7 @@
     <div class="tt-title"><p class="tt-kick"><span>${esc(H.place || 'SHANGHAI · TONGJI UNIV.')}</span></p><h1 class="tt-name" aria-label="Wenjing Bian"><span class="a" aria-hidden="true">WENJING</span><span class="b" aria-hidden="true">BIAN</span></h1><p class="tt-cn"><b>卞文璟</b><span>视觉传达设计 × 人工智能</span></p></div>
     <p class="tt-press"><b>PRESS ANY KEY</b><span class="k">按任意键，或点击屏幕开始</span><span class="t">TAP TO START</span></p>
     <div class="tt-lw"><ul class="tt-list" role="menu" aria-label="作品"></ul></div>
-    <footer class="tt-guide"><p class="q">要查看哪个作品？</p><p class="keys" aria-hidden="true"><span class="kb"><b>↑↓</b>选择</span><span class="kb"><b>←→</b>分类</span><span class="kb"><b>ENTER</b>打开</span><span class="kb"><b>ESC</b>跳过</span><span class="tp">点一下选中，再点一下打开</span></p></footer>`;
+    <footer class="tt-guide"><p class="lab">Command</p><p class="q">要查看哪个作品？</p><p class="keys" aria-hidden="true"><span class="kb"><b>↑↓</b>选择</span><span class="kb"><b>←→</b>分类</span><span class="kb"><b>ENTER</b>打开</span><span class="kb"><b>ESC</b>跳过</span><span class="tp">点一下选中，再点一下打开</span></p></footer>`;
   document.body.appendChild(ov);
 
   const $ = s => ov.querySelector(s);
@@ -100,7 +100,7 @@
   /* ---- list, categories, the line you are on ---- */
   const renderList = () => {
     cur = visible();
-    list.innerHTML = cur.map((it, i) => `<li role="none" style="--i:${i}"><button type="button" role="menuitem" class="tt-it${it.kind === 's' ? ' sys' : ''}" tabindex="-1" data-i="${i}"><span class="tx">${esc(it.lab)}</span></button></li>`).join('');
+    list.innerHTML = cur.map((it, i) => `<li role="none" style="--i:${i}"><button type="button" role="menuitem" class="tt-it${it.kind === 's' ? ' sys' : /[^ -]/.test(it.lab) ? ' sys cn' : ''}" tabindex="-1" data-i="${i}"><span class="tx">${esc(it.lab)}</span></button></li>`).join('');
     btns = [...list.querySelectorAll('.tt-it')];
     list.classList.toggle('few', cur.length <= 8);
   };
@@ -123,6 +123,8 @@
   const select = (i, o = {}) => {
     i = (i + cur.length) % cur.length; idx = i;
     btns.forEach((b, k) => { b.classList.toggle('on', k === i); b.tabIndex = k === i ? 0 : -1; b.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+    btns.forEach((x, k) => { const li = x.parentElement; li.style.setProperty('--k', Math.min(Math.abs(k - i), 7)); li.style.setProperty('--sg', Math.sign(k - i)); });
+    ghost.parentElement.classList.toggle('blk', i % 2 === 1); ov.style.setProperty('--sh', i % 6);
     const b = btns[i]; if (b && !o.init) { b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); }
     show(cur[i], o.init);
     if (o.focus && state === 'menu') b.focus({ preventScroll: true });
@@ -218,6 +220,7 @@
   ov.addEventListener('pointermove', e => { const n = performance.now(); if (n - lastMove > 260 && !reduce) { lastMove = n; ripple(e.clientX, e.clientY, .55); } });
   ov.addEventListener('pointerdown', e => { if (!reduce) ripple(e.clientX, e.clientY, 1); });
   const TAU = 6.28318;
+  const sm = (a, b, x) => { x = (x - a) / (b - a); x = x < 0 ? 0 : x > 1 ? 1 : x; return x * x * (3 - 2 * x); };
   const draw = time => {
     const d = im.data, t = time * .00042 + 23, inten = .005, now = performance.now();
     const rp = ripples.filter(r => now - r.t < 2600).map(r => { const a = (now - r.t) / 1000; return { x: r.x, y: r.y, R: a * 46, w: 3 + a * 3, f: r.k * Math.exp(-a * 1.2) }; });
@@ -234,7 +237,7 @@
           c += 1 / Math.hypot(px / (Math.sin(ix + tt) / inten), py / (Math.cos(iy + tt) / inten));
         }
         c = c / 5; c = 1.17 - Math.pow(c, 1.4);
-        let v = Math.abs(c); v = v * v; v = v * v; v = v * v; v *= lit;
+        let v = Math.abs(c); v = v * v; v = v * v; v = v * v; v = (sm(.26, .4, v) * .6 + v * .35) * lit;
         for (let k = 0; k < rp.length; k++) { const r = rp[k], dx = x - r.x, dy = y - r.y, dd = Math.sqrt(dx * dx + dy * dy) - r.R; if (dd < r.w * 3 && dd > -r.w * 3) v += r.f * .9 * Math.exp(-(dd * dd) / (2 * r.w * r.w)); }
         const c1 = v > 1.2 ? 1.2 : v, o = (y * W + x) * 4;
         /* surface: light cyan-blue; depth: saturated cobalt */

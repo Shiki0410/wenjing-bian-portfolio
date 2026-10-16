@@ -22,8 +22,8 @@
   const PHC = [COL.ink, COL.red, COL.verd];
   const tipA = (h, b) => ` data-tip="${E(h)}" data-tipb="${E(b || '')}" tabindex="0"`;
   const BAL = [
-    ['r', '祀 · 被记得', '阿鸮想起自己是谁，靠的是一次次被人叫出名字：第四集编钟里浮出的“妇”字，第五集那一声真名。祀在片里的意思，是文物被认出来、被记住。', [['bronze-ep01-4', 'EP.01《朱契》'], ['bronze-ep10-4', 'EP.10《拓归》']]],
-    ['w', '戎 · 被认出', '每件器物都有自己的战斗领域，来自它原来的用途：编钟靠音波，剑靠复仇的斩击，鼎靠吞噬。打起来是力量对撞，破局的办法却是认出它。', [['bronze-ep02-3', 'EP.02《青焰》'], ['bronze-ep08-5', 'EP.08《南渡》']]]
+    ['r', '祀 · 被记得', '阿鸮想起自己是谁，靠的是一次次被人叫出名字：第四集编钟里浮出的“妇”字，第五集那一声真名。“祀”在片里指文物被认出来、被记住。', [['bronze-ep01-4', 'EP.01《朱契》'], ['bronze-ep10-4', 'EP.10《拓归》']]],
+    ['w', '戎 · 被认出', '每件器物都有自己的战斗领域，来自它原来的用途：编钟靠音波，剑靠复仇的斩击，鼎靠吞噬。战斗时是力量对撞，解开的办法是认出它。', [['bronze-ep02-3', 'EP.02《青焰》'], ['bronze-ep08-5', 'EP.08《南渡》']]]
   ];
   const noeva = h => h.replace(/<(section|header)/g, '<$1 data-noeva');
   const stripVt = s => String(s).replace(/<[^>]+>/g, '');
@@ -149,7 +149,7 @@
           <img class="zo-img" src="${src(a.open.img)}" alt="${esc(a.open.cap)}" loading="lazy">
           <p class="zo-word" aria-hidden="true">${esc(a.open.script)}</p>
           <div class="zo-copy"><h2>${md(a.title)}</h2><p>${md(a.lead)}</p><small class="mono">${esc(a.kicker)} · ${esc(a.open.cap)}</small></div>
-          <p class="zo-v">${vt('簪花 · 吊坠 · 一直都在')}</p>
+          <p class="zo-v">${vt('簪花 · 吊坠 · 三套造型都有')}</p>
         </header>
         ${form(1, 0, 1, 2, 'DAILY · 短红外套')}
         ${form(2, 3, 4, 5, 'BATTLE · 立领长裙 · 玉箫')}
@@ -497,7 +497,7 @@
           <text x="${x + bw / 2}" y="${top + ph + 18}" text-anchor="middle" font-size="${narrow ? 11 : 13}" class="bz-h">${E(s.eps[i])}</text>
           <text x="${x + bw / 2}" y="${top + ph + 33}" text-anchor="middle" font-size="9.5" class="t-m" opacity=".6">${p2(i + 1)}</text></g>`;
       });
-      g += `<line x1="0" x2="${W}" y1="${y(avg)}" y2="${y(avg)}" stroke="${COL.gold}" stroke-width="1.6" stroke-dasharray="6 4"/><text x="${W}" y="${y(avg) - 5}" text-anchor="end" font-size="11" fill="#8a6a2c" class="t-m">平均 ${mm(avg)}</text>`;
+      g += `<line x1="0" x2="${W}" y1="${y(avg)}" y2="${y(avg)}" stroke="${COL.gold}" stroke-width="1.6" stroke-dasharray="6 4"/><text x="${(cw * 5.5 + 4).toFixed(1)}" y="${y(avg) - 5}" text-anchor="middle" font-size="11" fill="#8a6a2c" class="t-m">平均 ${mm(avg)}</text>`;
       return { H: top + ph + 48, g };
     };
   }
@@ -698,7 +698,7 @@
       const r = host.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1);
       W = Math.max(280, Math.round(r.width)); H = Math.max(300, Math.round(r.height));
       [cv, glc].forEach(c => { if (!c) return; c.width = W * dpr; c.height = H * dpr; c.style.width = W + 'px'; c.style.height = H + 'px'; });
-      if (GL) { GL.r.setPixelRatio(dpr); GL.r.setSize(W, H, false); GL.cam.aspect = W / H; GL.cam.position.z = W < 560 ? 7.6 : 6.4; GL.group.position.x = W < 560 ? -.1 : -.28; GL.cam.updateProjectionMatrix(); }
+      if (GL) { GL.r.setPixelRatio(dpr); GL.r.setSize(W, H, false); GL.cam.aspect = W / H; GL.cam.position.z = Math.max(W < 560 ? 7.6 : 6.4, 4.4 / (0.4986 * GL.cam.aspect)); GL.group.position.x = W < 560 ? -.1 : -.28; GL.cam.updateProjectionMatrix(); }
       draw();
     };
     const geo = () => S.geo[S.form] || (S.geo[S.form] = buildForm(FORMS[S.form]));
@@ -758,7 +758,7 @@
         ctx.stroke();
       }
       const k0 = fl / Dz; screenYs = FORMS[S.form].zones.map(z => [cyc - (z.a * 2 - 1) * cp * k0, cyc - (z.b * 2 - 1) * cp * k0]);
-      railX = Math.min(W - 54, cx + Math.min(W * .34, 1.15 * fl / Dz * 1.2) + 18);
+      railX = Math.min(W - 76, cx + Math.min(W * .34, 1.15 * fl / Dz * 1.2) + 18);
       rail();
     }
 
@@ -832,7 +832,7 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
       const F = FORMS[S.form], v = new GL.V3(), pj = y => { v.set(0, y, 0); GL.group.localToWorld(v); v.project(GL.cam); return (1 - v.y) * H / 2; };
       screenYs = F.zones.map(z => [pj(z.a * 2 - 1), pj(z.b * 2 - 1)]);
-      v.set(1.05, 0, 0); v.project(GL.cam); railX = Math.min(W - 54, (v.x + 1) * W / 2 + 40);
+      v.set(1.05, 0, 0); v.project(GL.cam); railX = Math.min(W - 76, (v.x + 1) * W / 2 + 40);
       rail();
     }
     function draw() { if (!W) return; if (S.mode === 'gl' && GL) drawGL(); else drawSoft(); }

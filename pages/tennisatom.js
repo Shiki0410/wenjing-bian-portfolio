@@ -165,8 +165,8 @@
 
   const ACT = {};
   ACT.context = (a, i) => ahead(a, i) + '<div class="ta-body">' +
-    plate('TA-01 / GAP', '两套系统之间的缝', gap(), 'ta-p-gap', '专业转播有的东西，球员拿不到；手机拍得到的东西，缺少质感和数据。') +
-    plate('TA-02 / INTENT', '影像为谁而剪', intent(), 'ta-p-intent', '同一段球场素材，观看目的不同，剪出来的成片也不同。这个项目面向第三种。') +
+    plate('TA-01 / GAP', '专业转播与手机视频的差距', gap(), 'ta-p-gap', '专业转播有的东西，球员拿不到；手机拍得到的东西，缺少质感和数据。') +
+    plate('TA-02 / INTENT', '三种剪辑目的', intent(), 'ta-p-intent', '同一段球场素材，观看目的不同，剪出来的成片也不同。这个项目做第三种。') +
     '<div class="rv">' + facts() + '</div></div>';
 
   /* ============ 02 问题怎么得到 ============ */
@@ -195,7 +195,7 @@
     const rows = [
       [['受访 2 · 太丑，很少分享', '受访 3 · 不满意就不发'], '素材丑，没有调性', '缺乏个人视觉语言', 'LACK OF PERSONAL VISUAL LANGUAGE'],
       [['受访 4 · 要保留剪辑的乐趣', '场馆方 · 手动改了还不如手剪'], '自动化拿走叙事主权', '工具夺走主体感', 'TOOL STRIPS AGENCY'],
-      [['受访 3 · 想展示气质', '受访 4 · 想被看成很坚持的人'], '身份认同诉求，与技术无关', '情感叙事 比 数据叙事 更重要', 'FEELING OVER READING · iBall, CHI 2023']
+      [['受访 3 · 想展示气质', '受访 4 · 想被看成很坚持的人'], '身份认同诉求，与技术无关', '成片先要传达状态，再附数据', 'FEELING OVER READING · iBall, CHI 2023']
     ];
     return '<div class="ta-coding" data-ta="coding"><div class="ta-co-head mono"><span>RAW · 原话</span><span>CODE · 编码</span><span>THEME · 主题</span></div>' +
       rows.map(([raw, code, th, en], i) => '<div class="ta-co-row" data-row="' + i + '"><ul class="ta-co-raw">' + raw.map(r => '<li>' + E(r) + '</li>').join('') + '</ul><i class="ta-co-ln" aria-hidden="true"></i><button type="button" class="ta-co-code" aria-pressed="false"><b>' + E(code) + '</b></button><i class="ta-co-ln" aria-hidden="true"></i><div class="ta-co-theme"><b>' + E(th) + '</b><span class="mono">' + E(en) + '</span></div></div>').join('') +
@@ -209,10 +209,10 @@
 
 
   ACT.question = (a, i) => ahead(a, i) + '<div class="ta-body">' +
-    plate('TA-03 / SAMPLE', '五段现场访谈', tapes(), 'ta-p-tapes', '2026 年 6 月 3 日，乐动力杨浦球馆。录音转写，主题编码。') +
-    plate('TA-04 / VOICES', '原话里的第一条线索', scatter(), 'ta-p-voices', '原话断成大小不一的几块，说得最重的词放得最大。') +
-    plate('TA-05 / CODING', '从原话到主题', coding(), 'ta-p-coding', '每条编码归入一个主题，三个主题指向同一个问题。') +
-    plate('TA-06 / JOURNEY', '问题出在哪一步', reframe(), 'ta-p-reframe', '一位博主型受访者的旅程：情绪在剪辑处陡降，目标曲线从这里向上。') + '</div>';
+    plate('TA-03 / SAMPLE', '访谈样本', tapes(), 'ta-p-tapes', '2026 年 6 月 3 日，乐动力杨浦球馆。录音转写，主题编码。') +
+    plate('TA-04 / VOICES', '受访者原话', scatter(), 'ta-p-voices', '受访者原话摘录，字号大的是他们强调的词。') +
+    plate('TA-05 / CODING', '编码：从原话到主题', coding(), 'ta-p-coding', '每条原话归为一条编码，编码再归入三个主题。') +
+    plate('TA-06 / JOURNEY', '问题出在素材变成成片这一步', reframe(), 'ta-p-reframe', '一位博主型受访者的旅程：情绪在剪辑处陡降，目标曲线从这里向上。') + '</div>';
   /* 用户旅程：现状（As-Is）与目标（To-Be）两条情绪曲线 */
   const JNY = {
     as: [['出发打球', '期待', 7], ['击球高光', '兴奋', 9], ['看素材', '落差', 4], ['尝试剪辑', '困惑', 3], ['放弃 / 将就', '挫败', 2], ['发出后', '失落', 3]],
@@ -267,20 +267,20 @@
     $$(el, '.ta-seg button').forEach(b => b.addEventListener('click', () => set(b.dataset.m)));
     set('as');
   };
-  const reframe = () => '<div class="ta-reframe"><div class="ta-rf-txt"><article class="old"><span class="mono">起初的判断</span><h4>不分享，是不想被看见。</h4></article><article class="new"><span class="mono">访谈之后</span><h4>不分享，是成片拿不出手。</h4><p>受访的人想发，也想被看见。卡住的是素材变成成片的那一段：看素材时有落差，剪辑时找不到自己的审美，发出去的内容和别人没有区别。</p></article></div>' + journey() + '</div>';
+  const reframe = () => '<div class="ta-reframe"><div class="ta-rf-txt"><article class="old"><span class="mono">访谈前的假设</span><h4>假设：球员不分享，是因为不想被看见。</h4></article><article class="new"><span class="mono">访谈之后</span><h4>结论：球员不分享，是因为成片自己都觉得拿不出手。</h4><p>受访者想发，也想被看见。卡在素材变成成片这一步：看素材时和预期有落差，剪辑时找不到自己的审美，发出去的内容和别人差不多。</p></article></div>' + journey() + '</div>';
 
   /* ============ 03 调研分析 ============ */
   const gens = () => '<div class="ta-gen-wrap"><div class="ta-gen-n"><b>126</b><span>篇 CHI / UIST / IEEE VIS / SportsHCI 论文</span></div><ol class="ta-gen">' + [
     ['GEN 1', '信息交付', '让数据被看见', 'iBall、VisCommentator、Sporthesia：嵌入式可视化、自然语言驱动的增强、视线调节。观众和分析师因此读得懂比赛。'],
     ['GEN 2', '个人信息学', '让运动者反思自己', 'SportsBuddy 等：运动员从边缘移到中心，多传感器数据生成个性化集锦，并在真实场景中部署。'],
     ['GEN 3', 'AI 中介的自我表征', '让数据成为审美表达', 'PicMe、Reimagining Personal Data、BeReal、Becoming My Own Audience：新手的障碍来自自我评判，技术本身反倒排在后面。'],
-    ['AFTER', '生成之后', '敢不敢发出去？', '三代研究都停在生成与理解。做出来之后，业余者敢不敢把它给别人看，几乎没有人认真研究过。']
+    ['AFTER', '生成之后', '愿不愿意发出去', '三个阶段的研究都停在生成与理解。成片做出来以后，业余者是否愿意发给别人，几乎没有研究。']
   ].map(([c, h, s, t], i) => '<li class="' + (i === 3 ? 'gap' : '') + '"><span class="mono">' + c + '</span><h4>' + h + '</h4><b>' + s + '</b><p>' + t + '</p></li>').join('') + '</ol></div>';
 
   const QUAD = [
     ['hawk', 'Hawk-Eye', 14, 17, '专业 · 分析', '球场鹰眼，精度很高。3D 模型无法下载，球员自己拿不到数据。'],
     ['f1', 'F1 式转播', 76, 16, '专业 · 表达', '转播级的数据叙事：球速不是角标数字，而是球后拖出的光轨。'],
-    ['sv', 'SwingVision / SmartShot', 19, 68, '业余 · 分析', '业余球员用得上的分析工具：数据标注、球路和集锦，审美让位给精度。'],
+    ['sv', 'SwingVision / SmartShot', 19, 68, '业余 · 分析', '业余球员用得上的分析工具：数据标注、球路和集锦，侧重精度，画面审美弱。'],
     ['jy', '剪映模板', 78, 76, '业余 · 表达', '好上手，模板化。成片趋同，看不出是谁在打球。'],
     ['ta', 'TennisAtom', 63, 64, '本项目', '业余球员 × 审美表达：数据变成画面，成片由球员本人参与决定。']
   ];
@@ -324,7 +324,7 @@
     });
     return { H, g: g + lb };
   };
-  const persona = () => '<div class="ta-persona" data-ta="persona">' + chart('persona', '四类用户在四条轴上的位置') + '<ul class="ta-pl-key">' + PERSONA.map(([n, d, v, c]) => '<li><button type="button" data-n="' + n + '" aria-pressed="false"><i style="background:' + c + '"></i><b>' + n + '</b><span>' + d + '</span></button></li>').join('') + '</ul><p class="ta-note">四类用户画像由访谈提炼，用于设计推演；每条线的位置是画像的定位，不是测得的分值。</p></div>';
+  const persona = () => '<div class="ta-persona" data-ta="persona">' + chart('persona', '四类用户在四条轴上的位置') + '<ul class="ta-pl-key">' + PERSONA.map(([n, d, v, c]) => '<li><button type="button" data-n="' + n + '" aria-pressed="false"><i style="background:' + c + '"></i><b>' + n + '</b><span>' + d + '</span></button></li>').join('') + '</ul><p class="ta-note">四类用户画像由访谈归纳，用于设计推演；每条线的位置是画像的大致定位，不是测量得到的分值。</p></div>';
   INIT.persona = el => {
     const ch = $(el, '.ta-chart');
     el.addEventListener('ta:drawn', () => {});
@@ -339,7 +339,7 @@
   const CASES = [
     { k: 'A', name: 'SwingVision 官方高光', tag: '工具流标杆', feat: '单线叙事，数据叠加，剪辑节奏稳定。', total: 30,
       seg: [[0, 3, '全景球场，选手姓名水印浮入'], [3, 12, '一次回合（正常速度），球路追踪线与球速角标'], [12, 15, '慢动作回放（同一击球），落点标记'], [15, 25, '下一回合，同样的处理方式'], [25, 30, '数据统计卡片，App 水印']],
-      ok: '信息完整、专业可信，生产线高度可重复。', no: '审美让位给精度，所有视频雷同，没有个人特色与情感共鸣。', use: '保留数据的可信度，但在审美决策上反向操作：用分镜跳跃代替线性叙事，让数据成为画面，不再只是角标。' },
+      ok: '信息完整、专业可信，生产线高度可重复。', no: '重精度，轻审美，所有视频看起来一样，没有个人特色。', use: '保留数据的可信度；剪辑上用分镜跳跃代替线性叙事，把数据做成画面，不再只贴角标。' },
     { k: 'B', name: 'Vivian 风 · 生活方式 vlog', tag: '氛围叙事', feat: '少量击球画面，大量氛围特写，文艺字幕。', total: 30,
       seg: [[0, 3, '球拍特写，阳光透过球网，标题「周末的球场」'], [3, 8, '自拍打球准备，慢动作甩头发，热门 BGM'], [8, 15, '3 到 4 个击球瞬间，每个 1 到 2 秒，按 BGM 卡点切'], [15, 22, '失误后的笑，同伴击掌，喘气'], [22, 28, '收拍走向网前，夕阳剪影'], [28, 30, '字幕「今天也是想成为更好的自己的一天」']],
       ok: '氛围压过技术，情绪压过数据，把网球当作生活方式来表达。', no: '几乎没有运动本身的数据，错过了「数据成为表达」的可能。', use: '最接近目标的样本。在这个样本上叠加情绪化的数据，已经接近这类用户要的定制成片。' },
@@ -374,7 +374,7 @@
   const RHY = [[0, 3, '开场钩子', '反常规的强冲击', 'FocusBox · 锁定'], [3, 12, '推进叙事', '客观抛物线叙事', 'SpeedTrail · 球轨'], [12, 18, '节奏加速', '感官节奏变密', 'RhythmPulse · 心流'], [18, 22, '最强瞬间', '触发高光特效', 'Glitch / Impact'], [22, 26, '回归余韵', '情绪平静回落', 'Constellation · 星图']];
   const rhythm = () => '<div class="ta-rhythm" data-ta="rhythm"><div class="ta-rh-ctl"><button type="button" class="ta-rh-play" aria-pressed="false"><i></i><span>播放节奏</span></button><span class="ta-rh-t mono">00.0 / 26 s</span></div>' +
     '<div class="ta-rh-bar" role="list">' + RHY.map(([a, b, h, d, fx], i) => '<div role="listitem" class="s' + (i % 3) + (i === 3 ? ' peak' : '') + '" data-i="' + i + '" style="flex:' + (b - a) + '" tabindex="0"><span class="mono">' + a + '–' + b + ' s</span><b>' + h + '</b><em>' + d + '</em><u class="mono">' + fx + '</u></div>').join('') + '<i class="ta-rh-head" aria-hidden="true"></i></div>' +
-    '<p class="ta-note">四个案例拆开后，节奏骨架相同：开场抓人，中段推进，后段加速，在最强的一瞬间触发高光，最后回到平静。五个时间段各对应一种特效，由事件触发。</p></div>';
+    '<p class="ta-note">四个案例的节奏相同：开场抓人，中段推进，后段加速，最强的一瞬间触发高光，最后回到平静。五个时间段各对应一种特效，由事件触发。</p></div>';
   INIT.rhythm = el => {
     const bar = $(el, '.ta-rh-bar'), head = $(el, '.ta-rh-head'), btn = $(el, '.ta-rh-play'), out = $(el, '.ta-rh-t'), segs = $$(el, '.ta-rh-bar [role=listitem]');
     let t = 0, timer = 0;
@@ -391,11 +391,11 @@
   };
 
   ACT.research = (a, i) => ahead(a, i) + '<div class="ta-body">' +
-    plate('TA-07 / LITERATURE', '三代研究的边界', gens(), 'ta-p-gens') +
-    plate('TA-08 / MAP', '学术与产业的坐标', quad(), 'ta-p-quad', '点击或悬停坐标上的点，右下角会显示说明。') +
-    plate('TA-09 / USERS', '四类球员怎样对待数据', persona(), 'ta-p-persona', '点击下方名字，高亮对应的那条线。') +
+    plate('TA-07 / LITERATURE', '已有研究的三个阶段', gens(), 'ta-p-gens') +
+    plate('TA-08 / MAP', '学术与产业产品的位置', quad(), 'ta-p-quad', '点击或悬停坐标上的点，右下角显示说明。') +
+    plate('TA-09 / USERS', '四类球员对数据的态度', persona(), 'ta-p-persona', '点击下方名字，高亮对应的那条线。') +
     plate('TA-10 / CASES', '四段公开案例的逐镜头拆解', cases(), 'ta-p-cases') +
-    plate('TA-11 / RHYTHM', '案例共有的节奏骨架', rhythm(), 'ta-p-rhythm') + '</div>';
+    plate('TA-11 / RHYTHM', '四个案例的共同节奏', rhythm(), 'ta-p-rhythm') + '</div>';
 
   /* ============ 04 实验设计 ============ */
   const PRIN = [
@@ -653,6 +653,7 @@
   const ENV = { a: .25, d: .35, s: .55, r: .8 }, HOLD = .5;
   const envAt = (p, t) => { const T1 = p.a, T2 = p.a + p.d, T3 = T2 + HOLD, T4 = T3 + p.r; return t < T1 ? t / T1 : t < T2 ? 1 - (1 - p.s) * (t - T1) / p.d : t < T3 ? p.s : t < T4 ? p.s * (1 - (t - T3) / p.r) : 0; };
   const fxDraw = (k, e) => {
+    e = Math.max(0, e);
     const cx = 190, cy = 150;
     if (k === 0) return '<g fill="none" stroke="#5aaeff" stroke-width="2">' + [20, 40, 62, 88].map((r, j) => { const s = r * (.25 + e * .95); return '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + s.toFixed(1) + '" ry="' + (s * .5).toFixed(1) + '" opacity="' + (e * (1 - j * .2)).toFixed(2) + '"/>'; }).join('') + '<path d="M' + (cx - 14) + ' ' + cy + 'h28m-14-14v28" stroke="#ecedef" opacity="' + e.toFixed(2) + '"/></g>';
     if (k === 1) return '<g fill="none"><path d="M40 196Q170 28 316 130" stroke="#5aaeff" stroke-width="' + (2 + 9 * e).toFixed(1) + '" stroke-linecap="round" opacity="' + (.15 + .85 * e).toFixed(2) + '"/><path d="M40 208Q166 52 300 132" stroke="#ecedef" stroke-opacity="' + (e * .5).toFixed(2) + '" stroke-width="1.5"/></g><circle cx="316" cy="130" r="7" fill="#ecedef"/>';
@@ -706,7 +707,7 @@
   };
 
   ACT.pipeline = (a, i) => ahead(a, i) + '<div class="ta-body">' +
-    plate('TA-18 / INPUT', '输入：一份训练记录', dataIn(), 'ta-p-data', '成片从球馆采集的数据里长出来。') +
+    plate('TA-18 / INPUT', '输入：一份训练记录', dataIn(), 'ta-p-data', '成片使用球馆采集的训练记录作为输入。') +
     plate('TA-19 / SYSTEM', '七模块技术链路', chain(), 'ta-p-chain', '分析层和创作层之间只传一份数据。') +
     plate('TA-20 / POSE', '骨架：33 个点跟着一次挥拍移动', skel(), 'ta-p-skel', '拖动滑块，或者点四个阶段。') +
     plate('TA-21 / EVENT', '事件决定特效在哪一帧出现', fx(), 'ta-p-fx', '选事件、调包络、点触发，看画面怎样变。') +
@@ -790,4 +791,28 @@
       $$(root, '[data-ta]').forEach(el => { const f = INIT[el.dataset.ta]; if (f) { try { f(el); } catch (e) { console.error('[tennisatom]', el.dataset.ta, e); } } });
     }
   };
+})();
+
+;/* 2026-10-15 polish: type-size floor (small labels >= 11px, running text >= 14px) */
+(() => {
+  const SKIP = /(note|foot|cap|source|src|hint|meta|tag|legend|mono|pill|chip|badge|kbd|num|axis|label)/i;
+  let timer = 0;
+  const run = () => {
+    const root = document.querySelector('#main') || document.body;
+    root.querySelectorAll('*').forEach(e => {
+      if (e.closest('svg') || ['SCRIPT', 'STYLE', 'OPTION'].includes(e.tagName)) return;
+      let t = '';
+      for (const n of e.childNodes) if (n.nodeType === 3) t += n.textContent;
+      t = t.trim(); if (!t) return;
+      const fs = parseFloat(getComputedStyle(e).fontSize);
+      if (fs < 11) e.style.setProperty('font-size', '11px', 'important');
+      else if (fs < 14 && t.length >= 28 && !SKIP.test(String(e.className)) && !e.closest('[class*="note"],[class*="foot"],[class*="cap"],[class*="source"]')) e.style.setProperty('font-size', '14px', 'important');
+    });
+  };
+  const sched = () => { if (!timer) timer = setTimeout(() => { timer = 0; run(); }, 500); };
+  const start = () => {
+    sched();
+    new MutationObserver(sched).observe(document.querySelector('#main') || document.body, { childList: true, subtree: true });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();

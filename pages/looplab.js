@@ -1,7 +1,7 @@
 /* LoopLab — workbench collage: material labels, tape, stickers, a specimen card with a real 3D model.
    Refs (pins.txt): 250 cobalt windows on black, 11 paper collage with dot grid and X marks, 4 pinned notes on strings.
-   Everything on this page is drawn here: the 3D model is a Moebius ribbon built with three@0.160 (no shared stage). */
-if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], credit: ['ROLE', '个人负责竞品研究与方案表达'] });
+   Everything on this page is drawn here: the 3D model is a cutting-mat workbench with a conveyor ring and five station models, built with three@0.160 (no shared stage). */
+if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], credit: ['TEAM', '团队项目 · 个人负责竞品研究与方案表达'] });
 
 
 (() => {
@@ -55,12 +55,12 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
       <div class="lc"><p class="lc-h mono a">现在的做法 / BEHAVIOR</p><span aria-hidden="true"></span><p class="lc-h mono b">带来的问题 / PROBLEM</p>
         ${CHAIN.map(([a, b], i) => `<div class="lc-n a r${i}"><b class="mono">0${i + 1}</b>${e(a)}</div><i class="lc-x" aria-hidden="true"><svg viewBox="0 0 60 24"><path d="M2 12h46M42 5l7 7-7 7"/></svg></i><div class="lc-n b r${i}">${e(b)}</div>`).join('')}
       </div>
-      <p class="lc-end"><b>LoopLab</b> 在最后一环接回第一环：用完的余料先发布到交换板，进入下一个人的制作。</p>`,
+      <p class="lc-end"><b>LoopLab</b> 的做法：用完的余料重新发布到交换板，给下一个人的制作使用。</p>`,
       '桌面研究 · 描述的是设计学生的采购与存放习惯，没有统计样本', 'll-chain')
   };
 
   /* ============================================================
-     02 · FIG.3 · benchmarks — a table, drawn in code
+     02 · FIG.2 · benchmarks — a table, drawn in code
      ============================================================ */
   const BENCH = [
     ['校园食品自提柜', '扫码自助取件', '只能放单一品类', '柜点取件', '取件'],
@@ -70,7 +70,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
     ['校园云存储', '文件分享', '没有设计标签', '加设计标签，便于检索', '档案']
   ];
   M['looplab-benchmarks'] = {
-    html: () => card('FIG.3 · DESK RESEARCH', '桌面研究：五类相邻产品', `
+    html: () => card('FIG.2 · DESK RESEARCH', '桌面研究：五类相邻产品', `
       <div class="lb" role="table" aria-label="相邻产品比较表">
         <div class="lb-r lb-head" role="row"><span role="columnheader">参照对象</span><span role="columnheader">长处</span><span role="columnheader">局限</span><span role="columnheader">校园方案的做法</span><span role="columnheader">对应模块</span></div>
         ${BENCH.map(([n, s, w, d, m], i) => `<div class="lb-r" role="row"><b role="rowheader" data-l="参照对象"><i class="mono">${String(i + 1).padStart(2, '0')}</i>${e(n)}</b><span role="cell" data-l="长处">${e(s)}</span><span role="cell" data-l="局限" class="w">${e(w)}</span><span role="cell" data-l="做法" class="k">${e(d)}</span><span role="cell" data-l="对应模块"><em class="mono">${e(m)}</em></span></div>`).join('')}
@@ -79,7 +79,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
   };
 
   /* ============================================================
-     03 · FIG.4 · value proposition — value map + customer profile
+     03 · FIG.3 · value proposition — value map + customer profile
      ============================================================ */
   const VP = {
     product: ['LoopLab 校园小程序：浏览、预约、发布与领取余料', '积分 / 额度：捐赠余料获得免费交换额度', '小批量余料分享与交换', '共享资源库：可检索的纹理、3D 模型与项目文件', '整合制作：校内打印店与 3D 打印社团', '校园取件柜：线下闭环'],
@@ -91,7 +91,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
   };
   const notes = (arr, cls) => arr.map((t, i) => `<li class="${cls}" style="--r:${((i * 37) % 5) - 2}deg">${e(t)}</li>`).join('');
   M['looplab-value'] = {
-    html: () => card('FIG.4 · VALUE PROPOSITION', '价值主张：服务方案对应学生的任务、收益与困难', `
+    html: () => card('FIG.3 · VALUE PROPOSITION', '价值主张：服务方案对应学生的任务、收益与困难', `
       <div class="lv">
         <div class="lv-map"><p class="lv-t mono">VALUE MAP · 服务侧</p>
           <div class="lv-box"><div class="lv-ps"><h4>产品与服务</h4><ul>${notes(VP.product, 'y')}</ul></div>
@@ -114,7 +114,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
   };
 
   /* ============================================================
-     04 · MATERIAL RING — Moebius ribbon, five stations, three.js
+     04 · MATERIAL RING — cutting-mat workbench, conveyor ring, five station models, three.js
      ============================================================ */
   const ST = [
     { k: 'exchange', n: '材料交换板', en: 'EXCHANGE', rec: '材料规格、余量、成色与交接约定', flow: ['发布材料', '匹配需求', '约定交接', '确认收取'], c: '#d9a15c' },
@@ -134,12 +134,12 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
       <text x="${cx}" y="${cy - 4}" text-anchor="middle" font-size="19" font-weight="800">材料环</text><text x="${cx}" y="${cy + 20}" text-anchor="middle" font-size="12" letter-spacing="2" fill="#6b7087">LOOP · 通知贯穿全程</text></svg>`;
   };
   M['looplab-ring'] = {
-    html: () => card('MODEL · MATERIAL LOOP', '材料环：一条带上的五个站', `
+    html: () => card('FIG.4 · MATERIAL LOOP', '材料环：切割垫上的五个服务站', `
       <div class="lr">
         <div class="lr-stage">
-          <div class="lr-view" tabindex="0" role="group" aria-label="材料环三维示意。拖动旋转，方向键微调，点站点编号选择模块。">
+          <div class="lr-view" tabindex="0" role="group" aria-label="材料环三维示意：绿色切割垫上有一圈传送带和五个模块的小模型。拖动旋转，方向键微调，点击模型或标签选择模块。">
             <canvas class="lr-cv" aria-hidden="true"></canvas><div class="lr-tags"></div>
-            <span class="lr-c tl mono">LL-09 / SPEC</span><span class="lr-c tr mono">1 RIBBON · 5 STATIONS</span><span class="lr-c bl mono">N · MATERIAL FLOW →</span><span class="lr-c br mono"><i class="lr-bc"></i></span>
+            <span class="lr-c tl mono">LL-09 / SPEC</span><span class="lr-c tr mono">1 LOOP · 5 STATIONS</span><span class="lr-c bl mono">N · MATERIAL FLOW →</span><span class="lr-c br mono"><i class="lr-bc"></i></span>
             <p class="lr-load mono">三维模型加载中…</p>
           </div>
           <div class="lr-flat" hidden><p class="lr-fail mono">三维模型没有加载出来。下面是同一条材料环的平面图，五个站点可点选。</p>${flatSvg()}</div>
@@ -151,7 +151,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
           <div class="lr-detail" aria-live="polite"></div>
         </div>
       </div>`,
-      '结构示意 · 带的长度、色块数量和站点位置不代表真实规模、库存或订单', 'll-ring'),
+      '结构示意 · 模型、传送带长度和色块数量不代表真实规模、库存或订单', 'll-ring'),
     init(el) {
       const view = $('.lr-view', el), flat = $('.lr-flat', el), list = $$('.lr-list button', el), detail = $('.lr-detail', el);
       let cur = 0, api = null;
@@ -182,88 +182,117 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
     const renderer = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, powerPreference: 'low-power' });
     renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
     renderer.outputColorSpace = T.SRGBColorSpace;
-    const scene = new T.Scene(), cam = new T.PerspectiveCamera(30, 1, .1, 60);
-    cam.position.set(0, 2.2, 9.6); cam.lookAt(0, 0, 0);
-    scene.add(new T.HemisphereLight(0xffffff, 0xa8b8ff, 1.1));
-    const dl = new T.DirectionalLight(0xffffff, 1.35); dl.position.set(3, 6, 5); scene.add(dl);
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap;
+    const scene = new T.Scene(), cam = new T.PerspectiveCamera(30, 1, .1, 80);
+    scene.add(new T.HemisphereLight(0xffffff, 0xb7c4ff, 1.05));
+    const dl = new T.DirectionalLight(0xffffff, 1.5); dl.position.set(4, 8, 5); dl.castShadow = true; dl.shadow.mapSize.set(1536, 1536);
+    Object.assign(dl.shadow.camera, { left: -5, right: 5, top: 5, bottom: -5, near: 1, far: 22 }); dl.shadow.bias = -.0006; dl.shadow.radius = 4; scene.add(dl);
     const root = new T.Group(); scene.add(root);
-    const R = 2.45, W = .66, TAU = Math.PI * 2;
-    /* Moebius surface: u runs 0..4pi for a full return of the normal */
-    const S = (u, v, out = new T.Vector3()) => { const a = R + v * Math.cos(u / 2); return out.set(a * Math.cos(u), v * Math.sin(u / 2), a * Math.sin(u)); };
-    /* ribbon with chevron texture so the direction of flow can be read */
-    const tc = document.createElement('canvas'); tc.width = 256; tc.height = 64; const g = tc.getContext('2d');
-    g.fillStyle = '#1f3bff'; g.fillRect(0, 0, 256, 64);
-    g.fillStyle = 'rgba(214,228,255,.95)'; g.fillRect(0, 3, 256, 3); g.fillRect(0, 58, 256, 3);
-    g.strokeStyle = '#d6e4ff'; g.lineWidth = 7; g.lineJoin = 'miter'; g.lineCap = 'butt';
-    g.beginPath(); g.moveTo(44, 14); g.lineTo(70, 32); g.lineTo(44, 50); g.stroke();
-    g.lineWidth = 3; g.beginPath(); g.moveTo(104, 20); g.lineTo(122, 32); g.lineTo(104, 44); g.stroke();
-    g.fillStyle = '#d6e4ff'; for (let i = 0; i < 4; i++) g.fillRect(150 + i * 14, 30, 7, 4);
-    const tex = new T.CanvasTexture(tc); tex.wrapS = T.RepeatWrapping; tex.wrapT = T.ClampToEdgeWrapping; tex.repeat.set(12, 1); tex.colorSpace = T.SRGBColorSpace; tex.anisotropy = 4;
-    const N = 260, pos = [], uv = [], idx = [];
-    for (let i = 0; i <= N; i++) { const u = i / N * TAU; for (const j of [0, 1]) { const p = S(u, (j ? 1 : -1) * W); pos.push(p.x, p.y, p.z); uv.push(i / N, j); } }
-    for (let i = 0; i < N; i++) { const a = i * 2; idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); }
-    const geo = new T.BufferGeometry(); geo.setAttribute('position', new T.Float32BufferAttribute(pos, 3)); geo.setAttribute('uv', new T.Float32BufferAttribute(uv, 2)); geo.setIndex(idx); geo.computeVertexNormals();
-    const ribbon = new T.Mesh(geo, new T.MeshStandardMaterial({ map: tex, side: T.DoubleSide, roughness: .55, metalness: 0 })); root.add(ribbon);
-    for (const sg of [-1, 1]) { const pts = []; for (let i = 0; i <= N; i++) pts.push(S(i / N * TAU, sg * W)); root.add(new T.Line(new T.BufferGeometry().setFromPoints(pts), new T.LineBasicMaterial({ color: 0x0d1020 }))); }
-    /* shadow disc */
-    const sh = new T.Mesh(new T.CircleGeometry(R + 1.1, 48), new T.MeshBasicMaterial({ color: 0x1f3bff, transparent: true, opacity: .09, depthWrite: false })); sh.rotation.x = -Math.PI / 2; sh.position.y = -1.25; scene.add(sh);
-    /* stations: a stem rising from the ribbon centre line, a small prop on top */
-    const mat = (c, o = {}) => new T.MeshStandardMaterial(Object.assign({ color: c, roughness: .6 }, o));
-    const box = (w, h, d, c, o) => new T.Mesh(new T.BoxGeometry(w, h, d), mat(c, o));
+    const TAU = Math.PI * 2, MR = 3.95, TR0 = 1.7, TR1 = 2.2, SR = 3.05, PR = .66;
+    const mat = (c, o = {}) => new T.MeshStandardMaterial(Object.assign({ color: c, roughness: .62, metalness: 0 }, o));
+    const shade = m => { m.castShadow = true; m.receiveShadow = true; return m; };
+    const box = (w, h, d, c, o) => shade(new T.Mesh(new T.BoxGeometry(w, h, d), mat(c, o)));
+    const cyl = (r, h, c, o, seg = 36) => shade(new T.Mesh(new T.CylinderGeometry(r, r, h, seg), mat(c, o)));
+    const at = (m, x, y, z, ry = 0) => { m.position.set(x, y, z); m.rotation.y = ry; return m; };
+    const glass = { transparent: true, opacity: .32, roughness: .1 };
+
+    /* the base is a green self-healing cutting mat: grid, angle ticks, a loop arrow in the middle */
+    const mc = document.createElement('canvas'); mc.width = mc.height = 1024; const g = mc.getContext('2d');
+    g.fillStyle = '#1f6f50'; g.fillRect(0, 0, 1024, 1024);
+    g.strokeStyle = 'rgba(255,255,255,.16)'; g.lineWidth = 1;
+    for (let i = 0; i <= 1024; i += 32) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i, 1024); g.moveTo(0, i); g.lineTo(1024, i); g.stroke(); }
+    g.strokeStyle = 'rgba(255,255,255,.34)'; g.lineWidth = 2;
+    for (let i = 0; i <= 1024; i += 160) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i, 1024); g.moveTo(0, i); g.lineTo(1024, i); g.stroke(); }
+    g.save(); g.translate(512, 512); g.strokeStyle = 'rgba(255,255,255,.55)';
+    for (let a = 0; a < 360; a += 5) { const r0 = 500, r1 = a % 30 === 0 ? 474 : 488, t = a * Math.PI / 180; g.lineWidth = a % 30 === 0 ? 3 : 1.5; g.beginPath(); g.moveTo(Math.cos(t) * r0, Math.sin(t) * r0); g.lineTo(Math.cos(t) * r1, Math.sin(t) * r1); g.stroke(); }
+    g.lineWidth = 3; g.beginPath(); g.arc(0, 0, 150, 0, TAU); g.stroke();
+    g.fillStyle = 'rgba(255,255,255,.75)'; g.font = '700 22px monospace'; g.textAlign = 'center'; g.fillText('LOOPLAB', 0, 8);
+    g.lineWidth = 6; g.lineCap = 'round'; g.lineJoin = 'round';
+    for (const a0 of [-.35, Math.PI - .35]) { const a1 = a0 + 2.3; g.beginPath(); g.arc(0, 0, 108, a0, a1); g.stroke(); const ex = Math.cos(a1) * 108, ey = Math.sin(a1) * 108, tx = -Math.sin(a1), ty = Math.cos(a1), nx = Math.cos(a1), ny = Math.sin(a1); g.beginPath(); g.moveTo(ex - tx * 6 + nx * 14, ey - ty * 6 + ny * 14); g.lineTo(ex + tx * 14, ey + ty * 14); g.lineTo(ex - tx * 6 - nx * 14, ey - ty * 6 - ny * 14); g.stroke(); }
+    g.restore();
+    const mtex = new T.CanvasTexture(mc); mtex.colorSpace = T.SRGBColorSpace; mtex.anisotropy = 8;
+    const matDisc = shade(new T.Mesh(new T.CylinderGeometry(MR, MR, .16, 96), [mat(0x14503a), new T.MeshStandardMaterial({ map: mtex, roughness: .8 }), mat(0x14503a)]));
+    matDisc.position.y = -.08; root.add(matDisc);
+    /* conveyor ring: cobalt strip with chevrons; blocks travel in the direction the chevrons point */
+    const tc = document.createElement('canvas'); tc.width = 512; tc.height = 64; const t2 = tc.getContext('2d');
+    t2.fillStyle = '#1f3bff'; t2.fillRect(0, 0, 512, 64); t2.fillStyle = '#d6e4ff'; t2.fillRect(0, 3, 512, 3); t2.fillRect(0, 58, 512, 3);
+    t2.strokeStyle = '#d6e4ff'; t2.lineWidth = 6; for (let i = 0; i < 8; i++) { const x = 20 + i * 64; t2.beginPath(); t2.moveTo(x, 16); t2.lineTo(x + 20, 32); t2.lineTo(x, 48); t2.stroke(); }
+    const ttex = new T.CanvasTexture(tc); ttex.wrapS = T.RepeatWrapping; ttex.repeat.set(2, 1); ttex.colorSpace = T.SRGBColorSpace; ttex.anisotropy = 8;
+    const ringGeo = new T.RingGeometry(TR0, TR1, 160, 1); { const p = ringGeo.attributes.position, uv = ringGeo.attributes.uv; for (let i = 0; i < p.count; i++) { const x = p.getX(i), y = p.getY(i), a = Math.atan2(y, x), r = Math.hypot(x, y); uv.setXY(i, (a / TAU + .5), (r - TR0) / (TR1 - TR0)); } }
+    const track = new T.Mesh(ringGeo, new T.MeshStandardMaterial({ map: ttex, roughness: .55, side: T.DoubleSide })); track.rotation.x = -Math.PI / 2; track.position.y = .012; track.receiveShadow = true; root.add(track);
+    for (const r of [TR0, TR1]) { const e = shade(new T.Mesh(new T.TorusGeometry(r, .03, 8, 160), mat(0xf2f4ff))); e.rotation.x = Math.PI / 2; e.position.y = .03; root.add(e); }
+
+    /* the five stations: a white plinth with a small model of what the module does */
     const props = [
-      () => { const gr = new T.Group(); const a = box(.58, .07, .38, 0xd9b382); const b = box(.52, .07, .34, 0xf3f1ea); b.position.y = .08; b.rotation.y = .35; const c = box(.4, .07, .3, 0x8ec5ff, { transparent: true, opacity: .8 }); c.position.y = .16; c.rotation.y = -.25; gr.add(a, b, c); return gr; },
-      () => { const gr = new T.Group(); const fr = new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(.5, .46, .5)), new T.LineBasicMaterial({ color: 0x0d1020 })); const gl = box(.5, .46, .5, 0xd6e4ff, { transparent: true, opacity: .35 }); const o = box(.17, .17, .17, 0x1f3bff); o.position.y = -.1; const hd = box(.34, .03, .03, 0x0d1020); hd.position.y = .1; gr.add(gl, fr, o, hd); return gr; },
-      () => { const gr = new T.Group(); [[0, 0, 0, .26, 0x2f7d6d], [.28, -.03, .08, .2, 0xb98b5a], [-.12, .22, -.04, .2, 0xf3f1ea], [.16, .2, .14, .16, 0xd9b382]].forEach(([x, y, z, s, c]) => { const b = box(s, s, s, c); b.position.set(x, y, z); b.rotation.y = x * 2; gr.add(b); }); return gr; },
-      () => { const gr = new T.Group(); const f = box(.54, .4, .05, 0xffffff); const i = box(.44, .3, .02, 0xff4d8d); i.position.z = .035; const ph = box(.3, .14, .02, 0xd6e4ff); ph.position.set(-.04, -.05, .05); const st = box(.05, .16, .05, 0x0d1020); st.position.set(0, -.28, -.04); gr.add(f, i, ph, st); gr.rotation.y = .3; return gr; },
-      () => { const gr = new T.Group(); const body = box(.5, .52, .32, 0x0d1020); gr.add(body); [[-.12, .13], [.12, .13], [-.12, -.13], [.12, -.13]].forEach(([x, y], k) => { const d = box(.2, .2, .02, k === 0 ? 0x1f3bff : 0xd6e4ff); d.position.set(x, y, .17); gr.add(d); const h = box(.04, .02, .02, 0x0d1020); h.position.set(x + .06, y, .19); gr.add(h); }); return gr; }
+      /* 01 exchange board: pegboard with hanging material tags, a stack of boards in front */
+      () => { const gr = new T.Group(); const pc = document.createElement('canvas'); pc.width = pc.height = 256; const p = pc.getContext('2d'); p.fillStyle = '#efe4d2'; p.fillRect(0, 0, 256, 256); p.fillStyle = '#7a6a55'; for (let y = 16; y < 256; y += 32) for (let x = 16; x < 256; x += 32) { p.beginPath(); p.arc(x, y, 4, 0, TAU); p.fill(); } const pt = new T.CanvasTexture(pc); pt.colorSpace = T.SRGBColorSpace;
+        const side = mat(0xd9c9ae), board = shade(new T.Mesh(new T.BoxGeometry(.95, .78, .05), [side, side, side, side, new T.MeshStandardMaterial({ map: pt, roughness: .8 }), side])); board.position.set(0, .62, -.1); gr.add(board);
+        for (const x of [-.36, .36]) gr.add(at(box(.05, .26, .26, 0x3a3f55), x, .13, -.02));
+        [[-.28, .8, 0xd9b382], [.02, .74, 0x8ec5ff], [.3, .82, 0xf3f1ea], [-.1, .5, 0x2f7d6d], [.24, .5, 0xb98b5a]].forEach(([x, y, c], k) => { const tg = box(.2, .17, .018, c, c === 0x8ec5ff ? glass : {}); tg.position.set(x, y, -.06); tg.rotation.z = (k - 2) * .04; gr.add(tg); const pin = shade(new T.Mesh(new T.SphereGeometry(.026, 12, 8), mat(0xff4d8d))); pin.position.set(x, y + .06, -.045); gr.add(pin); });
+        gr.add(at(box(.5, .06, .34, 0xd9b382), .06, .03, .3, .12), at(box(.46, .06, .3, 0xf3f1ea), .06, .09, .3, -.1), at(box(.4, .05, .28, 0x8ec5ff, glass), .06, .145, .3, .2)); return gr; },
+      /* 02 booking: a fab machine behind glass, with a part being made */
+      () => { const gr = new T.Group(); gr.add(at(box(.92, .1, .66, 0x2a3050), 0, .05, 0));
+        const hood = box(.92, .5, .66, 0xd6e4ff, glass); hood.position.y = .35; hood.castShadow = false; gr.add(hood);
+        const fr = new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(.92, .5, .66)), new T.LineBasicMaterial({ color: 0x0d1020 })); fr.position.y = .35; gr.add(fr);
+        gr.add(at(box(.92, .035, .035, 0x0d1020), 0, .52, .12), at(box(.035, .035, .66, 0x0d1020), -.38, .52, 0));
+        const head = box(.1, .1, .1, 0x1f3bff); head.position.set(.1, .44, .12); head.name = 'head'; gr.add(head);
+        const beam = box(.012, .3, .012, 0xff4d8d); beam.position.set(.1, .26, .12); beam.name = 'beam'; gr.add(beam);
+        gr.add(at(box(.34, .06, .22, 0xb98b5a), .1, .13, .12), at(box(.24, .06, .15, 0xd9b382), .1, .19, .12), at(box(.14, .06, .1, 0xf3f1ea), .1, .25, .12));
+        gr.add(at(box(.14, .05, .02, 0x1f3bff), .3, .06, .34)); return gr; },
+      /* 03 group buy: a strapped pallet of bulk material and two rolls */
+      () => { const gr = new T.Group(); gr.add(at(box(.92, .06, .66, 0xc99a63), 0, .03, 0)); gr.add(at(box(.92, .04, .1, 0xa87b48), 0, .08, .22), at(box(.92, .04, .1, 0xa87b48), 0, .08, -.22));
+        let y = .1; [[0xf3f1ea, .08], [0xd9b382, .08], [0x8ec5ff, .06, 1], [0xf3f1ea, .08], [0x2f7d6d, .05], [0xd9b382, .08]].forEach(([c, h, tr], k) => { gr.add(at(box(.62, h, .5, c, tr ? glass : {}), -.12, y + h / 2, 0, (k % 3 - 1) * .05)); y += h; });
+        gr.add(at(box(.66, y - .06, .03, 0x0d1020), -.12, .1 + (y - .06) / 2, .1), at(box(.66, y - .06, .03, 0x0d1020), -.12, .1 + (y - .06) / 2, -.1));
+        for (const [x, z, c] of [[.34, .13, 0xc7955d], [.34, -.13, 0xe9dcc0]]) { gr.add(at(cyl(.13, .5, c, {}, 28), x, .35, z)); gr.add(at(cyl(.05, .52, 0x5a3d22, {}, 16), x, .35, z)); }
+        return gr; },
+      /* 04 archive: a framed photo and a scan turntable with a small model */
+      () => { const gr = new T.Group(); gr.add(at(box(.6, .46, .04, 0xffffff), -.14, .5, -.12, .1), at(box(.5, .36, .02, 0xff4d8d), -.14, .5, -.1, .1), at(box(.34, .12, .02, 0xd6e4ff), -.17, .46, -.088, .1), at(box(.04, .26, .04, 0x0d1020), -.14, .13, -.2, .1));
+        gr.add(at(cyl(.3, .05, 0x2a3050), .2, .025, .2)); const spin = new T.Group(); spin.position.set(.2, .05, .2); spin.name = 'spin';
+        spin.add(at(box(.2, .14, .2, 0xd9b382), 0, .07, 0), at(box(.14, .12, .14, 0xf3f1ea), 0, .2, 0, .5), at(box(.08, .1, .08, 0x1f3bff), 0, .31, 0, 1)); gr.add(spin);
+        const ar = shade(new T.Mesh(new T.TorusGeometry(.27, .012, 8, 48), mat(0xff4d8d))); ar.rotation.x = Math.PI / 2; ar.position.set(.2, .3, .2); gr.add(ar); return gr; },
+      /* 05 pickup: lockers with one door open, and a map pin above */
+      () => { const gr = new T.Group(); gr.add(at(box(.78, .74, .38, 0x2a3050), 0, .37, 0));
+        [[-.2, .56], [.2, .56], [-.2, .3], [.2, .3], [-.2, .08], [.2, .08]].forEach(([x, y], k) => { if (k === 3) return; gr.add(at(box(.34, .22, .02, k === 0 ? 0x1f3bff : 0xd6e4ff), x, y + .06, .2), at(box(.05, .02, .02, 0x0d1020), x + .1, y + .06, .22)); });
+        gr.add(at(box(.34, .22, .02, 0xd6e4ff), .4, .36, .3, -1.25), at(box(.3, .18, .02, 0x1f3bff), .2, .36, .02), at(box(.1, .1, .1, 0xd9b382), .2, .27, .1, .4));
+        const pin = new T.Group(); const cone = shade(new T.Mesh(new T.ConeGeometry(.1, .24, 20), mat(0xff4d8d))); cone.rotation.x = Math.PI; cone.position.y = .12; const ball = shade(new T.Mesh(new T.SphereGeometry(.12, 20, 16), mat(0xff4d8d))); ball.position.y = .3; pin.add(cone, ball); pin.position.set(0, .98, .1); pin.name = 'pin'; gr.add(pin); return gr; }
     ];
     const stations = ST.map((s, i) => {
-      const u = i / 5 * TAU, p = S(u, 0), gr = new T.Group(); gr.position.copy(p); root.add(gr);
-      const stem = box(.028, .9, .028, 0x0d1020); stem.position.y = .45; gr.add(stem);
-      const ring = new T.Mesh(new T.TorusGeometry(.2, .018, 8, 40), mat(0xff4d8d)); ring.rotation.x = Math.PI / 2; ring.position.y = .01; gr.add(ring);
-      const prop = props[i](); prop.position.y = 1.22; gr.add(prop);
+      const u = i / 5 * TAU, gr = new T.Group(); gr.position.set(SR * Math.cos(u), 0, SR * Math.sin(u)); gr.rotation.y = Math.PI / 2 - u; gr.userData.i = i; root.add(gr);
+      gr.add(at(cyl(PR, .1, 0xffffff), 0, .05, 0));
+      const rim = shade(new T.Mesh(new T.TorusGeometry(PR, .02, 8, 48), mat(0x0d1020))); rim.rotation.x = Math.PI / 2; rim.position.y = .1; gr.add(rim);
+      const prop = props[i](); prop.position.y = .1; prop.scale.setScalar(1.2); gr.add(prop);
+      const ring = new T.Mesh(new T.TorusGeometry(PR + .12, .03, 8, 56), mat(0xff4d8d)); ring.rotation.x = Math.PI / 2; ring.position.y = .06; gr.add(ring);
+      /* a short bridge from the plinth to the conveyor ring */
+      const br = box(.2, .03, .34, 0xf2f4ff); br.position.set(0, .015, -(PR + .1)); br.castShadow = false; gr.add(br);
       const tag = document.createElement('button'); tag.type = 'button'; tag.className = 'lr-tag'; tag.dataset.i = i; tag.innerHTML = `<b class="mono">0${i + 1}</b>${s.n}`; tag.addEventListener('click', () => { onPick(i); focus(i); });
       tagsBox.appendChild(tag);
-      return { u, gr, prop, ring, tag, top: new T.Vector3(0, 1.75, 0) };
+      return { u, gr, prop, ring, tag, top: new T.Vector3(0, 1.8, 0), anim: { head: prop.getObjectByName('head'), beam: prop.getObjectByName('beam'), spin: prop.getObjectByName('spin'), pin: prop.getObjectByName('pin') } };
     });
-    /* material blocks riding the ribbon */
-    const kinds = [[.24, .07, .17, 0xd9b382], [.2, .1, .2, 0xf3f1ea], [.22, .05, .22, 0x8ec5ff, 1], [.26, .06, .16, 0xb98b5a], [.2, .04, .24, 0x2f7d6d]];
-    const blocks = Array.from({ length: 15 }, (_, i) => {
-      const [w, h, d, c, tr] = kinds[i % 5], m = box(w, h, d, c, tr ? { transparent: true, opacity: .78 } : {}); m.userData = { u: i / 15 * TAU * 2, v: (((i * 53) % 7) - 3) / 3 * W * .45, h }; root.add(m); return m;
-    });
-    const A = new T.Vector3(), B = new T.Vector3(), Tg = new T.Vector3(), Bn = new T.Vector3(), Nn = new T.Vector3(), Zz = new T.Vector3(), mtx = new T.Matrix4();
-    const place = m => {
-      const { u, v, h } = m.userData, e = .01;
-      S(u + e, v, A); S(u - e, v, B); Tg.subVectors(A, B).normalize();
-      S(u, v + e, A); S(u, v - e, B); Bn.subVectors(A, B).normalize();
-      Nn.crossVectors(Tg, Bn).normalize(); Zz.crossVectors(Tg, Nn).normalize();
-      mtx.makeBasis(Tg, Nn, Zz); m.quaternion.setFromRotationMatrix(mtx);
-      S(u, v, A); m.position.copy(A).addScaledVector(Nn, h / 2 + .012);
-    };
+    /* material blocks riding the conveyor, same five materials as the legend */
+    const kinds = [[.3, .08, .22, 0xd9b382], [.26, .12, .26, 0xf3f1ea], [.28, .05, .28, 0x8ec5ff, 1], [.32, .07, .2, 0xb98b5a], [.26, .04, .3, 0x2f7d6d]];
+    const blocks = Array.from({ length: 16 }, (_, i) => { const [w, h, d, c, tr] = kinds[i % 5], m = box(w, h, d, c, tr ? glass : {}); m.userData = { a: i / 16 * TAU, r: (TR0 + TR1) / 2 + (((i * 53) % 5) - 2) * .03, h }; root.add(m); return m; });
+    const place = m => { const { a, r, h } = m.userData; m.position.set(r * Math.cos(a), .024 + h / 2, r * Math.sin(a)); m.rotation.y = -a; };
     blocks.forEach(place);
     /* state */
-    const st = { yaw: 0, pitch: .42, ty: 0, tp: .42, spin: !reduce, flow: !reduce, drag: false, sel: 0, x: 0, y: 0, vis: true, hold: 0 };
-    const home = () => { st.tp = .42; };
-    const yawFor = i => { const phi = stations[i].u; let t = phi - Math.PI / 2; const k = Math.round((st.yaw - t) / TAU); return t + k * TAU; };
-    function focus(i, instant) { st.sel = i; st.ty = yawFor(i); st.hold = 1.6; st.spinWas = st.spin; if (instant) { st.yaw = st.ty; } stations.forEach((s, k) => { s.tag.classList.toggle('on', k === i); }); }
-    const size = () => { const r = view.getBoundingClientRect(); const w = Math.max(240, r.width), h = Math.max(240, r.height); renderer.setSize(w, h, false); cam.aspect = w / h; const d = Math.max(9.6, 3.7 / (.268 * cam.aspect)); cam.position.set(0, 2.2 * d / 9.6, d); cam.lookAt(0, 0, 0); cam.updateProjectionMatrix(); };
-    const V = new T.Vector3();
+    const st = { yaw: 0, pitch: .66, ty: 0, tp: .66, spin: !reduce, flow: !reduce, drag: false, sel: 0, x: 0, y: 0, moved: 0, vis: true, hold: 0 };
+    const yawFor = i => { const t = stations[i].u - Math.PI / 2; const k = Math.round((st.yaw - t) / TAU); return t + k * TAU; };
+    function focus(i, instant) { st.sel = i; st.ty = yawFor(i); st.hold = 1.6; if (instant) { st.yaw = st.ty; } stations.forEach((s, k) => { s.tag.classList.toggle('on', k === i); }); }
+    const size = () => { const r = view.getBoundingClientRect(); const w = Math.max(240, r.width), h = Math.max(240, r.height); renderer.setSize(w, h, false); cam.aspect = w / h; const d = Math.max(13.6, 4.7 / (.268 * cam.aspect)); cam.position.set(0, d * .06, d); cam.lookAt(0, .35, 0); cam.updateProjectionMatrix(); };
+    const V = new T.Vector3(); let clock = 0;
     const render = (dt = 0) => {
-      if (st.flow) { tex.offset.x -= dt * .06; blocks.forEach(m => { m.userData.u += dt * .42; place(m); }); }
+      clock += dt;
+      if (st.flow) { ttex.offset.x -= dt * .05; blocks.forEach(m => { m.userData.a += dt * .28; place(m); }); }
       if (st.hold > 0) st.hold -= dt;
-      if (!st.drag) {
-        if (st.hold > 0) st.yaw += (st.ty - st.yaw) * Math.min(1, dt * 5);
-        else if (st.spin) { st.yaw += dt * .22; }
-        st.pitch += (st.tp - st.pitch) * Math.min(1, dt * 6);
-      }
+      if (!st.drag) { if (st.hold > 0) st.yaw += (st.ty - st.yaw) * Math.min(1, dt * 5); else if (st.spin) st.yaw += dt * .2; st.pitch += (st.tp - st.pitch) * Math.min(1, dt * 6); }
       root.rotation.y = st.yaw; root.rotation.x = st.pitch;
       stations.forEach((s, k) => {
-        const on = k === st.sel, sc = on ? 1.28 : 1; s.prop.scale.setScalar(s.prop.scale.x + (sc - s.prop.scale.x) * Math.min(1, dt * 8 + .0001)); s.prop.rotation.y += dt * (on ? 1.2 : .35);
-        s.ring.visible = on; s.ring.scale.setScalar(1 + (Math.sin(performance.now() / 260) * .12));
+        const on = k === st.sel, sc = on ? 1.34 : 1.2; s.prop.scale.setScalar(s.prop.scale.x + (sc - s.prop.scale.x) * Math.min(1, dt * 8 + .0001));
+        s.ring.visible = on; s.ring.scale.setScalar(1 + Math.sin(clock * 4) * .03);
+        const a = s.anim; if (a.head) { a.head.position.x = .1 + Math.sin(clock * 1.6) * .22; a.beam.position.x = a.head.position.x; a.beam.scale.y = .75 + .25 * Math.sin(clock * 9); } if (a.spin) a.spin.rotation.y = clock * (on ? 1.4 : .6); if (a.pin) a.pin.position.y = .98 + Math.sin(clock * 2.4) * .05;
       });
       root.updateMatrixWorld(true);
       const r = view.getBoundingClientRect();
-      stations.forEach(s => { V.copy(s.top); s.gr.localToWorld(V); V.project(cam); const hw = s.tag.offsetWidth / 2 + 4; const x = Math.max(hw, Math.min(r.width - hw, (V.x * .5 + .5) * r.width)), y = Math.max(s.tag.offsetHeight + 4, (-V.y * .5 + .5) * r.height); s.tag.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`; s.tag.style.opacity = V.z < 1 ? '1' : '0'; });
+      stations.forEach(s => { V.copy(s.top); s.gr.localToWorld(V); V.project(cam); const hw = s.tag.offsetWidth / 2 + 4; const x = Math.max(hw, Math.min(r.width - hw, (V.x * .5 + .5) * r.width)), y = Math.max(s.tag.offsetHeight + 4, Math.min(r.height - 4, (-V.y * .5 + .5) * r.height)); s.tag.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`; s.tag.style.opacity = V.z < 1 ? '1' : '0'; });
       renderer.render(scene, cam);
     };
     size();
@@ -272,17 +301,21 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
     const loop = t => { raf = requestAnimationFrame(loop); const dt = Math.min(.05, (t - last) / 1000); last = t; if (st.vis) render(dt); };
     new IntersectionObserver(en => { st.vis = en[0].isIntersecting; }, { threshold: 0 }).observe(view);
     raf = requestAnimationFrame(loop);
-    /* input */
-    view.addEventListener('pointerdown', ev => { if (ev.target.closest('.lr-tag')) return; st.drag = true; st.x = ev.clientX; st.y = ev.clientY; st.hold = 0; view.setPointerCapture?.(ev.pointerId); view.classList.add('drag'); });
-    view.addEventListener('pointermove', ev => { if (!st.drag) return; st.yaw += (ev.clientX - st.x) * .008; st.pitch = Math.max(.05, Math.min(1.1, st.pitch + (ev.clientY - st.y) * .006)); st.tp = st.pitch; st.x = ev.clientX; st.y = ev.clientY; render(0); });
-    const up = () => { st.drag = false; view.classList.remove('drag'); };
-    view.addEventListener('pointerup', up); view.addEventListener('pointercancel', up);
-    view.addEventListener('keydown', ev => { const k = ev.key; if (k === 'ArrowLeft') st.yaw -= .12; else if (k === 'ArrowRight') st.yaw += .12; else if (k === 'ArrowUp') st.tp = st.pitch = Math.max(.05, st.pitch - .08); else if (k === 'ArrowDown') st.tp = st.pitch = Math.min(1.1, st.pitch + .08); else return; st.hold = 0; ev.preventDefault(); render(0); });
+    /* input: drag to orbit, click a model to select it */
+    const ray = new T.Raycaster(), ndc = new T.Vector2();
+    view.addEventListener('pointerdown', ev => { if (ev.target.closest('.lr-tag')) return; st.drag = true; st.moved = 0; st.x = ev.clientX; st.y = ev.clientY; st.hold = 0; view.setPointerCapture?.(ev.pointerId); view.classList.add('drag'); });
+    view.addEventListener('pointermove', ev => { if (!st.drag) return; st.moved += Math.abs(ev.clientX - st.x) + Math.abs(ev.clientY - st.y); st.yaw += (ev.clientX - st.x) * .008; st.pitch = Math.max(.12, Math.min(1.2, st.pitch + (ev.clientY - st.y) * .006)); st.tp = st.pitch; st.x = ev.clientX; st.y = ev.clientY; render(0); });
+    view.addEventListener('pointerup', ev => {
+      const was = st.drag; st.drag = false; view.classList.remove('drag');
+      if (was && st.moved < 5) { const r = view.getBoundingClientRect(); ndc.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, cam); const hit = ray.intersectObjects(stations.map(s => s.gr), true)[0]; if (hit) { let o = hit.object; while (o && o.userData.i == null) o = o.parent; if (o) { onPick(o.userData.i); focus(o.userData.i); } } }
+    });
+    view.addEventListener('pointercancel', () => { st.drag = false; view.classList.remove('drag'); });
+    view.addEventListener('keydown', ev => { const k = ev.key; if (k === 'ArrowLeft') st.yaw -= .12; else if (k === 'ArrowRight') st.yaw += .12; else if (k === 'ArrowUp') st.tp = st.pitch = Math.max(.12, st.pitch - .08); else if (k === 'ArrowDown') st.tp = st.pitch = Math.min(1.2, st.pitch + .08); else return; st.hold = 0; ev.preventDefault(); render(0); });
     const bs = $('[data-spin]', host), bf = $('[data-flow]', host);
     bs.setAttribute('aria-pressed', st.spin); bf.setAttribute('aria-pressed', st.flow);
     bs.addEventListener('click', () => { st.spin = !st.spin; st.hold = 0; bs.setAttribute('aria-pressed', st.spin); });
     bf.addEventListener('click', () => { st.flow = !st.flow; bf.setAttribute('aria-pressed', st.flow); });
-    $('[data-reset]', host).addEventListener('click', () => { st.tp = .42; st.ty = yawFor(st.sel); st.hold = 1.6; });
+    $('[data-reset]', host).addEventListener('click', () => { st.tp = .66; st.ty = yawFor(st.sel); st.hold = 1.6; });
     render(0);
     return { focus, render, state: st, stations };
   }
@@ -358,7 +391,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
      ============================================================ */
   const BIZ = [['校园 SaaS', '学校管理方', '存储与社区年度订阅', '¥10,000–50,000', '每校每年'], ['高级功能', '高频用户（高年级 / 研究生）', '高级下载、虚拟展览空间、企业包', '¥29–99', '每用户每月'], ['企业合作', '材料品牌与供应商', '产品展示费或收益分成', '¥5,000–20,000', '每家供应商每年'], ['服务佣金', '校内打印店 / 3D 打印社团', '制作订单佣金 5–10%', '¥2–5', '每单'], ['免费基础入口', '所有用户', '基础交换免费；快速取件、检索或档案导出付费', '5–10%', '目标转化率']];
   M['looplab-business'] = {
-    html: () => card('BUSINESS · PROPOSAL', '五种商业机制与定价假设', `<div class="lbz">${BIZ.map(([h, t, m, v, u], i) => `<article style="--r:${[-1.4, .9, -.6, 1.3, -1][i]}deg"><i class="tp" aria-hidden="true"></i><span class="mono">MODEL 0${i + 1}</span><h4>${h}</h4><p class="lbz-p"><b>${v}</b><small>${u}</small></p><dl><dt>服务对象</dt><dd>${t}</dd><dt>机制</dt><dd>${m}</dd></dl><em class="mono">方案区间 · 未实现收入</em></article>`).join('')}</div>`,
+    html: () => card('FIG.6 · BUSINESS', '五种商业机制与定价假设', `<div class="lbz">${BIZ.map(([h, t, m, v, u], i) => `<article style="--r:${[-1.4, .9, -.6, 1.3, -1][i]}deg"><i class="tp" aria-hidden="true"></i><span class="mono">MODEL 0${i + 1}</span><h4>${h}</h4><p class="lbz-p"><b>${v}</b><small>${u}</small></p><dl><dt>服务对象</dt><dd>${t}</dd><dt>机制</dt><dd>${m}</dd></dl><em class="mono">方案区间 · 未实现收入</em></article>`).join('')}</div>`,
       '定价和转化率是方案假设，不是收入记录', 'll-business')
   };
 
@@ -367,7 +400,7 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
      ============================================================ */
   const FIN = [['收入', 219000], ['成本', 69000], ['利润', 150000]];
   M['looplab-finance'] = {
-    html: () => card('FINANCIAL PLAN · YEAR 1', '市场范围与首年经济测算', `
+    html: () => card('FIG.7 · FINANCIAL PLAN', '市场范围与首年经济测算', `
       <div class="lf">
         <div class="lf-fun" role="img" aria-label="漏斗：全国设计学生 3,000,000；上海设计学生 150,000；首年活跃用户目标 12,000">
           ${[['TAM', '3,000,000', '全国设计学生'], ['SAM', '150,000', '上海设计学生 · 约 TAM 的 5%'], ['SOM', '12,000', '首年活跃用户目标 · 约 SAM 的 8%']].map(([k, n, t], i) => `<div class="lf-s s${i}"><b class="mono">${k}</b><strong>${n}</strong><span>${t}</span></div>${i < 2 ? '<i class="lf-a" aria-hidden="true"></i>' : ''}`).join('')}
@@ -398,10 +431,10 @@ if (window.META?.looplab) Object.assign(window.META.looplab, { sources: [], cred
         <div class="lm-sheet"><i class="tp t1" aria-hidden="true"></i><i class="tp t2" aria-hidden="true"></i>
           <header><span class="mono">LL-${p.number} · MATERIAL LOOP</span><span class="mono">SPEC SHEET · A4</span></header>
           <h1 id="tc-name">Loop<br><span>Lab</span></h1>
-          <p class="lm-sub">${esc(s.sub)}</p>
-          <div class="lm-cols">${[['交换', 'EXCHANGE'], ['团购', 'GROUP'], ['预约', 'BOOK'], ['档案', 'ARCHIVE'], ['取件', 'PICKUP']].map(([c, e], i) => `<p><b>${c}</b><span class="mono">${e}</span><i>0${i + 1}</i></p>`).join('')}</div>
-          <figure class="lm-fig"><img src="assets/${s.key}.webp" alt="${esc(s.keyCap)}" fetchpriority="high"><figcaption class="mono">${esc(s.keyCap)}</figcaption></figure>
-          <dl class="lm-meta">${(s.meta || []).map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>
+          <div class="lm-r"><p class="lm-sub">${esc(s.sub)}</p>
+          <ol class="lm-cols" aria-label="五个服务模块">${[['交换', 'EXCHANGE', '材料交换板'], ['团购', 'GROUP', '小量团购'], ['预约', 'BOOK', '制作预约'], ['档案', 'ARCHIVE', '项目档案'], ['取件', 'PICKUP', '校园取件地图']].map(([c, e, n], i) => `<li><i class="mono">0${i + 1}</i><b>${c}</b><span>${n}</span><em class="mono">${e}</em></li>`).join('')}</ol>
+          <dl class="lm-meta">${(s.meta || []).map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl></div>
+                    <figure class="lm-fig"><img src="assets/${s.key}.webp" alt="${esc(s.keyCap)}" fetchpriority="high"><figcaption class="mono">${esc(s.keyCap)}</figcaption></figure>
           ${bc(34)}
         </div>
         <a class="lm-back mono" href="index.html#scene-${p.id}" data-cut="INDEX">← INDEX</a>

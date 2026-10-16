@@ -369,6 +369,7 @@ if (window.META?.['growth-compass']) Object.assign(window.META['growth-compass']
         <ul class="sy-leg" aria-label="图例"><li><i class="ln"></i>直接关系</li><li><i class="ln ds"></i>间接关系</li><li class="lg" data-pre><i class="bd">i</i>信息</li><li class="lg" data-pre><i class="bd">$</i>资金</li><li class="lg" data-pre><i class="bd sq"></i>资源</li><li class="lg" data-learn><i class="bd">m</i><i class="bd">d</i><i class="bd">a</i>标记类别，图中未给图例</li></ul>
         <div class="sy-fig"><button type="button" class="sy-x" aria-label="关闭放大">关闭 ✕</button><div class="sy-svg"></div><div class="sy-tip" role="status" hidden></div></div>
         <p class="sy-hint mono">图较宽，可左右滑动，或点“放大查看”。</p><p class="sy-status mono" aria-live="polite"></p>
+        <div class="sy-deg" aria-label="各角色的关系数"></div>
         <ol class="sy-list"></ol>
       </div>
       <p class="gw-foot mono">依据课前、课中两张服务系统图重绘 · 点节点可定位角色 · 指到箭头或清单可高亮</p>`, 'wide sys'),
@@ -376,11 +377,19 @@ if (window.META?.['growth-compass']) Object.assign(window.META['growth-compass']
       const root = $('.sy', el), svgBox = $('.sy-svg', el), list = $('.sy-list', el), status = $('.sy-status', el), role = $('[data-role]', el), tip = $('.sy-tip', el), fig = $('.sy-fig', el);
       let phase = 'pre', focus = 'all';
       const names = S => Object.fromEntries(Object.entries(S.nodes).map(([k, n]) => [k, n.n]));
+      /* in / out degree of every role, counted from the edges drawn above; click a bar to focus that role */
+      const renderDeg = (S, nm) => {
+        const deg = Object.keys(S.nodes).map(k => ({ k, o: S.edges.filter(x => x[0] === k).length, i: S.edges.filter(x => x[1] === k).length })).filter(d => d.o + d.i).sort((a, b) => (b.o + b.i) - (a.o + a.i));
+        const mx = Math.max(...deg.map(d => d.o + d.i)), top = deg.filter(d => d.o + d.i === mx);
+        $('.sy-deg', el).innerHTML = `<p class="sd-h"><b>每个角色连着几条关系</b><span class="mono">深色 = 发出 · 浅色 = 收到 · 点一行只看这个角色</span></p><ol>${deg.map(d => `<li><button type="button" data-k="${d.k}" aria-pressed="${focus === d.k}"><span class="sd-n">${nm[d.k]}</span><span class="sd-b"><i class="o" style="width:${d.o / mx * 100}%"></i><i class="n" style="width:${d.i / mx * 100}%"></i></span><span class="sd-v mono">${d.o + d.i}<small>（发 ${d.o} · 收 ${d.i}）</small></span></button></li>`).join('')}</ol><p class="sd-c">关系最多的角色是${top.map(d => nm[d.k]).join('、')}，共 ${mx} 条；图中共 ${S.edges.length} 条箭头，每条箭头计入两个角色。</p>`;
+        $$('.sy-deg button', el).forEach(b => b.addEventListener('click', () => { focus = focus === b.dataset.k ? 'all' : b.dataset.k; role.value = focus; apply(); }));
+      };
       const apply = () => {
         const S = SYS[phase], nm = names(S);
         $$('.sy-e', svgBox).forEach(g => { const on = focus === 'all' || g.dataset.from === focus || g.dataset.to === focus; g.classList.toggle('dim', !on); });
         $$('.sy-n', svgBox).forEach(g => { const k = g.dataset.id, rel = focus === 'all' || k === focus || S.edges.some(x => (x[0] === focus && x[1] === k) || (x[1] === focus && x[0] === k)); g.classList.toggle('dim', !rel); g.classList.toggle('sel', k === focus); });
         const rows = S.edges.map((r, i) => ({ r, i })).filter(({ r }) => focus === 'all' || r[0] === focus || r[1] === focus);
+        renderDeg(S, nm);
         status.textContent = `${S.name} · ${focus === 'all' ? `${S.edges.length} 条关系` : `${nm[focus]}相关 ${rows.length} / ${S.edges.length} 条关系`}`;
         list.innerHTML = rows.map(({ r, i }) => { const gl = [...new Set(r[5].map(b => b[2]))]; return `<li data-i="${i}" tabindex="0"><b>${String(i + 1).padStart(2, '0')}</b><div><strong>${nm[r[0]]} <i aria-hidden="true">${r[2] === 'direct' ? '→' : '⇢'}</i> ${nm[r[1]]}</strong><p>${r[3] ? e(r[3]) : '<em>图上没有文字标签</em>'}</p><small>${r[2] === 'direct' ? '直接关系' : '间接关系'}${gl.length ? ' · ' + gl.map(g => GL[g] ? GL[g] + ' ' + (g === 'm$' ? '$' : g === 'sq' ? '□' : g) : g).join(' / ') : ''}</small></div></li>`; }).join('');
       };
@@ -427,11 +436,11 @@ if (window.META?.['growth-compass']) Object.assign(window.META['growth-compass']
      09 · CONCEPT FILM — video with a chapter bar that really seeks
      ============================================================ */
   const CH = [
-    [0, 2.6, '选课前', 'AWAKEN · PREDICT · TRIAL · EXPERIENCE', '画面分成四格，角标依次是 Awaken、Predict、Trial、Experience：躺着刷手机、对着课程星图、在试听里体验。对应选课旅程的前三个阶段。'],
-    [2.6, 4.5, '收到提醒', 'NOTIFICATION', '手机里弹出一条通知，学生停下手里的事去看。选课和调整的节点就在这样的提醒里到来。'],
-    [4.5, 5.9, '作业受阻', 'PITFALL DATABASE', '镜头切到另一个学生：对着电脑抱着头，旁边是写着“Pitfall Database”的列表，一排打叉的失败案例。'],
-    [5.9, 8.5, '自己整理', 'LOGIC CANVAS', '学生戴上耳机，在笔记本里打开文件夹，一步步整理自己的思路。画面角标是 Logic Canvas 和 Pitfall Database。'],
-    [8.5, 10.2, '反馈与修改', 'CONFIDENT REVISION', '四个小画面：反馈报告、语音留言、修改前后的对比和技能树，最后停在 Confident Revision。']
+    [0, 2.6, '选课前', 'AWAKEN · PREDICT · TRIAL · EXPERIENCE', '画面分成四格，角标依次是 Awaken、Predict、Trial、Experience：躺着刷手机、对着课程星图、在试听里体验。对应选课旅程的前三个阶段。', '选课旅程 01—03 · 探索兴趣、预见课程、低成本试听'],
+    [2.6, 4.5, '收到提醒', 'NOTIFICATION', '手机里弹出一条通知，学生停下手里的事去看。选课和调整的节点就在这样的提醒里到来。', '选课旅程 04 · 调整并承诺'],
+    [4.5, 5.9, '作业受阻', 'PITFALL DATABASE', '镜头切到另一个学生：对着电脑抱着头，旁边是写着“Pitfall Database”的列表，一排打叉的失败案例。', '作业旅程 01 · 理解任务（受阻时的状态）'],
+    [5.9, 8.5, '自己整理', 'LOGIC CANVAS', '学生戴上耳机，在笔记本里打开文件夹，一步步整理自己的思路。画面角标是 Logic Canvas 和 Pitfall Database。', '作业旅程 02 · 强制支架（作业逻辑画布、正反案例）'],
+    [8.5, 10.2, '反馈与修改', 'CONFIDENT REVISION', '四个小画面：反馈报告、语音留言、修改前后的对比和技能树，最后停在 Confident Revision。', '作业旅程 03—05 · 即时预审、深入诊断、自信交付']
   ];
   const tc = t => { t = Math.max(0, t); return String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(Math.floor(t % 60)).padStart(2, '0') + '.' + String(Math.floor((t % 1) * 10)); };
   M['growth-compass-film'] = {
@@ -439,9 +448,9 @@ if (window.META?.['growth-compass']) Object.assign(window.META['growth-compass']
       <div class="gf-main">${win('CONCEPT_FILM.mp4', '服务概念影片 · 10 秒', `
         <div class="gf-screen"><video controls playsinline preload="metadata" poster="assets/growth-concept-poster.webp"><source src="media/growth-concept.mp4" type="video/mp4"></video></div>
         <div class="gf-bar" role="group" aria-label="影片章节，点击跳转">${CH.map((c, i) => `<button type="button" data-i="${i}" style="flex:${(c[1] - c[0]).toFixed(2)}" aria-pressed="${i === 0}"><b>${String(i + 1).padStart(2, '0')}</b><span>${c[2]}</span></button>`).join('')}<i class="gf-head" aria-hidden="true"></i></div>
-        <p class="gf-time mono"><span data-now>00:00.0</span> / 00:10.2<a href="media/growth-concept.mp4" target="_blank" rel="noopener">独立窗口观看 ↗</a></p>`, 'gf-w')}</div>
+        <p class="gf-time mono"><span data-now>00:00.0</span> / 00:10.2<button type="button" class="gf-one" aria-pressed="false">只播本章：关</button><a href="media/growth-concept.mp4" target="_blank" rel="noopener">独立窗口观看 ↗</a></p>`, 'gf-w')}</div>
       <aside class="gf-side">${win('CHAPTER.txt', '章节说明', '<div class="gf-read" aria-live="polite"></div>')}</aside>
-      <ol class="gf-stills" aria-label="五个章节的画面">${CH.map((c, i) => `<li><button type="button" data-i="${i}" aria-label="跳到${c[2]}"><img src="assets/growth-compass/film-${i + 1}.jpg" alt="${c[2]}的画面" loading="lazy"><b class="mono">${String(i + 1).padStart(2, '0')} · ${tc(c[0])}</b><span>${c[2]}</span></button></li>`).join('')}</ol>
+      <ol class="gf-stills" aria-label="五个章节的画面">${CH.map((c, i) => `<li><button type="button" data-i="${i}" aria-label="跳到${c[2]}"><img src="assets/growth-compass/film-${i + 1}.jpg" alt="${c[2]}的画面" loading="lazy"><b class="mono">${String(i + 1).padStart(2, '0')} · ${tc(c[0])}</b><span>${c[2]}<small class="mono">${(c[1] - c[0]).toFixed(1)} 秒</small></span></button></li>`).join('')}</ol>
     </div>`,
     init(el) {
       const v = $('video', el), bs = $$('.gf-bar button', el), st = $$('.gf-stills button', el), read = $('.gf-read', el), head = $('.gf-head', el), now = $('[data-now]', el), bar = $('.gf-bar', el);
@@ -450,10 +459,11 @@ if (window.META?.['growth-compass']) Object.assign(window.META['growth-compass']
       const show = i => {
         if (i === cur) return; cur = i; const c = CH[i];
         bs.forEach((b, k) => b.setAttribute('aria-pressed', k === i)); st.forEach((b, k) => b.classList.toggle('on', k === i));
-        read.innerHTML = `<p class="mono">CHAPTER ${String(i + 1).padStart(2, '0')} / 05 · ${tc(c[0])}</p><h4>${c[2]}</h4><p class="gf-en mono">${c[3]}</p><p>${c[4]}</p>`;
+        read.innerHTML = `<p class="mono">CHAPTER ${String(i + 1).padStart(2, '0')} / 05 · ${tc(c[0])}</p><h4>${c[2]}</h4><p class="gf-en mono">${c[3]}</p><p>${c[4]}</p><p class="gf-map"><span class="mono">对应旅程</span>${c[5]}<a href="#journey">看旅程 →</a></p><p class="gf-dur mono">${tc(c[0])} — ${tc(c[1])} · ${(c[1] - c[0]).toFixed(1)} 秒</p>`;
       };
       const at = t => { const k = CH.findIndex(c => t < c[1]); return k < 0 ? CH.length - 1 : k; };
-      const sync = () => { const t = v.currentTime || 0; head.style.left = (t / total * 100) + '%'; now.textContent = tc(t); show(at(t)); };
+      let one = false; const ob = $('.gf-one', el); ob.addEventListener('click', () => { one = !one; ob.setAttribute('aria-pressed', one); ob.textContent = '只播本章：' + (one ? '开' : '关'); });
+      const sync = () => { const t = v.currentTime || 0; if (one && cur >= 0 && t >= CH[cur][1] - .03 && !v.paused) { v.pause(); v.currentTime = CH[cur][0] + .01; return; } head.style.left = (t / total * 100) + '%'; now.textContent = tc(t); show(at(t)); };
       const go = (i, play = true) => { try { v.currentTime = CH[i][0] + .01; } catch (_) { } sync(); if (play) v.play().catch(() => { }); };
       [...bs, ...st].forEach(b => b.addEventListener('click', () => go(+b.dataset.i)));
       v.addEventListener('timeupdate', sync); v.addEventListener('seeked', sync); v.addEventListener('loadedmetadata', sync);

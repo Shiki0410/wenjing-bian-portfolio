@@ -584,3 +584,20 @@ body.pg.pg-tennisatom {
 @media (min-width:701px){.ta-jny-names{display:none}}
 
 .pg-tennisatom .filespec .fs-row:nth-child(2), .pg-tennisatom .filespec .fs-row:nth-child(4) { display:none; }
+
+/* 2026-10-15 polish: cover copy backing so the film perforation does not cut through the subtitle */
+.pg-tennisatom .ta-cv-copy::before { content:""; position:absolute; z-index:-1; inset:-18px -34px -14px -28px; background:linear-gradient(90deg,rgba(5,10,38,.92) 0,rgba(5,10,38,.82) 62%,rgba(5,10,38,0) 100%); }
+.pg-tennisatom .ta-cv-q { font-size:clamp(15px,1.3vw,18px); }
+
+/* 2026-10-15 polish: narrow screens */
+@media (max-width:700px){
+  .pg-tennisatom .ta-sc-stage { display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 18px; padding:28px 18px; min-height:0; aspect-ratio:auto; }
+  .pg-tennisatom .ta-sc-ln { display:none; }
+  .pg-tennisatom .ta-fr { position:static; translate:none; }
+  .pg-tennisatom .ta-fr.v { writing-mode:horizontal-tb; letter-spacing:.06em; }
+  .pg-tennisatom .ta-fr.s { font-size:14px; }
+  .pg-tennisatom .ta-fr.m { font-size:20px; }
+  .pg-tennisatom .ta-q-pt { flex-direction:column; gap:3px; white-space:normal; width:96px; text-align:center; padding:4px; }
+  .pg-tennisatom .ta-q-pt.ta { width:110px; }
+}
+.pg-tennisatom .act.end { padding-left:var(--gx,18px); padding-right:var(--gx,18px); box-sizing:border-box; }

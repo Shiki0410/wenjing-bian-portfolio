@@ -1055,3 +1055,27 @@
     $$('[data-pc="inview"], .p-title, .p-tiles, .p-arch, .p-city, .pml', root).forEach(el => io.observe(el));
   };
 })();
+
+;/* 2026-10-15 polish: type-size floor (small labels >= 11px, running text >= 14px) */
+(() => {
+  const SKIP = /(note|foot|cap|source|src|hint|meta|tag|legend|mono|pill|chip|badge|kbd|num|axis|label)/i;
+  let timer = 0;
+  const run = () => {
+    const root = document.querySelector('#main') || document.body;
+    root.querySelectorAll('*').forEach(e => {
+      if (e.closest('svg') || ['SCRIPT', 'STYLE', 'OPTION'].includes(e.tagName)) return;
+      let t = '';
+      for (const n of e.childNodes) if (n.nodeType === 3) t += n.textContent;
+      t = t.trim(); if (!t) return;
+      const fs = parseFloat(getComputedStyle(e).fontSize);
+      if (fs < 11) e.style.setProperty('font-size', '11px', 'important');
+      else if (fs < 14 && t.length >= 28 && !SKIP.test(String(e.className)) && !e.closest('[class*="note"],[class*="foot"],[class*="cap"],[class*="source"]')) e.style.setProperty('font-size', '14px', 'important');
+    });
+  };
+  const sched = () => { if (!timer) timer = setTimeout(() => { timer = 0; run(); }, 500); };
+  const start = () => {
+    sched();
+    new MutationObserver(sched).observe(document.querySelector('#main') || document.body, { childList: true, subtree: true });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();

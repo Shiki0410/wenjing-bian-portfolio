@@ -72,7 +72,7 @@
         </section>
         <section class="y-line" aria-label="${esc(u.o(4).sub)}">
           <h3 class="yh">${esc(u.o(4).sub)}</h3>
-          <ol class="yl3">${(u.o(5).list || []).map(([h, t], j) => `<li><b aria-hidden="true">${['一', '二', '三'][j]}</b><h4>${esc(h)}</h4><p>${esc(t)}</p></li>`).join('')}</ol>
+          <ol class="yl3">${(u.o(5).list || []).map(([h, t], j) => `<li><b aria-hidden="true">${['字', '游', '端'][j]}</b><h4>${esc(h)}</h4><p>${esc(t)}</p></li>`).join('')}</ol>
         </section>
         ${u.rest()}`;
     },
@@ -135,7 +135,6 @@
           <div class="ym-copy"><p class="mono">${esc(a.kicker)}</p><h2>${md(a.title)}</h2><p>${md(a.lead)}</p><small class="mono">${esc(a.open.cap)}</small></div>
         </header>
         <section class="y-pipe" aria-label="模块结构">${u.b(0)}</section>
-        <section class="y-tabs" aria-label="${esc(u.o(1).sub)}"><h3 class="yh">${esc(u.o(1).sub)}</h3>${u.b(2)}</section>
         ${u.rest()}`;
     }
   };
@@ -149,7 +148,7 @@
       dl: [['人物', '第一任园主史正志'], ['任务', '改字唤来清风与明月'], ['园景', '刚建成的网师园']] },
     { c: '冬', e: 'winter', en: 'WINTER', col: '#4a6275', cn: '黛蓝', tag: '史正志之子', h: '冬 · 萧瑟的园子',
       d: '玩家穿越到冬天，遇见史正志的儿子。园子正陷在低谷，这一章要去安慰新的园主。',
-      dl: [['人物', '史正志的儿子'], ['任务', '安慰低谷中的园主'], ['园景', '萧瑟，园子冷落']] },
+      dl: [['人物', '史正志的儿子'], ['任务', '安慰处在低谷的园主'], ['园景', '萧瑟，园子冷落']] },
     { c: '春', e: 'spring', en: 'SPRING', col: '#8aa07a', cn: '柳绿', tag: '后续的园主', h: '春 · 园子慢慢恢复',
       d: '故事继续穿越年代，玩家遇见后来的园主，继续替他们解谜，园景一点点恢复。',
       dl: [['人物', '后续的园主'], ['任务', '帮园主解谜、完成心愿'], ['园景', '复兴的旅程开始']] },
@@ -357,7 +356,7 @@
 
   M.gardenWordPuzzle = {
     html: () => `<section class="gw" data-noeva aria-label="改字演示">
-      <div class="gw-head"><div><p class="mono">WORD → LANDSCAPE · 改字演示</p><h3>取下一个字，换成另一个，看园子怎么回应</h3></div><div class="gw-pick" role="group" aria-label="选择谜题">${PUZ.map((p, i) => `<button type="button" data-ex="${i}" aria-pressed="${!i}"><b>${p.verse.join('')}</b><span class="mono">谜题 0${i + 1}</span></button>`).join('')}</div></div>
+      <div class="gw-head"><div><p class="mono">WORD → LANDSCAPE · 改字演示</p><h3>改字演示：取下一个字，换成另一个</h3></div><div class="gw-pick" role="group" aria-label="选择谜题">${PUZ.map((p, i) => `<button type="button" data-ex="${i}" aria-pressed="${!i}"><b>${p.verse.join('')}</b><span class="mono">谜题 0${i + 1}</span></button>`).join('')}</div></div>
       <ol class="gw-steps" aria-label="三个动作"><li><button type="button" data-step="0"><b>1</b><span>取字</span><em>点亮着的字</em></button></li><li><button type="button" data-step="1"><b>2</b><span>换字</span><em>选一个候选字</em></button></li><li><button type="button" data-step="2"><b>3</b><span>看景</span><em>景物回应</em></button></li></ol>
       <div class="gw-body">
         <div class="gw-left">
@@ -394,7 +393,7 @@
           ? (st === 1 ? `<span class="gw-ch gap" aria-label="空位"></span>` : `<button type="button" class="gw-ch ${st === 0 ? 'hot' : (o && o.k === 'ok' ? 'ok' : 'bad')}" data-take aria-label="${st === 0 ? '取下“' + c + '”' : '再取下“' + ch + '”换一个'}">${ch}</button>`)
           : `<span class="gw-ch">${c}</span>`).join('');
         q('.gw-chips').innerHTML = p.opts.map((x, i) => `<button type="button" class="gw-chip${st === 2 && pick === i ? ' sel ' + (x.k === 'ok' ? 'ok' : 'bad') : ''}" data-put="${i}" ${st === 0 ? 'disabled' : ''}><b>${x.c}</b><span>${x.m}</span></button>`).join('');
-        q('.gw-msg').innerHTML = st === 0 ? p.before : st === 1 ? '字被取下了，空位在等一个字。选一个候选字放进去。' : `<b class="${o.k === 'ok' ? 'ok' : 'bad'}">${o.k === 'ok' ? '对了 · ' : '换了个字 · '}${p.verse[0]} → ${o.c}</b>${o.t}<br><small>${o.r}</small>`;
+        q('.gw-msg').innerHTML = st === 0 ? p.before : st === 1 ? '字被取下来了，选一个候选字放进空位。' : `<b class="${o.k === 'ok' ? 'ok' : 'bad'}">${o.k === 'ok' ? '对了 · ' : '换了个字 · '}${p.verse[0]} → ${o.c}</b>${o.t}<br><small>${o.r}</small>`;
         q('.gw-tab tbody').innerHTML = p.opts.map((x, i) => `<tr class="${st === 2 && pick === i ? 'on' : ''}"><td><b>${x.c}</b></td><td>${x.m}</td><td>${x.t}${x.k === 'ok' ? ' <i>公开介绍</i>' : ''}</td></tr>`).join('');
         q('.gw-reset').disabled = st === 0;
         const rg = q('.gw-cmp input'); rg.disabled = st !== 2; q('.gw-stage').classList.toggle('cmp', st === 2); setX(st === 2 ? Number(rg.value) : 0);
@@ -429,7 +428,7 @@
   };
   M.gardenPuzzleMap = {
     html: () => `<section class="gm" data-noeva aria-label="解谜机制结构">
-      <header class="gm-h"><p class="mono">PUZZLE STRUCTURE</p><h3>改字这件事，在游戏里怎样走通</h3></header>
+      <header class="gm-h"><p class="mono">PUZZLE STRUCTURE</p><h3>改字谜题的流程</h3></header>
       <ol class="gm-flow">${[
         ['scene', '景中有字', '题诗、匾额等文字出现在场景里，同时是谜题的入口。', '输入'],
         ['fan', '奇扇取字', '玩家用绘梦奇扇把其中一个字提取出来。', '提取'],
@@ -454,7 +453,7 @@
       <div class="gx-base"><b>共用的园子</b><span>网师园三维场景 · 秋冬春夏四季 · 建筑与园景</span></div>
       <div class="gx-cols">
         <article class="gx-col story">
-          <header><p class="mono">STORY / 剧情模式</p><h3>园主的心愿推着往前走</h3></header>
+          <header><p class="mono">STORY / 剧情模式</p><h3>剧情模式：跟着园主的心愿推进</h3></header>
           <svg viewBox="0 0 520 150" role="img" aria-label="剧情模式：四章线性推进，每章一道改字谜题"><title>剧情模式的线性推进</title>
             <path d="M20 80H496" stroke="#1b1d1a" stroke-width="3"/>
             ${['秋', '冬', '春', '夏'].map((c, i) => `<g transform="translate(${56 + i * 118},80)"><circle r="26" fill="${['#c4622d', '#4a6275', '#8aa07a', '#4f8577'][i]}"/><text y="9" text-anchor="middle" font-size="26" fill="#fbfaf5" font-family="'Ma Shan Zheng',serif">${c}</text><rect x="48" y="-12" width="30" height="24" rx="3" fill="#fbfaf5" stroke="#1b1d1a" stroke-width="2"/><path d="M56 0H70" stroke="#1b1d1a" stroke-width="2"/></g>`).join('')}
@@ -463,11 +462,11 @@
           <ol><li><b>夜读入梦</b>进入南宋的网师园</li><li><b>遇见园主</b>通过对话知道他的心愿</li><li><b>奇扇改字</b>改动景中的诗句，解开谜题</li><li><b>下一章</b>季节更替；四章完成后播放终章动画</li></ol>
         </article>
         <article class="gx-col tour">
-          <header><p class="mono">TOUR / 游览模式</p><h3>走到哪里，就从哪里开始看</h3></header>
+          <header><p class="mono">TOUR / 游览模式</p><h3>游览模式：自己走，自己选季节</h3></header>
           <svg viewBox="0 0 520 150" role="img" aria-label="游览模式：在园景中自由走动，四季可以随时切换"><title>游览模式的自由路径</title>
             <path d="M40 100Q110 30 190 80T330 54T470 100" fill="none" stroke="#1b1d1a" stroke-width="2.5" stroke-dasharray="6 6"/>
             <path d="M190 80Q230 126 300 112" fill="none" stroke="#1b1d1a" stroke-width="2.5" stroke-dasharray="6 6"/>
-            ${[[40, 100], [110, 52], [190, 80], [260, 62], [330, 54], [300, 112], [400, 76], [470, 100]].map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 === 0 ? 10 : 7}" fill="${i % 3 === 0 ? '#5c8f6c' : '#fbfaf5'}" stroke="#1b1d1a" stroke-width="2"/>`).join('')}
+            ${[[40, 100], [110, 52], [190, 80], [260, 62], [330, 54], [300, 112], [400, 76], [470, 100]].map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="${i % 3 === 0 ? 10 : 7}" fill="${i % 3 === 0 ? '#4f8577' : '#fbfaf5'}" stroke="#1b1d1a" stroke-width="2"/>`).join('')}
             ${['秋', '冬', '春', '夏'].map((c, i) => `<g transform="translate(${340 + i * 34},22)"><circle r="14" fill="${['#c4622d', '#4a6275', '#8aa07a', '#4f8577'][i]}"/><text y="6" text-anchor="middle" font-size="15" fill="#fbfaf5" font-family="'Ma Shan Zheng',serif">${c}</text></g>`).join('')}
             <text x="40" y="136" font-size="15" fill="#5d5f58">自由路线</text><text x="340" y="62" font-size="0"></text><text x="340" y="48" font-size="0"></text>
           </svg>
@@ -493,7 +492,7 @@
   ];
   M.gardenMap = {
     html: () => `<section class="gmap" data-noeva aria-label="游园地图示意">
-      <header><p class="mono">GARDEN MAP · 游园地图 · 示意</p><h3>几处出现过的场景，落在园子的哪里</h3></header>
+      <header><p class="mono">GARDEN MAP · 游园地图 · 示意</p><h3>几处场景在园中的位置</h3></header>
       <div class="gmap-body">
         <figure class="gmap-fig"><img src="assets/garden/frame-8.jpg" alt="网师园水墨俯视画面 · 演示视频截帧" loading="lazy">${SPOTS.map(p => `<button type="button" class="gmap-pin" data-p="${p.n - 1}" style="left:${p.x}%;top:${p.y}%" aria-label="${p.h}"><b>${p.n}</b></button>`).join('')}<figcaption class="mono">底图：演示视频中的水墨俯视画面 · 点位为示意</figcaption></figure>
         <div class="gmap-info"><img class="gmap-thumb" alt=""><p class="mono gmap-mode"></p><h4 class="gmap-h"></h4><p class="gmap-d"></p>
@@ -518,28 +517,46 @@
       <div class="gn-arrow" aria-hidden="true">▼</div>
       <div class="gn-layer mine"><p class="mono">MINE · 2025.12—2026.01</p>
         <div class="gn-mods">
-          <article><b>NPC</b><h4>对话与触发</h4><p>靠近人物时给出可对话的提示，进入对话，结束后回到探索。</p></article>
-          <article><b>CAMERA</b><h4>摄像机</h4><p>探索时跟随角色，对话时切换取景，结束后回到跟随。</p></article>
-          <article><b>MINI</b><h4>小程序适配</h4><p>触控输入与运行环境改写，让同一套游戏能在微信小程序里玩。</p></article>
+          <article><b>NPC</b><h4>对话与触发</h4><p>我重写了 NPC 交互：玩家靠近人物时出现可对话的提示，进入对话后可以正常结束，并回到探索状态，不会停在对话里。</p></article>
+          <article><b>CAMERA</b><h4>摄像机</h4><p>我重写了摄像机模块：探索时跟随角色，对话时切换取景，结束后回到跟随。切换前后的视角要接得上，玩家才不会在园子里迷路。</p></article>
+          <article><b>MINI</b><h4>小程序适配</h4><p>参与网页版向微信小程序的适配部署：按触控方式和运行环境改写交互模块，把 NPC 与摄像机功能移植过去。</p></article>
         </div>
       </div>
       <div class="gn-arrow" aria-hidden="true">▼</div>
       <div class="gn-layer env"><p class="mono">INPUT / PLATFORM</p><ul><li>鼠标 · 键盘（网页）</li><li>触控（手机）</li><li>微信小程序运行环境</li></ul></div>
-      <div class="gn-state">
-        <p class="mono">STATE · 探索、对话与视角</p>
-        <svg viewBox="0 0 600 200" role="img" aria-label="探索与对话之间的切换：靠近人物进入对话，结束后回到探索，镜头随之切换"><title>探索与对话的状态切换</title>
-          <defs><marker id="gn-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1b1d1a"/></marker></defs>
-          <g font-family="'LXGW WenKai TC','Noto Serif SC',serif">
-            <rect x="20" y="62" width="150" height="76" rx="38" fill="#e2efdc" stroke="#1b1d1a" stroke-width="2.5"/><text x="95" y="108" text-anchor="middle" font-size="24" fill="#1b1d1a">探索</text>
-            <rect x="430" y="62" width="150" height="76" rx="38" fill="#fbf0dc" stroke="#1b1d1a" stroke-width="2.5"/><text x="505" y="108" text-anchor="middle" font-size="24" fill="#1b1d1a">对话</text>
-            <path d="M172 88H428" stroke="#1b1d1a" stroke-width="2.4" marker-end="url(#gn-ar)" fill="none"/><text x="300" y="76" text-anchor="middle" font-size="16" fill="#1b1d1a">靠近并触发</text>
-            <path d="M428 118H172" stroke="#1b1d1a" stroke-width="2.4" marker-end="url(#gn-ar)" fill="none"/><text x="300" y="146" text-anchor="middle" font-size="16" fill="#1b1d1a">对话结束</text>
-            <path d="M95 60Q95 32 160 32H228" fill="none" stroke="#5c8f6c" stroke-width="2.2" stroke-dasharray="5 5"/><text x="300" y="38" text-anchor="middle" font-size="15" fill="#3f7a50">镜头：跟随角色</text>
-            <path d="M505 140Q505 170 420 170H360" fill="none" stroke="#d9772b" stroke-width="2.2" stroke-dasharray="5 5"/><text x="300" y="176" text-anchor="middle" font-size="15" fill="#b25a1a">镜头：对话取景</text>
-          </g>
-        </svg>
+      <div class="gn-state" data-st="explore">
+        <p class="mono">STATE · 探索、对话与视角 · 示意，点按钮切换</p>
+        <div class="gn-sm">
+          <div class="gn-view" aria-hidden="true">
+            <svg viewBox="0 0 320 170"><rect x="0" y="0" width="320" height="170" fill="none"/>
+              <path d="M10 140Q90 110 160 130T310 112" fill="none" stroke="#14161c" stroke-opacity=".18" stroke-width="2"/>
+              <rect class="gn-cam" x="0" y="0" width="150" height="96" rx="4" fill="none" stroke="#b8412f" stroke-width="2" stroke-dasharray="6 5"/>
+              <g class="gn-pl"><circle r="11" fill="#2f4a5a"/><text y="4.5" text-anchor="middle" font-size="12" fill="#f3ede0">我</text></g>
+              <g class="gn-npc"><circle r="11" fill="#c4622d"/><text y="4.5" text-anchor="middle" font-size="11" fill="#f3ede0">人</text><circle class="gn-tip" r="17" fill="none" stroke="#c4622d" stroke-width="1.5" stroke-dasharray="3 3"/></g>
+            </svg>
+          </div>
+          <div class="gn-states">
+            <div class="gn-node ex"><b>探索</b><span class="mono">镜头 · 跟随角色</span><p>玩家自由走动；走近人物，头顶出现可对话的提示。</p></div>
+            <div class="gn-btns"><button type="button" data-go="talk">靠近人物并触发 ↓</button><button type="button" data-go="explore">↑ 对话结束</button></div>
+            <div class="gn-node dl"><b>对话</b><span class="mono">镜头 · 对话取景</span><p>移动输入暂停，镜头拉近到玩家和人物之间；结束后回到跟随。</p></div>
+          </div>
+        </div>
       </div>
       <p class="garden-source">个人分工的结构示意：文化内容、谜题设计和游戏美术属于团队；这里只标出我改写的模块。</p>
-    </section>`
+    </section>`,
+    init(el) {
+      const box = el.querySelector('.gn-state'), cam = el.querySelector('.gn-cam'), pl = el.querySelector('.gn-pl'), npc = el.querySelector('.gn-npc');
+      const set = st => {
+        box.dataset.st = st;
+        const talk = st === 'talk';
+        pl.style.transform = talk ? 'translate(120px,96px)' : 'translate(70px,100px)';
+        npc.style.transform = 'translate(220px,92px)';
+        cam.style.transform = talk ? 'translate(96px,40px) scale(.9,.86)' : 'translate(2px,30px)';
+        cam.setAttribute('width', talk ? 150 : 150);
+        box.querySelectorAll('[data-go]').forEach(b => { b.disabled = b.dataset.go === st; });
+      };
+      box.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b && !b.disabled) set(b.dataset.go); });
+      set('explore');
+    }
   };
 })();
